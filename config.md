@@ -1,3 +1,4 @@
+@def prepath = "BeautifulMakie"
 <!--
 Add here global page variables to use throughout your website.
 -->
