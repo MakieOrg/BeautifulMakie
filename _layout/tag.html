@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{insert style.html}}
+  <title>Tag: {{fill fd_tag}}</title>
+</head>
+<body>
+  {{insert pgwrap.html}}
+  <div class="{{div_content}}">
+    <h1>Tag: {{fill fd_tag}}</h1>
+    {{taglist}}
+    {{insert page_foot.html}}
+  </div>
+  <!-- close what is opened in pgwrap.html -->
+  </div> <!-- end of class main-content -->
+  </div> <!-- end of class main-content-wrap -->
+  </div> <!-- end of class page-wrap-->
+</body>
+</html>
