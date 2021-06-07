@@ -1,7 +1,7 @@
 # by lazarusA # HIDE
 # using GLMakie # HIDE
 using CairoMakie
-CairoMakie.activate!() # HIDE 
+CairoMakie.activate!() # HIDE
 let
     x = -2π:0.1:2π
     fig = Figure(resolution = (700, 450), fontsize = 18, font = "sans")
