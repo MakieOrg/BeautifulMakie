@@ -1,0 +1,105 @@
+/* supports question 3 */
+.code-output code.plaintext.hljs {
+  background-color:#fcbc01; /*#ff7c4c;*/
+}
+
+/* Misc */
+.franklin-toc ol {
+  list-style: georgian;
+}
+
+figure {
+  text-align: center;
+  border: 1px solid gray;
+}
+.franklin-content figure > img {
+  padding:0;
+  margin:0;
+}
+
+figcaption {
+  text-align: center;
+}
+
+.small-imgc {
+  text-align: center;
+}
+.small-imgc img {
+  margin:0;
+  padding:0;
+  width: 25%;
+}
+
+
+/* ----------------- */
+
+
+pre {
+	position: relative;
+	/* padding: 30px; */
+}
+
+.copy-button {
+	cursor: pointer;
+	border: 0;
+	font-size: 10px;
+	text-transform: uppercase;
+	font-weight: 500;
+	padding: 6px 10px 10px;
+	color: #795548;
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.copy-button:hover,
+.copy-button:focus,
+.copy-button:active {
+	outline: 0;
+	background-color: #eee9e6;
+}
+/* -----------------  https://codepen.io/vhanla/pen/PxjZvj */
+/*
+.gridG {
+  column-count: 3;
+  column-gap: 20px;
+	row-gap: 20px;
+}
+*/
+.row1 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8px 8px;
+
+}
+
+/* Create four equal columns that sits next to each other */
+.column1 {
+  flex: 31%;
+  max-width: 31%;
+  padding: 8px 8px;
+	row-gap: 10px;
+}
+
+.column1 img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column1 {
+    flex: 40%;
+    max-width: 40%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column1 {
+    flex: 100%;
+    max-width: 100%;
+  }
+}

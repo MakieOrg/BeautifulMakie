@@ -1,0 +1,2 @@
+      Status `~/Documents/beautifulMakie/BeaufitulMakie/Project.toml`
+  [e9467ef8] GLMakie v0.3.1

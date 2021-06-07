@@ -3,29 +3,170 @@
   <div class="side-bar">
     <div class="header">
       <a href="/" class="title">
-        Franklin
+        <font color = "#5D6D7E"> Beautiful Makie </font>
       </a>
     </div>
     <label for="show-menu" class="show-menu">MENU</label>
     <input type="checkbox" id="show-menu" role="button">
     <div class="menu" id="side-menu">
+			<p><a href="https://github.com/lazarusA/MakieNotebooks">
+				<img align="left" src="https://img.shields.io/github/stars/lazarusA/BeautifulMakie?style&#61;social" alt="Stars" /></a></p>
+				<br>
+
+			<form id="lunrSearchForm" name="lunrSearchForm">
+				<input class="search-input" name="q" placeholder="Search..." type="text" style="height:20px;width:150px;font-size:12pt;border-radius:10px;">
+				<input type="submit" value="Search" formaction="/search/index.html" style="height:20px;width:100px;font-size:12pt;">
+			</form>
+			<br>
       <ul class="menu-list">
-        <li class="menu-list-item {{ispage index}}active{{end}}"><a href="/" class="menu-list-link {{ispage index}}active{{end}}">Home</a>
-        <li class="menu-list-item {{ispage menu1/*}}active{{end}}"><a href="/menu1/" class="menu-list-link {{ispage menu1}}active{{end}}">Code blocks</a>
-        <li class="menu-list-item {{ispage menu2/*}}active{{end}}"><a href="/menu2/" class="menu-list-link {{ispage menu2}}active{{end}}">More goodies</a>
-        <li class="menu-list-item {{ispage menu3/*}}active{{end}}"><a href="/menu3/" class="menu-list-link {{ispage menu3}}active{{end}}">Tags</a>
-          <ul class="menu-list-child-list ">
-            <li class="menu-list-item "><a href="#" class="menu-list-link">Submenu</a>
-          </ul>
+				<!-- HOME -->
+          <li class="menu-list-item {{ispage index}}active{{end}}"><a href="/" class="menu-list-link">• Home</a>
+					<!-- WORKFLOW -->
+ 		  <li class="menu-list-parent {{ispage ScattersLines/*}}active{{end}}"><a href="/ScattersLines/" class="menu-list-link">• Lines and Scatters</a>
+ 			  <ul class="menu-list-child-list ">
+ 				<li class="menu-list-item {{ispage ScattersLines/index.html}}active{{end}}"><a href="/ScattersLines/" class="menu-list-link">Single line</a>
+					<li class="menu-list-item {{ispage ScattersLines/twolines}}active{{end}}"><a href="/ScattersLines/twolines/" class="menu-list-link">Two lines</a>
+
+ 				<li class="menu-list-item {{ispage ScattersLines/lineScatter}}active{{end}}"><a href="/ScattersLines/lineScatter/" class="menu-list-link">Line with scatter</a>
+ 				<li class="menu-list-item {{ispage ScattersLines/linesScatters}}active{{end}}"><a href="/ScattersLines/linesScatters/" class="menu-list-link">Lines with scatters</a>
+				<li class="menu-list-item {{ispage ScattersLines/linesAndScatters}}active{{end}}"><a href="/ScattersLines/linesAndScatters/" class="menu-list-link">Lines and scatters</a>
+				<li class="menu-list-item {{ispage ScattersLines/ScattersCmaps}}active{{end}}"><a href="/ScattersLines/ScattersCmaps/" class="menu-list-link">Scatters and colormaps</a>
+				<li class="menu-list-item {{ispage ScattersLines/BubblePlot}}active{{end}}"><a href="/ScattersLines/BubblePlot/" class="menu-list-link">Bubble Plot</a>
+				<li class="menu-list-item {{ispage ScattersLines/LineLogx}}active{{end}}"><a href="/ScattersLines/LineLogx/" class="menu-list-link">Log scale in x</a>
+				<li class="menu-list-item {{ispage ScattersLines/LineLogy}}active{{end}}"><a href="/ScattersLines/LineLogy/" class="menu-list-link">Log scale in y</a>
+				<li class="menu-list-item {{ispage ScattersLines/LineLogxy}}active{{end}}"><a href="/ScattersLines/LineLogxy/" class="menu-list-link">Log scale in x and y</a>
+				<li class="menu-list-item {{ispage ScattersLines/ScatterLogxyCbar}}active{{end}}"><a href="/ScattersLines/ScatterLogxyCbar/" class="menu-list-link">Log scale in x and y, scatters and colormap</a>
+
+ 				<li class="menu-list-item {{ispage ScattersLines/linesAndScattersLegOut}}active{{end}}"><a href="/ScattersLines/linesAndScattersLegOut/" class="menu-list-link">Lines and scatters (legend out)</a>
+				<li class="menu-list-item {{ispage ScattersLines/MulticoloredLinesLegOut}}active{{end}}"><a href="/ScattersLines/MulticoloredLinesLegOut/" class="menu-list-link">Multicolored lines (legend out)</a>
+				<li class="menu-list-item {{ispage ScattersLines/MulticoloredLinesCbarOut}}active{{end}}"><a href="/ScattersLines/MulticoloredLinesCbarOut/" class="menu-list-link">Multicolored lines (colorbar out)</a>
+				<li class="menu-list-item {{ispage ScattersLines/LinesAndMulticoloredLineCbarOut}}active{{end}}"><a href="/ScattersLines/LinesAndMulticoloredLineCbarOut/" class="menu-list-link">Lines and multicolored lines</a>
+				<li class="menu-list-item {{ispage ScattersLines/MultipleMulticoloredLineCbarOut}}active{{end}}"><a href="/ScattersLines/MultipleMulticoloredLineCbarOut/" class="menu-list-link">Multiple lines with different colormaps</a>
+				<li class="menu-list-item {{ispage ScattersLines/MultipleMulticoloredLineCbarAround}}active{{end}}"><a href="/ScattersLines/MultipleMulticoloredLineCbarAround/" class="menu-list-link">Multiple lines with different colormaps (colorbars around plot)</a>
+				<li class="menu-list-item {{ispage ScattersLines/LineWithInset}}active{{end}}"><a href="/ScattersLines/LineWithInset/" class="menu-list-link">Line with inset</a>
+				<li class="menu-list-item {{ispage ScattersLines/LineWithInsetHeatmap}}active{{end}}"><a href="/ScattersLines/LineWithInsetHeatmap/" class="menu-list-link">Line with an inset heatmap</a>
+
+ 			  </ul>
+
+			<li class="menu-list-parent {{ispage FilledCurves/*}}active{{end}}"><a href="/FilledCurves/" class="menu-list-link">• Filled Curves</a>
+ 			  <ul class="menu-list-child-list ">
+ 				<li class="menu-list-item {{ispage FilledCurves/index.html}}active{{end}}"><a href="/FilledCurves/" class="menu-list-link">Filled Line</a>
+ 				<li class="menu-list-item {{ispage FilledCurves/FilledLines}}active{{end}}"><a href="/FilledCurves/FilledLines/" class="menu-list-link">Filled Lines, bell shaped curves</a>
+ 				<li class="menu-list-item {{ispage FilledCurves/Bands}}active{{end}}"><a href="/FilledCurves/Bands/" class="menu-list-link">Bands</a>
+ 				<li class="menu-list-item {{ispage FilledCurves/ConfidenceRegion}}active{{end}}"><a href="/FilledCurves/ConfidenceRegion/" class="menu-list-link">Confidence Region</a>
+ 			  </ul>
+
+			<li class="menu-list-parent {{ispage FlowFields/*}}active{{end}}"><a href="/FlowFields/" class="menu-list-link">• Flow Fields</a>
+ 			  <ul class="menu-list-child-list ">
+ 				<li class="menu-list-item {{ispage FlowFields/index.html}}active{{end}}"><a href="/FlowFields/" class="menu-list-link">Arrows</a>
+ 				<li class="menu-list-item {{ispage FlowFields/streamplot}}active{{end}}"><a href="/FlowFields/streamplot/" class="menu-list-link">Streamplot</a>
+ 				<li class="menu-list-item {{ispage FlowFields/streamplotAndHeatmap}}active{{end}}"><a href="/FlowFields/streamplotAndHeatmap/" class="menu-list-link">Streamplot and heatmap</a>
+ 				<li class="menu-list-item {{ispage FlowFields/streamplots3}}active{{end}}"><a href="/FlowFields/streamplots3/" class="menu-list-link">3 streamplots fields</a>
+				<li class="menu-list-item {{ispage FlowFields/complexPolyaField}}active{{end}}"><a href="/FlowFields/complexPolyaField/" class="menu-list-link">Complex function and Pólya Field</a>
+
+				</ul>
+			<li class="menu-list-parent {{ispage StatsPlots/*}}active{{end}}"><a href="/StatsPlots/" class="menu-list-link">• Statistical plots</a>
+ 			  <ul class="menu-list-child-list ">
+ 				<li class="menu-list-item {{ispage StatsPlots/index.html}}active{{end}}"><a href="/StatsPlots/" class="menu-list-link">Histograms, bins and counts</a>
+ 				<li class="menu-list-item {{ispage StatsPlots/histogramsNorms}}active{{end}}"><a href="/StatsPlots/histogramsNorms/" class="menu-list-link">Histograms and normalization</a>
+ 				<li class="menu-list-item {{ispage StatsPlots/histDensity}}active{{end}}"><a href="/StatsPlots/histDensity/" class="menu-list-link">Histogram and pdf => density!</a>
+ 				<li class="menu-list-item {{ispage StatsPlots/BoxPlot}}active{{end}}"><a href="/StatsPlots/BoxPlot/" class="menu-list-link">Box Plots, vertical and horizontal</a>
+				<li class="menu-list-item {{ispage StatsPlots/ViolinPlot}}active{{end}}"><a href="/StatsPlots/ViolinPlot/" class="menu-list-link">Violin Plot</a>
+				<li class="menu-list-item {{ispage StatsPlots/BarViolinDataSet}}active{{end}}"><a href="/StatsPlots/BarViolinDataSet/" class="menu-list-link">Bars and Violins using RDatasets</a>
+				<li class="menu-list-item {{ispage StatsPlots/DensitiesDataSet}}active{{end}}"><a href="/StatsPlots/DensitiesDataSet/" class="menu-list-link">Density plots using RDatasets</a>
+				<li class="menu-list-item {{ispage StatsPlots/BoxErrorBars}}active{{end}}"><a href="/StatsPlots/BoxErrorBars/" class="menu-list-link">Boxes and y error bars</a>
+				<li class="menu-list-item {{ispage StatsPlots/xBoxErrorBars}}active{{end}}"><a href="/StatsPlots/xBoxErrorBars/" class="menu-list-link">x-error boxes and y-error bars</a>
+				<li class="menu-list-item {{ispage StatsPlots/BoxErrorBarsCmap}}active{{end}}"><a href="/StatsPlots/BoxErrorBarsCmap/" class="menu-list-link">Boxes and y error bars, colormap</a>
+				<li class="menu-list-item {{ispage StatsPlots/xyerrorbars}}active{{end}}"><a href="/StatsPlots/xyerrorbars/" class="menu-list-link">Simple xy error bars</a>
+				<li class="menu-list-item {{ispage StatsPlots/yerrorbars}}active{{end}}"><a href="/StatsPlots/yerrorbars/" class="menu-list-link">Simple y error bars + colormap</a>
+ 			  </ul>
+
+			<li class="menu-list-parent {{ispage heatmaps/*}}active{{end}}"><a href="/heatmaps/" class="menu-list-link">• Heatmaps plots</a>
+				<ul class="menu-list-child-list ">
+				<li class="menu-list-item {{ispage heatmaps/index.html}}active{{end}}"><a href="/heatmaps/" class="menu-list-link">Simple heatmap</a>
+				<li class="menu-list-item {{ispage heatmaps/heatmapIrregular}}active{{end}}"><a href="/heatmaps/heatmapIrregular/" class="menu-list-link">Heatmap with an irregular grid</a>
+				<li class="menu-list-item {{ispage heatmaps/heatmapLogIrregular}}active{{end}}"><a href="/heatmaps/heatmapLogIrregular/" class="menu-list-link">Heatmap with an irregular grid, log scales</a>
+				<li class="menu-list-item {{ispage heatmaps/heatmapCbarLeft}}active{{end}}"><a href="/heatmaps/heatmapCbarLeft/" class="menu-list-link">Heatmap, left colorbar</a>
+				<li class="menu-list-item {{ispage heatmaps/heatmapCbarTop}}active{{end}}"><a href="/heatmaps/heatmapCbarTop/" class="menu-list-link">Heatmap, top colorbar</a>
+				<li class="menu-list-item {{ispage heatmaps/heatmapCbarBottom}}active{{end}}"><a href="/heatmaps/heatmapCbarBottom/" class="menu-list-link">Heatmap, bottom colorbar</a>
+				<li class="menu-list-item {{ispage heatmaps/heatmapxyz}}active{{end}}"><a href="/heatmaps/heatmapxyz/" class="menu-list-link">Heatmap with x,y,z values</a>
+				<li class="menu-list-item {{ispage heatmaps/heatmapGrid}}active{{end}}"><a href="/heatmaps/heatmapGrid/" class="menu-list-link">Grid of Heatmaps</a>
+				<li class="menu-list-item {{ispage heatmaps/heatmap2SharedCbars}}active{{end}}"><a href="/heatmaps/heatmap2SharedCbars/" class="menu-list-link">Heatmaps, shared colorbars</a>
+				<li class="menu-list-item {{ispage heatmaps/heatmap1SharedCbar}}active{{end}}"><a href="/heatmaps/heatmap1SharedCbar/" class="menu-list-link">Heatmaps, 1 shared colorbar</a>
+
+				</ul>
+
+				<li class="menu-list-parent {{ispage contour/*}}active{{end}}"><a href="/contour/" class="menu-list-link">• Contour plots</a>
+					<ul class="menu-list-child-list ">
+					<li class="menu-list-item {{ispage contour/index.html}}active{{end}}"><a href="/contour/" class="menu-list-link">Simple countour</a>
+					<li class="menu-list-item {{ispage contour/contourQubit}}active{{end}}"><a href="/contour/contourQubit/" class="menu-list-link">Contour Qubit</a>
+					<li class="menu-list-item {{ispage contour/ContourComplexF}}active{{end}}"><a href="/contour/ContourComplexF/" class="menu-list-link">Contour Complex Functiont</a>
+
+					</ul>
+			<li class="menu-list-parent {{ispage surfWireLines/*}}active{{end}}"><a href="/surfWireLines/" class="menu-list-link">• 3D plots</a>
+				<ul class="menu-list-child-list ">
+				<li class="menu-list-item {{ispage surfWireLines/index.html}}active{{end}}"><a href="/surfWireLines/" class="menu-list-link">Surface branching</a>
+				<li class="menu-list-item {{ispage surfWireLines/surface1Color}}active{{end}}"><a href="/surfWireLines/surface1Color/" class="menu-list-link">Surface, one color</a>
+				<li class="menu-list-item {{ispage surfWireLines/surfaceComplexF}}active{{end}}"><a href="/surfWireLines/surfaceComplexF/" class="menu-list-link">Surface, complex Function</a>
+
+				<li class="menu-list-item {{ispage surfWireLines/revolutionSurf}}active{{end}}"><a href="/surfWireLines/revolutionSurf/" class="menu-list-link">Revolution Surface</a>
+				<li class="menu-list-item {{ispage surfWireLines/revolutionSurf2}}active{{end}}"><a href="/surfWireLines/revolutionSurf2/" class="menu-list-link">Revolution Surface 2</a>
+				<li class="menu-list-item {{ispage surfWireLines/KleinBottle}}active{{end}}"><a href="/surfWireLines/KleinBottle/" class="menu-list-link">Klein Bottle</a>
+				<li class="menu-list-item {{ispage surfWireLines/wireTori}}active{{end}}"><a href="/surfWireLines/wireTori/" class="menu-list-link">Wireframe Tori</a>
+				<li class="menu-list-item {{ispage surfWireLines/wireSurfToris}}active{{end}}"><a href="/surfWireLines/wireSurfToris/" class="menu-list-link">Wireframe and Surface Tori</a>
+				<li class="menu-list-item {{ispage surfWireLines/ntesseralSphericalH}}active{{end}}"><a href="/surfWireLines/tesseralSphericalH/" class="menu-list-link">Tesseral Spherical Harmonics</a>
+				<li class="menu-list-item {{ispage surfWireLines/RGBcube}}active{{end}}"><a href="/surfWireLines/RGBcube/" class="menu-list-link">RGB cube</a>
+				<li class="menu-list-item {{ispage surfWireLines/line3D}}active{{end}}"><a href="/surfWireLines/line3D/" class="menu-list-link">Line in 3D</a>
+
+				</ul>
+				<li class="menu-list-parent {{ispage GeoPlots/*}}active{{end}}"><a href="/GeoPlots/" class="menu-list-link">• Geo plots</a>
+					<ul class="menu-list-child-list ">
+					<li class="menu-list-item {{ispage GeoPlots/index.html}}active{{end}}"><a href="/GeoPlots/" class="menu-list-link">Earth 3D</a>
+					<li class="menu-list-item {{ispage GeoPlots/moon}}active{{end}}"><a href="/GeoPlots/moon/" class="menu-list-link">The moon</a>
+					<li class="menu-list-item {{ispage GeoPlots/landSea}}active{{end}}"><a href="/GeoPlots/landSea/" class="menu-list-link">Land, Sea and Lakes</a>
+					<li class="menu-list-item {{ispage GeoPlots/temPrecESDL}}active{{end}}"><a href="/GeoPlots/temPrecESDL/" class="menu-list-link">ESDL data, temperature & precipitation</a>
+
+					<li class="menu-list-item {{ispage GeoPlots/gppBeer2010}}active{{end}}"><a href="/GeoPlots/gppBeer2010/" class="menu-list-link">GPP Beer 2010, NetCDF file</a>
+					<li class="menu-list-item {{ispage GeoPlots/topography}}active{{end}}"><a href="/GeoPlots/topography/" class="menu-list-link">Surface, topography ETOPO1, NetCDF file</a>
+					<li class="menu-list-item {{ispage GeoPlots/topographySphere}}active{{end}}"><a href="/GeoPlots/topographySphere/" class="menu-list-link">Surface sphere, topography ETOPO1, NetCDF file</a>
+					<li class="menu-list-item {{ispage GeoPlots/topoLinesFuji}}active{{end}}"><a href="/GeoPlots/topoLinesFuji/" class="menu-list-link">Topography, Lines Fuji, .tif file</a>
+
+					</ul>
+
+					<li class="menu-list-parent {{ispage withTheme/*}}active{{end}}"><a href="/withTheme/" class="menu-list-link">• with_theme </a>
+						<ul class="menu-list-child-list ">
+						<li class="menu-list-item {{ispage withTheme/index.html}}active{{end}}"><a href="/withTheme/" class="menu-list-link">theme_black</a>
+
+						</ul>
+
+						<li class="menu-list-parent {{ispage animations/*}}active{{end}}"><a href="/animations/" class="menu-list-link">• Animations </a>
+							<ul class="menu-list-child-list ">
+							<li class="menu-list-item {{ispage animations/index.html}}active{{end}}"><a href="/animations/" class="menu-list-link">Test NDVI</a>
+
+							</ul>
+						<li class="menu-list-parent {{ispage dashboards/*}}active{{end}}"><a href="/dashboards/" class="menu-list-link">• Dashboards </a>
+							<ul class="menu-list-child-list ">
+							<li class="menu-list-item {{ispage dashboards/index.html}}active{{end}}"><a href="/dashboards/" class="menu-list-link">WIP</a>
+
+							</ul>
+
+
+
       </ul>
+
     </div>
     <div class="footer">
-      This is <em>Just the docs</em>, adapted from the <a href="https://github.com/pmarsceill/just-the-docs" target="_blank">Jekyll theme</a>.
+			<div class="copyright">
+		     &copy;	lazarusA
+		  </div>
+
+      Built with <a href="https://franklinjl.org" target="_blank"><em>Franklin.jl</em></a>.
     </div>
   </div>
   <!-- CONTENT -->
   <div class="main-content-wrap"> <!-- closed in foot.html -->
     <div class="main-content">    <!-- closed in foot.html -->
-      <div class="main-header">
-        <a id="github" href="//github.com/tlienart/Franklin.jl">Franklin on GitHub</a>
-      </div>
+<div class="main-header">
+			<a id="github" href="https://lazarusa.github.io/Webpage/codeJuliaMakie.html">GitHub Repository</a>
+
+	</div>
