@@ -17,7 +17,8 @@ function genplain(s::String)
         end
     end
 end
-
+#genplain("Fig2Lines.jl")
+genplain("irisDataSet.jl")
 #genplain("revolutionSurf.jl")
 #genplain("revolutionSurf2.jl")
 #genplain("KleinBottle.jl")
