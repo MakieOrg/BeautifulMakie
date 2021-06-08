@@ -44,6 +44,9 @@
   </div>
 
   <div class="column1">
+    <a href = "/surfWireLines/surfWireContour/">
+      <img src="/assets/scripts/output/surfWireContour.png">
+    </a>
     <a href = "/FlowFields/streamplot/">
       <img src="/assets/scripts/output/streamplot.png">
     </a>

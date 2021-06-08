@@ -18,7 +18,8 @@ function genplain(s::String)
     end
 end
 
-genplain("ContourOverHeatmap.jl")
+#genplain("ContourOverHeatmap.jl")
+genplain("surfWireContour.jl")
 #genplain("Fig2Lines.jl")
 #genplain("irisDataSet.jl")
 #genplain("revolutionSurf.jl")
