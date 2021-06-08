@@ -1,6 +1,6 @@
 # by lazarusA # HIDE
 #using GLMakie, Random # HIDE
-using CairoMakie
+using CairoMakie, Random
 CairoMakie.activate!() #HIDE
 let
     Random.seed!(123)

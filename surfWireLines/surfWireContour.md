@@ -3,6 +3,7 @@
 @def tags = ["syntax", "code"]
 
 ## Surface, Wireframe and Contour
+
 \fig{/_assets/scripts/output/surfWireContour.png}
 \input{julia}{/_assets/scripts/surfWireContour.jl}
 ~~~

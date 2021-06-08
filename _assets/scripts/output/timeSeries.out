@@ -1,0 +1,5 @@
+      Status `~/Documents/BeautifulMakie/Project.toml`
+  [13f3f980] CairoMakie v0.5.7
+  [945b72a4] MarketData v0.13.6
+  [9e3dc215] TimeSeries v0.22.1
+  [ade2ca70] Dates
