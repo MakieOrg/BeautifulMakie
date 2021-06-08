@@ -16,13 +16,13 @@ let
         push!(linesegs, Point2f0(i, highV[i]))
     end
     linesegs = Point2f0.(linesegs)
-    cmap = colormap = ("#f64325", "#78f518")
+    cmap = ("#f64325", "#78f518")
 
     fig = Figure(resolution = (1200, 700), font = "sans", fontsize = 20)
     ax = Axis(fig, backgroundcolor = :black, ygridcolor = "#65866b",
         xgridcolor = "#65866b", xgridstyle=:dash, ygridstyle=:dash)
     barplot!(ax, 1:lentime, values(ohlc.Open), fillto = values(ohlc.Close),
-        color = colors,strokewidth = 0.5, strokecolor = colors,colormap = cmap)
+        color = colors,strokewidth = 0.5, strokecolor = colors, colormap = cmap)
     linesegments!(ax, linesegs, color = colors, colormap = cmap)
     xlims!(ax, 200, 300)
     ylims!(ax, 13,24)
@@ -32,4 +32,4 @@ let
     save(joinpath(@__DIR__, "output", "candlestick.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE
-Pkg.status(["CairoMakie", "Random"]) # HIDE
+Pkg.status(["CairoMakie", "Random","TimeSeries", "MarketData", "Dates"]) # HIDE
