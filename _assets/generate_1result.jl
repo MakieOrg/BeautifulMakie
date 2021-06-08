@@ -17,7 +17,9 @@ function genplain(s::String)
         end
     end
 end
-genplain("Fig2Lines.jl")
+
+genplain("ContourOverHeatmap.jl")
+#genplain("Fig2Lines.jl")
 #genplain("irisDataSet.jl")
 #genplain("revolutionSurf.jl")
 #genplain("revolutionSurf2.jl")
@@ -30,14 +32,14 @@ genplain("Fig2Lines.jl")
 #genplain("surface1Color.jl")
 #genplain("surfaceComplexF.jl")
 #genplain("contourQubit.jl")
-#genplain("BlueMarbel.jl")
-#genplain("moon.jl")
+genplain("BlueMarbel.jl")
+genplain("moon.jl")
 #genplain("landSea.jl")
 #genplain("temPrecESDL.jl")
 #genplain("contour1.jl")
 #genplain("ContourComplexF.jl")
 #genplain("complexPolyaField.jl")
-genplain("themeBlack.jl")
+#genplain("themeBlack.jl")
 
 #genplain("topoLinesFuji.jl")
 

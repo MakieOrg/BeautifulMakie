@@ -24,4 +24,4 @@ end
 
 
 using Pkg # HIDE
-Pkg.status(["GLMakie","FileIO"]) # HIDE
+Pkg.status(["GLMakie","FileIO", "ImageMagick", "QuartzImageIO"]) # HIDE
