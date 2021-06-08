@@ -1,6 +1,6 @@
 # by lazarusA # HIDE
 #using GLMakie, Random # HIDE
-using CairoMakie
+using CairoMakie, Random
 CairoMakie.activate!() #HIDE
 let
     Random.seed!(123)
@@ -18,4 +18,4 @@ let
     save(joinpath(@__DIR__, "output", "heatmapIrregular.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE
-Pkg.status(["CairoMakie"]) # HIDE
+Pkg.status(["CairoMakie", "Random"]) # HIDE
