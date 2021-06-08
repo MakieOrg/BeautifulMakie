@@ -3,7 +3,6 @@
 @def tags = ["syntax", "code"]
 
 ## Moon
-
 \fig{/_assets/scripts/output/moon.png}
 \input{julia}{/_assets/scripts/moon.jl}
 ~~~

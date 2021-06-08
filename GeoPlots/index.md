@@ -3,6 +3,7 @@
 @def tags = ["syntax", "code"]
 
 ## Blue Marbel, Earth
+
 \fig{/_assets/scripts/output/BlueMarbel.png}
 \input{julia}{/_assets/scripts/BlueMarbel.jl}
 ~~~
