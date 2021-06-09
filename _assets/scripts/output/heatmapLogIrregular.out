@@ -1,3 +1,4 @@
-      Status `~/Documents/BeaufitulMakie/Project.toml`
-  [13f3f980] CairoMakie v0.5.5
+      Status `~/Documents/BeautifulMakie/Project.toml`
+  [13f3f980] CairoMakie v0.5.7
   [35d6a980] ColorSchemes v3.12.1
+  [9a3f8284] Random

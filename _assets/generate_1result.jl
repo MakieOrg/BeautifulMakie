@@ -17,7 +17,7 @@ function genplain(s::String)
         end
     end
 end
-genplain("surfaceConstraints.jl")
+#genplain("surfaceConstraints.jl")
 #genplain("candlestick.jl")
 #genplain("twinAxis.jl")
 #genplain("ScatterHistDensitySides.jl")
@@ -56,6 +56,6 @@ genplain("surfaceConstraints.jl")
 #using Glob
 #files = glob("./scripts/*.jl")
 #for f in files #[30:end]
-#    println("Generating output for "*f)
-#    genplain(dir*f[2:end])
+#    println("Generating output for "*f[11:end])
+#    genplain(dir*f[11:end])
 #end
