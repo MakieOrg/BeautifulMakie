@@ -21,6 +21,7 @@ let
     hidespines!(ax, :t, :r)
     fig[1,1] = ax
     fig[1,2] = cbar
+    fig
     save(joinpath(@__DIR__, "output", "gppBeer2010.png"), fig, px_per_unit = 2.0) # HIDE
 end
 

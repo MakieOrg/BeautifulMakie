@@ -9,7 +9,7 @@ let
     stplt = streamplot!(ax, odeSol, -2..4, -2..2, colormap = Reverse(:plasma),
         gridsize= (32,32), arrow_size = 10)
     fig[1, 1] = ax
-    #save("Fig2Lines.png", fig, px_per_unit = 2)
+    fig
     save(joinpath(@__DIR__, "output", "streamplot.png"), fig, px_per_unit = 2) # HIDE
 end
 using Pkg # HIDE

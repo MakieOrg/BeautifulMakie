@@ -29,6 +29,7 @@ let
     ax.xticks = (slice_dates, tempo[slice_dates])
     ax.xticklabelrotation = π/4
     fig[1,1] = ax
+    fig
     save(joinpath(@__DIR__, "output", "candlestick.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE

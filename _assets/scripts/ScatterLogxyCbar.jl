@@ -17,6 +17,7 @@ let
     cbar = Colorbar(fig, pltpbj)
     ylims!(ax,1e-1,1e2)
     fig[1,2] = cbar
+    fig
     save(joinpath(@__DIR__, "output", "ScatterLogxyCbar.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE

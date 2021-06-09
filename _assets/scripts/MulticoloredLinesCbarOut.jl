@@ -25,6 +25,7 @@ let
     fig[1, 1] = ax
     fig[1, 2] = cbar
     colgap!(fig.layout, 5)
+    fig
     #save("MulticoloredLinesCbarOut.png", fig, px_per_unit = 2)
     save(joinpath(@__DIR__, "output", "MulticoloredLinesCbarOut.png"), fig, px_per_unit = 2) # HIDE
 end

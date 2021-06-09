@@ -19,6 +19,7 @@ let
     fig[1, 4] = cbars[3]
     fig[1, 5] = cbars[4]
     colgap!(fig.layout, 15)
+    fig
     #save("MultipleMulticoloredLineCbarOut.png", fig, px_per_unit = 2)
     save(joinpath(@__DIR__, "output", "MultipleMulticoloredLineCbarOut.png"), fig, px_per_unit = 2) # HIDE
 end

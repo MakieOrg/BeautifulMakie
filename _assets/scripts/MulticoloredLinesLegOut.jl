@@ -23,6 +23,7 @@ let
      valign = :center)
     fig[1, 1] = ax
     fig[1, 2] = leg
+    fig
     #save("MulticoloredLinesLegOut.png", fig, px_per_unit = 2)
     save(joinpath(@__DIR__, "output", "MulticoloredLinesLegOut.png"), fig, px_per_unit = 2) # HIDE
 end

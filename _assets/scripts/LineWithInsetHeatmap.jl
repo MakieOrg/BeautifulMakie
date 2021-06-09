@@ -32,6 +32,7 @@ let
     fig[1, 1] = ax1
     fig[1, 1] = leg
     fig[1, 1] = cbar
+    fig
     #save("LineWithInsetHeatmap.png", fig, px_per_unit = 2)
     save(joinpath(@__DIR__, "output", "LineWithInsetHeatmap.png"), fig, px_per_unit = 2) # HIDE
 end

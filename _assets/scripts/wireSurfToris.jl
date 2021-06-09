@@ -39,6 +39,7 @@ let
     fig[1, 3] = cbar1
     fig[1, 1] = cbar2
     colgap!(fig.layout, 2)
+    fig
     save(joinpath(@__DIR__, "output", "wireSurfToris.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE

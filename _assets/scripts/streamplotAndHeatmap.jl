@@ -20,7 +20,7 @@ let
         labelsize = 14, ticklabelsize=14)
     cbar.width = 20
     colgap!(fig.layout, 5)
-    #save("Fig2Lines.png", fig, px_per_unit = 2)
+    fig
     save(joinpath(@__DIR__, "output", "streamplotAndHeatmap.png"), fig, px_per_unit = 2) # HIDE
 end
 using Pkg # HIDE

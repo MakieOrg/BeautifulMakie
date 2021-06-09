@@ -16,6 +16,7 @@ let
         tellwidth = false, bgcolor = :white, framecolor=:white)
     fig[1, 1] = ax
     fig[1, 1] = leg
+    fig
     #save("FigLineScatter.png", fig, px_per_unit = 2)
     save(joinpath(@__DIR__, "output", "FigLinesScatters.png"), fig, px_per_unit = 2) # HIDE
 end

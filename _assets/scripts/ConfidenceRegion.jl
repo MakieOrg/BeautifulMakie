@@ -12,6 +12,7 @@ let
     lines!(x, y1d, color = :black)
     band!(x, lower, upper; color = ("#E69F00", 0.2))
     fig[1,1] = ax
+    fig
     #save("ConfidenceRegion.png"), fig, px_per_unit = 2.0)
     save(joinpath(@__DIR__, "output", "ConfidenceRegion.png"), fig, px_per_unit = 2.0) # HIDE
 end

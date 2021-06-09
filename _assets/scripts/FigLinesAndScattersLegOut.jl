@@ -16,6 +16,7 @@ let
         tellheight =false, tellwidth = true, valign = :center)
     fig[1, 1] = ax
     fig[1, 2] = leg
+    fig
     #save("FigLinesAndScattersLegOut.png", fig, px_per_unit = 2)
     save(joinpath(@__DIR__, "output", "FigLinesAndScattersLegOut.png"), fig, px_per_unit = 2) # HIDE
 end

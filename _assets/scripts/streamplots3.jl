@@ -26,6 +26,7 @@ let
     limits!(ax1, -4, 4, -4, 4)
     limits!(ax2, -4, 4, -4, 4)
     limits!(ax3, -4, 4, -4, 4)
+    fig
     #save("streamplots3.png", fig, px_per_unit = 2)
     save(joinpath(@__DIR__, "output", "streamplots3.png"), fig, px_per_unit = 2) # HIDE
 end

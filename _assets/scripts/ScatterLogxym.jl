@@ -18,6 +18,7 @@ let
     limits!(ax,5e-1,1.5e2, 5e-1,1.5e2)
     fig[1,1] = ax
     fig[1,2] = cbar
+    fig
     save(joinpath(@__DIR__, "output", "ScatterLogxym.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE

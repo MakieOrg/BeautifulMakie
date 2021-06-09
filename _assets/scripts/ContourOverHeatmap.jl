@@ -25,7 +25,6 @@ let
     fig[1,2] = ax2
     fig[1,3] = ax3
     fig[1,4] = cbar
-
     fig
     save(joinpath(@__DIR__, "output", "ContourOverHeatmap.png"), fig, px_per_unit = 2.0) # HIDE
 end

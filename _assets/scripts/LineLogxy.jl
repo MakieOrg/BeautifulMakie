@@ -11,6 +11,7 @@ let
         xgridstyle=:dash, ygridstyle=:dash, xminorticksvisible = true,
         xminorticks = IntervalsBetween(9), yminorticksvisible = true,
         yminorticks = IntervalsBetween(9)))
+    current_figure()
     save(joinpath(@__DIR__, "output", "LineLogxy.png"), current_figure(), px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE

@@ -29,6 +29,7 @@ let
     tellheight =false, tellwidth = false, margin = (10, 10, 10, 10),)
     fig[1, 1] = ax1
     fig[1, 1] = leg
+    fig
     #save("Fig2Lines.png", fig, px_per_unit = 2)
     save(joinpath(@__DIR__, "output", "LineWithInset.png"), fig, px_per_unit = 2) # HIDE
 end

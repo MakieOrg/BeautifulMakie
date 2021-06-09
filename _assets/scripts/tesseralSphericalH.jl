@@ -63,6 +63,7 @@ let
         textsize = 30, color = (:white, 0.85))
     fig
     colgap!(fig.layout, 2)
+    fig
     save(joinpath(@__DIR__, "output", "tesseralSphericalH.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE

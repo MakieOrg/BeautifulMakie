@@ -16,7 +16,7 @@ let
     end
     axislegend("Species")
     fig[1,1] = ax
-
+    fig
     save(joinpath(@__DIR__, "output", "irisDataSet.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE
