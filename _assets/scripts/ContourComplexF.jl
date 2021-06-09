@@ -22,6 +22,7 @@ let
     fig[1,1] = ax1
     fig[1,2] = ax2
     fig[1,3] = cbar
+    fig
     save(joinpath(@__DIR__, "output", "ContourComplexF.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE

@@ -11,6 +11,7 @@ let
     fig, _ = surface(X1, Y1, Z1, shading = true, ambient = Vec3f0(0.95, 0.95, 0.95),
         backlight = 0.95f0, color = sqrt.(X1.^2 .+ Y1.^2 .+ Z1.^2), colormap = :viridis)
     wireframe!(X1, Y1, Z1)
+    fig
     save(joinpath(@__DIR__, "output", "revolutionSurf2.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE

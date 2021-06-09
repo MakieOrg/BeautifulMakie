@@ -13,6 +13,7 @@ let
                 tellheight = false, tellwidth = false, margin = (10, 10, 10, 10))
     fig[1, 1] = ax
     fig[1, 1] = leg
+    fig
     #save("FilledLine.png"), fig, px_per_unit = 2.0)
     save(joinpath(@__DIR__, "output", "FilledLine.png"), fig, px_per_unit = 2.0) # HIDE
 end

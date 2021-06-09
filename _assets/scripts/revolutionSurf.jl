@@ -10,6 +10,7 @@ let
     Z1 = [(u^4 - u^2)*sin(v)  for u in u, v in v]
     fig, _ = surface(X1, Y1, Z1, shading = true,  ambient = Vec3f0(0.65, 0.65, 0.65), backlight = 0.95f0,
         color = sqrt.(X1.^2 .+ Y1.^2 .+ Z1.^2), colormap = :plasma)
+    fig
     save(joinpath(@__DIR__, "output", "revolutionSurf.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE

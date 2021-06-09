@@ -11,9 +11,9 @@ let
     leg = Legend(fig, [[line1, pnts1]], ["sin(x)"], markersize = 8,
     tellheight = false, tellwidth = false, halign = :right, valign = :top,
     bgcolor = :transparent, margin = (10, 10, 10, 10), framevisible = true)
-
     fig[1, 1] = ax
     fig[1, 1] = leg
+    fig
     #save("FigLineScatter.png", fig, px_per_unit = 2)
     save(joinpath(@__DIR__, "output", "FigLineScatter.png"), fig, px_per_unit = 2) # HIDE
 end

@@ -1,7 +1,7 @@
 # by lazarusA # HIDE
 # using GLMakie # HIDE
 using CairoMakie
-CairoMakie.activate!() # HIDE 
+CairoMakie.activate!() # HIDE
 let
     x = LinRange(0,2π,50) # with 50 points in the interval.
     fig = Figure(resolution = (700, 450), font =:sans)
@@ -17,6 +17,7 @@ let
         margin = (10, 10, 10, 10))
     fig[1, 1] = ax
     fig[1, 1] = leg
+    fig
     #save("FigLineScatter.png", fig, px_per_unit = 2)
     save(joinpath(@__DIR__, "output", "FigLinesAndScatters.png"), fig, px_per_unit = 2) # HIDE
 end

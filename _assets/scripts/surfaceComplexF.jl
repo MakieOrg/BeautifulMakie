@@ -14,6 +14,7 @@ let
     fig, ax, pltobj = surface(x, y, fvalues, color = fargs,
         colormap = :diverging_rainbow_bgymr_45_85_c67_n256,
         colorrange = (-π,π), backlight = 1f0, highclip = :black)
+    fig
     save(joinpath(@__DIR__, "output", "surfaceComplexF.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE

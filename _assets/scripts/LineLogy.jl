@@ -10,6 +10,7 @@ let
             ygridstyle=:dash, yminorticksvisible = true,
             yminorticks = IntervalsBetween(9)))
     xlims!(-1,1)
+    current_figure()
     save(joinpath(@__DIR__, "output", "LineLogy.png"), current_figure(), px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE

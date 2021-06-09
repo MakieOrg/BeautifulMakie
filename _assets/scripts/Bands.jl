@@ -10,6 +10,7 @@ let
     # filled curve 2
     band!(x, cos.(x), 1 .+ cos.(x); color = (:red, 0.2))
     fig[1,1] = ax
+    fig
     #save("Bands.png"), fig, px_per_unit = 2.0)
     save(joinpath(@__DIR__, "output", "Bands.png"), fig, px_per_unit = 2.0) # HIDE
 end

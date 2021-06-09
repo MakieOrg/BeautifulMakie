@@ -8,6 +8,7 @@ let
     axis = (xlabel = "x", ylabel = "x²", backgroundcolor = :white))
     axislegend("legend", position = :lt)
     limits!(0,10,0,100)
+    current_figure()
     #save("lines1.png"), current_figure(), px_per_unit = 2.0)
     save(joinpath(@__DIR__, "output", "lines1.png"), current_figure(), px_per_unit = 2.0) # HIDE
 end

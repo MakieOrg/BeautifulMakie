@@ -12,6 +12,7 @@ let
     lines!(x, cos.(x), color = :black, linestyle = :dash, label = "cos")
     limits!(-2π, 2π, -1,1)
     axislegend("legend", position = :lb)
+    current_figure()
     #save("Fig2Lines.png", fig, px_per_unit = 2)
     save(joinpath(@__DIR__, "output", "Fig2LinesEasy.png"), current_figure(), px_per_unit = 2) # HIDE
 end

@@ -18,6 +18,7 @@ let
     ax.xticklabelrotation = π/4
     #ax.xticklabelalign = (:center, :center)
     fig[1,1] = ax
+    fig
     save(joinpath(@__DIR__, "output", "timeSeries.png"), fig, px_per_unit = 2) # HIDE
 end
 

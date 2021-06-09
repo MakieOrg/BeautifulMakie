@@ -15,6 +15,7 @@ let
     limits!(ax, -2π, 2π, -1,1)
     fig[1, 1] = ax
     fig[1, 1] = leg
+    fig
     save(joinpath(@__DIR__, "output", "Fig2Lines.png"), fig, px_per_unit = 2) # HIDE
 end
 

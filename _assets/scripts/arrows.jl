@@ -17,6 +17,7 @@ let
     limits!(ax, -3,3,-3,3)
     fig[1,1] = ax
     fig[1,2] = cbar
+    fig
     #save("arrows.png", fig, px_per_unit = 2)
     save(joinpath(@__DIR__, "output", "arrows.png"), fig, px_per_unit = 2) # HIDE
 end

@@ -18,6 +18,7 @@ let
     wireframe!(ax, x, y, z, overdraw = true, transparency = true,
         color = (:black, 0.1))
     fig[1,1] = ax
+    fig
     save(joinpath(@__DIR__, "output", "surfWireContour.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE
