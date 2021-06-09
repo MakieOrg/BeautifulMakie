@@ -23,6 +23,9 @@
   </div>
 
   <div class="column1">
+    <a href = "/ScattersLines/ScatterHistDensitySides/">
+      <img src="/assets/scripts/output/ScatterHistDensitySides.png">
+    </a>
     <a href = "/ScattersLines/MultipleMulticoloredLineCbarAround/">
       <img src="/assets/scripts/output/MultipleMulticoloredLineCbarAround.png">
     </a>
