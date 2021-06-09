@@ -17,9 +17,9 @@ function genplain(s::String)
         end
     end
 end
-
+genplain("surfaceConstraints.jl")
 #genplain("candlestick.jl")
-genplain("twinAxis.jl")
+#genplain("twinAxis.jl")
 #genplain("ScatterHistDensitySides.jl")
 #genplain("timeSeries.jl")
 #genplain("heatmapText.jl")
