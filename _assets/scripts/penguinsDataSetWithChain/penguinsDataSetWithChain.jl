@@ -5,8 +5,8 @@ Pkg.add(["Makie","CairoMakie","PalmerPenguins", "Colors", "Chain", "DataFrames",
 using CairoMakie, PalmerPenguins, Colors, Chain, DataFrames
 CairoMakie.activate!() # HIDE
 let
-    penguins = dropmissing(DataFrame(PalmerPenguins.load()))
-	#the first time you need to type yes in the repl to download this dataset
+    ENV["DATADEPS_ALWAYS_ACCEPT"] = "true" # Don't ask if the datasets should be downloaded
+	penguins = dropmissing(DataFrame(PalmerPenguins.load()))
     set_theme!(Theme(
         Axis = (
             leftspinevisible = false,
