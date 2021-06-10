@@ -2,7 +2,7 @@
 using Pkg # HIDE
 Pkg.activate(@__DIR__) # HIDE # ?confused about global dir or relative dir, this works for now running from the dir.
 Pkg.add(["Makie","CairoMakie","PalmerPenguins", "Colors", "Chain", "DataFrames", "GLM"]) # HIDE
-using CairoMakie, PalmerPenguins, Colors, Chain, DataFrames
+using CairoMakie, PalmerPenguins, Colors, Chain, DataFrames, GLM
 CairoMakie.activate!() # HIDE
 let
     ENV["DATADEPS_ALWAYS_ACCEPT"] = "true" # Don't ask if the datasets should be downloaded
