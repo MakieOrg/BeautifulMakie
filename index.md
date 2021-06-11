@@ -8,6 +8,9 @@
     <a href = "/ScattersLines/linesScatters/">
       <img src="/assets/scripts/output/FigLinesScatters.png">
     </a>
+    <a href = "/ScattersLines/penguinsAoGsides3d/">
+      <img src="/assets/scripts/penguinsAoG/output/penguinsAoGsides3d.png">
+    </a>
     <a href = "/StatsPlots/candlestick/">
       <img src="/assets/scripts/output/candlestick.png">
     </a>

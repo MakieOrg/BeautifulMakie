@@ -1,0 +1,6 @@
+      Status `~/Desktop/BeautifulMakie/_assets/scripts/penguinsAoG/Project.toml`
+  [cbdf2221] AlgebraOfGraphics v0.4.4
+  [13f3f980] CairoMakie v0.5.9
+  [a93c6f00] DataFrames v1.1.1
+  [b1bec4e5] LIBSVM v0.6.0
+  [8b842266] PalmerPenguins v0.1.2

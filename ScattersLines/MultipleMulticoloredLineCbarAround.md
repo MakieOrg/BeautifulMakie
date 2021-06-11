@@ -2,7 +2,6 @@
 @def hascode = true
 @def tags = ["syntax", "code"]
 ## Multiple Multicolored Lines colorbar around
-
 \fig{/_assets/scripts/output/MultipleMulticoloredLineCbarAround.png}
 \input{julia}{/_assets/scripts/MultipleMulticoloredLineCbarAround.jl}
 ~~~
