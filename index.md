@@ -33,6 +33,11 @@
     <a href = "/ScattersLines/ScatterHistDensitySides/">
       <img src="/assets/scripts/output/ScatterHistDensitySides.png">
     </a>
+
+    <a href = "/withTheme/theme_dark_Contour3d/">
+      <img src="/assets/scripts/output/theme_dark_Contour3d.png">
+    </a>
+
     <a href = "/ScattersLines/MultipleMulticoloredLineCbarAround/">
       <img src="/assets/scripts/output/MultipleMulticoloredLineCbarAround.png">
     </a>

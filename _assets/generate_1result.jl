@@ -17,6 +17,7 @@ function genplain(s::String)
         end
     end
 end
+genplain("theme_dark_Contour3d.jl")
 #genplain("surfaceConstraints.jl")
 #genplain("candlestick.jl")
 #genplain("twinAxis.jl")
