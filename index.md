@@ -4,7 +4,9 @@
 ~~~
 <div class="row1">
   <div class="column1">
-    <a href="/GeoPlots/landSea/"> <img src="/assets/scripts/output/landSea.png"> </a>
+    <a href="/GeoPlots/landSea/">
+      <img src="/assets/scripts/output/landSea.png">
+    </a>
     <a href = "/ScattersLines/linesScatters/">
       <img src="/assets/scripts/output/FigLinesScatters.png">
     </a>
@@ -16,16 +18,16 @@
     </a>
 
     <a href = "/GeoPlots/topographySphere/">
-      <img src="/assets/scripts/output/topographySphere.png">
+      <img src="/assets/scripts/output/topographySphere.png" loading="lazy">
     </a>
     <a href = "/surfWireLines/surface1Color/">
-      <img src="/assets/scripts/output/surface1Color.png">
+      <img src="/assets/scripts/output/surface1Color.png" loading="lazy">
     </a>
     <a href = "/ScattersLines/ScatterLogxyCbar/">
-      <img src="/assets/scripts/output/ScatterLogxyCbar.png">
+      <img src="/assets/scripts/output/ScatterLogxyCbar.png" loading="lazy">
     </a>
     <a href = "/heatmaps/heatmapLogIrregular/">
-      <img src="/assets/scripts/output/heatmapLogIrregular.png">
+      <img src="/assets/scripts/output/heatmapLogIrregular.png" loading="lazy">
     </a>
   </div>
 
@@ -45,16 +47,16 @@
       <img src="/assets/scripts/output/LineWithInset.png">
     </a>
     <a href = "/FilledCurves/ConfidenceRegion/">
-      <img src="/assets/scripts/output/ConfidenceRegion.png">
+      <img src="/assets/scripts/output/ConfidenceRegion.png"  loading="lazy">
     </a>
     <a href = "/contour/ContourComplexF/">
-      <img src="/assets/scripts/output/ContourComplexF.png">
+      <img src="/assets/scripts/output/ContourComplexF.png" loading="lazy">
     </a>
     <a href = "/StatsPlots/histDensity/">
-      <img src="/assets/scripts/output/histDensity.png">
+      <img src="/assets/scripts/output/histDensity.png" loading="lazy">
     </a>
     <a href = "/StatsPlots/BoxPlot/">
-      <img src="/assets/scripts/output/BoxPlot.png">
+      <img src="/assets/scripts/output/BoxPlot.png" loading="lazy">
     </a>
   </div>
 
@@ -69,13 +71,13 @@
       <img src="/assets/scripts/output/heatmap1.png">
     </a>
     <a href = "/StatsPlots/DensitiesDataSet/">
-      <img src="/assets/scripts/output/DensitiesDataSet.png">
+      <img src="/assets/scripts/output/DensitiesDataSet.png" loading="lazy">
     </a>
     <a href = "/StatsPlots/BoxErrorBarsCmap/">
-      <img src="/assets/scripts/output/BoxErrorBarsCmap.png">
+      <img src="/assets/scripts/output/BoxErrorBarsCmap.png" loading="lazy">
     </a>
     <a href = "/StatsPlots/ViolinPlot/">
-      <img src="/assets/scripts/output/ViolinPlot.png">
+      <img src="/assets/scripts/output/ViolinPlot.png" loading="lazy">
     </a>
   </div>
 

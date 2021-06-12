@@ -36,4 +36,4 @@ let
     save(joinpath(@__DIR__, "output", "theme_dark_Contour3d.png"), fig, px_per_unit = 2) # HIDE
 end
 using Pkg # HIDE
-Pkg.status(["CairoMakie","ForwardDiff"]) # HIDE
+Pkg.status(["GLMakie","ForwardDiff"]) # HIDE
