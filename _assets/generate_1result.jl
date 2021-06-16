@@ -42,12 +42,12 @@ end
 #genplain("BlueMarbel.jl")
 #genplain("moon.jl")
 #genplain("landSea.jl")
-genplain("temPrecESDL.jl")
+#genplain("temPrecESDL.jl")
 #genplain("contour1.jl")
 #genplain("ContourComplexF.jl")
 #genplain("complexPolyaField.jl")
 #genplain("themeBlack.jl")
-
+genplain("heatmapLogIrregular.jl")
 #genplain("topoLinesFuji.jl")
 
 #genplain("gppBeer2010.jl")
