@@ -17,7 +17,9 @@ function genplain(s::String)
         end
     end
 end
-genplain("temCubeESDL.jl")
+genplain("heatmapIrregularCategories.jl")
+
+#genplain("temCubeESDL.jl")
 #genplain("theme_dark_Contour3d.jl")
 #genplain("surfaceConstraints.jl")
 #genplain("candlestick.jl")
