@@ -2,7 +2,7 @@
 # using GLMakie # HIDE
 using ESDL, GLMakie
 GLMakie.activate!()# HIDE
-# this is raw approach to plot data cubes
+# this is a raw approach to plot data cubes
 let
     cube = esdc()
     #YAXArray with the following dimensions
@@ -11,7 +11,7 @@ let
     #time                Axis with 1702 Elements from 1980-01-05T00:00:00 to 2016-12-30T00:00:00
     #Variable            Axis with 75 elements: soil_moisture leaf_area_index .. snow_sublimation Rg
     #Total size: 493.03 GB
-    #then from here we just call what we need. 
+    #then from here we just call what we need.
     function getCubeFaces(datCubes, timeRange, lonRange, latRange;
         variable = "air_temperature_2m" )
         #front face
