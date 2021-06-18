@@ -10,7 +10,7 @@ let
     σ = rand(length(x), length(y))      # beware of dims
     # custom ticks
     function steps(x::Vector{T} where T<:Real)
-    sum(x .< 0) == 0 || error("Error: $x - nagative step length not allowed")
+    sum(x .< 0) == 0 || error("Error: $x - negative step length not allowed")
     (s = append!(eltype(x)[0],x); [Base.sum(s[1:i]) for i ∈ Base.eachindex(s)])
     end
     function stepcenters(x::Vector{T} where T<:Real)

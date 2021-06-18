@@ -1,0 +1,111 @@
+# by lazarusA & Julius Krumbiegel
+# using GLMakie # HIDE
+using CairoMakie, HTTP, CSV, DataFrames, DataFramesMeta, Suppressor
+using Images, ColorSchemes, Colors, Statistics
+using Lazy: @>
+CairoMakie.activate!()
+let
+    data_url = "https://bit.ly/3kmlGn2"
+    @suppress begin
+        global astronauts
+        astronauts = CSV.File(HTTP.download(data_url)) |> DataFrame
+    end
+    offhr, rPts, α = 3.5, 45, 35
+    astro = @> begin
+        astronauts
+        @orderby(:year_of_mission)
+        @where(:total_eva_hrs .> 0.0)
+        @transform(ntotEVA = :total_eva_hrs/ maximum(:total_eva_hrs))
+        @transform(θ = LinRange(0, 2π - 2π/length(:name), length(:name)))
+        @transform(align = tuple.(ifelse.(π/2 .< :θ .< 3π/2, ^(:right), ^(:left)), ^(:center)))
+        @transform(texttheta = ifelse.(π/2 .< :θ .< 3π/2, :θ .+ π, :θ))
+        @transform(evaM = log10.((60 * :eva_hrs_mission/median(60 * :eva_hrs_mission)) .+ offhr))
+        @transform(xM = rPts * :evaM .* cos.(:θ), yM = rPts * :evaM .* sin.(:θ))
+        @transform(xMnm = rPts * (:evaM .- :total_number_of_missions .* :evaM./α) .* cos.(:θ))
+        @transform(yMnm = rPts * (:evaM .- :total_number_of_missions .* :evaM./α) .* sin.(:θ))
+    end
+    valYear = @> begin astro
+            @where([true; :year_of_mission[2:end] .!= :year_of_mission[1:end-1]])
+        end
+    vehicles = @> begin astro
+            @where([true; :ascend_shuttle[2:end] .!= :ascend_shuttle[1:end-1]])
+        end
+    tierra = "https://climate.nasa.gov/system/internal_resources/details/original/309_ImageWall5_768px-60.jpg"
+    @suppress begin
+        global imgEarth
+        tierra = HTTP.download(tierra)
+        imgEarth = load(tierra)
+    end
+    x, y = astro.xM, astro.yM # end points
+    xs, ys = astro.xMnm, astro.yMnm # short lines starts
+    xo = yo = zeros(length(x)) # origin
+    xnb, ynb = 90 * cos.(astro.θ), 90 * sin.(astro.θ)
+    xne, yne = 100 * cos.(astro.θ), 100 * sin.(astro.θ)
+    ps, cp = 0.5 .+ 3astro.ntotEVA, astro.total_eva_hrs ; # point size, color palette
+    gridLines = LinRange(log10(offhr), maximum(astro.evaM), 6)
+    horas = (10 .^ gridLines .- offhr)*median(60*astro.eva_hrs_mission)/60
+    xg = [rPts * gl .* cos.(astro.θ) for gl in gridLines]
+    yg = [rPts * gl .* sin.(astro.θ) for gl in gridLines];
+    function segments!(xs, xf, ys, yf, cp, ps; αc = 1, pal = :rainbow2)
+        cpal = get(colorschemes[pal], cp, :extrema)
+        for k in 1:length(xs)
+            lines!([xs[k], xf[k]], [ys[k], yf[k]], color = (cpal[k], αc), linewidth = ps[k])
+        end
+    end
+
+    with_theme(theme_black()) do
+        fig = Figure(resolution = (1200, 1200))
+        cmap = :rainbow2
+        ax = Makie.Axis(fig[1, 1],
+            title = "ASTRONAUTS' EXTRAVEHICULAR ACTIVITIES",
+            autolimitaspect = 1)
+        hidespines!(ax)
+        hidedecorations!(ax)
+        image!(-20..20, -17..17, rotr90(imgEarth))
+        text!(astro.name, position = @.(Point(cos(astro.θ), sin(astro.θ)) * 85),
+            rotation = astro.texttheta, textsize = 6, align = astro.align)
+        text!(string.(valYear.year_of_mission),
+            position = @.(Point(cos(valYear.θ), sin(valYear.θ)) * 65),
+            rotation = valYear.texttheta, textsize = 10, align = valYear.align)
+        text!(vehicles.ascend_shuttle,
+            position = @.(Point(cos(vehicles.θ), sin(vehicles.θ)) * 75),
+            rotation = vehicles.texttheta, textsize = 6, align = vehicles.align)
+
+        pltobj = scatter!(ax, astro[:,:xM], astro[:,:yM], color = cp,
+            colormap = cmap, markersize = 3*ps, strokewidth = 0)
+
+        segments!(xo, xs, yo, ys, cp, ps/2; αc = 0.15, pal = cmap)
+        segments!(xs, x, ys, y, cp, ps/2; pal = cmap)
+        segments!(xnb, xne, ynb, yne, cp, ps/3; αc = 0.5)
+
+        Colorbar(fig[1,1], pltobj,
+            label = "Total duration of all extravehicular activities in hours",
+            tellheight = false, tellwidth = false, ticklabelsize = 12, flipaxis = true,
+            vertical = false, ticksize=15, tickalign = 1, width = Relative(1.5/4),
+            halign = :right, valign = :bottom, labelsize = 12)
+
+        for (indx, gl) in enumerate(gridLines)
+            xg, yg = rPts * gl .* cos.(astro.θ), rPts * gl .* sin.(astro.θ)
+            hrs = Int64(round(horas[indx], digits = 0))
+            lines!(xg, yg, linewidth = 0.5, linestyle = :dash, color = :white)
+            text!(string.(hrs), position = (xg[1] + 0.5, y[1]+0.5),
+                color = "#FFDD33", textsize = 14)
+        end
+        lines!([rPts*gridLines[1], rPts*gridLines[end]],[0,0],linestyle = :dash,
+            linewidth = 2, color =  "#FFDD33")
+        text!("evaM (hrs)", position = (47, -3.5), color = "#FFDD33", textsize = 16)
+        text!("evaM ≡ Duration of extravehicular \n activities during the mission in hours",
+            position = (rPts*gridLines[end-2], 90), color = "#FFDD33", textsize = 16)
+        text!("using Makie", position = (-99, -94), textsize = 18, color = :white)
+        text!("Visualization by @LazarusAlon and Julius Krumbiegel ",
+            position = (-99, -97), textsize = 12, color = "#61AFEF")
+        text!("Data - Astronaut Database - Mariya Stavnichuk and Tatsuya Corlett",
+            position = (-99, -99), textsize = 10)
+        limits!(ax, -100, 100, -100, 100)
+        save(joinpath(@__DIR__, "output", "theme_dark_astronauts.png"), fig, px_per_unit = 2) # HIDE
+    end
+
+end
+using Pkg # HIDE
+Pkg.status(["CairoMakie", "HTTP", "CSV", "DataFrames", "DataFramesMeta", # HIDE
+    "Suppressor", "Images", "ColorSchemes","Colors", "Statistics", "Lazy" ]) # HIDE
