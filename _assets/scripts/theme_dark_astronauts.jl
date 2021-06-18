@@ -1,6 +1,6 @@
 # by lazarusA & Julius Krumbiegel
 # using GLMakie # HIDE
-using CairoMakie, HTTP, CSV, DataFrames, DataFramesMeta, Suppressor
+using Makie, CairoMakie, HTTP, CSV, DataFrames, DataFramesMeta, Suppressor
 using Images, ColorSchemes, Colors, Statistics
 using Lazy: @>
 CairoMakie.activate!()
@@ -36,27 +36,35 @@ let
         tierra = HTTP.download(tierra)
         imgEarth = load(tierra)
     end
+    function getPoints(xi,yi,xf,yf)
+        xyos = []
+        for i in 1:length(xo)
+            push!(xyos, [xi[i], yi[i]])
+            push!(xyos, [xf[i], yf[i]])
+        end
+        xyos
+    end
     x, y = astro.xM, astro.yM # end points
     xs, ys = astro.xMnm, astro.yMnm # short lines starts
     xo = yo = zeros(length(x)) # origin
     xnb, ynb = 90 * cos.(astro.θ), 90 * sin.(astro.θ)
     xne, yne = 100 * cos.(astro.θ), 100 * sin.(astro.θ)
-    ps, cp = 0.5 .+ 3astro.ntotEVA, astro.total_eva_hrs ; # point size, color palette
+    ps, colorp = 0.5 .+ 3astro.ntotEVA, astro.total_eva_hrs ; # point size, color palette
     gridLines = LinRange(log10(offhr), maximum(astro.evaM), 6)
     horas = (10 .^ gridLines .- offhr)*median(60*astro.eva_hrs_mission)/60
     xg = [rPts * gl .* cos.(astro.θ) for gl in gridLines]
-    yg = [rPts * gl .* sin.(astro.θ) for gl in gridLines];
-    function segments!(xs, xf, ys, yf, cp, ps; αc = 1, pal = :rainbow2)
-        cpal = get(colorschemes[pal], cp, :extrema)
-        for k in 1:length(xs)
-            lines!([xs[k], xf[k]], [ys[k], yf[k]], color = (cpal[k], αc), linewidth = ps[k])
-        end
-    end
+    yg = [rPts * gl .* sin.(astro.θ) for gl in gridLines]
+    # in order to use linesegments (faster to plot)
+    xyos = getPoints(xo,yo,xs,ys)
+    xys  = getPoints(xs,ys,x,y)
+    xybe = getPoints(xnb,ynb,xne,yne)
+    cpDo = repeat(colorp, inner=2)
+    psDo = repeat(ps, inner=2);
 
     with_theme(theme_black()) do
         fig = Figure(resolution = (1200, 1200))
         cmap = :rainbow2
-        ax = Makie.Axis(fig[1, 1],
+        ax = CairoMakie.Axis(fig[1, 1],
             title = "ASTRONAUTS' EXTRAVEHICULAR ACTIVITIES",
             autolimitaspect = 1)
         hidespines!(ax)
@@ -68,15 +76,15 @@ let
             position = @.(Point(cos(valYear.θ), sin(valYear.θ)) * 65),
             rotation = valYear.texttheta, textsize = 10, align = valYear.align)
         text!(vehicles.ascend_shuttle,
-            position = @.(Point(cos(vehicles.θ), sin(vehicles.θ)) * 75),
+            position = @.(Point(cos(vehicles.θ), sin(vehicles.θ)) * 73),
             rotation = vehicles.texttheta, textsize = 6, align = vehicles.align)
 
-        pltobj = scatter!(ax, astro[:,:xM], astro[:,:yM], color = cp,
+        pltobj = scatter!(ax, astro[:,:xM], astro[:,:yM], color = colorp,
             colormap = cmap, markersize = 3*ps, strokewidth = 0)
 
-        segments!(xo, xs, yo, ys, cp, ps/2; αc = 0.15, pal = cmap)
-        segments!(xs, x, ys, y, cp, ps/2; pal = cmap)
-        segments!(xnb, xne, ynb, yne, cp, ps/3; αc = 0.5)
+        linesegments!(Point2f0.(xyos), color = cpDo, linewidth = psDo/2, colormap = (cmap, 0.15))
+        linesegments!(Point2f0.(xys), color = cpDo, linewidth = psDo/2,colormap = cmap)
+        linesegments!(Point2f0.(xybe), color = cpDo, linewidth = psDo/3, colormap = (cmap,0.5))
 
         Colorbar(fig[1,1], pltobj,
             label = "Total duration of all extravehicular activities in hours",
