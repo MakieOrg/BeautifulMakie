@@ -1,4 +1,4 @@
-# by @walra356 # HIDE
+# by @walra356
 using CairoMakie
 CairoMakie.activate!() #HIDE
 let
@@ -59,6 +59,7 @@ let
     fig[2,:] = axn
     fig[0,:] = axt
     fig
+    save(joinpath(@__DIR__, "output", "heatmapScaleAdd.png"), fig, px_per_unit = 2.0) # HIDE
 end
 using Pkg # HIDE
 Pkg.status(["CairoMakie"]) # HIDE
