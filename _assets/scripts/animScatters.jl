@@ -14,7 +14,8 @@ let
             axis = (xlabel = "x", ylabel = "y",))
         limits!(ax, 0,2,0,1)
         # the animation is done by updating the node values
-        record(fig,joinpath(@__DIR__, "output", "animScatters.mp4"), framerate = 24) do io
+        record(fig,joinpath(@__DIR__, "output", "animScatters.mp4"),
+            framerate = 24, profile = "main") do io
             for i in 1:0.1:8
                 msize[] = i*initms
                 recordframe!(io)  # record a new frame
