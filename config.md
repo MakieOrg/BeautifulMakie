@@ -28,7 +28,7 @@ Add here global latex commands to use throughout your pages.
 \newcommand{\video}[1]{
 ~~~
 <video controls width="100%">
-    <source src="#1"
+    <source src="!#1"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
