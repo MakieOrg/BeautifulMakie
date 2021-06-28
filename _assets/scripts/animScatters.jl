@@ -5,7 +5,7 @@ let
     Random.seed!(123)
     npts = 100
     initms = 8*rand(npts)
-    msize = Node(initms) # this is variable that will change
+    msize = Node(initms) # this is the variable that will change
     with_theme(theme_dark()) do
         # first frame, initial plot
         fig, ax = scatter(2*rand(npts), rand(npts), markersize = msize,
@@ -23,8 +23,5 @@ let
         end
     end
 end
-
-
-
 using Pkg # HIDE
 Pkg.status("CairoMakie") # HIDE
