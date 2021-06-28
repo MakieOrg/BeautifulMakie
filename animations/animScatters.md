@@ -3,7 +3,8 @@
 @def tags = ["syntax", "code"]
 
 ## Animation scatters size
-\fig{/_assets/scripts/output/animScatters.mp4}
+
+\video{/assets/scripts/output/animScatters.mp4}
 \input{julia}{/_assets/scripts/animScatters.jl}
 ~~~
 <span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
