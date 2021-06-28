@@ -17,10 +17,12 @@ function genplain(s::String)
         end
     end
 end
-genplain("heatmapScaleAdd.jl")
-genplain("heatmapScaleDetail.jl")
-genplain("heatmapScaleCrosshair.jl")
-genplain("heatmapScaleSections.jl")
+genplain("animScatters.jl")
+genplain("animLinePoint.jl")
+#genplain("heatmapScaleAdd.jl")
+#genplain("heatmapScaleDetail.jl")
+#genplain("heatmapScaleCrosshair.jl")
+#genplain("heatmapScaleSections.jl")
 #genplain("theme_dark_astronauts.jl")
 #genplain("heatmapIrregularCategories.jl")
 #genplain("temCubeESDL.jl")
