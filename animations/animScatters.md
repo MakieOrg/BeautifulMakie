@@ -4,7 +4,7 @@
 
 ## Animation scatters size
 
-\video{/assets/scripts/output/animScatters.mp4}
+\video{/BeautifulMakie/assets/scripts/output/animScatters.mp4}
 \input{julia}{/_assets/scripts/animScatters.jl}
 ~~~
 <span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
