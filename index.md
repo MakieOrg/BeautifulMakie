@@ -61,14 +61,13 @@
   </div>
 
   <div class="column1">
-    <div>
+
     <a href = "/animations/lorenzAttractorAnim/"> Code </a>
         <video controls autoplay width="100%">
           <source src="/assets/scripts/diffEquations/output/lorenzAttractorAnim.mp4"
                   type="video/mp4">
           Sorry, your browser doesn't support embedded videos.
       </video>
-    </div>
 
     <a href = "/surfWireLines/surfWireContour/">
       <img src="/assets/scripts/output/surfWireContour.png">

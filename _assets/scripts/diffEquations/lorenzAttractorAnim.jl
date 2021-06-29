@@ -17,7 +17,7 @@ let
   tempo = sol.t
   #x, y, z = sol[1,:], sol[2,:], sol[3,:]
   # the plot/animation
-  fig = Figure(resolution=(1000,600), fontsize = 20)
+  fig = Figure(resolution=(1100,600), fontsize = 20)
   ax = Axis3(fig[1,1], aspect = (1,1,0.5), azimuth = -0.3π, elevation = π/9,
     perspectiviness = 0.5)
   # let's start with some points, so that the plot is not empty (empty also works)
