@@ -17,27 +17,29 @@ let
   tempo = sol.t
   #x, y, z = sol[1,:], sol[2,:], sol[3,:]
   # the plot/animation
-  fig = Figure(resolution=(1200,1200), fontsize = 20)
-  ax = Axis3(fig[2,1], aspect = :data, azimuth = -0.3π, elevation = π/9,
-    perspectiviness = 0.5)
-  # let's start with some points, so that the plot is not empty (empty also works)
-  points = Observable([Point3f0(sol[:,1]), Point3f0(sol[:,2])]) # points to be updated
-  color = Observable(tempo[1:2])   # color value is also updated
-  attr = (color = color, transparency = true, colormap = :plasma)
-  pltobj = lines!(ax, points; attr..., overdraw = false)
-  scatter!(ax, map(x-> x[end], points); markersize = 0.04, color = :black,
-    markerspace = SceneSpace)
-  cbar = Colorbar(fig[1,1], pltobj, label = "time", height = 15, vertical = false,
-              ticksize=15, tickalign = 1, width = Relative(0.5))
-  # the animation is done by updating the Observables
-  path = joinpath(@__DIR__, "output", "lorenzAttractorAnim.mp4")
-  record(fig, path, enumerate(tempo[3:end]), framerate = 24*8) do (i, t)
-      xyz = Point3f0(sol[:, i+2])
-      push!(points[], xyz)
-      push!(color[], t)
-      notify(points)
-      notify(color)
-      autolimits!(ax)
+  with_theme(theme_dark()) do
+    fig = Figure(resolution=(1200,1200), fontsize = 20)
+    ax = Axis3(fig[2,1], aspect = :data, azimuth = -0.3π, elevation = π/9,
+      perspectiviness = 0.5)
+    # let's start with some points, so that the plot is not empty
+    points = Observable([Point3f0(sol[:,1]), Point3f0(sol[:,2])])
+    color = Observable(tempo[1:2])   # color value is also updated
+    attr = (color = color, transparency = true, colormap = :Spectral_11)
+    pltobj = lines!(ax, points; attr..., overdraw = false)
+    scatter!(ax, map(x-> x[end], points); markersize = 0.04, color = :white,
+      markerspace = SceneSpace)
+    cbar = Colorbar(fig[1,1], pltobj, label = "time", height = 15,
+      vertical = false, ticksize=15, tickalign = 1, width = Relative(0.5))
+    # the animation is done by updating the Observables
+    path = joinpath(@__DIR__, "output", "lorenzAttractorAnim.mp4")
+    record(fig, path, enumerate(tempo[3:end]), framerate = 24*8) do (i, t)
+        xyz = Point3f0(sol[:, i+2])
+        push!(points[], xyz)
+        push!(color[], t)
+        notify(points)
+        notify(color)
+        autolimits!(ax)
+    end
   end
 end
 using Pkg # HIDE
