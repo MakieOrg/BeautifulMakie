@@ -1,0 +1,4 @@
+      Status `~/Desktop/BeautifulMakie/_assets/scripts/diffEquations/Project.toml`
+  [0c46a032] DifferentialEquations v6.17.1
+  [e9467ef8] GLMakie v0.4.2
+  [65888b18] ParameterizedFunctions v5.10.0
