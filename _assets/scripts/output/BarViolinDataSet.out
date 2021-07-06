@@ -1,4 +1,5 @@
-      Status `~/Documents/BeautifulMakie/Project.toml`
-  [13f3f980] CairoMakie v0.5.10
+      Status `~/Desktop/BeautifulMakie/_assets/Project.toml`
+  [13f3f980] CairoMakie v0.6.2
   [35d6a980] ColorSchemes v3.12.1
+  [5ae59095] Colors v0.12.8
   [ce6b1742] RDatasets v0.7.5
