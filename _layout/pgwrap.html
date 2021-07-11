@@ -1,25 +1,15 @@
 <div class="page-wrap">   <!-- closed in foot.html -->
   <!-- SIDE BAR -->
   <div class="side-bar">
-    <div class="header">
-      <a href="/" class="title">
-        <font color = "#5D6D7E"> Beautiful Makie </font>
-      </a>
-    </div>
-    <label for="show-menu" class="show-menu">MENU</label>
+    <label for="show-menu" class="show-menu"><font color ="#CC0000"> <strong> MENU </strong> </font></label>
     <input type="checkbox" id="show-menu" role="button">
     <div class="menu" id="side-menu">
-			<p><a href="https://github.com/lazarusA/BeautifulMakie">
-				<img align="left" src="https://img.shields.io/github/stars/lazarusA/BeautifulMakie?style&#61;social" alt="Stars" /></a></p>
-				<br>
-			<form id="lunrSearchForm" name="lunrSearchForm">
-				<input class="search-input" name="q" placeholder="Search..." type="text" style="height:20px;width:150px;font-size:12pt;border-radius:10px;">
-				<input type="submit" value="Search" formaction="/search/index.html" style="height:20px;width:100px;font-size:12pt;">
-			</form>
-			<br>
+			<a title="star this site !" href="https://github.com/lazarusA/BeautifulMakie">
+				<img align="left" src="https://img.shields.io/github/stars/lazarusA/BeautifulMakie?style&#61;social" alt="Stars" /></a>
+			<br><br>
       <ul class="menu-list">
 				<!-- HOME -->
-          <li class="menu-list-item {{ispage index}}active{{end}}"><a href="/" class="menu-list-link">• Home</a>
+      <!--    <li class="menu-list-item {{ispage index}}active{{end}}"><a href="/" class="menu-list-link">• Home</a> -->
 					<!-- WORKFLOW -->
  		  <li class="menu-list-parent {{ispage ScattersLines/*}}active{{end}}"><a href="/ScattersLines/" class="menu-list-link">• Lines and Scatters</a>
  			  <ul class="menu-list-child-list ">
@@ -187,19 +177,44 @@
 
     </div>
     <div class="footer">
+			<form id="lunrSearchForm" name="lunrSearchForm" style="background:none">
+				<input class="search-input" name="q" placeholder="Search..." type="text" style="height:20px;width:150px;font-size:12pt;border-radius:10px;background:#323232;">
+				<input type="submit" value="Search" formaction="/search/index.html" style="height:20px;width:100px;font-size:12pt;background:none;">
+			</form>
 			<div class="copyright">
-		     &copy;	lazarusA
+		     &copy;lazarusA
 		  </div>
-
       Built with <a href="https://franklinjl.org" target="_blank"><em>Franklin.jl</em></a>.
-			<br><br>
+			<br>
 			<script type="text/javascript" id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=xLzejgAgiuTZK9q-myRo_QBWojYzPce67wdC_98QhOI"></script>
     </div>
   </div>
   <!-- CONTENT -->
   <div class="main-content-wrap"> <!-- closed in foot.html -->
     <div class="main-content">    <!-- closed in foot.html -->
-<div class="main-header">
-			<a id="github" href="https://github.com/lazarusA/BeautifulMakie">GitHub Repository</a>
 
+
+	<div class="masthead">
+		<div class="masthead__inner-wrap">
+			<div class="masthead__menu">
+				<nav id="site-nav" class="greedy-nav">
+					<a class="site-title" href="/"> Beautiful Makie</a>
+					<a href="https://github.com/lazarusA/BeautifulMakie">
+					<ul class="visible-links">
+						<li class="masthead__menu-item"><a id="github" href="https://github.com/lazarusA/BeautifulMakie">GitHub Repository</a> </li>
+						<li class="masthead__menu-item"><a href="/ScattersLines/" >2D</a></li>
+						<li class="masthead__menu-item"><a href="/surfWireLines/" >3D</a></li>
+						<li class="masthead__menu-item"><a href="/animations/" >Animations</a></li>
+						<li class="masthead__menu-item"><a href="/withTheme/" >Themes</a></li>
+						<li class="masthead__menu-item"><a href="/dashboards/" >Dashboards</a></li>
+						<li class="masthead__menu-item"><a href="/GeoPlots/" >Geo</a></li>
+					</ul>
+					<button class="greedy-nav__toggle hidden" type="button">
+						<span class="visually-hidden">Toggle menu</span>
+						<div class="navicon"></div>
+					</button>
+					<ul class="hidden-links hidden"></ul>
+				</nav>
+			</div>
+		</div>
 	</div>

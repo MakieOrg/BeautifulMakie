@@ -135,12 +135,12 @@ SIDE BAR
   z-index: 100;
   display: flex;
   flex-wrap: wrap;
-  background-color:#f5f6fa;
+  background-color:#171819;
 }
 .side-bar .header {
   display: flex;
   min-height: 60px;
-  align-items: center;
+  align-items: left;
 }
 .side-bar .header .title{
   padding-right:1rem;
@@ -148,7 +148,7 @@ SIDE BAR
   flex-grow:1;
   display:flex;
   height:100%;
-  align-items:center;
+  align-items:left;
   padding-top:.75rem;
   padding-bottom:.75rem;
   color:#27262b;
@@ -166,7 +166,7 @@ SIDE BAR
   color:#0E39B0;
   text-transform:uppercase;
   background:transparent;
-  text-align:right;
+  text-align:left;
   padding-right: 2rem;
   border:0;
   width: calc(100% - 220px);
@@ -202,7 +202,7 @@ SIDE BAR
   content:"- "
 }
 .menu-list-child-list .menu-list-item.active::before{
-  color:#FF4500 /*#5c5962 */
+  color:#FF4500; /*#5c5962 */
 }
 .menu-list-item{
   font-size:14px !important;
@@ -216,7 +216,7 @@ SIDE BAR
 }
 .menu-list-item.active a {
   font-weight:600;
-  color:#27262b;
+  color:#b7b7b7;
   text-decoration:none
 }
 .menu-list-child-list{
@@ -239,11 +239,11 @@ ul.menu-list-child-list li {
 } */
 
 .side-bar .footer {
-  width: 150px;
+  width: 300px;
   font-size: 13px;
   padding-right:1rem;
   padding-left:1rem;
-  position:absolute;
+  position:relative;
   bottom:0;
   left:0;
   padding-top:1rem;
@@ -260,13 +260,13 @@ input[type=checkbox]:checked ~ #side-menu{display: block;}
   /* Toggle menu off */
   .side-bar .menu {
     display: none;
-    padding-left:35px;
-    padding-bottom:15px;}
+    padding-left:5px;
+    padding-bottom:10px;}
   .side-bar {
     border-bottom: 1px solid #eeebee;
   }
   .side-bar .header {
-    padding-left: 15px;
+    padding-left: 5px;
     width: 150px;} /* middle space */
   .show-menu {display: block;}
   .side-bar .footer  {
@@ -309,17 +309,17 @@ input[type=checkbox]:checked ~ #side-menu{display: block;}
     display:none
   }
   .side-bar .menu{
-    width: 160px;
+    width: 260px;
     padding-right:2.5rem;
     /* padding-left:0rem; */
-    padding-top:3rem;
+    padding-top:1.5rem;
     padding-bottom:1rem;
     overflow-y:auto;
     flex:1 1 auto
   }
   .side-bar .footer{
     padding-right:2rem;
-    padding-left:2rem;
+    padding-left:4rem;
     position: static;
   }
 }
