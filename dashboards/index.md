@@ -2,7 +2,7 @@
 @def hascode = true
 @def tags = ["syntax", "code"]
 
-## Arrows
+## Tesseral Spherical Harmonics. Menu and Sliders.
 \fig{/_assets/scripts/output/tesseralSphericalHSliders.png}
 \input{julia}{/_assets/scripts/tesseralSphericalHSliders.jl}
 ~~~
