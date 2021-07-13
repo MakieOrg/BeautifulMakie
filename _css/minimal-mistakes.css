@@ -2133,7 +2133,7 @@ th {
 }
 
 .greedy-nav {
-  position: relative;
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
