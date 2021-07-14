@@ -17,7 +17,8 @@ function genplain(s::String)
         end
     end
 end
-genplain("tesseralSphericalHSliders.jl")
+genplain("stripedBar.jl")
+#genplain("tesseralSphericalHSliders.jl")
 #genplain("animScatters.jl")
 #genplain("animLinePoint.jl")
 #genplain("heatmapScaleAdd.jl")
