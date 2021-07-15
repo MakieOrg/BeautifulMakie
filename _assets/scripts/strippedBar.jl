@@ -1,6 +1,6 @@
 
 # by lazarusA
-# striped bar, this currently fails with CairoMakie
+# stripped bar, this currently fails with CairoMakie
 # https://discourse.julialang.org/t/striped-colors-for-e-g-bar-plots-in-julia/64435/3
 using Makie, GLMakie, Random
 GLMakie.activate!() # HIDE
@@ -25,3 +25,5 @@ let
     fig
     save(joinpath(@__DIR__, "output", "strippedBar.png"), fig, px_per_unit = 2.0) # HIDE
 end
+using Pkg # HIDE
+Pkg.status(["Makie", "GLMakie", "Random"]) # HIDE
