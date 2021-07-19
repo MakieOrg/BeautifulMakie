@@ -15,7 +15,7 @@ let
     fig[1,1] = ax
     #save("filename.png", fig, px_per_unit = 2.0) 
     save(joinpath(@__DIR__, "output", "latexSample.png"), fig, px_per_unit = 2.0) # HIDE 
-    fig
+    display(fig)
 end
 using Pkg # HIDE 
 Pkg.status() # HIDE 
