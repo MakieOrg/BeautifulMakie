@@ -1,0 +1,7 @@
+      Status `~/Desktop/BeautifulMakie/_assets/scripts/latexSample/Project.toml`
+  [13f3f980] CairoMakie v0.6.3
+  [e9467ef8] GLMakie v0.4.3
+  [b964fa9f] LaTeXStrings v1.2.1
+  [ee78f7c6] Makie v0.15.0
+  [0a4f8689] MathTeXEngine v0.1.1
+  [276daf66] SpecialFunctions v1.5.1
