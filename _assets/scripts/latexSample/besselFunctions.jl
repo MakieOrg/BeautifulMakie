@@ -1,6 +1,7 @@
+# by Lazaro Alonso 
 using CairoMakie, LaTeXStrings, SpecialFunctions
+CairoMakie.activate!() # HIDE 
 let 
-    x = 0:0.05:4π
     fig = Figure(resolution = (600,400), font = "CMU Serif") # probably you need to install this font in your system 
     ax = Axis(fig, xlabel = L"x", ylabel = L"J_{\nu}(x)", ylabelsize = 22, 
         xlabelsize= 22, xgridstyle=:dash, ygridstyle=:dash, xtickalign = 1, 
