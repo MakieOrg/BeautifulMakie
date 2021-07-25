@@ -1,6 +1,6 @@
       Status `~/Desktop/BeautifulMakie/_assets/Project.toml`
-  [13f3f980] CairoMakie v0.6.2
-  [945b72a4] MarketData v0.13.6
-  [9e3dc215] TimeSeries v0.22.1
+  [13f3f980] CairoMakie v0.6.3
+  [945b72a4] MarketData v0.13.7
+  [9e3dc215] TimeSeries v0.23.0
   [ade2ca70] Dates
   [9a3f8284] Random

@@ -1,6 +1,6 @@
       Status `~/Desktop/BeautifulMakie/_assets/Project.toml`
-  [e9467ef8] GLMakie v0.4.2
+  [e9467ef8] GLMakie v0.4.4
   [5c1252a2] GeometryBasics v0.3.12
-  [ee78f7c6] Makie v0.14.2
+  [ee78f7c6] Makie v0.15.0
   [2913bbd2] StatsBase v0.33.8
   [37e2e46d] LinearAlgebra
