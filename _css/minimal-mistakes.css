@@ -1709,7 +1709,7 @@ tr,td,th {
 }
 
 .masthead {
-  position: relative;
+  position: absolute;
   border-bottom: 1px solid #f2f3f3;
   -webkit-animation: intro 0.3s both;
   animation: intro 0.3s both;
@@ -1719,7 +1719,7 @@ tr,td,th {
 }
 
 .masthead__inner-wrap {
-  clear: both;
+  clear: right;
   margin-left: auto;
   margin-right: auto;
   padding: 1em;
@@ -1986,7 +1986,7 @@ tr,td,th {
 .greedy-nav a {
   display: block;
   margin: 0 1rem;
-  color: #6f777d;
+  color: #000000;
   text-decoration: none
 }
 
