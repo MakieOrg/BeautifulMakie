@@ -7,11 +7,11 @@ function plotVolColormaps(; rseed = 123)
     cs = collect(keys(colorschemes))
     cmapIdx = Node(1) 
     cmap = @lift(cs[$cmapIdx]) # @lift(Reverse(cs[$cmapIdx]))
-    colors = @lift(to_colormap($cmap, 101))
-    n = @lift(length($colors))
+    ncolors = 101
+    colors = @lift(to_colormap($cmap, ncolors))
     # some transparencies in the colors
     g(x) = 0.5 + 0.5*tanh((x+3)/3)
-    alphas = g.(-10:0.2:10)
+    alphas = g.(LinRange(-10,10, ncolors))
     cmap_alpha = @lift(RGBAf0.($colors, alphas))
     # the actual figure
     n = 15
