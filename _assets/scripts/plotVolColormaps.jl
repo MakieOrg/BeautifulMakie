@@ -32,5 +32,5 @@ function plotVolColormaps(; rseed = 123)
 end
 fig = with_theme(plotVolColormaps, theme_black())
 save(joinpath(@__DIR__, "output", "plotVolColormaps.png"), fig, px_per_unit = 2.0) # HIDE
-using Pkg
-Pkg.status(["GLMakie", "ColorSchemes"])
+using Pkg # HIDE 
+Pkg.status(["GLMakie", "ColorSchemes"]) #HIDE 
