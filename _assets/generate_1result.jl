@@ -17,7 +17,7 @@ function genplain(s::String)
         end
     end
 end
-genplain("plotVolColormaps.jl")
+genplain("volume.jl")
 #genplain("strippedBar.jl")
 #genplain("tesseralSphericalHSliders.jl")
 #genplain("animScatters.jl")
