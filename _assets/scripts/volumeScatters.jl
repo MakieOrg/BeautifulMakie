@@ -1,6 +1,6 @@
 # by Lazaro Alonso
 # using GLMakie # HIDE
-using GLMakie, LinearAlgebra
+using GLMakie
 GLMakie.activate!() # HIDE
 let
     x = 1:10
