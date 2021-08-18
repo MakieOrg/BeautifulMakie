@@ -52,7 +52,7 @@ function plotGraph(adjacencyM, x, y)
         linewidth = abs.(weights)/2, colorrange = (adjmin, adjmax), 
         figure = (;resolution = (500,400)), axis = (;aspect = DataAspect()))
     scatter!(ax, x, y, color = diagValues, markersize = 3*abs.(diagValues),
-        colormap = cmap)
+        colorrange = (adjmin, adjmax), colormap = cmap)
     limits!(ax, -0.02,1.02,-0.02,1.02)
     Colorbar(fig[1,2], pltobj, label = "weights")
     fig
