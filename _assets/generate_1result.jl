@@ -17,7 +17,8 @@ function genplain(s::String)
         end
     end
 end
-genplain("RRGraph3D.jl")
+genplain("delaunayTriangulation.jl")
+#genplain("RRGraph3D.jl")
 #genplain("RRGraph.jl")
 #genplain("volumeScatters.jl")
 #genplain("volume.jl")

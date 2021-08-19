@@ -1,8 +1,6 @@
 # by Lazaro Alonso
 # port from the original code used in:
-# L Alonso, et. al. Weighted random-geometric and random-rectangular graphs: spectral 
-# and eigenfunction properties of the adjacency matrix, Journal of Complex Networks, Volume 6, Issue 5,
-# October 2018, Pages 753–766, https://doi.org/10.1093/comnet/cnx053
+# L Alonso, et. al. https://doi.org/10.1093/comnet/cnx053
 
 # using CairoMakie # HIDE
 using LinearAlgebra, Random, CairoMakie

@@ -549,6 +549,12 @@ git-tree-sha1 = "ef6b2599a755101af901bc9e5e2c535e9e2a0543"
 uuid = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
 version = "0.4.4"
 
+[[GR]]
+deps = ["Base64", "DelimitedFiles", "LinearAlgebra", "Printf", "Random", "Serialization", "Sockets", "Test", "UUIDs"]
+git-tree-sha1 = "1185d50c5c90ec7c0784af7f8d0d1a600750dc4d"
+uuid = "28b8d3ca-fb5f-59d9-8090-bfdbd6d07a71"
+version = "0.49.1"
+
 [[GeoDatasets]]
 deps = ["CodecZlib", "GeoInterface", "Printf", "RemoteFiles", "Shapefile", "ZipFile"]
 git-tree-sha1 = "5ea1a10047cd19f5df9139567c6637a375bd4f8d"
