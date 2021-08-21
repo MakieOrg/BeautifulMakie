@@ -1091,6 +1091,12 @@ git-tree-sha1 = "3927848ccebcc165952dc0d9ac9aa274a87bfe01"
 uuid = "d8a4904e-b15c-11e9-3269-09a3773c0cb0"
 version = "0.2.20"
 
+[[NPZ]]
+deps = ["Compat", "ZipFile"]
+git-tree-sha1 = "fbfb3c151b0308236d854c555b43cdd84c1e5ebf"
+uuid = "15e1cf62-19b3-5cfa-8e77-841668bca605"
+version = "0.4.1"
+
 [[NaNMath]]
 git-tree-sha1 = "bfe47e760d60b82b66b61d2d44128b62e3a369fb"
 uuid = "77ba4419-2d1f-58cd-9bb1-8ffee604a2e3"
@@ -1316,6 +1322,12 @@ deps = ["Distributed", "Printf"]
 git-tree-sha1 = "afadeba63d90ff223a6a48d2009434ecee2ec9e8"
 uuid = "92933f4c-e287-5a05-a399-4b506db050ca"
 version = "1.7.1"
+
+[[Proj4]]
+deps = ["BinaryProvider", "Dates", "Libdl", "Printf", "Test"]
+git-tree-sha1 = "2073c3ce97519a500feb3cd91812e02ef4404d14"
+uuid = "9a7e659c-8ee8-5706-894e-f68f43bc57ea"
+version = "0.5.0"
 
 [[QuadGK]]
 deps = ["DataStructures", "LinearAlgebra"]
