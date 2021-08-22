@@ -572,6 +572,18 @@ git-tree-sha1 = "38a649e6a52d1bea9844b382343630ac754c931c"
 uuid = "cf35fbd7-0cd7-5166-be24-54bfbe79505f"
 version = "0.5.5"
 
+[[GeoJSON]]
+deps = ["GeoInterface", "JSON3"]
+git-tree-sha1 = "4764da92d333658552b2bedc9f6b379f017c727b"
+uuid = "61d90e0f-e114-555e-ac52-39dfb47a3ef9"
+version = "0.5.1"
+
+[[GeoMakie]]
+deps = ["Colors", "GeoInterface", "GeoJSON", "GeometryBasics", "ImageMagick", "Makie", "Reexport", "StructArrays"]
+git-tree-sha1 = "8cdb7c5b9b83b5c0b4ee28cf61411032aba9a61d"
+uuid = "db073c08-6b98-4ee5-b6a4-5efafb3259c6"
+version = "0.2.1"
+
 [[GeometryBasics]]
 deps = ["EarCut_jll", "IterTools", "LinearAlgebra", "StaticArrays", "StructArrays", "Tables"]
 git-tree-sha1 = "4136b8a5668341e58398bb472754bff4ba0456ff"
@@ -820,6 +832,12 @@ deps = ["Dates", "Mmap", "Parsers", "Unicode"]
 git-tree-sha1 = "8076680b162ada2a031f707ac7b4953e30667a37"
 uuid = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
 version = "0.21.2"
+
+[[JSON3]]
+deps = ["Dates", "Mmap", "Parsers", "StructTypes", "UUIDs"]
+git-tree-sha1 = "b3e5984da3c6c95bcf6931760387ff2e64f508f3"
+uuid = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+version = "1.9.1"
 
 [[JpegTurbo_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]

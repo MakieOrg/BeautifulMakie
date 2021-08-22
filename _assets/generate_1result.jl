@@ -17,7 +17,10 @@ function genplain(s::String)
         end
     end
 end
-genplain("proj4_to_Sphere.jl")
+genplain("submarineCables.jl")
+genplain("submarineCables3D.jl")
+
+#genplain("proj4_to_Sphere.jl")
 #genplain("delaunayTriangulation.jl")
 #genplain("RRGraph3D.jl")
 #genplain("RRGraph.jl")

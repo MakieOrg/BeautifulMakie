@@ -4,7 +4,7 @@ using GLMakie, Proj4, NPZ, FileIO
 using Colors, ColorSchemes
 GLMakie.activate!()
 let
-    # this data can be download from here:
+    # download the data from here:
     # https://github.com/lazarusA/BeautifulMakie/tree/main/_assets/data
 
     x = npzread("./data/aggregationOSMx.npy")

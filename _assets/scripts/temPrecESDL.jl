@@ -11,8 +11,8 @@ let
     lon = getAxis("lon", cubeTemP).values
     lat = getAxis("lat", cubeTemP).values
     #time = getAxis("time", cube).values;
-    precipitation = cubeTemP[var="precipitation"].data[:,end:-1:1]
-    temperature = cubeTemP[var="air_temperature_2m"].data[:,end:-1:1]
+    precipitation = cubeTemP[var="precipitation"].data[:,:]
+    temperature = cubeTemP[var="air_temperature_2m"].data[:,:]
 
     fig = Figure(resolution = (1250, 1200), font = "sans", fontsize = 24)
     ax1 = Axis(fig, xlabel = "lon", ylabel = "lat")
