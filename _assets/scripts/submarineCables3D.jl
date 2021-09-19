@@ -72,7 +72,7 @@ let
         mesh!(Sphere(Point3(0),1), color = :black, shading = false, transparency = false)
         meshscatter!(toPoints3D, color = 1:length(toPoints3D), 
             markersize = 0.005, colormap = :plasma)
-        [lines!(ax,splitLines3D[i], linewidth=0.75) for i in 1:length(splitLines)]
+        [lines!(ax,splitLines3D[i], linewidth=0.75) for i in 1:length(splitLines3D)]
         hidedecorations!(ax)
         hidespines!(ax)
         fig, ax
