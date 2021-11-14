@@ -17,7 +17,9 @@ function genplain(s::String)
         end
     end
 end
-genplain("volumeTransparent.jl")
+genplain("gravities.jl")
+
+#genplain("volumeTransparent.jl")
 
 #genplain("submarineCables.jl")
 #genplain("submarineCables3D.jl")
