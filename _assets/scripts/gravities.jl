@@ -3,7 +3,7 @@ using GLMakie, FileIO
 GLMakie.activate!()
 # See following links for references:
 # https://twitter.com/AnsonBiggs/status/1444823816031510529/photo/1
-# https://gitlab.com/MisterBiggs/gravities-of-the-solar-system/-/blob/master/gravities.jl
+# https://github.com/JuliaAnimators/Javis.jl/blob/master/examples/gravities.jl
 let
 
     diameters = Dict(
