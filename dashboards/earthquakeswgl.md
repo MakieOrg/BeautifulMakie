@@ -25,9 +25,10 @@ app = JSServe.App() do session::Session
     end
 
     # https://earthquake.usgs.gov/earthquakes/map/?extent=-68.39918,-248.90625&extent=72.60712,110.74219
-    path = "/Users/lalonso/Desktop/BeautifulMakie/_assets" # hide
-    earthquakes1 = DataFrame(CSV.File(path*"/data/2021_01_2021_05.csv"))
-    earthquakes2 = DataFrame(CSV.File(path*"/data/2021_06_2022_01.csv"))
+    file1 = Downloads.download("https://github.com/lazarusA/BeautifulMakie/raw/main/_assets/data/2021_01_2021_05.csv")
+    file2 = Downloads.download("https://github.com/lazarusA/BeautifulMakie/raw/main/_assets/data/2021_06_2022_01.csv")
+    earthquakes1 = DataFrame(CSV.File(file1))
+    earthquakes2 = DataFrame(CSV.File(file2))
     earthquakes = vcat(earthquakes1, earthquakes2)
 
     # depth unit, km
