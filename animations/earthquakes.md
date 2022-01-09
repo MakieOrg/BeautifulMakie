@@ -2,7 +2,10 @@
 @def hascode = true
 @def tags = ["syntax", "code"]
 
-## Earthquakes, depth not at scale
+## Earthquakes, depth not at scale.
+
+Take a look at the [interactive version](https://lazarusa.github.io/BeautifulMakie/dashboards/earthquakeswgl/) (still WIP).
+
 
 \video{/assets/scripts/earthquakes/output/earthquakes.mp4}
 
