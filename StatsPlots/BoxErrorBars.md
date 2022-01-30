@@ -1,11 +1,8 @@
-@def title = "Lines"
+@def title = "Barplot and y error bars"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Boxes and y error bars
-\fig{/_assets/scripts/output/BoxErrorBars.png}
-\input{julia}{/_assets/scripts/BoxErrorBars.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/BoxErrorBars}
+\literate{/_literate/BoxErrorBars.jl}

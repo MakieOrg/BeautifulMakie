@@ -1,12 +1,8 @@
 @def title = "streamplot"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-
-## Streamplot
-\fig{/_assets/scripts/output/streamplot.png}
-\input{julia}{/_assets/scripts/streamplot.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/streamplot}
+\literate{/_literate/streamplot.jl}

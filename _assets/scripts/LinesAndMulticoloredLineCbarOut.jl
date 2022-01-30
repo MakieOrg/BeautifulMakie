@@ -1,26 +1,18 @@
-# by lazarusA # HIDE
-# using GLMakie # HIDE
+# by Lazaro Alonso
 using CairoMakie, ColorSchemes
 CairoMakie.activate!() # HIDE
 let
-    x = LinRange(0,2π,100) # with 100 points in the interval.
-    fig = Figure(resolution = (700, 450), font =:sans)
-    ax = Axis(fig, xlabel = "x", ylabel = "")
-    line1 = lines!(x, sin.(x), color = x,  colormap = :thermal, linewidth = 2)
-    line2 = lines!(x, cos.(x), color = :black,  linewidth = 1)
-    line3 = lines!(x, -cos.(x), color = :dodgerblue)
-    leg = Legend(fig, [line2, line3], ["  sin(x)", "- cos(x)"], tellwidth = false,
-    halign = :left, valign = :top, margin = (10, 10, 10, 10))
-    cbar = Colorbar(fig, line1, label = "cos(x)", ticklabelsize = 14,
-        labelpadding = 5, width = 10)
-    #limits!(ax, 0,2π,-1.01,1.01)
-    fig[1, 1] = ax
-    fig[1, 1] = leg
-    fig[1, 2] = cbar
+    x = LinRange(0, 2π, 100)
+    fig = Figure(resolution = (600, 400))
+    ax = Axis(fig[1, 1], xlabel = "x")
+    obj = lines!(x, sin.(x); color = x, colormap = :viridis, linewidth = 5)
+    lines!(x, cos.(x), color = :black, label = "cos(x)", linewidth = 1)
+    lines!(x, -cos.(x), color = :dodgerblue, label = "-cos(x)")
+    axislegend(ax)
+    Colorbar(fig[1, 2], obj, label = "sin(x)")
     colgap!(fig.layout, 5)
-    fig
-    #save("MulticoloredLinesCbarOut.png", fig, px_per_unit = 2)
-    save(joinpath(@__DIR__, "output", "LinesAndMulticoloredLineCbarOut.png"), fig, px_per_unit = 2) # HIDE
+    display(fig)
+    save(joinpath(@__DIR__, "output", "LinesAndMulticoloredLineCbarOut.svg"), fig) # HIDE
 end
 using Pkg # HIDE
 Pkg.status(["CairoMakie", "ColorSchemes"]) # HIDE

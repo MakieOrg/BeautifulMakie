@@ -1,10 +1,8 @@
 @def title = "ScattersCmaps"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
-## Scatters and colormaps
-\fig{/_assets/scripts/output/ScattersCmaps.png}
-\input{julia}{/_assets/scripts/ScattersCmaps.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/ScattersCmaps}
+@def literate_mds = true
+
+\literate{/_literate/ScattersCmaps.jl}

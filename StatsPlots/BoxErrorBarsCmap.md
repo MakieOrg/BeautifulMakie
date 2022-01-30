@@ -1,11 +1,8 @@
-@def title = "BoxErrorBarsCmap"
+@def title = "Barplot and y error bars, colormap"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Boxes and y error bars, colormap
-\fig{/_assets/scripts/output/BoxErrorBarsCmap.png}
-\input{julia}{/_assets/scripts/BoxErrorBarsCmap.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/BoxErrorBarsCmap}
+\literate{/_literate/BoxErrorBarsCmap.jl}

@@ -1,12 +1,8 @@
-@def title = "Lines"
+@def title = "ConfidenceRegion"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-
-## Confidence Region
-\fig{/_assets/scripts/output/ConfidenceRegion.png}
-\input{julia}{/_assets/scripts/ConfidenceRegion.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/ConfidenceRegion}
+\literate{/_literate/ConfidenceRegion.jl}

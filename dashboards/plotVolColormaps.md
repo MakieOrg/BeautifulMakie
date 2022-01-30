@@ -1,11 +1,8 @@
 @def title = "plotVolColormaps"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Plot Volume and ColorSchemes
-\fig{/_assets/scripts/output/plotVolColormaps.png}
-\input{julia}{/_assets/scripts/plotVolColormaps.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/plotVolColormaps}
+\literate{/_literate/plotVolColormaps.jl}

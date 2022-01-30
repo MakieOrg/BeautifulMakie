@@ -1,11 +1,8 @@
 @def title = "LineWithInsetHeatmap"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
-## Line with inset Heatmap
+@def literate_mds = true
 
-\fig{/_assets/scripts/output/LineWithInsetHeatmap.png}
-\input{julia}{/_assets/scripts/LineWithInsetHeatmap.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/LineWithInsetHeatmap}
+\literate{/_literate/LineWithInsetHeatmap.jl}

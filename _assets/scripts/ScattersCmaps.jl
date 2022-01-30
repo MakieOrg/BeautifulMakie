@@ -1,5 +1,4 @@
-# by lazarusA # HIDE
-# using GLMakie # HIDE
+# by Lazaro Alonso
 using CairoMakie, Random
 CairoMakie.activate!() # HIDE
 let
@@ -13,25 +12,24 @@ let
         fig = Figure(resolution = (1200, 800))
         c = 1
         for i in 1:2, j in 1:2:5
-            ax = Axis(fig[i, j],aspect = 1,xgridstyle=:dash,ygridstyle=:dash,
-                                xtickalign=1, ytickalign=1)
-            pnts = scatter!(x, y.^c, color = color, colormap=cmaps[c],
-                markersize = 15, marker = markers[c], strokewidth=0)
-            limits!(ax, -0.1,1.1,-0.1,1.1)
-            ax.xticks = [0,1]
-            ax.yticks = [0,1]
+            ax = Axis(fig[i, j], aspect = AxisAspect(1))
+            pnts = scatter!(x, y .^ c; color = color, colormap = cmaps[c],
+                markersize = 15, marker = markers[c], strokewidth = 0)
+            cbar = Colorbar(fig, pnts, height = Relative(0.75), tickwidth = 2,
+                tickalign = 1, width = 14, ticksize = 14)
+            fig[i, j+1] = cbar
+            limits!(ax, -0.1, 1.1, -0.1, 1.1)
+            ax.xticks = [0, 1]
+            ax.yticks = [0, 1]
             ax.xticklabelsize = 20
             ax.yticklabelsize = 20
-            cbar = Colorbar(fig, pnts,height = Relative(0.75), tickwidth = 2,
-                            tickalign=1, width = 14, ticksize=14)
-            fig[i, j+1] = cbar
-            c+=1
+            c += 1
         end
         fig
     end
     fig = FigGridScatters()
-    #save("FigLineScatter.png", fig, px_per_unit = 2)
-    save(joinpath(@__DIR__, "output", "ScattersCmaps.png"), fig, px_per_unit = 2) # HIDE
+    display(fig)
+    save(joinpath(@__DIR__, "output", "ScattersCmaps.svg"), fig) # HIDE
 end
 using Pkg # HIDE
 Pkg.status(["CairoMakie","Random"]) # HIDE

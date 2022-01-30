@@ -1,36 +1,30 @@
 # By Lazaro Alonso
 using GLMakie, ColorSchemes, Random
-GLMakie.activate!() # HIDE 
+GLMakie.activate!() # HIDE
+let
 function plotVolColormaps(; rseed = 123)
     Random.seed!(rseed)
     # all colormaps from colorschemes
     cs = collect(keys(colorschemes))
-    cmapIdx = Node(1) 
-    cmap = @lift(cs[$cmapIdx]) # @lift(Reverse(cs[$cmapIdx]))
-    ncolors = 101
-    colors = @lift(to_colormap($cmap, ncolors))
-    # some transparencies in the colors
-    g(x) = 0.5 + 0.5*tanh((x+3)/3)
-    alphas = g.(LinRange(-10,10, ncolors))
-    cmap_alpha = @lift(RGBAf0.($colors, alphas))
+    cmapIdx = Observable(1)
+    cmap = @lift(cs[$cmapIdx])
     # the actual figure
-    n = 15
-    x = randn(n)
-    y = randn(n)
-    z = randn(n)
-    A = randn(n, n, n) ./ 3
+    x = y = z = -1.7:0.05:1.7
+    r(i, j, k) = sqrt(i^2 + j^2 + k^2)
+    A = [rand() / r(i, j, k)^2 for i in x, j in y, k in z]
 
-    fig = Figure(resolution = (800,800))
-    ax = Axis3(fig, aspect = (1,1,1), perspectiveness = 0.5, elevation = π/9)
-    volume!(ax, x, y ,z, A, colormap = cmap_alpha, transparency =false)
-    sl = Slider(fig[1, 2], range = 1:length(cs), startvalue = 400, horizontal = false)
+    fig = Figure(resolution = (1200, 800))
+    ax = Axis3(fig[1,1], aspect = (1, 1, 1), perspectiveness = 0.5, elevation = π / 9)
+    volume!(ax, x, y, z, A; colormap = cmap, transparency = true)
+    sl = Slider(fig[1, 2], range = 1:length(cs), startvalue = 40, horizontal = false)
     connect!(cmapIdx, sl.value)
-    fig[1,1] = ax
-    fig[0,1] = Label(fig, @lift("Colormap: $(cs[$cmapIdx])"), textsize = 20, 
+    fig[0, 1] = Label(fig, @lift("Colormap: $(cs[$cmapIdx])"), textsize = 20,
         tellheight = true, tellwidth = false)
     fig
 end
-fig = with_theme(plotVolColormaps, theme_black())
-save(joinpath(@__DIR__, "output", "plotVolColormaps.png"), fig, px_per_unit = 2.0) # HIDE
+    fig = with_theme(plotVolColormaps, theme_light())
+    save(joinpath(@__DIR__, "output", "plotVolColormaps.png"), fig, px_per_unit = 2.0) # HIDE
+    display(fig)
+end
 using Pkg # HIDE 
 Pkg.status(["GLMakie", "ColorSchemes"]) #HIDE 

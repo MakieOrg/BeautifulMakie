@@ -1,11 +1,8 @@
 @def title = "revolutionSurf"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Revolution Surface
-\fig{/_assets/scripts/output/revolutionSurf.png}
-\input{julia}{/_assets/scripts/revolutionSurf.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/revolutionSurf}
+\literate{/_literate/revolutionSurf.jl}
