@@ -4,7 +4,7 @@
 
 ## Log scale in y
 
-\fig{/_assets/scripts/output/LineLogy.png}
+\fig{/_assets/scripts/output/LineLogy.svg}
 \input{julia}{/_assets/scripts/LineLogy.jl}
 ~~~
 <span style="color:#e53e00;"> <strong> Dependencies </strong> </span>

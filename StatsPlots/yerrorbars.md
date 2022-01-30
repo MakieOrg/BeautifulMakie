@@ -1,11 +1,8 @@
 @def title = "yerrorbars"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Simple y error bars + colormap
-\fig{/_assets/scripts/output/yerrorbars.png}
-\input{julia}{/_assets/scripts/yerrorbars.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/yerrorbars}
+\literate{/_literate/yerrorbars.jl}
