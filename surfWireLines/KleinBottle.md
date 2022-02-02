@@ -1,11 +1,8 @@
 @def title = "KleinBottle"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Klein Bottle
-\fig{/_assets/scripts/output/KleinBottle.png}
-\input{julia}{/_assets/scripts/KleinBottle.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/KleinBottle}
+\literate{/_literate/KleinBottle.jl}

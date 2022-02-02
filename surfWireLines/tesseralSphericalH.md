@@ -1,11 +1,8 @@
 @def title = "tesseralSphericalH"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Tesseral Spherical Harmonics
-\fig{/_assets/scripts/output/tesseralSphericalH.png}
-\input{julia}{/_assets/scripts/tesseralSphericalH.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/tesseralSphericalH}
+\literate{/_literate/tesseralSphericalH.jl}

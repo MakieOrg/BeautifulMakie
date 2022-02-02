@@ -1,11 +1,8 @@
-@def title = "xBoxErrorBars"
+@def title = "x-error & y-error barplots"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## x-error boxes and y-error bars
-\fig{/_assets/scripts/output/xBoxErrorBars.png}
-\input{julia}{/_assets/scripts/xBoxErrorBars.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/xBoxErrorBars}
+\literate{/_literate/xBoxErrorBars.jl}

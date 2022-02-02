@@ -1,13 +1,8 @@
 @def title = "gravities"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Gravity animation
-
-\video{/assets/scripts/output/gravities.mp4}
-
-\input{julia}{/_assets/scripts/gravities.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/gravities}
+\literate{/_literate/gravities.jl}

@@ -1,11 +1,8 @@
 @def title = "histDensity"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Histogram and pdf => density!
-\fig{/_assets/scripts/output/histDensity.png}
-\input{julia}{/_assets/scripts/histDensity.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/histDensity}
+\literate{/_literate/histDensity.jl}

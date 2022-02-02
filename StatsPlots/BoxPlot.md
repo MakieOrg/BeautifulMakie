@@ -1,11 +1,8 @@
 @def title = "BoxPlot"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Box Plots, vertical and horizontal
-\fig{/_assets/scripts/output/BoxPlot.png}
-\input{julia}{/_assets/scripts/BoxPlot.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/BoxPlot}
+\literate{/_literate/BoxPlot.jl}

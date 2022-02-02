@@ -3,7 +3,7 @@
 @def tags = ["syntax", "code"]
 
 ## Single line
-\fig{/_assets/scripts/output/lines1.png}
+\fig{/_assets/scripts/output/lines1.svg}
 \input{julia}{/_assets/scripts/lines1.jl}
 
 ~~~
