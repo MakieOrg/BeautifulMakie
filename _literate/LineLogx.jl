@@ -13,7 +13,7 @@ let
             ygridstyle = :dash, xminorticksvisible = true,
             xminorticks = IntervalsBetween(9))) # possible issue with log-ticks
     ylims!(-1, 1)
-    display(current_figure())
+    ## display(current_figure())
     save(joinpath(@OUTPUT, "LineLogx.svg"), current_figure()) # HIDE
 end;
 # \fig{LineLogx.svg}

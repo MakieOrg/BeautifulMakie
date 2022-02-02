@@ -41,7 +41,6 @@ let
     fig[1,2] = cbar1
     fig[2,1] = ax2
     fig[2,2] = cbar2
-    fig
     save(joinpath(@__DIR__, "output", "temPrecESDL.png"), fig, px_per_unit = 2.0) # HIDE
 end
 

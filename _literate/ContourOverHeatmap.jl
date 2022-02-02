@@ -16,7 +16,7 @@ let
     Colorbar(fig[1,4], p1, width = 20, ticksize=20, tickalign = 1)
     [limits!(axs[i], 1,20,1,20) for i in 1:3]
     [hideydecorations!(axs[i], grid = false, ticks = false) for i in 2:3]
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "ContourOverHeatmap.svg"), fig) # HIDE
 end
 using Pkg # HIDE

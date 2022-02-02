@@ -78,7 +78,7 @@ let
   fig[2, 3] = axc
   fig[3, :] = lfn
   fig[0, :] = lst
-  display(fig)
+  ## display(fig)
   save(joinpath(@__DIR__, "output", "heatmapScaleSections.svg"), fig) # HIDE
   set_theme!()
 end

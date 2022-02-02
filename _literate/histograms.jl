@@ -24,7 +24,7 @@ let
     axislegend(ax2; position = :rt)
     axislegend(ax3; position = :rt)
     axislegend(ax4; position = :rt)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "histograms.svg"), fig) # HIDE
 end;
 # \fig{histograms.svg}

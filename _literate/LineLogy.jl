@@ -9,7 +9,7 @@ let
             ygridstyle = :dash, yminorticksvisible = true,
             yminorticks = IntervalsBetween(9))) # possible issue with log-ticks
     xlims!(-1, 1)
-    display(current_figure())
+    ## display(current_figure())
     save(joinpath(@__DIR__, "output", "LineLogy.svg"), current_figure()) # HIDE
 end
 using Pkg # HIDE

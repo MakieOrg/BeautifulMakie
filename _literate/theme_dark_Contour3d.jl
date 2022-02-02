@@ -37,7 +37,7 @@ let
     end
     fig = with_theme(plot, theme_dark())
     save(joinpath(@OUTPUT, "theme_dark_Contour3d.png"), fig, px_per_unit = 2) # HIDE
-    display(fig)
+    ## display(fig)
 end;
 # \fig{theme_dark_Contour3d.png}
 md"""

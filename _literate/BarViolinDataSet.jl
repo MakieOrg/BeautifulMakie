@@ -20,7 +20,7 @@ let
         violin!(axs[2], a, datam; width = 0.35, color = (colors[indx], 0.45),
             strokecolor = colors[indx], show_median = true, mediancolor = :black)
     end
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "BarViolinDataSet.svg"), fig) # HIDE
 end;
 # \fig{BarViolinDataSet.svg}

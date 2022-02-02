@@ -21,7 +21,7 @@ let
     axis[:ticks][:textcolor] = :black
     axis[:ticks][:textsize] = 10
     save(joinpath(@__DIR__, "output", "wireTori.png"), fig, px_per_unit = 2.0) # HIDE
-    display(fig)
+    ## display(fig)
 end
 using Pkg # HIDE
 Pkg.status(["GLMakie"]) # HIDE

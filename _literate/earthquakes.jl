@@ -5,7 +5,7 @@ md"""
 
 ## by Lazaro Alonso
 using CSV, DataFrames
-using GLMakie
+using GLMakie, Colors, ColorSchemes
 using FileIO, Downloads
 
 let
@@ -57,7 +57,7 @@ let
     Label(fig[1, 1, Top()], "Earthquakes on Earth between January 2021 and January 2022.\nOriginal data from USGS")
     zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
     rotate!(ax.scene, 3.0)
-    display(fig)
+    ## display(fig)
     record(fig, joinpath(@OUTPUT, "earthquakes.mp4"), framerate = 24) do io
         for i in 3.0:0.015:9.5
             rotate!(ax.scene, i)
@@ -72,4 +72,4 @@ md"""
 #### Dependencies
 """
 using Pkg # HIDE
-Pkg.status(["GLMakie", "CSV", "DataFrames", "FileIO", "Downloads"]) # HIDE
+Pkg.status(["GLMakie", "CSV", "DataFrames", "FileIO", "Downloads", "Colors", "ColorSchemes"]) # HIDE

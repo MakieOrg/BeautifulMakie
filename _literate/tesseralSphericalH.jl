@@ -39,7 +39,7 @@ let
         textsize = 30, color = (:white, 0.85))
     [hidedecorations!(axs[i]; grid = false) for i in 1:2]
     save(joinpath(@OUTPUT, "tesseralSphericalH.png"), fig, px_per_unit = 2.0) # HIDE
-    display(fig)
+    ## display(fig)
     set_theme!()
 end;
 # \fig{tesseralSphericalH.png}

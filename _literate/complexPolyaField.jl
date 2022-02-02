@@ -27,7 +27,7 @@ let
         limits!(axs[2], -2, 2, -2, 2)
         colsize!(fig.layout, 1, Aspect(1, 1.0))
         colsize!(fig.layout, 2, Aspect(1, 1.0))
-        display(fig)
+        ## display(fig)
         save(joinpath(@OUTPUT, "complexPolyaField.svg"), fig) # HIDE
 end;
 # \fig{complexPolyaField.svg}

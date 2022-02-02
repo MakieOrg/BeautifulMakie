@@ -29,7 +29,7 @@ let
     hidespines!(ax2)
     ax2.yticks = [-10, 0, 10]
     ax2.xticks = [-10, 0, 10]
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "LineWithInsetHeatmap.svg"), fig) # HIDE
 end;
 # \fig{LineWithInsetHeatmap.svg}

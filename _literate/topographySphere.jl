@@ -47,7 +47,6 @@ let
     hidedecorations!(ax)
     fig[1,1] = ax
     fig[1,2] = cbar
-    fig
     save(joinpath(@__DIR__, "output", "topographySphere.png"), fig, px_per_unit = 2.0) # HIDE
 end
 

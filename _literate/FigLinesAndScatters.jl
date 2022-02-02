@@ -14,7 +14,7 @@ let
     scatter!(x, -cos.(x); color = :red, label = "-cos(x)", strokewidth = 1,
         strokecolor = :red, markersize = 5, marker = '■')
     axislegend(; position = :lt, bgcolor = (:white, 0.85), framecolor = :green)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "FigLinesAndScatters.svg"), fig) # HIDE
 end;
 

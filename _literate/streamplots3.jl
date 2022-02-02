@@ -20,7 +20,7 @@ let
         gridsize = (32, 32), arrow_size = 10) for i in 1:3]
     [hideydecorations!(axs[2], grid = false, ticks = false) for i in 2:3]
     [limits!(axs[i], -4, 4, -4, 4) for i in 1:3]
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "streamplots3.svg"), fig) # HIDE
 end;
 # \fig{streamplots3.svg}

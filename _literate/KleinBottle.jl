@@ -19,7 +19,7 @@ let
     ax = LScene(fig[1, 1], show_axis = false)
     surface!(ax, x, y, z; color = sqrt.(x.^2 .+ y.^2), colormap = (:Spectral_11, 0.8))
     save(joinpath(@OUTPUT, "KleinBottle.png"), fig, px_per_unit = 2.0) # HIDE
-    display(fig)
+    ## display(fig)
 end;
 # \fig{KleinBottle.png}
 

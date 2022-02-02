@@ -59,7 +59,7 @@ end
 rrgraph = with_theme(theme_black()) do
     plotGraph(adjacencyM, x, y)
 end
-display(rrgraph)
+## display(rrgraph)
 save(joinpath(@__DIR__, "output", "RRGraph.svg"), rrgraph) # HIDE
 using Pkg # HIDE
 Pkg.status(["CairoMakie", "LinearAlgebra", "Random"]) # HIDE

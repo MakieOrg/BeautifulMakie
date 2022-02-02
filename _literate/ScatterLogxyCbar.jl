@@ -17,7 +17,7 @@ let
             xminorticks = IntervalsBetween(9), yminorticks = IntervalsBetween(9)))
     Colorbar(fig[1, 2], pltpbj)
     ylims!(ax, 1e-1, 1e2)
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "ScatterLogxyCbar.svg"), fig) # HIDE
 end
 using Pkg # HIDE

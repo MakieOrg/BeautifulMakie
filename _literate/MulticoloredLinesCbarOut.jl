@@ -27,7 +27,7 @@ let
     Colorbar(fig[1, 2], limits = (-10, 10), nsteps = psize, colormap = cmap,
         label = L"p", ticksize = 20, width = 20, tickalign = 1)
     colsize!(fig.layout, 1, Aspect(1, 1.0))
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "MulticoloredLinesCbarOut.svg"), fig) # HIDE
 end;
 # \fig{MulticoloredLinesCbarOut.svg}

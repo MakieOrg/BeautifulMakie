@@ -10,7 +10,7 @@ let
         xgridstyle=:dash, ygridstyle=:dash, xminorticksvisible = true,
         xminorticks = IntervalsBetween(9), yminorticksvisible = true,
         yminorticks = IntervalsBetween(9)))
-    display(current_figure())
+    ## display(current_figure())
     save(joinpath(@__DIR__, "output", "LineLogxy.svg"), current_figure()) # HIDE
 end
 using Pkg # HIDE

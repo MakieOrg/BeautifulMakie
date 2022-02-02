@@ -28,7 +28,6 @@ let
     hidespines!(ax)
     hidedecorations!(ax)
     hidespines!(ax)
-    fig
     #save("FigTOPOFuji.png", fig, px_per_unit = 2) # HIDE
     save(joinpath(@__DIR__, "output", "topoLinesFuji.png"), fig, px_per_unit = 2.0) # HIDE
 end

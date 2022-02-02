@@ -15,7 +15,7 @@ let
     lines!(ax2, 0 .. 10, x -> exp(-x); color = :dodgerblue)
     hidespines!(ax2, :l, :b, :t)
     hidexdecorations!(ax2)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "twinAxis.svg"), fig) # HIDE
 end;
 

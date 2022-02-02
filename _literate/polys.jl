@@ -21,7 +21,7 @@ let
         hidedecorations!(ax; grid = false)
         hidespines!(ax)
         save(joinpath(@OUTPUT, "polygons.svg"), fig) # HIDE
-        display(fig)
+        ## display(fig)
     end
 end;
 # \fig{polygons.svg}

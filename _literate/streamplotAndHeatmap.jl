@@ -21,7 +21,7 @@ let
     Colorbar(fig[1, 2], fs, label = L"\log_{10}[(u^2+v^2)^{1/2}]", width = 20,
         labelsize = 14, ticklabelsize = 14)
     colgap!(fig.layout, 5)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "streamplotAndHeatmap.svg"), fig) # HIDE
 end;
 # \fig{streamplotAndHeatmap.svg}

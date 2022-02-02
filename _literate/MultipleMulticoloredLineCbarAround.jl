@@ -29,7 +29,7 @@ let
     fig[3, 2] = cbar3
     colgap!(fig.layout, 5)
     rowgap!(fig.layout, 5)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "MultipleMulticoloredLineCbarAround.svg"), fig) # HIDE
 end;
 # \fig{MultipleMulticoloredLineCbarAround.svg}

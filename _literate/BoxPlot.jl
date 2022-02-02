@@ -27,7 +27,7 @@ let
     limits!(ax2, -5, 5, 0, 2)
     axislegend(ax1, position = :rb, framecolor = :transparent)
     axislegend(ax2, position = :rt, bgcolor = (:dodgerblue, 0.2))
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "BoxPlot.svg"), fig) # HIDE
 end;
 # \fig{BoxPlot.svg}

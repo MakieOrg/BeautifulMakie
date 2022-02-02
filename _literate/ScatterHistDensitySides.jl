@@ -24,7 +24,7 @@ let
     rowsize!(fig.layout, 1, Relative(1 / 3))
     colgap!(fig.layout, 10)
     rowgap!(fig.layout, 10)
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "ScatterHistDensitySides.svg"), fig) # HIDE
 end
 using Pkg # HIDE

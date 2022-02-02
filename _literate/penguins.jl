@@ -33,7 +33,7 @@ let
         end
     end
     fig = plotPenguins()
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "penguins.svg"), fig) # HIDE
 end
 using Pkg # HIDE

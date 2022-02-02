@@ -25,7 +25,7 @@ let
     [lines!(xs, ys[:, v], color = cmap[v], label = "$(p[v])") for v in 1:psize]
     Legend(fig[1, 2], ax, nbanks = 2, label = L"p")
     colsize!(fig.layout, 1, Aspect(1, 1.0))
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "MulticoloredLinesLegOut.svg"), fig) # HIDE
 end;
 # \fig{MulticoloredLinesLegOut.svg}

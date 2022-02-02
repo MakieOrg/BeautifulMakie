@@ -18,7 +18,7 @@ let
     Colorbar(fig[1, 3], pltobj1, ticks = ([-π, -π / 2, 0, π / 2, π],
         ["-π", "-π/2", "0", "π/2", "π"]))
     limits!(axs[1], -2, 2, -2, 2)
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "ContourComplexF.svg"), fig) # HIDE
 end
 using Pkg # HIDE

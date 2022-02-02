@@ -39,7 +39,7 @@ let
     zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
     rotate!(ax.scene, 12.0)
     save(joinpath(@__DIR__, "output", "proj4_to_Sphere.png"), fig) # HIDE
-    display(fig)
+    ## display(fig)
 end
 using Pkg # HIDE
 Pkg.status(["GLMakie", "FileIO", "ImageMagick", "QuartzImageIO", "Proj4", "Colors", "ColorSchemes"]) # HIDE

@@ -23,7 +23,7 @@ let
             strokewidth = 1.5, strokecolor = to_colormap(:mk_12, 8))
         hidedecorations!(ax; grid = false)
         save(joinpath(@OUTPUT, "stem.svg"), fig)
-        display(fig)
+        ## display(fig)
     end
 end;
 # \fig{stem.svg}

@@ -27,7 +27,7 @@ let
     translate!(ax2.elements[:background], 0, 0, 9)
     translate!(ax2.elements[:xgridlines], 0, 0, 9)
     translate!(ax2.elements[:ygridlines], 0, 0, 9)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "LineWithInset.svg"), fig) # HIDE
 end;
 # \fig{LineWithInset.svg}

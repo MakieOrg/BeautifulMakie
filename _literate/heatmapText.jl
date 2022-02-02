@@ -31,7 +31,7 @@ let
     Colorbar(fig[1, 2], hmap; label = "values", width = 15, ticksize = 15)
     ax.xticklabelrotation = π / 3
     ax.xticklabelalign = (:right, :center)
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "heatmapText.svg"), fig) # HIDE
 end
 using Pkg # HIDE

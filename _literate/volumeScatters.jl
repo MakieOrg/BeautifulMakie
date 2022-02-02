@@ -19,7 +19,7 @@ let
     colsize!(fig.layout, 1, Aspect(1, 1.0))
     limits!(ax, -1, 11, -1, 11, -1, 11)
     save(joinpath(@__DIR__, "output", "volumeScatters.png"), fig, px_per_unit = 2.0) # HIDE
-    display(fig)
+    ## display(fig)
 end
 using Pkg # HIDE
 Pkg.status(["GLMakie"]) # HIDE

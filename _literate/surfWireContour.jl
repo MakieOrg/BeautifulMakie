@@ -25,7 +25,7 @@ let
     Colorbar(fig[1, 2], sm, height = Relative(0.5))
     colsize!(fig.layout, 1, Aspect(1, 1.0))
     save(joinpath(@OUTPUT, "surfWireContour.png"), fig, px_per_unit = 2.0) # HIDE
-    display(fig)
+    ## display(fig)
     set_theme!()
 end;
 # \fig{surfWireContour.png}
