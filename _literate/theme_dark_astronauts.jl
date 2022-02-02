@@ -1,4 +1,7 @@
-# by Lazaro Alonso & Julius Krumbiegel
+md"""
+## Black: Astronauts
+"""
+## by Lazaro Alonso & Julius Krumbiegel
 using CairoMakie, HTTP, CSV, DataFrames, DataFramesMeta, Suppressor
 using Images, ColorSchemes, Colors, Statistics
 using Lazy: @>
@@ -55,7 +58,7 @@ let
     horas = (10 .^ gridLines .- offhr) * median(60 * astro.eva_hrs_mission) / 60
     xg = [rPts * gl .* cos.(astro.θ) for gl in gridLines]
     yg = [rPts * gl .* sin.(astro.θ) for gl in gridLines]
-    # in order to use linesegments (faster to plot)
+    ## in order to use linesegments (faster to plot)
     xyos = getPoints(xo, yo, xs, ys)
     xys = getPoints(xs, ys, x, y)
     xybe = getPoints(xnb, ynb, xne, yne)
@@ -112,9 +115,13 @@ let
             position = (-99, -99), textsize = 10)
         limits!(ax, -100, 100, -100, 100)
     end
-    save(joinpath(@__DIR__, "output", "theme_dark_astronauts.png"), current_figure(), px_per_unit = 2) # HIDE
+    save(joinpath(@OUTPUT, "theme_dark_astronauts.png"), current_figure(), px_per_unit = 2) # HIDE
     display(current_figure())
-end
+end;
+# \fig{theme_dark_astronauts.png}
+md"""
+#### Dependencies
+"""
 using Pkg # HIDE
 Pkg.status(["CairoMakie", "HTTP", "CSV", "DataFrames", "DataFramesMeta", # HIDE
     "Suppressor", "Images", "ColorSchemes", "Colors", "Statistics", "Lazy"]) # HIDE

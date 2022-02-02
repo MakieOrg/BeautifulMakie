@@ -1,16 +1,20 @@
-# example modified from  mthelm85
-# by lazarusA # HIDE
+md"""
+## theme_dark, surface, contour3d & streamplot
+"""
+## example modified from  mthelm85
+## by Lazaro Alonso
+
 using GLMakie, ForwardDiff
 GLMakie.activate!()
 let
-    f(x,y) = -5*x*y*exp(-x^2-y^2)
+    f(x, y) = -5 * x * y * exp(-x^2 - y^2)
     x = y = -1:0.05:1.0
-    z = [f(i,j) for i in x, j in y]
-    # This is the same function as above, just modified so that it will
-    # work with ForwardDiff
-    g(x,y) = [-5*x*y*exp(-x^2-y^2)]
-    J(xx,yy) = ForwardDiff.jacobian(x -> g(x[1], x[2]), [xx,yy])
-    field(i,j) = Point2f(J(i,j)[1], J(i,j)[2])
+    z = [f(i, j) for i in x, j in y]
+    ## This is the same function as above, just modified so that it will
+    ## work with ForwardDiff
+    g(x, y) = [-5 * x * y * exp(-x^2 - y^2)]
+    J(xx, yy) = ForwardDiff.jacobian(x -> g(x[1], x[2]), [xx, yy])
+    field(i, j) = Point2f(J(i, j)[1], J(i, j)[2])
 
     zmin, zmax = minimum(z), maximum(z)
     cmap = :viridis
@@ -32,8 +36,12 @@ let
         fig
     end
     fig = with_theme(plot, theme_dark())
-    save(joinpath(@__DIR__, "output", "theme_dark_Contour3d.png"), fig, px_per_unit = 2) # HIDE
+    save(joinpath(@OUTPUT, "theme_dark_Contour3d.png"), fig, px_per_unit = 2) # HIDE
     display(fig)
-end
+end;
+# \fig{theme_dark_Contour3d.png}
+md"""
+#### Dependencies
+"""
 using Pkg # HIDE
-Pkg.status(["GLMakie","ForwardDiff"]) # HIDE
+Pkg.status(["GLMakie", "ForwardDiff"]) # HIDE

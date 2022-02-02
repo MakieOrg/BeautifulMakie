@@ -67,6 +67,7 @@ app = JSServe.App() do session::Session
     zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
     rotate!(ax.scene, 3.0)
     fig
+    set_theme!()
     return JSServe.record_states(session, DOM.div(fig))
 end
 show(io, MIME"text/html"(), app)

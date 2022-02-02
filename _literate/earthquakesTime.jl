@@ -71,6 +71,7 @@ let
             recordframe!(io)  # record a new frame
         end
     end
+    set_theme!()
 end
 
 using Pkg # HIDE

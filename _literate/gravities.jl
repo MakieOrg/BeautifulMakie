@@ -139,6 +139,7 @@ let
             recordframe!(io)  # record a new frame
         end
     end
+    set_theme!()
 end;
 
 # \video{/assets/animations/gravities/code/output/gravities.mp4}

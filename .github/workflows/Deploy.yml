@@ -42,8 +42,9 @@ jobs:
           # Fix for Plots with GR backend.
           GKSwstype: nul
     - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+      uses: JamesIves/github-pages-deploy-action@releases/v4
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: __site
+        branch: gh-pages
+        folder: __site
+        # Reduce state.
+        single-commit: true

@@ -1,4 +1,8 @@
-# by Lazaro Alonso
+md"""
+## Epicycloid
+"""
+
+## by Lazaro Alonso
 using CairoMakie
 CairoMakie.activate!()
 let
@@ -22,6 +26,10 @@ let
     fig = with_theme(EpicycloidLines, theme_black())
     save(joinpath(@OUTPUT, "Epicycloid.svg"), fig) # HIDE
     display(fig)
-end
+end;
+# \fig{Epicycloid.svg}
+md"""
+#### Dependencies
+"""
 using Pkg # HIDE
 Pkg.status("CairoMakie") # HIDE

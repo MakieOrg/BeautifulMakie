@@ -71,6 +71,7 @@ let
   fig[0, :] = axt
   display(fig)
   save(joinpath(@__DIR__, "output", "heatmapScaleDetail.svg"), fig) # HIDE
+  set_theme!()
 end
 using Pkg # HIDE
 Pkg.status(["CairoMakie"]) # HIDE

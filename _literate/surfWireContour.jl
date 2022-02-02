@@ -9,6 +9,7 @@ let
     z = (-x .* exp.(-x .^ 2 .- (y') .^ 2)) .* 4
     zmin, zmax = minimum(z), maximum(z)
     cmap = :viridis
+    set_theme!(theme_dark())
     fig = Figure(resolution = (1200, 800), fontsize = 22)
     ax = Axis3(fig[1, 1], aspect = :data, perspectiveness = 0.5, elevation = π / 9,
         xzpanelcolor = (:black, 0.75), yzpanelcolor = (:black, 0.75),
@@ -25,6 +26,7 @@ let
     colsize!(fig.layout, 1, Aspect(1, 1.0))
     save(joinpath(@OUTPUT, "surfWireContour.png"), fig, px_per_unit = 2.0) # HIDE
     display(fig)
+    set_theme!()
 end;
 # \fig{surfWireContour.png}
 

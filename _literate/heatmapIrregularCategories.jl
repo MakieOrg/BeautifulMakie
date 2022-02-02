@@ -35,6 +35,7 @@ let
     heatmap!(ax2, steps(x), steps(y), σ)
     display(fig)
     save(joinpath(@__DIR__, "output", "heatmapIrregularCategories.svg"), fig) # HIDE
+    set_theme!()
 end
 using Pkg # HIDE
 Pkg.status(["CairoMakie", "Random"]) # HIDE

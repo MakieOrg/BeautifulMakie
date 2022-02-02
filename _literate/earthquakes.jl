@@ -1,6 +1,8 @@
 md"""
 ## Earthquakes on Earth: depth not at scale
 """
+## Original reference: https://glowy-earthquakes.glitch.me
+
 ## by Lazaro Alonso
 using CSV, DataFrames
 using GLMakie
@@ -66,6 +68,7 @@ let
             recordframe!(io)  # record a new frame
         end
     end
+    set_theme!()
 end;
 # \video{/assets/animations/earthquakes/code/output/earthquakes.mp4}
 

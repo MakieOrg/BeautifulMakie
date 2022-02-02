@@ -26,15 +26,12 @@ ul {
 }
 
 .docs-sidebar .docs-nav {
-    width: 14rem !important;
+    width: 16rem !important;
 }
 
-code {
-    background: var(--block-background);
-    color: var(--black);
-    display: block;
-    padding: 0.5rem;
-    overflox-x: auto;
+.code-output {
+    background: var(--output-background) !important;
+    border: 1px dashed #f86e1f;
 }
 
 th, td, tr {
@@ -62,6 +59,47 @@ table {
     color: var(--black);
 }
 
+h1 {
+    margin-bottom: 3rem;
+}
+
 h2 {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.accordion input:checked ~ .accordion-header > .icon:first-child,
+.accordion[open] .accordion-header > .icon:first-child {
+  transform: rotate(90deg);
+}
+
+.accordion input:checked ~ .accordion-body,
+.accordion[open] .accordion-body {
+  max-height: 100rem;
+}
+
+.accordion .accordion-header {
+  display: block;
+  padding: .2rem .4rem;
+}
+
+.accordion .accordion-header .icon {
+  transition: transform .25s;
+}
+
+.accordion .accordion-body {
+  margin-bottom: .4rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s;
+}
+
+summary.accordion-header::-webkit-details-marker {
+  display: none;
 }

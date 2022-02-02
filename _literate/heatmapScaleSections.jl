@@ -80,6 +80,7 @@ let
   fig[0, :] = lst
   display(fig)
   save(joinpath(@__DIR__, "output", "heatmapScaleSections.svg"), fig) # HIDE
+  set_theme!()
 end
 using Pkg # HIDE
 Pkg.status(["CairoMakie"]) # HIDE
