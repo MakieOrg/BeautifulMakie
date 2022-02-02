@@ -15,7 +15,7 @@ let
             xlabelsize = 22, ylabelsize = 22))
     axislegend("legend", position = :lt)
     limits!(0, 10, 0, 100)
-    current_figure()
+    ## current_figure()
     save(joinpath(@OUTPUT, "lines1.svg"), current_figure()) # HIDE
 end;
 

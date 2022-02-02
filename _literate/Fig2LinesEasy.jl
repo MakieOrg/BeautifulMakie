@@ -16,7 +16,7 @@ let
     lines!(x, cos.(x); color = :black, linestyle = :dash, label = L"cos")
     limits!(-2π, 2π, -1, 1)
     axislegend("Legend", position = :lb)
-    current_figure()
+    ## current_figure()
     save(joinpath(@OUTPUT, "Fig2LinesEasy.svg"), current_figure()) # HIDE
 end;
 # \fig{Fig2LinesEasy.svg}

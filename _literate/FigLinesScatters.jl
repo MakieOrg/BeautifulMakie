@@ -15,7 +15,7 @@ let
         marker = '■', markercolor = :red, markersize = 10,
         strokewidth = 1, strokecolor = :red)
     axislegend(; position = :cc)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "FigLinesScatters.svg"), fig) # HIDE
 end;
 

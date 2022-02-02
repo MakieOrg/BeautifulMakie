@@ -11,7 +11,7 @@ let
         vertical = false, flipaxis = false, height = 15, tickwidth = 2,
         ticklabelsize = 14, ticks = [0, 0.5, 1])
     hideydecorations!(axs[2], ticks = false)
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "heatmap1SharedCbar.svg"), fig) # HIDE
 end
 using Pkg # HIDE

@@ -9,7 +9,7 @@ let
     ax = Axis(fig[1, 1], xlabel = "x", ylabel = "y")
     band!(x, sin.(x), sin.(x) .+ 1; color = (:blue, 0.2))
     band!(x, cos.(x), 1 .+ cos.(x); color = (:red, 0.2))
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "Bands.svg"), fig) # HIDE
 end;
 # \fig{Bands.svg}

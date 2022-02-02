@@ -19,7 +19,6 @@ let
     hidedecorations!(ax)
     hidespines!(ax)
     fig[1,1] = ax
-    fig
     save(joinpath(@__DIR__, "output", "moon.png"), fig, px_per_unit = 2.0) # HIDE
 end
 

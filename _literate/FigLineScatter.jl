@@ -10,7 +10,7 @@ let
     ax = Axis(fig[1, 1], xlabel = "x", ylabel = "")
     scatterlines!(x, sin.(x), color = :black, markersize = 10, label = "sin(x)")
     axislegend()
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "FigLineScatter.svg"), fig) # HIDE
 end;
 # \fig{FigLineScatter.svg}

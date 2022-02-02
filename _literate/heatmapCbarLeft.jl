@@ -9,7 +9,7 @@ let
     Colorbar(fig[1, 1], hmap; label = "values", width = 15, flipaxis = false,
         ticksize = 15, tickalign = 1)
     colsize!(fig.layout, 2, Aspect(1, 1.0))
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "heatmapCbarLeft.svg"), fig) # HIDE
 end
 using Pkg # HIDE

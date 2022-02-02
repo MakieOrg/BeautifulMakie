@@ -16,7 +16,7 @@ let
     ax.xticks = (slice_dates, tempo[slice_dates])
     ax.xticklabelrotation = π/4
     ax.xticklabelalign = (:right, :center)
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "timeSeries.svg"), fig) # HIDE
 end
 using Pkg # HIDE

@@ -14,7 +14,7 @@ let
     axislegend(ax)
     Colorbar(fig[1, 2], obj, label = "sin(x)")
     colgap!(fig.layout, 5)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "LinesAndMulticoloredLineCbarOut.svg"), fig) # HIDE
 end;
 # \fig{LinesAndMulticoloredLineCbarOut.svg}

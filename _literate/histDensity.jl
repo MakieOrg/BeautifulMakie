@@ -14,7 +14,7 @@ let
     hist!(ax1, data; normalization = :pdf, color = (:green, 0.5), label = "hist & pdf")
     density!(ax1, data, color = (:orange, 0.25), label = "density!", strokewidth = 1)
     axislegend(ax1, position = :rt)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "histDensity.svg"), fig) # HIDE
 end;
 # \fig{histDensity.svg}

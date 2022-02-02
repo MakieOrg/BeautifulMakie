@@ -13,7 +13,7 @@ let
     scatter!(x, -cos.(x), color = :red, label = "-cos(x)", strokewidth = 1,
         strokecolor = :red, markersize = 5, marker = '■')
     Legend(fig[1, 2], ax, merge = true)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "FigLinesAndScattersLegOut.svg"), fig) # HIDE
 end;
 

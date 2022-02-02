@@ -19,7 +19,7 @@ let
             label = L"\mu = %$(μ), \sigma = %$(σs[idx])")
     end
     axislegend(; merge = true, framecolor = :red)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "FilledLines.svg"), fig) # HIDE
 end;
 # \fig{FilledLines.svg}

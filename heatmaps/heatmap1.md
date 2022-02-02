@@ -5,4 +5,4 @@
 @def tags = ["syntax", "code"]
 @def literate_mds = true
 
-\literate{/_literate/heatmap1.jl}
+`\literate{/_literate/heatmap1.jl}`

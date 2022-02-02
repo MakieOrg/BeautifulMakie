@@ -17,7 +17,7 @@ let
     ylims!(-0.6, 1.05)
     xlims!(-0.5, 12)
     axislegend(L"f(x)"; position = :rt, bgcolor = (:grey90, 0.25))
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "latexSample.svg"), fig) # HIDE
 end;
 # \fig{latexSample.svg}

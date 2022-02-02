@@ -12,7 +12,7 @@ let
     ax = Axis(fig[1, 1]; xlabel = "variable", ylabel = "values")
     errorbars!(ax, x, y, yerr; whiskerwidth = 12, color = :orangered)
     errorbars!(ax, x, y, xerr; whiskerwidth = 12, direction = :x)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "xyerrorbars.svg"), fig) # HIDE
 end;
 # \fig{xyerrorbars.svg}
