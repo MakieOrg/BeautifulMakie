@@ -22,15 +22,11 @@ let
 
     ## https://earthquake.usgs.gov/earthquakes/map/?extent=-68.39918,-248.90625&extent=72.60712,110.74219
     urldata = "https://github.com/lazarusA/BeautifulMakie/raw/main/_assets/data/"
-    path = "/Users/lalonso/Desktop/BeautifulMakie/_assets"
     file1 = Downloads.download(urldata * "2021_01_2021_05.csv")
     file2 = Downloads.download(urldata * "2021_06_2022_01.csv")
     earthquakes1 = DataFrame(CSV.File(file1))
     earthquakes2 = DataFrame(CSV.File(file2))
-    earthquakes3 = DataFrame(CSV.File(path * "/data/2022_01_08_2022_02_15.csv"))
-
-    earthquakes = vcat(earthquakes1, earthquakes2, earthquakes3)
-    earthquakes = unique(sort(earthquakes, [:time]))
+    earthquakes = vcat(earthquakes1, earthquakes2)
 
     ## depth unit, km
     function toCartesian(lon, lat; r = 1.02, cxyz = (0, 0, 0))
