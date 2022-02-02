@@ -62,7 +62,7 @@ let
     Label(fig[1, 1, Top()], @lift("Earthquakes on Earth between January 2021 and January 2022.\nOriginal data from USGS\n $(earthquakes[1, :time]) : $(earthquakes[$index, :time])"))
     zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
     rotate!(ax.scene, 3.0)
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "earthquakesTimeSd_1.png"), fig, px_per_unit = 2.0)
 
     record(fig, joinpath(@__DIR__, "output", "earthquakesTimeSd_1.mp4"), framerate = 24) do io

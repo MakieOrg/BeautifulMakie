@@ -26,7 +26,7 @@ let
         tellheight = true, tellwidth = false,
         framevisible = false, titleposition = :left)
     Legend(fig[3, 2], ax2, "Cyl")
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "DensitiesDataSet.svg"), fig) # HIDE
 end;
 # \fig{DensitiesDataSet.svg}

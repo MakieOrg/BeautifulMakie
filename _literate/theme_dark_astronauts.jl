@@ -116,7 +116,7 @@ let
         limits!(ax, -100, 100, -100, 100)
     end
     save(joinpath(@OUTPUT, "theme_dark_astronauts.png"), current_figure(), px_per_unit = 2) # HIDE
-    display(current_figure())
+    ## display(current_figure())
 end;
 # \fig{theme_dark_astronauts.png}
 md"""

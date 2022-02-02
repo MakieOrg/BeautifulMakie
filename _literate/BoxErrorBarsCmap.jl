@@ -12,7 +12,7 @@ let
     barplot!(ax, x, y; strokewidth = 1, color = x, colormap = (:Spectral_10, 0.85),
         strokecolor = :black)
     errorbars!(ax, x, y, yerr; whiskerwidth = 12)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "BoxErrorBarsCmap.svg"), fig) # HIDE
 end;
 # \fig{BoxErrorBarsCmap.svg}

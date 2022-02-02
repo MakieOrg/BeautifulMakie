@@ -16,7 +16,7 @@ let
         lightposition = Vec3f(-2, -3, -3), ambient = Vec3f(0.8, 0.8, 0.8),
         backlight = 1.5f0)
     save(joinpath(@__DIR__, "output", "BlueMarbel.png"), fig, px_per_unit = 2.0) # HIDE
-    display(fig)
+    ## display(fig)
 end
 using Pkg # HIDE
 Pkg.status(["GLMakie", "FileIO", "ImageMagick", "QuartzImageIO"]) # HIDE

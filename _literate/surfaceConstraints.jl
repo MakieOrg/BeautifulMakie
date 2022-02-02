@@ -38,7 +38,7 @@ let
         height = Relative(0.5), width = 20)
     colsize!(fig.layout, 1, Aspect(1, 1.0))
     save(joinpath(@OUTPUT, "surfaceConstraints.png"), fig, px_per_unit = 2.0) # HIDE
-    display(fig)
+    ## display(fig)
 end;
 # \fig{surfaceConstraints.png}
 

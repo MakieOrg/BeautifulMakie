@@ -13,7 +13,7 @@ let
     barplot!(ax, x, y; width = 1.8xerr, strokewidth = 1, color = :transparent,
         strokecolor = :black)
     errorbars!(ax, x, y, yerr; whiskerwidth = 12)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "xBoxErrorBars.svg"), fig) # HIDE
 end;
 # \fig{xBoxErrorBars.svg}

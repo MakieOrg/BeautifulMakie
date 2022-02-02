@@ -60,7 +60,7 @@ let
   fig[1, 3] = axc
   fig[2, :] = axn
   fig[0, :] = axt
-  display(fig)
+  ## display(fig)
   save(joinpath(@__DIR__, "output", "heatmapScaleCrosshair.svg"), fig) # HIDE
   set_theme!()
 end

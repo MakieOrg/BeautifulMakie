@@ -58,7 +58,7 @@ let
         connect!(m, sl2.value)
         tight_ticklabel_spacing!(cbar)
         save(joinpath(@OUTPUT, "tesseralSphericalHSliders.png"), fig, px_per_unit = 2.0) # HIDE
-        display(fig)
+        ## display(fig)
     end
 end;
 # \fig{tesseralSphericalHSliders.png}

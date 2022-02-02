@@ -16,7 +16,7 @@ let
     end
     axislegend(; nbanks = 3, framecolor = (:grey, 0.5))
     save(joinpath(@OUTPUT, "besselFunctions.svg"), fig) # HIDE
-    display(fig)
+    ## display(fig)
 end;
 # \fig{besselFunctions.svg}
 

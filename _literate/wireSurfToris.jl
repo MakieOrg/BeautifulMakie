@@ -39,7 +39,7 @@ let
     fig[1, 1] = cbar2
     colgap!(fig.layout, 2)
     save(joinpath(@__DIR__, "output", "wireSurfToris.png"), fig, px_per_unit = 2.0) # HIDE
-    display(fig)
+    ## display(fig)
 end
 using Pkg # HIDE
 Pkg.status(["GLMakie"]) # HIDE

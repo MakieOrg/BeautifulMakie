@@ -23,7 +23,6 @@ let
         barplot!(ax, [idx + 2], [idx * (2rand() + 1)], color = pattern, strokewidth = 2)
     end
     ax.xticks = (1:8, ["grey", "orange", "/", "\\", "-", "|", "x", "+"])
-    fig
     save(joinpath(@OUTPUT, "strippedBar.png"), fig, px_per_unit = 2.0) # HIDE
 end;
 # \fig{strippedBar.png}

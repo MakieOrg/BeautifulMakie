@@ -14,7 +14,7 @@ let
     errorbars!(ax, x, y, yerr; whiskerwidth = 12, color = yerr,
         linewidth = 2, colormap = :viridis)
     scatter!(ax, x, y; color = yerr, colormap = :viridis, markersize = 15)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "yerrorbars.svg"), fig) # HIDE
 end;
 # \fig{yerrorbars.svg}

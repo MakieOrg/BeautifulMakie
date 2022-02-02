@@ -22,7 +22,7 @@ let
         text!(latexstring(x * y * "\\varphi>0"), position = (-1, -1))
         hidedecorations!(ax; grid = false)
         save(joinpath(@OUTPUT, "series.svg"), fig) # HIDE
-        display(fig)
+        ## display(fig)
     end
 end;
 # \fig{series.svg}

@@ -34,7 +34,7 @@ let
         marker = Rect3f(Vec3f(-1), Vec3f(2)))
     limits!(ax4, -1.2, 1.2, -1.2, 1.2, -1.2, 1.2)
     save(joinpath(@__DIR__, "output", "volumeTransparent.png"), fig, px_per_unit = 2.0) # HIDE
-    display(fig)
+    ## display(fig)
 end
 using Pkg # HIDE
 Pkg.status(["GLMakie"]) # HIDE

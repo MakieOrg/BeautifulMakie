@@ -27,7 +27,7 @@ let
     end
     fig = with_theme(plotVolColormaps, theme_dark())
     save(joinpath(@OUTPUT, "plotVolColormaps.png"), fig, px_per_unit = 2.0) # HIDE
-    display(fig)
+    ## display(fig)
 end;
 # \fig{plotVolColormaps.png}
 

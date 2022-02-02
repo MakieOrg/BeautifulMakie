@@ -32,7 +32,7 @@ let
         fig
     end
     fig = FigGridScatters()
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "ScattersCmaps.svg"), fig) # HIDE
 end;
 # \fig{ScattersCmaps.svg}

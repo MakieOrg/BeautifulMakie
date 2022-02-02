@@ -67,7 +67,7 @@ let
         plotGraph3D(adjacencyM3D, x, y, z)
     end
     save(joinpath(@__DIR__, "output", "RRGraph3D.png"), rrgraph3D, px_per_unit = 2.0) # HIDE
-    display(rrgraph3D)
+    ## display(rrgraph3D)
 end
 
 using Pkg # HIDE

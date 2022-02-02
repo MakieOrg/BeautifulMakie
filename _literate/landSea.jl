@@ -20,7 +20,6 @@ let
     ax.ytickformat = "{:d}ᵒ"
     fig[1,1] = ax
     fig[1,2] = cbar
-    fig
     save(joinpath(@__DIR__, "output", "landSea.png"), fig, px_per_unit = 2.0) # HIDE
 end
 

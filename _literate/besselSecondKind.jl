@@ -19,7 +19,7 @@ let
     axislegend(; position = :rb, nbanks = 2, framecolor = (:grey, 0.5))
     ylims!(-1.8, 0.7)
     save(joinpath(@OUTPUT, "besselSecondKind.svg"), fig) # HIDE
-    display(fig)
+    ## display(fig)
     set_theme!() # HIDE
 end;
 # \fig{besselSecondKind.svg}

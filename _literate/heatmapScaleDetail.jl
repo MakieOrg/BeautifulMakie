@@ -69,7 +69,7 @@ let
   fig[1, 4] = axc
   fig[2, :] = axn
   fig[0, :] = axt
-  display(fig)
+  ## display(fig)
   save(joinpath(@__DIR__, "output", "heatmapScaleDetail.svg"), fig) # HIDE
   set_theme!()
 end

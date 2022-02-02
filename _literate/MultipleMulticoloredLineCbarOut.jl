@@ -18,7 +18,7 @@ let
     cbars = [Colorbar(fig[1, i+1], lineas[i], label = labels[i], labelsize = 22)
              for i in 1:4]
     colgap!(fig.layout, 5)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "MultipleMulticoloredLineCbarOut.svg"), fig) # HIDE
 end;
 # \fig{MultipleMulticoloredLineCbarOut.svg}

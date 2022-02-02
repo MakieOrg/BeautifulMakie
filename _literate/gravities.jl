@@ -131,8 +131,6 @@ let
     colgap!(fig.layout, 0)
     rowsize!(fig.layout, 2, Auto(0.2))
     rowsize!(fig.layout, 4, Auto(0.2))
-    fig
-
     record(fig, joinpath(@OUTPUT, "gravities.mp4"), framerate = 2 * framerate) do io
         for i in 1:frames
             f[] = i

@@ -25,7 +25,7 @@ let
     end
     fig = with_theme(EpicycloidLines, theme_black())
     save(joinpath(@OUTPUT, "Epicycloid.svg"), fig) # HIDE
-    display(fig)
+    ## display(fig)
 end;
 # \fig{Epicycloid.svg}
 md"""

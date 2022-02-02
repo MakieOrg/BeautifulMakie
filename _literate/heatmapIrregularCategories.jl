@@ -33,7 +33,7 @@ let
     ax2 = Axis(fig[1,2]; attr2...)
     heatmap!(ax1, steps(x), steps(y), σ)
     heatmap!(ax2, steps(x), steps(y), σ)
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "heatmapIrregularCategories.svg"), fig) # HIDE
     set_theme!()
 end

@@ -5,4 +5,4 @@
 @def tags = ["syntax", "code"]
 @def literate_mds = true
 
-\literate{/_literate/MulticoloredLinesLegOut.jl}
+`\literate{/_literate/MulticoloredLinesLegOut.jl}`

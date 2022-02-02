@@ -14,7 +14,7 @@ let
     Colorbar(fig[1, 2], cls, label = "α-q")
     limits!(ax, 0, 4π, 0, 4π)
     colsize!(fig.layout, 1, Aspect(1, 1.0))
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "contourQubit.svg"), fig) # HIDE
 end
 using Pkg # HIDE

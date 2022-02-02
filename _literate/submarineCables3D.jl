@@ -83,7 +83,7 @@ let
     end
     fig = with_theme(plotCables3D, theme_black())
     save(joinpath(@OUTPUT, "submarineCables3D.png"), fig) # HIDE
-    display(fig)
+    ## display(fig)
 end;
 # \fig{submarineCables3D.png}
 

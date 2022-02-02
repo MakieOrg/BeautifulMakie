@@ -39,7 +39,7 @@ let
     end
     fig = with_theme(plotCables, theme_dark())
     save(joinpath(@__DIR__, "output", "submarineCables.png"), fig) # HIDE
-    display(fig)
+    ## display(fig)
 end
 using Pkg # HIDE
 Pkg.status(["GLMakie", "CairoMakie", "Downloads", "GeoJSON", "GeoInterface"]) # HIDE

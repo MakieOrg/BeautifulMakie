@@ -29,7 +29,7 @@ let
     poly(polys, color = rand(size(tri)[1]), strokewidth = 0.5, colormap = :Hiroshige,
         figure = (; resolution = (800, 800), fontsize = 22),
         axis = (; aspect = DataAspect(), title = "Delaunay triangulation"))
-    display(current_figure())
+    ## display(current_figure())
     save(joinpath(@OUTPUT, "delaunayTriangulation.svg"), current_figure()) # HIDE
     set_theme!()
 end;

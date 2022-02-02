@@ -17,7 +17,7 @@ let
         strokewidth = 1, label = "vertical")
     limits!(ax, 0, 2, -5, 5)
     axislegend(ax, position = :rt)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "ViolinPlot.svg"), fig) # HIDE
 end;
 # \fig{ViolinPlot.svg}
