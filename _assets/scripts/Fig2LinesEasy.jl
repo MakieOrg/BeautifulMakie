@@ -1,20 +1,20 @@
-# by lazarusA # HIDE
-# using GLMakie # HIDE
+# by Lazaro Alonso
 using CairoMakie
 CairoMakie.activate!() # HIDE
 let
     x = -2π:0.1:2π
-    lines(x, sin.(x), color = "#56B4E9", linewidth = 2, label = "sin",
-        axis = (xlabel = "x", ylabel = "f(x)", xgridcolor = :red,
-        xgridstyle=:dash, xgridwidth=0.85, xtickalign=1, xticksize=20),
-        figure = (resolution = (700, 450), fontsize = 18, font = "sans"))
+    lines(x, sin.(x); color = "#56B4E9", linewidth = 2, label = L"sin",
+        axis = (xlabel = L"x", ylabel = L"f(x)", xgridcolor = :red,
+            xlabelsize = 22, ylabelsize = 22,
+            xgridstyle = :dashdot, xgridwidth = 0.85,
+            xtickalign = 1, xticksize = 20),
+        figure = (resolution = (600, 400), font = "CMU Serif"))
 
-    lines!(x, cos.(x), color = :black, linestyle = :dash, label = "cos")
-    limits!(-2π, 2π, -1,1)
-    axislegend("legend", position = :lb)
+    lines!(x, cos.(x); color = :black, linestyle = :dash, label = L"cos")
+    limits!(-2π, 2π, -1, 1)
+    axislegend("Legend", position = :lb)
     current_figure()
-    #save("Fig2Lines.png", fig, px_per_unit = 2)
-    save(joinpath(@__DIR__, "output", "Fig2LinesEasy.png"), current_figure(), px_per_unit = 2) # HIDE
+    save(joinpath(@__DIR__, "output", "Fig2LinesEasy.svg"), current_figure()) # HIDE
 end
 
 using Pkg # HIDE

@@ -18,17 +18,17 @@ let
   #x, y, z = sol[1,:], sol[2,:], sol[3,:]
   # the plot/animation
   with_theme(theme_dark()) do
-    fig = Figure(resolution=(1200,1200), fontsize = 20)
+    fig = Figure(resolution=(1200,800), fontsize = 22)
     ax = Axis3(fig[2,1], aspect = :data, azimuth = -0.3π, elevation = π/9,
       perspectiviness = 0.5)
     # let's start with some points, so that the plot is not empty
-    points = Observable([Point3f0(sol[:,1]), Point3f0(sol[:,2])])
+    points = Observable([Point3f(sol[:,1]), Point3f(sol[:,2])])
     color = Observable(tempo[1:2])   # color value is also updated
     attr = (color = color, transparency = true, colormap = :Spectral_11)
     pltobj = lines!(ax, points; attr..., overdraw = false)
     scatter!(ax, map(x-> x[end], points); markersize = 0.04, color = :white,
       markerspace = SceneSpace)
-    cbar = Colorbar(fig[1,1], pltobj, label = "time", height = 15,
+    Colorbar(fig[1,1], pltobj, label = "time", height = 15,
       vertical = false, ticksize=15, tickalign = 1, width = Relative(0.5))
     # the animation is done by updating the Observables
     path = joinpath(@__DIR__, "output", "lorenzAttractorAnim.mp4")

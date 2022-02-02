@@ -1,10 +1,13 @@
-<div class="page-foot">
-
-  <div align="right">
-     Last Updated: {{ fill fd_mtime }}
-  </div>
-<!--
-<script type='text/javascript' id='clustrmaps'
-  src='https://cdn.clustrmaps.com/map_v2.js?cl=080808&w=350&t=n&d=xLzejgAgiuTZK9q-myRo_QBWojYzPce67wdC_98QhOI&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
--->
+<div class="docs-footer container grid-lg" id="copyright">
+    <p><a href="https://github.com/lazarusA/BeautifulMakie" target="_blank">GitHub</a> · <a
+            href="https://twitter.com/LazarusAlon" target="_blank">Twitter</a> · <a
+            href="https://github.com/sponsors/lazarusA?o=esb" target="_blank">Sponsor</a> </p>
+    <p>Designed and built with · <a href="https://picturepan2.github.io/spectre/" target="_blank"> SPECTRE Version </a> <span class="version"></span> ·
+        <a href="https://github.com/tlienart/Franklin.jl/" target="_blank"> Franklin.jl </a> and <span class="text-error">&hearts;</span> by <a href="https://twitter.com/LazarusAlon"
+            target="_blank"> {{ fill author }} </a>. Licensed under the <a
+            href="" target="_blank">MIT License</a>.</p>
 </div>
+{{ if hascode }}
+{{ insert foot_highlight.html }}
+{{ insert foot_clipboard.html }}
+{{ end }}

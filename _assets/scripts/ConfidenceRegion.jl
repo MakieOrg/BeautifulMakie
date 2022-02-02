@@ -1,5 +1,4 @@
-# by lazarusA # HIDE
-# using GLMakie # HIDE
+# by Lazaro Alonso
 using CairoMakie
 CairoMakie.activate!() # HIDE
 let
@@ -7,14 +6,13 @@ let
     y1d =  sin.(x) ./ x
     lower = y1d .- 0.1
     upper = y1d .+ 0.1
+
     fig = Figure(resolution = (600, 400))
-    ax = Axis(fig, xlabel = "x", ylabel = "y")
+    ax = Axis(fig[1,1], xlabel = "x", ylabel = "y")
     lines!(x, y1d, color = :black)
-    band!(x, lower, upper; color = ("#E69F00", 0.2))
-    fig[1,1] = ax
-    fig
-    #save("ConfidenceRegion.png"), fig, px_per_unit = 2.0)
-    save(joinpath(@__DIR__, "output", "ConfidenceRegion.png"), fig, px_per_unit = 2.0) # HIDE
+    band!(x, lower, upper; color = (:green, 0.2))
+    display(fig)
+    save(joinpath(@__DIR__, "output", "ConfidenceRegion.svg"), fig) # HIDE
 end
 
 

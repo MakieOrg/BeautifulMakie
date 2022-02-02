@@ -1,12 +1,8 @@
 @def title = "streamplotAndHeatmap"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-
-## Streamplot and heatmap field
-\fig{/_assets/scripts/output/streamplotAndHeatmap.png}
-\input{julia}{/_assets/scripts/streamplotAndHeatmap.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/streamplotAndHeatmap}
+\literate{/_literate/streamplotAndHeatmap.jl}

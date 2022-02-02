@@ -1,5 +1,4 @@
 # Example by @walra356 (modified)
-#using GLMakie, Random # HIDE
 using CairoMakie, Random
 CairoMakie.activate!() #HIDE
 let
@@ -10,13 +9,13 @@ let
     σ = rand(length(x), length(y))      # beware of dims
     # custom ticks
     function steps(x::Vector{T} where T<:Real)
-    sum(x .< 0) == 0 || error("Error: $x - negative step length not allowed")
-    (s = append!(eltype(x)[0],x); [Base.sum(s[1:i]) for i ∈ Base.eachindex(s)])
+        sum(x .< 0) == 0 || error("Error: $x - negative step length not allowed")
+        (s = append!(eltype(x)[0],x); [Base.sum(s[1:i]) for i ∈ Base.eachindex(s)])
     end
     function stepcenters(x::Vector{T} where T<:Real)
-    δ = x .* 0.5
-    s = append!(eltype(x)[0],x)
-    [Base.sum(s[1:i]) for i ∈ Base.eachindex(x)] .+ δ
+        δ = x .* 0.5
+        s = append!(eltype(x)[0],x)
+        [Base.sum(s[1:i]) for i ∈ Base.eachindex(x)] .+ δ
     end
     stepedges(x::Vector{T} where T<:Real) = steps(x)
 
@@ -30,14 +29,12 @@ let
         yticks = (stepedges(y), string.(0:n)), xlabel="cat", )
 
     fig = Figure()
-    ax1 = Axis(fig; attr1...)
-    ax2 = Axis(fig; attr2...)
+    ax1 = Axis(fig[1,1]; attr1...)
+    ax2 = Axis(fig[1,2]; attr2...)
     heatmap!(ax1, steps(x), steps(y), σ)
     heatmap!(ax2, steps(x), steps(y), σ)
-    fig[1,1] = ax1
-    fig[1,2] = ax2
-    fig
-    save(joinpath(@__DIR__, "output", "heatmapIrregularCategories.png"), fig, px_per_unit = 2.0) # HIDE
+    display(fig)
+    save(joinpath(@__DIR__, "output", "heatmapIrregularCategories.svg"), fig) # HIDE
 end
 using Pkg # HIDE
 Pkg.status(["CairoMakie", "Random"]) # HIDE

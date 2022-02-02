@@ -1,10 +1,8 @@
 @def title = "MulticoloredLinesCbarOut"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
-## Multicolored Lines Cbar Out
-\fig{/_assets/scripts/output/MulticoloredLinesCbarOut.png}
-\input{julia}{/_assets/scripts/MulticoloredLinesCbarOut.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/MulticoloredLinesCbarOut}
+@def literate_mds = true
+
+\literate{/_literate/MulticoloredLinesCbarOut.jl}

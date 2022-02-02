@@ -1,6 +1,7 @@
+# by Lazaro Alonso
 using GLMakie
 let
-    set_theme!(theme_black())
+    set_theme!(theme_dark())
     # https://www.jpl.nasa.gov/edu/pdfs/scaless_reference.pdf
     # 1au = 149597870700 # meters
     distances = [0, 0.39, 0.72, 1, 1.52, 5.2, 9.54, 19.2, 30.06] * 149597870700 # meters
@@ -10,10 +11,10 @@ let
         "burlywood", "cyan3", "dodgerblue"]
     names = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
 
-    point = Node(Point2f(0, 0))
-    tail = Node(Point2f[(0, 0)])
-    ms = Node(20.0)
-    tempo = Node(0.0)
+    point = Observable(Point2f(0, 0))
+    tail = Observable(Point2f[(0, 0)])
+    ms = Observable(20.0)
+    tempo = Observable(0.0)
     msP = diameters / maximum(diameters) * 700
 
     fig = Figure(resolution = (1600, 800))
@@ -31,8 +32,8 @@ let
     hidespines!(axS)
     xlims!(axS, -1, 1)
     ylims!(axS, -1, 1)
-    Label(fig[1, 2, TopLeft()], "so fast! 😃", padding = (0, -150, 0, 0), textsize = 20)
-    Label(fig[1, 2, TopRight()], "so slow 😢", padding = (-150, 0, 0, 0), textsize = 20)
+    Label(fig[1, 2, TopLeft()], "so fast! 😃", padding = (0, -150, 0, 0), textsize = 28)
+    Label(fig[1, 2, TopRight()], "so slow 😢", padding = (-150, 0, 0, 0), textsize = 28)
     Label(fig[2, :], "Twitter: @LazarusAlon", color = :white,
         tellwidth = false, textsize = 30, halign = :right,
         font = "noto-sands-bold")

@@ -1,11 +1,8 @@
-@def title = "xyerrorbars"
+@def title = "Simple x-y error bars"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Simple xy error bars
-\fig{/_assets/scripts/output/xyerrorbars.png}
-\input{julia}{/_assets/scripts/xyerrorbars.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/xyerrorbars}
+\literate{/_literate/xyerrorbars.jl}

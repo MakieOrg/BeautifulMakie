@@ -66,7 +66,7 @@ p{
   margin-bottom:1em
 }
 a{
-  color:#1873CC; /*#0E39B0; */
+  color:#0E39B0;
   text-decoration:none;
 }
 pre{
@@ -87,11 +87,12 @@ code{
 li:not(:last-child) {
     margin-bottom: 5px;
 }
+
 img{
-  max-width:100%;
+  max-width:80%;
   height:auto;
   border-radius: 8px;
-  box-shadow: 0 0 12px #333;
+  box-shadow: 0px 0px 0px #333;
   transition: all 1.5s ease;
   padding: 4px;
   display: block;
@@ -99,7 +100,7 @@ img{
   margin-right: auto;
 }
 img:hover {
-  box-shadow: 0 0 32px #333;
+  box-shadow: 0 0 0px #333;
   padding: 4px;
 }
 
@@ -109,288 +110,6 @@ hr{
   margin:2rem 0;
   background-color:#eeebee;
   border:0;
-}
-
-
-@media (min-width: 50rem){
-  .page-wrap{
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-}
-
-/************************************************************
-=============================================================
-SIDE BAR
-============================================================
-************************************************************/
-
-.side-bar{
-  z-index: 100;
-  display: flex;
-  flex-wrap: wrap;
-  background-color:#171819;
-}
-.side-bar .header {
-  display: flex;
-  min-height: 60px;
-  align-items: left;
-}
-.side-bar .header .title{
-  padding-right:1rem;
-  padding-left:1rem;
-  flex-grow:1;
-  display:flex;
-  height:100%;
-  align-items:left;
-  padding-top:.75rem;
-  padding-bottom:.75rem;
-  color:#27262b;
-  font-size:18px !important;
-  line-height: 1.15em;
-}
-.show-menu {
-  cursor: pointer;
-  appearance:none;
-  display:flex;
-  height:100%;
-  /* line-height: 60px; */
-  padding:1rem;
-  align-items:center;
-  color:#0E39B0;
-  text-transform:uppercase;
-  background:transparent;
-  text-align:left;
-  padding-right: 2rem;
-  border:0;
-  width: calc(100% - 220px);
-  background-color: white;
-}
-.side-bar .menu {
-  width: 100%;
-  padding-right:1rem;
-  padding-left:1rem
-}
-.menu-list{
-  padding:0;
-  margin-top:0;
-  margin-bottom:0;
-  list-style:none
-}
-.menu-list-child-list{
-  padding-left:.75rem;
-  line-height: 0.9em;
-  list-style:none;
-}
-.menu-list-child-list .menu-list-link{
-  color:#5c5962 /*#5c5962*/
-}
-.menu-list-child-list .menu-list-item{
-  position:relative
-}
-.menu-list-child-list .menu-list-item::before{
-  position:absolute;
-  margin-top:0.3em;
-  margin-left:-0.8em;
-  color:rgba(92,89,98,0.3);
-  content:"- "
-}
-.menu-list-child-list .menu-list-item.active::before{
-  color:#FF4500; /*#5c5962 */
-}
-.menu-list-item{
-  font-size:14px !important;
-  margin:0
-}
-.menu-list-parent .menu-list-child-list{
-  display:none
-}
-.menu-list-parent.active .menu-list-child-list{
-  display:block
-}
-.menu-list-item.active a {
-  font-weight:600;
-  color:#b7b7b7;
-  text-decoration:none
-}
-.menu-list-child-list{
-  margin-top: 0.5em;
-  padding-left: 0.5em;
-}
-ul.menu-list-child-list li {
-  font-size: 80%;
-}
-
-.menu-list-link{
-  display:block;
-  padding-top:.25rem;
-  padding-bottom:.25rem
-}
-/* .menu-list-link.active{
-  font-weight:600;
-  color:#27262b;
-  text-decoration:none
-} */
-
-.side-bar .footer {
-  width: 300px;
-  font-size: 13px;
-  padding-right:1rem;
-  padding-left:1rem;
-  position:relative;
-  bottom:0;
-  left:0;
-  padding-top:1rem;
-  padding-bottom:1rem
-}
-
-/*Hide checkbox*/
-input[type=checkbox]{display: none;}
-/*Show menu when invisible checkbox is checked*/
-input[type=checkbox]:checked ~ #side-menu{display: block;}
-
-/* side bar adjustments for narrow mode (bar on top) */
-@media (max-width : 49.99rem){
-  /* Toggle menu off */
-  .side-bar .menu {
-    display: none;
-    padding-left:5px;
-    padding-bottom:10px;}
-  .side-bar {
-    border-bottom: 1px solid #eeebee;
-  }
-  .side-bar .header {
-    padding-left: 5px;
-    width: 150px;} /* middle space */
-  .show-menu {display: block;}
-  .side-bar .footer  {
-    display:none;
-  }
-}
-/* side bar adjustments for narrow mode (bar on top) */
-@media (min-width: 31.25rem){
-  .side-bar .header .title{
-    font-size:24px !important
-  }
-  .menu-list-item{
-    font-size:16px !important
-  }
-}
-/* side bar adjustments for medium mode (bar on side) */
-@media (min-width: 50rem){
-  .side-bar{
-    flex-wrap: nowrap;
-    position: absolute;
-    width: 248px;
-    height: 100%;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  .side-bar .header{
-    z-index: 101;
-    height: 60px;
-    max-height: 60px;
-    border-bottom: 2px solid #eeebee;
-    padding-right:3.5rem;
-    padding-left:2rem;
-  }
-  .side-bar .header .title{
-    font-size: 30px !important;
-    padding-top:.5rem;
-    padding-bottom:.5rem
-  }
-  .show-menu {
-    display:none
-  }
-  .side-bar .menu{
-    width: 260px;
-    padding-right:2.5rem;
-    /* padding-left:0rem; */
-    padding-top:1.5rem;
-    padding-bottom:1rem;
-    overflow-y:auto;
-    flex:1 1 auto
-  }
-  .side-bar .footer{
-    padding-right:2rem;
-    padding-left:4rem;
-    position: static;
-  }
-}
-/* side bar adjustments for wide mode (bar on side) 100% - 66.5rem */
-@media (min-width: 66.5rem){
-  .side-bar{
-    width:calc((100% - 66.5rem) / 2 + 264px);
-    min-width:264px;
-  }
-}
-
-
-/************************************************************
-=============================================================
-MAIN CONTENT
-============================================================
-************************************************************/
-
-@media (min-width: 50rem){
-  .main-content-wrap{
-    position:absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-overflow-scrolling: touch;
-    overflow-x: hidden;
-    overflow-y: scroll
-  }
-  .main-content{
-    position:relative;
-    max-width: 800px;
-    margin-left: 248px
-  }
-}
-@media (min-width: 66.5rem){
-  .main-content {
-    margin-left:calc((100% - 1064px) / 2 + 264px);
-  }
-}
-
-.main-header{
-  padding-right:1rem;
-  padding-left:1rem;
-  display:none;
-  /* padding-top:1rem; */
-  /* padding-bottom:1rem; */
-  background-color:#f5f6fa;
-  height: 60px;
-  line-height: 60px;
-}
-@media (min-width: 50rem){
-  .main-header{
-    padding-right:2rem;
-    padding-left:2rem
-  }
-}
-@media (min-width: 50rem){
-  .main-header{
-    display:flex;
-    justify-content:flex-end;
-    height:line-height: 60px;
-    background-color:#fff;
-    border-bottom:1px solid #eeebee;
-  }
-}
-.main-footer{
-  font-size: 14px;
-  color: darkgray;
-  border-top: 1px solid #eeebee;
-  padding-top: 15px;
 }
 
 .franklin-content {
@@ -412,7 +131,9 @@ MAIN CONTENT
 
 /************************************************************
 =============================================================
+
 JUDOC SPECIFICS
+
 ============================================================
 ************************************************************/
 
@@ -516,9 +237,9 @@ td.fndef-backref {
 }
 
 .franklin-content img {
-    width: 70%;
+    width: 80%;
     text-align: center;
-    padding-left: 1%; }
+    padding-left: 10%; }
 
 .franklin-content .img-small img {
     width: 50%;
@@ -543,6 +264,11 @@ body { counter-reset: eqnum; }
     position: relative;
     float: right;
     padding-right: 5px; }
+
+.nonumber .katex-display::after {
+  counter-increment: nothing;
+  content: "";
+}
 
 /* ==================================================================
     CODE & HIGHLIGHT.JS
@@ -584,17 +310,6 @@ body { counter-reset: eqnum; }
 code.language-yaml .hljs-attr { color: #ca4418;}
 code.language-yaml .hljs-string { color: green;}
 
-ul.menu-list-child-list {
-  padding-bottom: 0.5em;
-}
-
-ul.menu-list-child-list li{
-  padding-left: 1em;
-}
-ul.menu-list-child-list a.menu-list-link {
-  font-size: 14px !important;
-}
-
 
 /* LUNR */
 .result-title a {
@@ -625,30 +340,6 @@ ul.menu-list-child-list a.menu-list-link {
 #lunrSearchForm {
   margin-top: 1em;
 }
-
-/* .pagination {
-	text-align: center;
-	margin: 16px 8px 16px 8px;
-}
-.pagination a {
-	color: black;
-	padding: 8px 16px;
-	text-decoration: none;
-}
-.pagination a.active {
-	background-color: #4CAF50;
-	color: white;
-}
-.pagination a:hover:not(.active) {
-	background-color: #ddd;
-} */
-
-/* ================================================================== */
-/*  PAGE-DIVS
-- .flist = lists with a checkmark
-- .note = highlight the background in light yellow
-*/
-/* ================================================================== */
 
 .blank {
   height: 1.5em;
@@ -787,20 +478,13 @@ ul.menu-list-child-list a.menu-list-link {
 .franklin-content h2 > a {white-space: normal;}
 .franklin-content h3 > a {white-space: normal;}
 
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 20%;
-  padding: 10px;
-}
-
-.column img {
-  margin-top: 12px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.copy-button {
+	cursor: pointer;
+	border: 0;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 500;
+	padding: 6px 10px 10px;
+	color: rgb(24, 21, 24);
+	background-color: rgb(189, 196, 207);
 }

@@ -1,11 +1,8 @@
 @def title = "lorenzAttractorAnim"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Lorenz Attractor Animation
-\video{/assets/scripts/diffEquations/output/lorenzAttractorAnim.mp4}
-\input{julia}{/_assets/scripts/diffEquations/lorenzAttractorAnim.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/diffEquations/lorenzAttractorAnim}
+\literate{/_literate/lorenzAttractorAnim.jl}

@@ -3,30 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{if hasmath}} {{insert head_katex.html }}     {{end}}
-  {{if hascode}}
-    {{insert head_highlight.html }}
+  {{if hasmath}} {{insert head_katex.html }} {{end}}
+  {{if hascode}} {{insert head_highlight.html }} 
     <script src="/libs/clipboard.min.js"></script>
-    <script src="/libs/minimal-mistakes/main.min.js"></script>
-    <script defer type="text/javascript" src="https://api.pirsch.io/pirsch.js" id="pirschjs"
-      data-code="F9rUGgeRyZplkavqbRaO7CYhKQhWoaRy"></script>
-
   {{end}}
 
+  <link rel="stylesheet" href="/css/spectre.min.css">
+  <link rel="stylesheet" href="/css/spectre-exp.min.css">
+  <link rel="stylesheet" href="/css/spectre-icons.min.css">
+  <link rel="stylesheet" href="/css/spectre-overrides.css">
+  <link rel="stylesheet" href="/css/docs.min.css">
   <link rel="stylesheet" href="/css/jtd.css">
-  <link rel="stylesheet" href="/css/extras.css">
-  <link rel="stylesheet" href="/css/minimal-mistakes.css">
-
-  {{isdef title}} <title>{{fill title}}</title>  {{end}}
-
-  <!-- LUNR -->
- <script src="/libs/lunr/lunr.min.js"></script>
- <script src="/libs/lunr/lunr_index.js"></script>
- <script src="/libs/lunr/lunrclient.min.js"></script>
-
 </head>
-<body>                      <!-- closed in foot.html -->
-{{insert pgwrap.html}}
+<body>
+  <div class="docs-container off-canvas off-canvas-sidebar-show">
+  {{insert menu.html}}
 
-
-<!-- Content appended here (in class franklin-content) -->
+<div class="off-canvas-content">
+<div id="content" class="docs-content">
+<div class="container">
+<!-- Content appended here -->
