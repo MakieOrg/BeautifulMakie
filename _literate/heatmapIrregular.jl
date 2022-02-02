@@ -11,7 +11,7 @@ let
     Colorbar(fig[1, 2], hmap; label="z values", width=15, ticksize=15, tickalign=1)
     colsize!(fig.layout, 1, Aspect(1, 1.0))
     colgap!(fig.layout, 7)
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "heatmapIrregular.svg"), fig) # HIDE
 end
 using Pkg # HIDE

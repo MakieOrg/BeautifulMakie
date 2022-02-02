@@ -5,4 +5,4 @@
 @def hasmath = true
 @def literate_mds = true
 
-\literate{/_literate/Fig2LinesEasy.jl}
+`\literate{/_literate/Fig2LinesEasy.jl}`

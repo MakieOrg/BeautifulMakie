@@ -11,7 +11,7 @@ let
         axis = (; type = Axis3, perspectiveness = 0.5, azimuth = 2.19, elevation = 0.57,
             aspect = (1, 1, 1)))
     save(joinpath(@__DIR__, "output", "volume.png"), fig, px_per_unit = 2.0) # HIDE
-    display(fig)
+    ## display(fig)
 end
 using Pkg # HIDE
 Pkg.status(["GLMakie"]) # HIDE

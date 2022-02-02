@@ -12,7 +12,7 @@ let
         Colorbar(fig[1:2, j+1]; limits=(0,1), colormap = cmaps[5j], ticklabelsize = 14,
             height = Relative(0.85), ticks = [0, 0.5, 1], tickwidth = 2)
     end
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "heatmap2SharedCbars.svg"), fig) # HIDE
 end
 using Pkg # HIDE

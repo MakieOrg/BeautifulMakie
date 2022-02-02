@@ -11,7 +11,7 @@ let
     ax = Axis(fig[1, 1], xlabel = "variable", ylabel = "values")
     barplot!(ax, x, y; strokewidth = 1, color = :transparent, strokecolor = :black)
     errorbars!(ax, x, y, yerr; whiskerwidth = 12)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "BoxErrorBars.svg"), fig) # HIDE
 end;
 # \fig{BoxErrorBars.svg}

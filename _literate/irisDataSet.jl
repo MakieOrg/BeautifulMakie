@@ -15,7 +15,7 @@ let
             marker = markers[idx], markersize = 15, label = "$(c)")
     end
     axislegend("Species")
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "irisDataSet.svg"), fig) # HIDE
 end
 using Pkg # HIDE

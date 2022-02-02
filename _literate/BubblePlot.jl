@@ -21,7 +21,7 @@ let
         labelpadding = 5, width = 10)
     Colorbar(fig[1, 3], pts2, label = "z2 value", ticklabelsize = 14,
         labelpadding = 5, width = 10)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "BubblePlot.svg"), fig) # HIDE
 end;
 # \fig{BubblePlot.svg}

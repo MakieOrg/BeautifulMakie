@@ -10,7 +10,7 @@ let
         figure = (; resolution = (1200, 800))
     )
     save(joinpath(@__DIR__, "output", "RGBcube.png"), fig, px_per_unit = 2.0) # HIDE
-    display(fig)
+    ## display(fig)
 end
 using Pkg # HIDE
 Pkg.status(["GLMakie", "GeometryBasics", "Colors"]) # HIDE

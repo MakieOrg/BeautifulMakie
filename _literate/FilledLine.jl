@@ -12,7 +12,7 @@ let
     lines!(x, y, color = :orangered, label = "Label")
     band!(x, fill(0, length(x)), y; color = (:orange, 0.25), label = "Label")
     axislegend(; merge = true, position = :lt)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "FilledLine.svg"), fig) # HIDE
 end;
 # \fig{FilledLine.svg}

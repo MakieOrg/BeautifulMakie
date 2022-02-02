@@ -16,7 +16,7 @@ let
         backlight = 5.0f0, figure = (; resolution = (1200, 800)))
     wireframe!(x, y, z, overdraw = false, linewidth = 0.1) # try overdraw = true
     save(joinpath(@OUTPUT, "surface1.png"), fig) # HIDE
-    display(fig)
+    ## display(fig)
 end;
 # \fig{surface1.png}
 

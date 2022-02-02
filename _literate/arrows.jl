@@ -20,7 +20,7 @@ let
         nsteps =100, colormap = cmap, ticksize=15, width = 15, tickalign=1)
     limits!(ax, -3,3,-3,3)
     colsize!(fig.layout, 1, Aspect(1, 1.0))
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "arrows.svg"), fig) # HIDE
 end;
 # \fig{arrows.svg}

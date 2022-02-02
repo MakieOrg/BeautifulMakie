@@ -12,7 +12,7 @@ let
         Colorbar(fig[i, j+1], hmap; height = Relative(0.5), tickwidth = 2,
             ticks = [0, 0.5, 1])
     end
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "heatmapGrid.svg"), fig) # HIDE
 end
 using Pkg # HIDE

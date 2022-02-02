@@ -15,7 +15,7 @@ let
         backlight = 2.0f0)
     wireframe!(x, y, z; overdraw = false, linewidth = 0.1) # try overdraw = true
     save(joinpath(@OUTPUT, "surface1Color.png"), fig, px_per_unit = 2.0) # HIDE
-    display(fig)
+    ## display(fig)
 end;
 # \fig{surface1Color.png}
 

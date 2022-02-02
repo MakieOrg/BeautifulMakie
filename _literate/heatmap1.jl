@@ -13,7 +13,7 @@ let
     Colorbar(fig[1, 2], hmap; label = "values", width = 15, ticksize = 15, tickalign = 1)
     colsize!(fig.layout, 1, Aspect(1, 1.0))
     colgap!(fig.layout, 7)
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "heatmap1.svg"), fig) # HIDE
 end;
 # \fig{heatmap1.svg}

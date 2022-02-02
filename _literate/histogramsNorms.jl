@@ -16,7 +16,7 @@ let
     [hist!(axs[i], data; normalization = normf[i], color = colors[i],
         label = "$(normf[i])") for i in 1:4]
     [axislegend(axs[i], position = :rt) for i in 1:4]
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "histogramsNorms.svg"), fig) # HIDE
 end;
 # \fig{histogramsNorms.svg}

@@ -14,7 +14,7 @@ let
     ax = Axis(fig[1, 1], xlabel = "x", ylabel = "y")
     lines!(x, y1d, color = :black)
     band!(x, lower, upper; color = (:green, 0.2))
-    display(fig)
+    ## display(fig)
     save(joinpath(@OUTPUT, "ConfidenceRegion.svg"), fig) # HIDE
 end;
 # \fig{ConfidenceRegion.svg}

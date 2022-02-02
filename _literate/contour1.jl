@@ -15,7 +15,7 @@ let
     Colorbar(fig[1, 2], cl, label = "egg-l", labelpadding = 0, width = 15,
         ticksize = 15, tickalign = 1)
     colsize!(fig.layout, 1, Aspect(1,0.6))
-    display(fig)
+    ## display(fig)
     save(joinpath(@__DIR__, "output", "contour1.svg"), fig) # HIDE
 end
 using Pkg # HIDE
