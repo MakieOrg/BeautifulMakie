@@ -6,4 +6,5 @@
 @def literate_mds = true
 Take a look at the [interactive version](https://lazarusa.github.io/BeautifulMakie/dashboards/earthquakeswgl/) (still WIP).
 
-\literate{/_literate/earthquakes.jl}
+`\literate{/_literate/earthquakes.jl}`
+\input{julia}{/_literate/earthquakes.jl}
