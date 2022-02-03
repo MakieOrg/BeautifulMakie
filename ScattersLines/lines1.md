@@ -4,4 +4,4 @@
 @def hasmath = true
 @def literate_mds = true
 
-\literate{/_literate/lines1.jl}
+`\literate{/_literate/lines1.jl}`
