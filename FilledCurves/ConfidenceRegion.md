@@ -5,4 +5,4 @@
 @def tags = ["syntax", "code"]
 @def literate_mds = true
 
-`\literate{/_literate/ConfidenceRegion.jl}`
+\literate{/_literate/ConfidenceRegion.jl}
