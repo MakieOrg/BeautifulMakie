@@ -5,4 +5,12 @@
 @def tags = ["syntax", "code"]
 @def literate_mds = true
 
-`\literate{/_literate/gravities.jl}`
+## Gravity Animation
+\video{/assets/scripts/animations/output/gravities.mp4}
+\input{julia}{/_assets/scripts/animations/gravities.jl}
+
+~~~
+<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
+~~~
+
+\prettyshow{/_assets/scripts/animations/gravities}

@@ -25,6 +25,12 @@ ul {
     margin-top: 4rem;
 }
 
+.btn.btn-link {
+  background: transparent;
+  border-color: #e65d0e;
+  color: #5755d9;
+}
+
 .docs-sidebar .docs-nav {
     width: 16rem !important;
 }
@@ -102,4 +108,14 @@ h3 {
 
 summary.accordion-header::-webkit-details-marker {
   display: none;
+}
+
+.ml-1 {
+  margin-left: 0.2rem !important;
+}
+.ml-1 {
+  margin-right: 0.2rem !important;
+}
+.ml-1 {
+  margin-top: .8rem !important;
 }

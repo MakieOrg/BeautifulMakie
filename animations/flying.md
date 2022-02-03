@@ -5,4 +5,12 @@
 @def tags = ["syntax", "code"]
 @def literate_mds = true
 
-`\literate{/_literate/flying.jl}`
+## Flying, the speed of light
+\video{/assets/scripts/animations/output/flying.mp4}
+\input{julia}{/_assets/scripts/animations/flying.jl}
+
+~~~
+<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
+~~~
+
+\prettyshow{/_assets/scripts/animations/flying}
