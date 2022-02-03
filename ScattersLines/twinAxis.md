@@ -5,4 +5,4 @@
 @def hasmath = true
 @def literate_mds = true
 
-`\literate{/_literate/twinAxis.jl}`
+\literate{/_literate/twinAxis.jl}
