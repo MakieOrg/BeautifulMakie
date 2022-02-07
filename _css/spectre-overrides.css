@@ -39,6 +39,22 @@ ul {
     background: var(--output-background) !important;
     border: 1px dashed #f86e1f;
 }
+.menu-item {
+  margin-top: 0;
+  padding: 0 .4rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.menu-item.active a {
+  font-style: italic;
+  font-weight: bold;
+}
+.menu-item a:hover {
+  color: rgb(70, 122, 219);
+  text-decoration: underline overline;
+}
+
 
 th, td, tr {
     border-left: none !important;

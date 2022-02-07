@@ -1,11 +1,11 @@
-# by Lazaro Alonso
+## by Lazaro Alonso
 using GLMakie, GeoMakie, CairoMakie, Downloads
 using GeoJSON, GeoInterface, ColorSchemes
 using HDF5
 GLMakie.activate!()
 let 
-    # data from
-    # https://github.com/telegeography/www.submarinecablemap.com
+    ## data from
+    ## https://github.com/telegeography/www.submarinecablemap.com
     urlPoints = "https://raw.githubusercontent.com/telegeography/www.submarinecablemap.com/master/web/public/api/v3/landing-point/landing-point-geo.json"
     urlCables = "https://raw.githubusercontent.com/telegeography/www.submarinecablemap.com/master/web/public/api/v3/cable/cable-geo.json"
 
