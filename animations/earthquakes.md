@@ -10,6 +10,8 @@ Take a look at the [interactive version](https://lazarusa.github.io/BeautifulMak
 ### Original reference: <https://glowy-earthquakes.glitch.me>
 
 \video{/assets/scripts/animations/output/earthquakes.mp4}
+\fig{/assets/earthquakesviews.png}
+
 \input{julia}{/_assets/scripts/animations/earthquakes.jl}
 
 ~~~
