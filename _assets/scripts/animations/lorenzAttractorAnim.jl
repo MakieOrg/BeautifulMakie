@@ -1,6 +1,7 @@
-md"""
-## Lorenz Attractor Animation
-"""
+#md""" # hide
+## Lorenz Attractor Animation 
+#""" # hide
+
 ## by Lazaro Alonso
 ## see discussion:
 ## https://discourse.julialang.org/t/lorenz-attractor-with-makie/63712/3
@@ -45,10 +46,10 @@ let
         end
     end
 end;
-# \video{/assets/animations/lorenzAttractorAnim/code/output/lorenzAttractorAnim.mp4}
+## \video{/assets/animations/lorenzAttractorAnim/code/output/lorenzAttractorAnim.mp4} # HIDE
 
-md"""
-#### Dependencies
-"""
+## md""" # HIDE
+#### Dependencies # HIDE
+## """
 using Pkg # HIDE
 Pkg.status(["GLMakie", "DifferentialEquations", "ParameterizedFunctions"]) # HIDE
