@@ -12,9 +12,9 @@ let
     streamplot!(ax, odeSol, -2 .. 4, -2 .. 2, colormap = Reverse(:plasma),
         gridsize = (32, 32), arrow_size = 10)
     ## display(fig)
-    save(joinpath(@OUTPUT, "streamplot.svg"), fig) # HIDE
+    save(joinpath(@OUTPUT, "streamplot.png"), fig) # HIDE
 end;
-# \fig{streamplot.svg}
+# \fig{streamplot.png}
 
 using Pkg # HIDE
 md"""

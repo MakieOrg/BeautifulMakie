@@ -1,11 +1,8 @@
 @def title = "moon"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Moon
-\fig{/_assets/scripts/output/moon.png}
-\input{julia}{/_assets/scripts/moon.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/moon}
+\literate{/_literate/moon.jl}

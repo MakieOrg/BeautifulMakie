@@ -1,11 +1,8 @@
 @def title = "topography"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Surface, topography ETOPO1, NetCDF file
-\fig{/_assets/scripts/output/topography.png}
-\input{julia}{/_assets/scripts/topography.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/topography}
+\literate{/_literate/topography.jl}
