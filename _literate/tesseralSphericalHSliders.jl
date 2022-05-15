@@ -1,6 +1,7 @@
 md"""
 ## Tesseral Spherical Harmonics: Menu and Sliders
 """
+
 ## by Lazaro Alonso
 using GLMakie, ColorSchemes
 using AssociatedLegendrePolynomials
@@ -43,20 +44,20 @@ let
         pltobj2 = surface!(ax2, @lift($Ylm .* x), @lift($Ylm .* y), @lift($Ylm .* z), color = Ygrid,
             colormap = cmap, shading = false)
         limits!(ax2, -0.5, 0.5, -0.5, 0.5, -1, 1)
-        cbar = Colorbar(fig[1, 3], pltobj1, label = "Yₗₘ(θ,ϕ)", width = 11, tickalign = 1, tickwidth = 1)
+        #cbar = Colorbar(fig[1, 3], pltobj1, label = "Yₗₘ(θ,ϕ)", width = 11, tickalign = 1, tickwidth = 1)
         fig[0, 1:2] = Label(fig, @lift("Tesseral Spherical Harmonics l = $($l), m = $($m)"), textsize = 20)
-        fig[1:2, 0] = vgrid!(
+        fig[1, 0] = vgrid!(
             Label(fig, "Colormap", width = nothing),
             menu; tellheight = false, width = 150)
         on(menu.selection) do s
             pltobj1.colormap = s
             pltobj2.colormap = s
         end
-        sl = Slider(fig[end+1, 2:3], range = 1:30, startvalue = 2)
-        sl2 = Slider(fig[end+1, 2:3], range = @lift(-$(sl.value):1:$(sl.value)))
+        sl = Slider(fig[end+1, 1:2], range = 1:30, startvalue = 2)
+        sl2 = Slider(fig[end+1, 1:2], range = @lift(-$(sl.value):1:$(sl.value)))
         connect!(l, sl.value)
         connect!(m, sl2.value)
-        tight_ticklabel_spacing!(cbar)
+        #tight_ticklabel_spacing!(cbar)
         save(joinpath(@OUTPUT, "tesseralSphericalHSliders.png"), fig, px_per_unit = 2.0) # HIDE
         ## display(fig)
     end

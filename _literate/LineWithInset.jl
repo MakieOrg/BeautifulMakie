@@ -17,16 +17,12 @@ let
     axislegend()
     ## inset
     ax2 = Axis(fig, bbox = BBox(140, 250, 200, 300), xticklabelsize = 12,
-        yticklabelsize = 12, showgrid = false,
-        title = "inset  at (140, 250, 200, 300)")
+        yticklabelsize = 12, title = "inset  at (140, 250, 200, 300)")
     lines!(ax2, x, y, color = :red)
     limits!(ax2, -3.1, -1.9, -0.05, 0.05)
     ax2.yticks = [-0.05, 0, 0.05]
     ax2.xticks = [-3, -2.5, -2]
     translate!(ax2.scene, 0, 0, 10)
-    translate!(ax2.elements[:background], 0, 0, 9)
-    translate!(ax2.elements[:xgridlines], 0, 0, 9)
-    translate!(ax2.elements[:ygridlines], 0, 0, 9)
     ## display(fig)
     save(joinpath(@OUTPUT, "LineWithInset.svg"), fig) # HIDE
 end;

@@ -67,21 +67,21 @@ let
 
     ## the actual plot !
     function plotCables3D()
-        colors = to_colormap(:Hiroshige, length(splitLines3D))
+        colors = cgrad(:Hiroshige, length(splitLines3D))
         fig = Figure(resolution = (1200, 800))
         ax = LScene(fig[1, 1]; show_axis = false)
         lines!(xw, yw, zw; color = :white, linewidth = 0.5)
-        mesh!(Sphere(Point3(0), 1), color = (:black, 0.35), shading = false,
+        mesh!(Sphere(Point3(0), 1), color = (:black, 0.85), shading = false,
             transparency = true)
         meshscatter!(toPoints3D, color = 1:length(toPoints3D),
             markersize = 0.008, colormap = :Hiroshige, shading = false)
-        [lines!(splitLines3D[i]; linewidth = 0.75, color = colors[i])
-         for i in 1:length(splitLines3D)]
+        [lines!(splitLines3D[i]; linewidth = 0.75, color = colors[i],
+            transparency = true) for i in 1:length(splitLines3D)]
         zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
         rotate!(ax.scene, 1.5)
         fig
     end
-    fig = with_theme(plotCables3D, theme_black())
+    fig = with_theme(plotCables3D, theme_dark())
     save(joinpath(@OUTPUT, "submarineCables3D.png"), fig) # HIDE
     ## display(fig)
 end;

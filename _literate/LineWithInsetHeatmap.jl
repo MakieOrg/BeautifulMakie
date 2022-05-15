@@ -18,8 +18,7 @@ let
     axislegend()
     ## inset
     ax2 = Axis(fig, bbox = BBox(140, 260, 260, 350), xticklabelsize = 12,
-        yticklabelsize = 12, showgrid = false,
-        title = "inset  at (140, 260, 260, 350)")
+        yticklabelsize = 12, title = "inset  at (140, 260, 260, 350)")
     hmap = heatmap!(ax2, x, y, fxy, colormap = :Spectral_11)
     Colorbar(fig[1, 1], hmap, label = "sinc(x,y)", labelpadding = 5,
         tellheight = false, tellwidth = false, ticklabelsize = 12,

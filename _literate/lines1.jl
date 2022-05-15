@@ -1,7 +1,5 @@
 md"""
 ## Single line
-`linewidth, linestyle, backgroundcolor,
-font, xlabelsize, ylabelsize, legend, label`
 """
 ## by Lazaro Alonso
 using CairoMakie

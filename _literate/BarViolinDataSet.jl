@@ -7,7 +7,7 @@ CairoMakie.activate!() #HIDE
 let
     airquality = dataset("datasets", "airquality")
     categories = ["Ozone", "Solar.R", "Wind", "Temp"]
-    colors = to_colormap(:Set1, length(categories))
+    colors = categorical_colors(:Set1, length(categories))
 
     fig = Figure(resolution = (600, 800))
     axs = [Axis(fig[i, 1], xticks = (1:length(categories), categories)) for i in 1:2]

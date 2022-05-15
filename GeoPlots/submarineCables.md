@@ -1,11 +1,8 @@
 @def title = "submarineCables"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Submarine Cables 2D
-\fig{/_assets/scripts/output/submarineCables.png}
-\input{julia}{/_assets/scripts/submarineCables.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/submarineCables}
+\literate{/_literate/submarineCables.jl}

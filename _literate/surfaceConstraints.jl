@@ -32,8 +32,8 @@ let
     ax = Axis3(fig[1, 1], aspect = (1, 1, 1), perspectiveness = 0.5, elevation = π / 9,
         azimuth = 0.2π, zgridcolor = :grey, ygridcolor = :grey, xgridcolor = :grey)
     pltobj = surface!(ax, x, y, zin; colormap = Reverse(:viridis))
-    surface!(ax, x, y, zout1; colormap = ((:orangered, 0.5), (:orangered, 0.5)))
-    surface!(ax, x, y, zout2; colormap = ((:dodgerblue, 0.5), (:dodgerblue, 0.5)))
+    surface!(ax, x, y, zout1; colormap = [(:orangered, 0.5), (:orangered, 0.5)])
+    surface!(ax, x, y, zout2; colormap = [(:dodgerblue, 0.5), (:dodgerblue, 0.5)])
     Colorbar(fig[1, 2], pltobj, label = "xy <=1 & x + y^2<=1",
         height = Relative(0.5), width = 20)
     colsize!(fig.layout, 1, Aspect(1, 1.0))

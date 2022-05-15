@@ -10,7 +10,7 @@ let
     vol2 = (vol1 .+ 1) ./ 2
     # colormap with transparency in the middle
     cmap = :Hiroshige
-    colors = to_colormap(cmap, 101)
+    colors = categorical_colors(cmap, 101)
     n = length(colors)
     g(x) = x^2
     alphas = [g(x) for x in range(-1, 1, length = n)]

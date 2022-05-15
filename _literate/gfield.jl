@@ -26,7 +26,7 @@ axs = LScene(fig[1, 1], show_axis = false)
 vol = [-1.5 / (1 + r(i, j))^(1 / 2) for i in x, j in y]
 
 cmap = :cyclic_tritanopic_wrwc_70_100_c20_n256
-colors = to_colormap(cmap, 101)
+colors = categorical_colors(cmap, 101)
 n = length(colors)
 g(x) = exp(-x^2)
 alphas = [g(x) for x in LinRange(-2, 3, 101)]

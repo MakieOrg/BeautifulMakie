@@ -43,7 +43,7 @@ let
     fig = Figure(resolution = (1400, 1400), fontsize = 24)
     ax = LScene(fig[1, 1], show_axis = false)
     pltobj = meshscatter!(ax, toPoints3D; markersize = ms / 20 .+ 0.001, color = mag,
-        colormap = to_colormap(:afmhot)[10:end], shading = true,
+        colormap = categorical_colors(:afmhot)[10:end], shading = true,
         ambient = Vec3f(0.99, 0.99, 0.99))
     surface!(ax, sphere(; r = 1.0)..., color = tuple.(earth_img, 0.1),
         shading = true, transparency = true)

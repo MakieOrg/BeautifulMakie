@@ -1,11 +1,8 @@
 @def title = "proj4_to_Sphere"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Proj4 OSM agg to Sphere
-\fig{/_assets/scripts/output/proj4_to_Sphere.png}
-\input{julia}{/_assets/scripts/proj4_to_Sphere.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/proj4_to_Sphere}
+\literate{/_literate/proj4_to_Sphere.jl}

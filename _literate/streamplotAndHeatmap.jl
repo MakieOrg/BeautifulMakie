@@ -22,9 +22,9 @@ let
         labelsize = 14, ticklabelsize = 14)
     colgap!(fig.layout, 5)
     ## display(fig)
-    save(joinpath(@OUTPUT, "streamplotAndHeatmap.svg"), fig) # HIDE
+    save(joinpath(@OUTPUT, "streamplotAndHeatmap.png"), fig) # HIDE
 end;
-# \fig{streamplotAndHeatmap.svg}
+# \fig{streamplotAndHeatmap.png}
 
 using Pkg # HIDE
 md"""

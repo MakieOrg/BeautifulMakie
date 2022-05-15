@@ -50,7 +50,7 @@ let
     pltobj = meshscatter!(ax, @lift(toPoints3D[1:$index]);
         markersize = @lift(ms[1:$index] / 20 .+ 0.001),
         color = 1:length(toPoints3D),
-        colormap = tuple.(to_colormap(:Spectral_11)[5:end-5], 0.75),
+        colormap = tuple.(categorical_colors(:Spectral_11)[5:end-5], 0.75),
         shading = true, ambient = Vec3f(1, 1, 1))
     surface!(ax, sphere(; r = 1.0)..., color = tuple.(earth_img, 0.1), shading = true,
         transparency = true)

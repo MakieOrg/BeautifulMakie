@@ -18,7 +18,7 @@ let
     with_theme(theme_minimal()) do
         fig = Figure(resolution = (600, 400))
         ax = Axis(fig[1, 1])
-        series!(curves; color = to_colormap(:Hokusai1, m), linewidth = 1.5)
+        series!(curves; color = categorical_colors(:inferno, m), linewidth = 1.5)
         text!(latexstring(x * y * "\\varphi>0"), position = (-1, -1))
         hidedecorations!(ax; grid = false)
         save(joinpath(@OUTPUT, "series.svg"), fig) # HIDE

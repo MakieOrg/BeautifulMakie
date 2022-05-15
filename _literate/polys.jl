@@ -12,7 +12,7 @@ let
     polysCentric = [ngonShape(0, 0, 3 / i^1.5, i) for i in 3:n]
     polysCircular = [ngonShape(√2 / 2 * sin(θ), √2 / 2 * cos(θ), 0.15 / √idx, idx + 2)
                      for (idx, θ) in enumerate(LinRange(0, 2π * (1 - 1 / (n - 2)), n - 2))]
-    cmap = to_colormap(:Homer1)[3:end]
+    cmap = cgrad(:Homer1, n)
 
     with_theme(theme_light()) do
         fig, ax, = poly(polysCentric; color = 1:n-2, colormap = cmap,

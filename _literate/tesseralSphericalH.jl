@@ -25,7 +25,7 @@ let
     m = 1
     Ygrid = [Y(θ, ϕ, l, m) for θ in θ, ϕ in ϕ]
     Ylm = abs.(Ygrid)
-    cmap = (:dodgerblue, :white)
+    cmap = [:dodgerblue, :white]
 
     set_theme!(theme_dark())
     fig = Figure(resolution = (1200, 800), fontsize = 22)

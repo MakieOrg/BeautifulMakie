@@ -8,8 +8,8 @@ let
     cars = dataset("datasets", "mtcars")
     byCat = cars.Cyl
     categ = unique(byCat)
-    colors1 = to_colormap(:Hiroshige, length(categ))
-    colors2 = to_colormap(:gnuplot, length(categ))
+    colors1 = categorical_colors(:Hiroshige, length(categ))
+    colors2 = categorical_colors(:gnuplot, length(categ))
 
     fig = Figure(resolution = (600, 800))
     ax1 = Axis(fig[2, 1], xlabel = "MPG", ylabel = "density", xgridstyle = :dash,
