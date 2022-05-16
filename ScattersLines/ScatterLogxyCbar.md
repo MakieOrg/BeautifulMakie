@@ -1,11 +1,8 @@
 @def title = "LineLogxyCbar"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Log scale in x and y, scatters and colormap
-\fig{/_assets/scripts/output/ScatterLogxyCbar.svg}
-\input{julia}{/_assets/scripts/ScatterLogxyCbar.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/ScatterLogxyCbar}
+\literate{/_literate/ScatterLogxyCbar.jl}

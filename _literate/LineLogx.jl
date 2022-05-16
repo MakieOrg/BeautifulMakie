@@ -18,7 +18,6 @@ let
 end;
 # \fig{LineLogx.svg}
 
-using Pkg # HIDE
 md"""
 #### Dependencies
 """

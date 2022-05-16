@@ -1,12 +1,10 @@
 @def title = "LineLogy"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
 ## Log scale in y
 
-\fig{/_assets/scripts/output/LineLogy.svg}
-\input{julia}{/_assets/scripts/LineLogy.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/LineLogy}
+\literate{/_literate/LineLogy.jl}
