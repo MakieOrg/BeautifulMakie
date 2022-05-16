@@ -1,11 +1,8 @@
 @def title = "geoCoastlinesField"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## GeoMakie, Coastlines and Field
-\fig{/_assets/scripts/geoMakieExample/output/geoCoastlinesField.png}
-\input{julia}{/_assets/scripts/geoMakieExample/geoCoastlinesField.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/geoMakieExample/geoCoastlinesField}
+\literate{/_literate/geoCoastlinesField.jl}
