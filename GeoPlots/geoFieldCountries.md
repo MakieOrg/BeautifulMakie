@@ -1,11 +1,8 @@
 @def title = "geoFieldCountries"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## GeoMakie, Field and world Countries 
-\fig{/_assets/scripts/geoMakieExample/output/geoFieldCountries.png}
-\input{julia}{/_assets/scripts/geoMakieExample/geoFieldCountries.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/geoMakieExample/geoFieldCountries}
+\literate{/_literate/geoFieldCountries.jl}
