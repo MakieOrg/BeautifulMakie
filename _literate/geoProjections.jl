@@ -34,15 +34,18 @@ let
         "+proj=wag5", "+proj=wag6", "+proj=wag7", "+proj=webmerc +datum=WGS84", "+proj=weren",
         "+proj=wink1", "+proj=wink2", "+proj=wintri"]
 
-    fig = Figure(resolution=(1200, 9000))
-    k = 2
-    for i in 1:39, j in 1:3
-        try
-            ga = GeoAxis(fig[i, j]; dest=projections[k],
-                title=projections[k], coastlines=true)
-            hidedecorations!(ga)
-        catch ex
-        end
+    sproj = ["+proj=weren", "+proj=crast",
+        "+proj=wink1", "+proj=wink2", "+proj=wintri", "+proj=poly",
+        "+proj=putp1", "+proj=putp2", "+proj=putp3", "+proj=putp3p", "+proj=putp4p", "+proj=putp5",
+        "+proj=putp5p", "+proj=putp6", "+proj=putp6p", "+proj=qua_aut", "+proj=robin", "+proj=rouss",
+        "+proj=rpoly", "+proj=sinu"]
+
+    fig = Figure(resolution=(1200, 1200))
+    k = 1
+    for i in 1:5, j in 1:4
+        ga = GeoAxis(fig[i, j]; dest=sproj[k],
+            title=sproj[k], coastlines=true)
+        hidedecorations!(ga)
         k += 1
     end
     fig

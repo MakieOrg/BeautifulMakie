@@ -12,6 +12,9 @@
 .docs-content > .container {
     margin-top: 0.9rem;
 }
+.docs-container {
+  min-height: 100vh;
+}
 
 ul {
     list-style: disc;
