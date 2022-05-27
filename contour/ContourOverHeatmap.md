@@ -1,12 +1,8 @@
 @def title = "ContourOverHeatmap"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Contour lines Over Heatmap
-
-\fig{/_assets/scripts/output/ContourOverHeatmap.png}
-\input{julia}{/_assets/scripts/ContourOverHeatmap.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/ContourOverHeatmap}
+\literate{/_literate/ContourOverHeatmap.jl}
