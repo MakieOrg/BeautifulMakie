@@ -1,11 +1,8 @@
 @def title = "ContourComplexF"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Contour Complex function
-\fig{/_assets/scripts/output/ContourComplexF.png}
-\input{julia}{/_assets/scripts/ContourComplexF.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/ContourComplexF}
+\literate{/_literate/ContourComplexF.jl}

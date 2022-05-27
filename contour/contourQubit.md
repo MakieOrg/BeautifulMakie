@@ -1,11 +1,8 @@
 @def title = "contourQubit"
 @def hascode = true
+@def showall = true
+@def hasmath = true
 @def tags = ["syntax", "code"]
+@def literate_mds = true
 
-## Contour Qubit
-\fig{/_assets/scripts/output/contourQubit.png}
-\input{julia}{/_assets/scripts/contourQubit.jl}
-~~~
-<span style="color:#e53e00;"> <strong> Dependencies </strong> </span>
-~~~
-\prettyshow{/_assets/scripts/contourQubit}
+\literate{/_literate/contourQubit.jl}
