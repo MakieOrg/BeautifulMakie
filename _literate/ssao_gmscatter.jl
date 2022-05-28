@@ -5,7 +5,7 @@ md"""
 using GLMakie
 GLMakie.activate!() # HIDE
 GLMakie.enable_SSAO[] = true
-## close(GLMakie.global_gl_screen()) # close any open screen
+close(GLMakie.global_gl_screen()) ## close any open screen
 let
     x = y = z = 1:10
     f(x, y, z) = x^2 + y^2 + z^2

@@ -1,11 +1,12 @@
 md"""
 ## SSAO, Earth and planes
 """
+## by Lazaro Alonso
 using GLMakie, Colors, LinearAlgebra
 using GeometryBasics, Downloads, FileIO
 GLMakie.activate!() # HIDE
 GLMakie.enable_SSAO[] = true
-## close(GLMakie.global_gl_screen()) # close any open screen
+close(GLMakie.global_gl_screen()) ## close any open screen
 let
     earth_img = load(Downloads.download("https://www.solarsystemscope.com/textures/download/8k_earth_daymap.jpg"))
     function SphereTess(; o=Point3f(0), r=1, tess=64)

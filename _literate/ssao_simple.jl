@@ -7,7 +7,7 @@ using Random: seed!
 seed!(1313)
 GLMakie.activate!() # HIDE
 GLMakie.enable_SSAO[] = true
-## close(GLMakie.global_gl_screen()) # close any open screen
+close(GLMakie.global_gl_screen()) ## close any open screen
 let
     function ssaom()
         positions = [Point3f(x, y, rand()) for x in -7:7 for y in -5:5]
