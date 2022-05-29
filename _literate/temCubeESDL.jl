@@ -117,7 +117,7 @@ let
     end
     fig = with_theme(cubePlot, theme_black())
     save(joinpath(@OUTPUT, "temCubeESDL.png"), fig) # HIDE
-end
+end;
 # \fig{temCubeESDL.png}
 
 md"""

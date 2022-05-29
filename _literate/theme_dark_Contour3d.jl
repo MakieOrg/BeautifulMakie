@@ -30,7 +30,7 @@ let
         wireframe!(ax1, x, y, z; color = (:black, 0.1),
             transparency = true)
         streamplot!(ax1, field, -1 .. 1, -1 .. 1; colormap = cmap, gridsize = (40, 40),
-            arrow_size = 35, linewidth = 1, transformation = (:xy, -zmax))
+            arrow_size = 15, linewidth = 1, transformation = (:xy, -zmax))
         streamplot!(ax2, field, -1 .. 1, -1 .. 1; colormap = cmap, gridsize = (40, 40),
             arrow_size = 15, linewidth = 1)
         fig

@@ -55,10 +55,10 @@ app = JSServe.App() do session::Session
         colormap = Reverse(:amp),
         shading = true,
         ambient = Vec3f(0.99, 0.99, 0.99))
-    surface!(ax, sphere(; r = 1.0)...; color = earth_img, shading = true,
-        colormap =(:oslo, 0.15),
-        transparency = true,
-    )
+    #surface!(ax, sphere(; r = 1.0)...; color = tuple.(earth_img, 0.15), shading = true,
+        #colormap =(:oslo, 0.15),
+    #    transparency = true,
+    #)
 
     Colorbar(fig[1, 2], pltobj, label = "Magnitude",
         height = Relative(1.5 / 4))

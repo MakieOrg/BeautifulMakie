@@ -9,23 +9,68 @@
   <link rel="stylesheet" href="/css/spectre-overrides.css">
   <link rel="stylesheet" href="/css/docs.min.css">
   <link rel="stylesheet" href="/css/jtd.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+  
+    /* Center website */
+    .main {
+      max-width: 1000px;
+      margin: auto;
+    }
+    .row {
+      margin: 5px -8px;
+    }
+    /* Add padding BETWEEN each column */
+    .row,
+    .row>.column {
+      padding: 0px;
+    }
+  
+    /* Create three equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 33.33%;
+      display: none;
+      /* Hide all elements by default */
+    }
+  
+    /* Clear floats after rows */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+    /* Content */
+    .content {
+      background-color: white;
+      padding: 1px;
+    }
+  
+    /* The "show" class is added to the filtered elements */
+    .show {
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <div class="docs-container off-canvas off-canvas-sidebar-show">
     <div class="docs-navbar">
       <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar"><i class="icon icon-menu"></i></a>
       <div class="btn-group">
-        <a class="btn ml-1" href="/ScattersLines/lines1/">Lines & Scatters</a>
-        <a class="btn ml-1" href="/FilledCurves/FilledLine/">Filled Curves</a>
-        <a class="btn ml-1" href="/FlowFields/arrows/">Fields</a>
-        <a class="btn ml-1" href="/StatsPlots/histograms/">Stats</a>
-        <a class="btn ml-1" href="/heatmaps/heatmap1/">Heatmaps</a>
-        <a class="btn ml-1" href="/contour/ContourEgg/">Contour</a>
-        <a class="btn ml-1" href="/surfWireLines/surfWireContour/">3D</a>
-        <a class="btn ml-1" href="/withTheme/Epicycloid/">Themes</a>
-        <a class="btn ml-1" href="/animations/animScatters/">Animations</a>
-        <a class="btn ml-1" href="/dashboards/tesseralSphericalHSliders/">Dashboards</a>
-        <a class="btn ml-1" href="/GeoPlots/blueMarble/">GeoPlots</a>
+        <a class="btn ml-1" onclick="filterSelection('lines')">Lines & Scatters</a>
+        <a class="btn ml-1" onclick="filterSelection('filled')">Filled Curves</a>
+        <a class="btn ml-1" onclick="filterSelection('fields')">Fields</a>
+        <a class="btn ml-1" onclick="filterSelection('stats')">Stats</a>
+        <a class="btn ml-1" onclick="filterSelection('heat')">Heatmaps</a>
+        <a class="btn ml-1" onclick="filterSelection('contour')">Contour</a>
+        <a class="btn ml-1" onclick="filterSelection('3d')">3D</a>
+        <a class="btn ml-1" onclick="filterSelection('themes')"">Themes</a>
+        <a class="btn ml-1" onclick="filterSelection('animations')">Animations</a>
+        <a class="btn ml-1" onclick="filterSelection('dashboards')">Dashboards</a>
+        <a class="btn ml-1" onclick="filterSelection('geo')">GeoPlots</a>
 
         <!-- <input class="docs-search form-input" type="text" placeholder="Search Docs"> -->
         <a class="btn btn-success ml-1" href="https://github.com/sponsors/lazarusA?o=esb" target="_blank">Sponsor</a>
@@ -462,6 +507,564 @@
       src="/assets/bannerDark.png" alt="example2">
   </figure>
 
+  <div class="main">
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('lines')"> Lines & Scatters</button>
+      <button class="btn" onclick="filterSelection('filled')"> Filled Curves</button>
+      <button class="btn" onclick="filterSelection('fields')"> Fields</button>
+      <button class="btn" onclick="filterSelection('stats')"> Stats</button>
+      <button class="btn" onclick="filterSelection('heat')"> Heatmaps</button>
+      <button class="btn" onclick="filterSelection('contour')"> Contour</button>
+      <button class="btn" onclick="filterSelection('3d')"> 3D</button>
+      <button class="btn" onclick="filterSelection('themes')"> Themes</button>
+      <button class="btn" onclick="filterSelection('animations')"> Animations</button>
+      <button class="btn" onclick="filterSelection('dashboards')"> Dashboards</button>
+      <button class="btn" onclick="filterSelection('geo')"> GeoPlots</button>
+      <button class="btn" onclick="filterSelection('all')"> Show all</button>
+    </div>
+  
+    <!-- Portfolio Gallery Grid -->
+    <div class="row">
+      <div class="column lines">
+        <a href="/ScattersLines/lines1/">
+          <img src="/assets/ScattersLines/lines1/code/output/lines1.svg" alt="lines" style="width:100%">
+        </a>
+      </div>
+      <div class="column lines">
+        <a href="/ScattersLines/Fig2Lines/">
+          <img src="/assets/ScattersLines/Fig2Lines/code/output/Fig2LinesEasy.svg" alt="lines" style="width:100%">
+        </a>
+      </div>
+      <div class="column lines">
+        <a href="/ScattersLines/twinAxis/">
+          <img src="/assets/ScattersLines/twinAxis/code/output/twinAxis.svg" alt="lines" style="width:100%">
+        </a>
+      </div>
+      <div class="column lines">
+        <a href="/ScattersLines/lineScatter/">
+          <img src="/assets/ScattersLines/lineScatter/code/output/FigLineScatter.svg" alt="lines" style="width:100%">
+        </a>
+      </div>
+      <div class="column lines">
+        <a href="/ScattersLines/linesScatters/">
+          <img src="/assets/ScattersLines/linesScatters/code/output/FigLinesScatters.svg" alt="lines" style="width:100%">
+        </a>
+      </div>
+      <div class="column lines">
+        <a href="/ScattersLines/linesAndScatters/">
+          <img src="/assets/ScattersLines/linesAndScatters/code/output/FigLinesAndScatters.svg" alt="lines" style="width:100%">
+        </a>
+      </div>
+      <div class="column lines">
+        <a href="/ScattersLines/latexSample/">
+          <img src="/assets/ScattersLines/latexSample/code/output/latexSample.svg" alt="lines"
+            style="width:100%">
+        </a>
+      </div>
+
+      <div class="column lines">
+        <a href="/ScattersLines/LineWithInset/">
+          <img src="/assets/ScattersLines/LineWithInset/code/output/LineWithInset.svg" alt="lines" style="width:100%">
+        </a>
+      </div>
+      <div class="column lines">
+        <a href="/ScattersLines/timeSeries/">
+          <img src="/assets/ScattersLines/timeSeries/code/output/timeSeries.svg" alt="lines" style="width:100%">
+        </a>
+      </div>
+
+      <div class="column lines">
+        <a href="/ScattersLines/MultipleMulticoloredLineCbarOut/">
+          <img src="/assets/ScattersLines/MultipleMulticoloredLineCbarOut/code/output/MultipleMulticoloredLineCbarOut.svg" alt="lines" style="width:100%">
+        </a>
+      </div>
+    <div class="column lines">
+      <a href="/ScattersLines/penguinsDataSetWithChain/">
+        <img src="/assets/ScattersLines/penguinsDataSetWithChain/code/output/penguins.svg"
+          alt="lines" style="width:100%">
+      </a>
+    </div>
+
+    <div class="column lines">
+      <a href="/ScattersLines/linesAndScattersLegOut/">
+        <img src="/assets/ScattersLines/linesAndScattersLegOut/code/output/FigLinesAndScattersLegOut.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column filled">
+      <a href="/FilledCurves/FilledLine/">
+        <img src="/assets/FilledCurves/FilledLine/code/output/FilledLine.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column filled">
+      <a href="/FilledCurves/FilledLines/">
+        <img src="/assets/FilledCurves/FilledLines/code/output/FilledLines.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column filled">
+      <a href="/FilledCurves/Bands/">
+        <img src="/assets/FilledCurves/Bands/code/output/Bands.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column filled">
+      <a href="/FilledCurves/ConfidenceRegion/">
+        <img src="/assets/FilledCurves/ConfidenceRegion/code/output/ConfidenceRegion.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column filled">
+      <a href="/FilledCurves/delaunayTriangulation/">
+        <img src="/assets/FilledCurves/delaunayTriangulation/code/output/delaunayTriangulation.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+
+    <div class="column fields">
+      <a href="/FilledCurves/arrows/">
+        <img src="/assets/FlowFields/arrows/code/output/arrows.svg" alt="lines"
+          style="width:100%">
+      </a>
+    </div>
+    <div class="column fields">
+      <a href="/FilledCurves/streamplot/">
+        <img src="/assets/FlowFields/streamplot/code/output/streamplot.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column fields">
+      <a href="/FilledCurves/complexPolyaField/">
+        <img src="/assets/FlowFields/complexPolyaField/code/output/complexPolyaField.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column fields">
+      <a href="/FilledCurves/streamplots3/">
+        <img src="/assets/FlowFields/streamplots3/code/output/streamplots3.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column fields">
+      <a href="/FilledCurves/streamplotAndHeatmap/">
+        <img src="/assets/FlowFields/streamplotAndHeatmap/code/output/streamplotAndHeatmap.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column stats">
+      <a href="/StatsPlots/histograms/">
+        <img src="/assets/StatsPlots/histograms/code/output/histograms.svg" alt="lines"
+          style="width:100%">
+      </a>
+    </div>
+    <div class="column stats">
+      <a href="/StatsPlots/histogramsNorms/">
+        <img src="/assets/StatsPlots/histogramsNorms/code/output/histogramsNorms.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column stats">
+      <a href="/StatsPlots/histDensity/">
+        <img src="/assets/StatsPlots/histDensity/code/output/histDensity.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column stats">
+      <a href="/StatsPlots/BoxPlot/">
+        <img src="/assets/StatsPlots/BoxPlot/code/output/BoxPlot.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column stats">
+      <a href="/StatsPlots/ViolinPlot/">
+        <img src="/assets/StatsPlots/ViolinPlot/code/output/ViolinPlot.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+
+    <div class="column stats">
+      <a href="/StatsPlots/BoxErrorBars/">
+        <img src="/assets/StatsPlots/BoxErrorBars/code/output/BoxErrorBars.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column stats">
+      <a href="/StatsPlots/xBoxErrorBars/">
+        <img src="/assets/StatsPlots/xBoxErrorBars/code/output/xBoxErrorBars.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column stats">
+      <a href="/StatsPlots/xyerrorbars/">
+        <img src="/assets/StatsPlots/xyerrorbars/code/output/xyerrorbars.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column stats">
+      <a href="/StatsPlots/BoxErrorBarsCmap/">
+        <img src="/assets/StatsPlots/BoxErrorBarsCmap/code/output/BoxErrorBarsCmap.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column stats">
+      <a href="/StatsPlots/strippedBar/">
+        <img src="/assets/StatsPlots/strippedBar/code/output/strippedBar.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column stats">
+      <a href="/StatsPlots/yerrorbars/">
+        <img src="/assets/StatsPlots/yerrorbars/code/output/yerrorbars.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column stats">
+      <a href="/StatsPlots/BarViolinDataSet/">
+        <img src="/assets/StatsPlots/BarViolinDataSet/code/output/BarViolinDataSet.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column stats">
+      <a href="/StatsPlots/DensitiesDataSet/">
+        <img src="/assets/StatsPlots/DensitiesDataSet/code/output/DensitiesDataSet.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column stats">
+      <a href="/StatsPlots/candlestick/">
+        <img src="/assets/scripts/output/candlestick.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmap1/">
+        <img src="/assets/heatmaps/heatmap1/code/output/heatmap1.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmapCbarLeft/">
+        <img src="/assets/scripts/output/heatmapCbarLeft.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmapCbarTop/">
+        <img src="/assets/scripts/output/heatmapCbarTop.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmapCbarBottom/">
+        <img src="/assets/scripts/output/heatmapCbarBottom.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmap1SharedCbar/">
+        <img src="/assets/scripts/output/heatmap1SharedCbar.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmap2SharedCbars/">
+        <img src="/assets/scripts/output/heatmap2SharedCbars.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmapGrid/">
+        <img src="/assets/scripts/output/heatmapGrid.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmapxyz/">
+        <img src="/assets/scripts/output/heatmapxyz.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmapText/">
+        <img src="/assets/scripts/output/heatmapText.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmapIrregular/">
+        <img src="/assets/scripts/output/heatmapIrregular.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmapIrregularCategories/">
+        <img src="/assets/scripts/output/heatmapIrregularCategories.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmapScaleAdd/">
+        <img src="/assets/scripts/output/heatmapScaleAdd.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmapScaleSections/">
+        <img src="/assets/scripts/output/heatmapScaleSections.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmapScaleCrosshair/">
+        <img src="/assets/scripts/output/heatmapScaleCrosshair.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column heat">
+      <a href="/heatmaps/heatmapScaleDetail/">
+        <img src="/assets/scripts/output/heatmapScaleDetail.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+
+    <div class="column contour">
+      <a href="/contour/ContourEgg/">
+        <img src="/assets/contour/ContourEgg/code/output/contour1.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column contour">
+      <a href="/contour/ContourOverHeatmap/">
+        <img src="/assets/contour/ContourOverHeatmap/code/output/ContourOverHeatmap.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column contour">
+      <a href="/contour/contourQubit/">
+        <img src="/assets/contour/contourQubit/code/output/contourQubit.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column contour">
+      <a href="/contour/ContourComplexF/">
+        <img src="/assets/contour/ContourComplexF/code/output/ContourComplexF.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+
+    <div class="column 3d">
+      <a href="/surfWireLines/surfWireContour/">
+        <img src="/assets/surfWireLines/surfWireContour/code/output/surfWireContour.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/surface1/">
+        <img src="/assets/surfWireLines/surface1/code/output/surface1.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/surfaceConstraints/">
+        <img src="/assets/surfWireLines/surfaceConstraints/code/output/surfaceConstraints.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/surface1Color/">
+        <img src="/assets/surfWireLines/surface1Color/code/output/surface1Color.png" alt="lines"
+          style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/surfaceComplexF/">
+        <img src="/assets/surfWireLines/surfaceComplexF/code/output/surfaceComplexF.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/revolutionSurf/">
+        <img src="/assets/surfWireLines/revolutionSurf/code/output/revolutionSurf.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/revolutionSurf2/">
+        <img src="/assets/surfWireLines/revolutionSurf2/code/output/revolutionSurf2.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/ghorn/">
+        <img src="/assets/surfWireLines/ghorn/code/output/ghorn.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/KleinBottle/">
+        <img src="/assets/surfWireLines/KleinBottle/code/output/KleinBottle.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/tesseralSphericalH/">
+        <img src="/assets/surfWireLines/tesseralSphericalH/code/output/tesseralSphericalH.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/RGBcube/">
+        <img src="/assets/scripts/output/RGBcube.png" alt="lines"
+          style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/RRGraph3D/">
+        <img src="/assets/scripts/output/RRGraph3D.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/volume/">
+        <img src="/assets/scripts/output/volume.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/volumeScatters/">
+        <img src="/assets/scripts/output/volumeScatters.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/volumeTransparent/">
+        <img src="/assets/scripts/output/volumeTransparent.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/line3D/">
+        <img src="/assets/scripts/output/line3D.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+
+    <div class="column 3d">
+      <a href="/surfWireLines/wireTori/">
+        <img src="/assets/scripts/output/wireTori.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/wireSurfToris/">
+        <img src="/assets/scripts/output/wireSurfToris.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/ssao_simple/">
+        <img src="/assets/surfWireLines/ssao_simple/code/output/ssao_simple.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/ssao_gmscatter/">
+        <img src="/assets/surfWireLines/ssao_gmscatter/code/output/ssao_gmscatter.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column 3d">
+      <a href="/surfWireLines/ssao_planeSphere/">
+        <img src="/assets/surfWireLines/ssao_planeSphere/code/output/ssao_planeSphere.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+
+    <div class="column themes">
+      <a href="/withTheme/Epicycloid/">
+        <img src="/assets/withTheme/Epicycloid/code/output/Epicycloid.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column themes">
+      <a href="/withTheme/theme_dark_Contour3d/">
+        <img src="/assets/withTheme/theme_dark_Contour3d/code/output/theme_dark_Contour3d.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+
+    <div class="column themes">
+      <a href="/withTheme/theme_dark_astronauts/">
+        <img src="/assets/withTheme/theme_dark_astronauts/code/output/theme_dark_astronauts.png" alt="lines"
+          style="width:100%">
+      </a>
+    </div>
+    <div class="column themes">
+      <a href="/withTheme/minimal/">
+        <img src="/assets/withTheme/minimal/code/output/series.svg" alt="lines"
+          style="width:100%">
+      </a>
+    </div>
+
+    <div class="column themes">
+      <a href="/withTheme/ggplot2/">
+        <img src="/assets/withTheme/ggplot2/code/output/stem.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column themes">
+      <a href="/withTheme/light/">
+        <img src="/assets/withTheme/light/code/output/polygons.svg" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column animations">
+      <a href="/animations/earthquakes/">
+        <img src="/assets/earthquakesviews.png" alt="lines"
+          style="width:100%">
+      </a>
+    </div>
+
+    <div class="column dashboards">
+      <a href="/dashboards/tesseralSphericalHSliders/">
+        <img src="/assets/dashboards/tesseralSphericalHSliders/code/output/tesseralSphericalHSliders.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column dashboards">
+      <a href="/dashboards/plotVolColormaps/">
+        <img src="/assets/dashboards/plotVolColormaps/code/output/plotVolColormaps.png" alt="lines"
+          style="width:100%">
+      </a>
+    </div>
+    <div class="column dashboards">
+      <a href="/dashboards/matcap/">
+        <img src="/assets/dashboards/matcap/code/output/matcap.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/blueMarble/">
+        <img src="/assets/GeoPlots/blueMarble/code/output/BlueMarbel.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/moon/">
+        <img src="/assets/GeoPlots/moon/code/output/moon.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/proj4_to_Sphere/">
+        <img src="/assets/GeoPlots/proj4_to_Sphere/code/output/proj4_to_Sphere.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/submarineCables/">
+        <img src="/assets/GeoPlots/submarineCables/code/output/submarineCables.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/submarineCables3D/">
+        <img src="/assets/GeoPlots/submarineCables3D/code/output/submarineCables3D.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/geoFieldCountries/">
+        <img src="/assets/GeoPlots/geoFieldCountries/code/output/mapCountries.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/geoCoastlinesStatesUS/">
+        <img src="/assets/GeoPlots/geoCoastlinesStatesUS/code/output/geoCoastlinesStatesUS.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/geoCoastlinesField/">
+        <img src="/assets/GeoPlots/geoCoastlinesField/code/output/geoCoastlinesField.png" alt="lines"
+          style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/geoCoastlines/">
+        <img src="/assets/GeoPlots/geoCoastlines/code/output/coastlines.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/landSea/">
+        <img src="/assets/GeoPlots/landSea/code/output/landSea.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    
+    <div class="column geo">
+      <a href="/GeoPlots/temPrecESDL/">
+        <img src="/assets/GeoPlots/temPrecESDL/code/output/temPrecESDL.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/temCubeESDL/">
+        <img src="/assets/GeoPlots/temCubeESDL/code/output/temCubeESDL.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/geoProjections/">
+        <img src="/assets/GeoPlots/geoProjections/code/output/geoProjections.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/gppBeer2010/">
+        <img src="/assets/GeoPlots/gppBeer2010/code/output/gppBeer2010.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/topography/">
+        <img src="/assets/GeoPlots/topography/code/output/topography.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+    <div class="column geo">
+      <a href="/GeoPlots/topographySphere/">
+        <img src="/assets/GeoPlots/topographySphere/code/output/topographySphere.png" alt="lines" style="width:100%">
+      </a>
+    </div>
+      <!-- END GRID -->
+    </div>
+  
+    <!-- END MAIN -->
+  </div>
+
   <div class="docs-footer container grid-lg" id="copyright">
       <p><a href="https://github.com/lazarusA/BeautifulMakie" target="_blank">GitHub</a> · <a
               href="https://twitter.com/LazarusAlon" target="_blank">Twitter</a> · <a
@@ -476,5 +1079,50 @@
     </div>
     </div>
     </div>
+    <script>
+      filterSelection("all")
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("column");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+      }
+
+      function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+        }
+      }
+
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+
+
+      // Add active class to the current button (highlight it)
+      var btnContainer = document.getElementById("myBtnContainer");
+      var btns = btnContainer.getElementsByClassName("btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+    </script>
   </body>
 </html>
