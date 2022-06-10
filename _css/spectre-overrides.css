@@ -1,0 +1,140 @@
+:root {
+  --black: hsf(0, 0%, 5%);
+  --background: hsl(0, 0%, 100%);
+  --block-background: hsl(0, 0%, 94%);
+  --output-background: hsl(0, 0%, 98%);
+}
+
+.docs-brand {
+    margin-top: 0.5rem;
+}
+
+.docs-content > .container {
+    margin-top: 0.9rem;
+}
+.docs-container {
+  min-height: 100vh;
+}
+
+ul {
+    list-style: disc;
+}
+
+.off-canvas .off-canvas-sidebar {
+    width: 14rem !important;
+}
+
+.off-canvas-content {
+    margin-top: 4rem;
+}
+
+.btn.btn-link {
+  background: transparent;
+  border-color: #e65d0e;
+  color: #5755d9;
+}
+
+.docs-sidebar .docs-nav {
+    width: 16rem !important;
+}
+
+.code-output {
+    background: var(--output-background) !important;
+    border: 1px dashed #f86e1f;
+}
+.menu-item {
+  margin-top: 0;
+  padding: 0 .4rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.menu-item.active a {
+  font-style: italic;
+  font-weight: bold;
+}
+.menu-item a:hover {
+  color: rgb(70, 122, 219);
+  text-decoration: underline overline;
+}
+
+
+th, td, tr {
+    border-left: none !important;
+    border-right: none !important;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 0.2rem;
+}
+
+th {
+    border: 1px solid lightgray;
+}
+
+table {
+    border-collapse: collapse;
+    line-height: 1.2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.context {
+    color: var(--black);
+}
+
+h1 {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.accordion input:checked ~ .accordion-header > .icon:first-child,
+.accordion[open] .accordion-header > .icon:first-child {
+  transform: rotate(90deg);
+}
+
+.accordion input:checked ~ .accordion-body,
+.accordion[open] .accordion-body {
+  max-height: 100rem;
+}
+
+.accordion .accordion-header {
+  display: block;
+  padding: .2rem .4rem;
+}
+
+.accordion .accordion-header .icon {
+  transition: transform .25s;
+}
+
+.accordion .accordion-body {
+  margin-bottom: .4rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s;
+}
+
+summary.accordion-header::-webkit-details-marker {
+  display: none;
+}
+
+.ml-1 {
+  margin-left: 0.2rem !important;
+}
+.ml-1 {
+  margin-right: 0.2rem !important;
+}
+.ml-1 {
+  margin-top: .8rem !important;
+}
