@@ -156,11 +156,7 @@ nav:
           - "minimal: series": "examples/generated/2d/themes/minimal_series.md"
           - "ggplot2: stem": "examples/generated/2d/themes/ggplot2_stem.md"
           - "light: poly": "examples/generated/2d/themes/light_ngon.md"
-
-  - "Animations":
-    - "Basics":
-          - "Marker sizes": "examples/generated/2d/animations/scatter_size.md"
- 
+          
   - "Dashboards":
     - "Basics":
           - "Slider": "examples/generated/2d/dashboards/colorshemes.md"
