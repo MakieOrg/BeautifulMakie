@@ -1,6 +1,5 @@
-# BeautifulMakie
-Gallery with easy to copy and paste examples, go to
+# Beautiful Makie 
 
 https://lazarusa.github.io/BeautifulMakie/
 
-Contributions are welcome as pull requests.
+Web page with basic examples showing how to use makie in julia

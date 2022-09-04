@@ -1,0 +1,24 @@
+using Documenter, DocumenterMarkdown
+using Literate
+
+get_example_path(p) = joinpath(@__DIR__, "..", "examples", p)
+OUTPUT = joinpath(@__DIR__, "src", "examples", "generated")
+
+folders = readdir(joinpath(@__DIR__, "..", "examples"))
+setdiff!(folders, [".DS_Store"])
+setdiff!(folders, ["bars"])
+
+srcs = []
+for f in folders
+    names = readdir(joinpath(@__DIR__, "..", "examples", f))
+    setdiff!(names, [".DS_Store"])
+    fpaths  = "$(f)/" .* names
+    srcs = vcat(srcs, fpaths...)
+end
+
+for (d, paths) in (("2d", srcs),)
+    for p in paths
+    Literate.markdown(get_example_path(p), joinpath(OUTPUT, d, dirname(p));
+            documenter=true)
+    end
+end

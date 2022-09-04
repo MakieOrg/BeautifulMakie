@@ -1,0 +1,181 @@
+theme:
+  name: material
+  features:
+    - navigation.sections # Sections are included in the navigation on the left.
+    - toc.integrate # Table of contents is integrated on the left; does not appear separately on the right.
+    - header.autohide # header disappears as you scroll
+  palette:
+    # Light mode / dark mode
+    # We deliberately don't automatically use `media` to check a user's preferences. We default to light mode as
+    # (a) it looks more professional, and (b) is more obvious about the fact that it offers a (dark mode) toggle.
+    - scheme: default
+      primary: white
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Lato
+  icon:
+    repo: fontawesome/brands/github # GitHub logo in top right
+    logo: "material/circle-opacity" # Equinox logo in top left
+  #  favicon: "_static/icon_transparent.svg"
+  custom_dir: "_overrides" # Overriding part of the HTML
+
+  # These additions are my own custom ones, having overridden a partial.
+  twitter_name: "@lazarusAlon"
+  twitter_url: "https://twitter.com/lazarusAlon"
+  sponsor_name: "Sponsor"
+  sponsor_url: "https://github.com/sponsors/lazarusA?o=esb"
+site_name: Beautiful Makie
+site_description: Makie Examples
+site_author: Lazaro Alonso
+site_url: ""
+
+repo_url: https://github.com/lazarusA/BeautifulMakie
+repo_name: BeautifulMakie
+edit_uri: "" # No edit button, as some of our pages are in /docs and some in /examples via symlink, so it's impossible for them all to be accurate
+
+strict: true # Don't allow warnings during the build process
+extra_javascript:
+  # The below three make MathJax work, see https://squidfunk.github.io/mkdocs-material/reference/mathjax/
+  - _static/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/custom.css
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: "¤" # Adds a clickable permalink to each section heading
+      toc_depth: 4
+  - pymdownx.arithmatex: # Render LaTeX via MathJax
+      generic: true
+  - pymdownx.details # Allowing hidden expandable regions denoted by ???
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences # Seems to enable syntax highlighting when used with the Material theme.
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - def_list
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - attr_list
+  - md_in_html
+plugins:
+  - search # default search plugin; needs manually re-enabling when using any other plugins
+  - autorefs # Cross-links to headings
+  - include_exclude_files:
+      exclude:
+        - "_overrides"
+#  - mknotebooks # Jupyter notebooks
+  - mkdocs-video
+nav:
+  - "Gallery": "index.md"
+  - "2D":
+    - "Lines & Scatters":
+      - "Lines":
+          - "Single line": "examples/generated/2d/lines/line_single.md"
+          - "Two lines": "examples/generated/2d/lines/line_two.md"
+          - "Twin Axis": "examples/generated/2d/lines/line_twin_axis.md"
+          - "Lines Colorbar": "examples/generated/2d/lines/line_cmap.md"
+          - "Lines with Colorbars": "examples/generated/2d/lines/line_cmaps.md"
+          - "Lines with Colorbars around": "examples/generated/2d/lines/line_cmaps_a.md"
+          - "Colored lines": "examples/generated/2d/lines/line_colored.md"
+          - "Colored line Colorbar": "examples/generated/2d/lines/line_colored_cbar.md"
+          - "Inset": "examples/generated/2d/lines/line_inset.md"
+          - "Inset heatmap": "examples/generated/2d/lines/line_inset_h.md"
+          - "Latex": "examples/generated/2d/lines/line_latex.md"
+          - "Bessel 1st": "examples/generated/2d/lines/line_latex_bessel.md"
+          - "Bessel 2nd": "examples/generated/2d/lines/line_latex_bessels.md"
+          - "Time series": "examples/generated/2d/lines/line_time.md"
+          - "x log ": "examples/generated/2d/lines/line_xlog.md"
+          - "y log": "examples/generated/2d/lines/line_ylog.md"
+          - "xy log": "examples/generated/2d/lines/line_xylog.md"
+      - "Scatters":
+          - "Scatter": "examples/generated/2d/scatters/scatter.md"
+      - "Scatterslines":
+          - "scatterlines": "examples/generated/2d/scatterlines/scatterlines.md"
+      - "Linesegments":
+          - "linesegments": "examples/generated/2d/linesegments/linesegments.md"
+      - "Series":
+          - "series": "examples/generated/2d/series/series.md"
+      - "Stairs":
+          - "stairs": "examples/generated/2d/stairs/stairs.md"
+      - "Stem":
+          - "stem": "examples/generated/2d/stem/stem.md"
+
+      - "Contour":
+          - "contour": "examples/generated/2d/contour/contour.md"
+      - "Arrows":
+          - "arrows": "examples/generated/2d/arrows/arrows.md"
+      - "Streamplot":
+          - "streamplot": "examples/generated/2d/streamplot/streamplot.md"
+    - "Statistics":
+      - "Histogram":
+          - "hist": "examples/generated/2d/histogram/hist.md"
+      - "Density":
+          - "density": "examples/generated/2d/density/density.md"
+      - "Boxplots":
+          - "boxplot": "examples/generated/2d/boxplots/boxplot.md"
+      - "Violins":
+          - "violin": "examples/generated/2d/violins/violin.md"
+      - "Errorbars":
+          - "errorbar": "examples/generated/2d/errorbars/errorbars.md"
+    - "Heatmap":
+          - "heatmap": "examples/generated/2d/heatmaps/heatmap.md"
+    - "Filled curves":
+          - "band": "examples/generated/2d/band/band.md"
+  - "3D":
+    - "Surfaces":
+          - "surface": "examples/generated/2d/surfaces/surface.md"
+          - "branching": "examples/generated/2d/surfaces/branching.md"
+          - "constraints": "examples/generated/2d/surfaces/constraints.md"
+          - "volume_contour_scatters": "examples/generated/2d/surfaces/volume_contour_scatters.md"
+          - "Screen-Space Ambient Occlusion, SSAO": "examples/generated/2d/surfaces/SSAO_meshscatter.md"
+          - "Gabriel's Horn": "examples/generated/2d/surfaces/gabriels_horn.md"
+          - "Klein Bottle": "examples/generated/2d/surfaces/klein_bottle.md"
+
+  - "Themes":
+    - "Predefined":
+          - "black: epicycloid": "examples/generated/2d/themes/black_epicycloid.md"
+          - "dark: surface, contour3d & streamplot": "examples/generated/2d/themes/dark_surface_contour3d_streamplot.md"
+          - "minimal: series": "examples/generated/2d/themes/minimal_series.md"
+          - "ggplot2: stem": "examples/generated/2d/themes/ggplot2_stem.md"
+          - "light: poly": "examples/generated/2d/themes/light_ngon.md"
+
+  - "Animations":
+    - "Basics":
+          - "Marker sizes": "examples/generated/2d/animations/scatter_size.md"
+ 
+  - "Dashboards":
+    - "Basics":
+          - "Slider": "examples/generated/2d/dashboards/colorshemes.md"
+          - "Menu and Sliders": "examples/generated/2d/dashboards/tesseral_spherical_harmonics.md"
+
+  - "Geo":
+    - "Projections":
+          - "Winkel Tripel, US States": "examples/generated/2d/geo/us_states.md"
+  - "Ray tracing":
+    - "Basics":
+          - "Sphere and plane": "examples/generated/2d/rpr/sphere_plane.md"
+  - "Fun":
+    - "Random plots":
+      - "Astronauts": "examples/generated/2d/fun/astronauts.md"
+  - "Algebra of Graphics":
+    - "Statistics":
+      - "Penguins, no AoG": "examples/generated/2d/aog/penguins.md"
+ 

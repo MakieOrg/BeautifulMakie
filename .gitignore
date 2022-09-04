@@ -1,7 +1,8 @@
-__site/
-.DS_Store
-franklin
-franklin.pub
-node_modules/
-.vscode
 Manifest.toml
+generated
+build
+.vscode
+.DS_Store
+
+docs/docs
+docs/site
