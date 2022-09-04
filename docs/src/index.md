@@ -1,5 +1,5 @@
 !!! danger
-    This site is currently being updated. Hence, expect some breaking links in the next fews days. 
+    This site is currently being updated. Hence, expect some breaking links (or the complete site) in the next fews days. 
 
 !!! tip
     The easiest and fastest way to find what you are looking for is via the searching box at the top.
