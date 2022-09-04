@@ -8,15 +8,15 @@ folders = readdir(joinpath(@__DIR__, "..", "examples"))
 setdiff!(folders, [".DS_Store"])
 setdiff!(folders, ["bars"])
 
-srcs = []
+srcsfiles = []
 for f in folders
     names = readdir(joinpath(@__DIR__, "..", "examples", f))
     setdiff!(names, [".DS_Store"])
     fpaths  = "$(f)/" .* names
-    srcs = vcat(srcs, fpaths...)
+    srcsfiles = vcat(srcsfiles, fpaths...)
 end
 
-for (d, paths) in (("2d", srcs),)
+for (d, paths) in (("2d", srcsfiles),)
     for p in paths
     Literate.markdown(get_example_path(p), joinpath(OUTPUT, d, dirname(p));
             documenter=true)
