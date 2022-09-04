@@ -5,15 +5,15 @@ GLMakie.activate!() # hide
 x = y = z = -1:0.2:1
 vol1 = [ix * iy * iz for ix in x, iy in y, iz in z]
 points3d = [Point3f(ix, iy, iz) for ix in x, iy in y, iz in z];
-# scale everything to the interval 0,1 (things don't seem to work with colorrange)
+## scale everything to the interval 0,1 (things don't seem to work with colorrange)
 vol2 = (vol1 .+ 1) ./ 2;
-# colormap with transparency in the middle
+## colormap with transparency in the middle
 cmap = :Hiroshige
 n = 101
 g(x) = x^2
 alphas = [g(x) for x in range(-1, 1, length = n)]
 cmap_alpha = resample_cmap(cmap, n; alpha = alphas)
-# the plot
+## the plot
 fig = Figure(resolution = (1200, 1200))
 ax1 = Axis3(fig[1, 1], perspectiveness = 0.5, azimuth = 7.19,
     elevation = 0.57, aspect = (1, 1, 1))

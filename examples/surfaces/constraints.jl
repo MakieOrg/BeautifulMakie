@@ -2,9 +2,9 @@ using GLMakie
 GLMakie.activate!()
 x = LinRange(-2, 0.5, 501)
 y = LinRange(-2, 2, 501);
-# objective function
+## objective function
 z = 100 .* (y' .- x .^ 2) .^ 2 .+ (1 .- x) .^ 2;
-# build constraints
+## build constraints
 zin = copy(z)
 zout1 = copy(z)
 zout2 = copy(z)

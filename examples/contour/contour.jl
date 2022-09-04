@@ -14,7 +14,7 @@ cl = contour!(x, y, segg;
     colormap=:Spectral_11,
     levels=0:0.02:1
     )
-#Colorbar(fig[1, 2], cl, label="egg-l", labelpadding=0, width=15, ticksize=15, tickalign=1) #hide
+## Colorbar(fig[1, 2], cl, label="egg-l", labelpadding=0, width=15, ticksize=15, tickalign=1) #hide
 colsize!(fig.layout, 1, Aspect(1, 0.6))
 fig
 

@@ -1,11 +1,11 @@
-# example modified from  mthelm85
+## example modified from  mthelm85
 using GLMakie, ForwardDiff
 GLMakie.activate!()
 f(x, y) = -5 * x * y * exp(-x^2 - y^2)
 x = y = -1:0.05:1.0
 z = [f(i, j) for i in x, j in y];
-# This is the same function as above, just modified so that it will
-# work with ForwardDiff
+## This is the same function as above, just modified so that it will
+## work with ForwardDiff
 g(x, y) = [-5 * x * y * exp(-x^2 - y^2)]
 J(xx, yy) = ForwardDiff.jacobian(x -> g(x[1], x[2]), [xx, yy])
 field(i, j) = Point2f(J(i, j)[1], J(i, j)[2])

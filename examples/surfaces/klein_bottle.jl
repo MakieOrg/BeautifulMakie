@@ -1,6 +1,6 @@
 using GLMakie
 GLMakie.activate!()
-# The bottle
+## The bottle
 u = LinRange(0, π, 100)
 v = LinRange(0, 2π, 100)
 x = [-2 / 15 * cos(u) * (3 * cos(v) - 30 * sin(u) + 90 * cos(u)^4 * sin(u)
