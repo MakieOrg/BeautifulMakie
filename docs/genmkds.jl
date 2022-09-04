@@ -8,13 +8,18 @@ folders = readdir(joinpath(@__DIR__, "..", "examples"))
 setdiff!(folders, [".DS_Store"])
 setdiff!(folders, ["bars"])
 
-srcsfiles = []
-for f in folders
-    names = readdir(joinpath(@__DIR__, "..", "examples", f))
-    setdiff!(names, [".DS_Store"])
-    fpaths  = "$(f)/" .* names
-    srcsfiles = vcat(srcsfiles, fpaths...)
+function getfiles()
+    srcsfiles = []
+    for f in folders
+        names = readdir(joinpath(@__DIR__, "..", "examples", f))
+        setdiff!(names, [".DS_Store"])
+        fpaths  = "$(f)/" .* names
+        srcsfiles = vcat(srcsfiles, fpaths...)
+    end
+    return srcsfiles
 end
+
+srcsfiles = getfiles()
 
 for (d, paths) in (("2d", srcsfiles),)
     for p in paths
