@@ -41,5 +41,5 @@ jobs:
           JULIA_DEBUG: "Documenter"
           DATADEPS_ALWAYS_ACCEPT: true
         run: |
-          julia --code-coverage=user --project=docs/ --color=yes docs/genmkds.jl
-          julia --code-coverage=user --project=docs/ --color=yes docs/make.jl
+          DISPLAY=:0 xvfb-run -s '-screen 0 1024x768x24' julia --code-coverage=user --project=docs/ --color=yes docs/genmkds.jl
+          DISPLAY=:0 xvfb-run -s '-screen 0 1024x768x24' julia --code-coverage=user --project=docs/ --color=yes docs/make.jl
