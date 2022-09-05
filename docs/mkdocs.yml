@@ -1,7 +1,24 @@
 theme:
   name: material
   features:
-    - navigation.sections # Sections are included in the navigation on the left.
+    # - announce.dismiss
+    - content.code.annotate
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
     - toc.integrate # Table of contents is integrated on the left; does not appear separately on the right.
     - header.autohide # header disappears as you scroll
   palette:
@@ -84,7 +101,7 @@ plugins:
 #  - mknotebooks # Jupyter notebooks
   - mkdocs-video
 nav:
-  - "Gallery": "index.md"
+  - "Home": "index.md"
   - "2D":
     - "Lines & Scatters":
       - "Lines":
