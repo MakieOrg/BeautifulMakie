@@ -1,5 +1,6 @@
 theme:
   name: material
+  logo: img/makie.svg
   features:
     # - announce.dismiss
     - content.code.annotate
@@ -41,7 +42,7 @@ theme:
     text: Lato
   icon:
     repo: fontawesome/brands/github # GitHub logo in top right
-    logo: "material/circle-opacity" # Equinox logo in top left
+  #  logo: "material/circle-opacity" # Equinox logo in top left
   #  favicon: "_static/icon_transparent.svg"
   custom_dir: "_overrides" # Overriding part of the HTML
 
@@ -174,6 +175,10 @@ nav:
           - "ggplot2: stem": "examples/generated/2d/themes/ggplot2_stem.md"
           - "light: poly": "examples/generated/2d/themes/light_ngon.md"
           
+  - "Animations":
+    - "Basics":
+          - "Scatter size": "examples/generated/2d/animations/scatter_size.md"
+
   - "Dashboards":
     - "Basics":
           - "Slider": "examples/generated/2d/dashboards/colorshemes.md"
