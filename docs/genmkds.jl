@@ -6,7 +6,7 @@ OUTPUT = joinpath(@__DIR__, "src", "examples", "generated")
 
 folders = readdir(joinpath(@__DIR__, "..", "examples"))
 setdiff!(folders, [".DS_Store"])
-setdiff!(folders, ["bars"])
+#setdiff!(folders, ["bars"])
 
 function getfiles()
     srcsfiles = []

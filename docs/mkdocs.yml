@@ -110,7 +110,7 @@ nav:
           - "Two lines": "examples/generated/2d/lines/line_two.md"
           - "Twin Axis": "examples/generated/2d/lines/line_twin_axis.md"
           - "Lines Colorbar": "examples/generated/2d/lines/line_cmap.md"
-          - "Lines with Colorbars": "examples/generated/2d/lines/line_cmaps.md"
+          - "Lines with different Colorbars": "examples/generated/2d/lines/line_cmaps.md"
           - "Lines with Colorbars around": "examples/generated/2d/lines/line_cmaps_a.md"
           - "Colored lines": "examples/generated/2d/lines/line_colored.md"
           - "Colored line Colorbar": "examples/generated/2d/lines/line_colored_cbar.md"
@@ -125,10 +125,22 @@ nav:
           - "xy log": "examples/generated/2d/lines/line_xylog.md"
       - "Scatters":
           - "Scatter": "examples/generated/2d/scatters/scatter.md"
+          - "Scatters with colormaps": "examples/generated/2d/scatters/scatters_colormap.md"
+          - "Bubble plot": "examples/generated/2d/scatters/bubble_plot.md"
+          - "Bubble plot logxy": "examples/generated/2d/scatters/bubble_plot_logxy.md"
+          - "Iris dataset": "examples/generated/2d/scatters/iris_dataset.md"
+
       - "Scatterslines":
-          - "scatterlines": "examples/generated/2d/scatterlines/scatterlines.md"
+          - "Sine": "examples/generated/2d/scatterlines/simple.md"
+          - "Spirals ": "examples/generated/2d/scatterlines/spirals.md"
+          - "Markers ": "examples/generated/2d/scatterlines/markers.md"
+          - "Scatterlines and lines": "examples/generated/2d/scatterlines/scatterls_line.md"
+          - "Scatterlines and lines: Legend out": "examples/generated/2d/scatterlines/scatterls_line_leg_out.md"
+
       - "Linesegments":
           - "linesegments": "examples/generated/2d/linesegments/linesegments.md"
+          - "RRGraph": "examples/generated/2d/linesegments/RRGraph.md"
+
       - "Series":
           - "series": "examples/generated/2d/series/series.md"
       - "Stairs":
@@ -137,32 +149,69 @@ nav:
           - "stem": "examples/generated/2d/stem/stem.md"
 
       - "Contour":
-          - "contour": "examples/generated/2d/contour/contour.md"
+          - "Egg shape": "examples/generated/2d/contour/egg_shape.md"
+          - "Contour over heatmap": "examples/generated/2d/contour/contour_over_heatmap.md"
+          - "Qubit": "examples/generated/2d/contour/qubit.md"
+          - "Complex function": "examples/generated/2d/contour/complex_function.md"
+
       - "Arrows":
           - "arrows": "examples/generated/2d/arrows/arrows.md"
       - "Streamplot":
-          - "streamplot": "examples/generated/2d/streamplot/streamplot.md"
+          - "Field lines: Electric charges": "examples/generated/2d/streamplot/streamplot.md"
+          - "ode solution": "examples/generated/2d/streamplot/ode_solution.md"
+          - "field heatmap": "examples/generated/2d/streamplot/field_heatmap.md"
+          - "Poincare - Van der Paul": "examples/generated/2d/streamplot/poincare_vander.md"
+          - "Complex Polya Field": "examples/generated/2d/streamplot/complex_polya_field.md"
+
     - "Statistics":
       - "Histogram":
           - "hist": "examples/generated/2d/histogram/hist.md"
+          - "histograms on the sides": "examples/generated/2d/histogram/hists_on_the_sides.md"
+          - "Bins and counts": "examples/generated/2d/histogram/bins_counts.md"
+          - "Normalization options": "examples/generated/2d/histogram/normalizations.md"
+          - "hist + pdf = density": "examples/generated/2d/histogram/hist_pdf.md"
+          
       - "Density":
-          - "density": "examples/generated/2d/density/density.md"
+          - "Distributions": "examples/generated/2d/density/density.md"
+          - "RDatasets: mtcars": "examples/generated/2d/density/mtcars_density.md"
+
       - "Boxplots":
-          - "boxplot": "examples/generated/2d/boxplots/boxplot.md"
+          - "Boxplots collection": "examples/generated/2d/boxplots/boxplots_collection.md"
+          - "Vertical / Horizontal": "examples/generated/2d/boxplots/vertical_horizontal.md"
+          - "Boxes: airquality": "examples/generated/2d/boxplots/airquality.md"
+
       - "Violins":
-          - "violin": "examples/generated/2d/violins/violin.md"
+          - "Single": "examples/generated/2d/violins/single.md"
+          - "Violins collection": "examples/generated/2d/violins/collection_violins.md"
+          - "Violins: airquality": "examples/generated/2d/violins/airquality.md"
+
       - "Errorbars":
-          - "errorbar": "examples/generated/2d/errorbars/errorbars.md"
+          - "Simple x-y errorbars": "examples/generated/2d/errorbars/simple_x_y.md"
+          - "y errorbar with colormap": "examples/generated/2d/errorbars/y_colormap.md"
+          - "Errorbars formation": "examples/generated/2d/errorbars/errorbars.md"
+      - "Barplots":
+          - "Barplot & y errorbar": "examples/generated/2d/bars/barplot_y_error.md"
+          - "x - Barplot error & y errorbar": "examples/generated/2d/bars/x_barplot_error_y_error.md"
+          - "Barplot with colormap & y errorbar": "examples/generated/2d/bars/barplot_cmap_y_error.md"
+          - "Stripped barplots": "examples/generated/2d/bars/stripped_bars.md"
+
     - "Heatmap":
           - "heatmap": "examples/generated/2d/heatmaps/heatmap.md"
     - "Filled curves":
-          - "band": "examples/generated/2d/band/band.md"
+          - "Bands: Intervals - Ribbon": "examples/generated/2d/band/band.md"
+          - "Filled under line": "examples/generated/2d/band/filled_under.md"
+          - "Filled under bell-shaped curves": "examples/generated/2d/band/filled_under_bell.md"
+          - "Band - Ribbon - Between": "examples/generated/2d/band/band_ribbon.md"
+          - "Confidence region": "examples/generated/2d/band/band_confidence_error.md"
+    - "Polygons":
+          - "Poygons: ngon": "examples/generated/2d/poly/poly_ngon.md"
+
   - "3D":
     - "Surfaces":
           - "surface": "examples/generated/2d/surfaces/surface.md"
           - "branching": "examples/generated/2d/surfaces/branching.md"
           - "constraints": "examples/generated/2d/surfaces/constraints.md"
-          - "volume_contour_scatters": "examples/generated/2d/surfaces/volume_contour_scatters.md"
+          - "volume, contour and scatters": "examples/generated/2d/surfaces/volume_contour_scatters.md"
           - "Screen-Space Ambient Occlusion, SSAO": "examples/generated/2d/surfaces/SSAO_meshscatter.md"
           - "Gabriel's Horn": "examples/generated/2d/surfaces/gabriels_horn.md"
           - "Klein Bottle": "examples/generated/2d/surfaces/klein_bottle.md"
