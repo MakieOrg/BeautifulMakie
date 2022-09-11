@@ -1,5 +1,5 @@
 using CairoMakie, Random
-CairoMakie.activate!(type = "png") #hide
+CairoMakie.activate!(type = "svg") #hide
 
 Random.seed!(123)
 fig = Figure(resolution = (600, 400))

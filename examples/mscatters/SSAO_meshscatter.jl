@@ -1,7 +1,8 @@
-# from https://makie.juliaplots.org/v0.15/documentation/lighting/#examples
+## from https://makie.juliaplots.org/v0.15/documentation/lighting/#examples
 using GLMakie, Colors, LinearAlgebra
 using Random: seed!
 seed!(1313)
+GLMakie.activate!() # hide
 GLMakie.enable_SSAO[] = true
 GLMakie.closeall() # close any open screen
 

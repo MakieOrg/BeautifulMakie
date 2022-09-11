@@ -1,5 +1,5 @@
 using GLMakie
-GLMakie.activate!() #hide
+GLMakie.activate!()
 
 x = y = LinRange(-2, 2, 51)
 z = (-x .* exp.(-x .^ 2 .- (y') .^ 2)) .* 4

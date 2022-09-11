@@ -1,5 +1,6 @@
 using GLMakie
 GLMakie.activate!()
+
 t = 0:0.1:15
 u = -1:0.1:1
 x = [u * sin(t) for t in t, u in u]

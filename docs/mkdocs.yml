@@ -197,6 +197,8 @@ nav:
 
     - "Heatmap":
           - "heatmap": "examples/generated/2d/heatmaps/heatmap.md"
+          - "heatmap with text": "examples/generated/2d/heatmaps/text_heatmap.md"
+
     - "Filled curves":
           - "Bands: Intervals - Ribbon": "examples/generated/2d/band/band.md"
           - "Filled under line": "examples/generated/2d/band/filled_under.md"
@@ -205,17 +207,38 @@ nav:
           - "Confidence region": "examples/generated/2d/band/band_confidence_error.md"
     - "Polygons":
           - "Poygons: ngon": "examples/generated/2d/poly/poly_ngon.md"
-
   - "3D":
-    - "Surfaces":
+      - "Lines":
+          - "Line 3d": "examples/generated/2d/lines3d/line3d.md"
+          - "Lines, contour3d, contour, wireframe": "examples/generated/2d/lines3d/lines_wire_contour_3d.md"
+          - "wireframe: torus": "examples/generated/2d/lines3d/wireframe_torus.md"
+      - "Surfaces":
           - "surface": "examples/generated/2d/surfaces/surface.md"
           - "branching": "examples/generated/2d/surfaces/branching.md"
           - "constraints": "examples/generated/2d/surfaces/constraints.md"
-          - "volume, contour and scatters": "examples/generated/2d/surfaces/volume_contour_scatters.md"
-          - "Screen-Space Ambient Occlusion, SSAO": "examples/generated/2d/surfaces/SSAO_meshscatter.md"
           - "Gabriel's Horn": "examples/generated/2d/surfaces/gabriels_horn.md"
           - "Klein Bottle": "examples/generated/2d/surfaces/klein_bottle.md"
-
+          - "One colour": "examples/generated/2d/surfaces/onecolor.md"
+          - "Complex function": "examples/generated/2d/surfaces/complex_function.md"
+          - "Revolution surface": "examples/generated/2d/surfaces/revolution_surface.md"
+          - "Revolution surface s": "examples/generated/2d/surfaces/revolution_surface_s.md"
+          - "Tesseral Spherical Harmonics": "examples/generated/2d/surfaces/tesseralSphericalH.md"
+          - "Torus": "examples/generated/2d/surfaces/torus.md"
+      - "Meshscatters":
+          - "Cube: meshscatters": "examples/generated/2d/mscatters/cube_mscatters.md"
+          - "RGBA cube": "examples/generated/2d/mscatters/RGBAcube.md"
+          - "Weighted random-geometric Graph 3D": "examples/generated/2d/mscatters/RRGraph3D.md"
+          - "Screen-Space Ambient Occlusion, SSAO": "examples/generated/2d/mscatters/SSAO_meshscatter.md"
+          - "SSAO: meshscatter grid": "examples/generated/2d/mscatters/SSAO_mgrid.md"
+      - "Volumes":
+          - "volume": "examples/generated/2d/volume/volume.md"
+          - "volume contour & scatters": "examples/generated/2d/volume/volume_contour_scatters.md"
+      - "Contour: volume-like, surface-like & 3d lines":
+          - "contourf & contour3d": "examples/generated/2d/contour3d/contourf_contour3d.md"
+          - "contour: volume-like": "examples/generated/2d/contour3d/contour_v.md"
+      - "Meshes":
+          - "Meshes: Cylinder, Pyramid, Sphere, Rect3": "examples/generated/2d/meshes/meshes.md"
+          - "Earth and planes": "examples/generated/2d/meshes/Earth_planes.md"
   - "Themes":
     - "Predefined":
           - "black: epicycloid": "examples/generated/2d/themes/black_epicycloid.md"
@@ -232,10 +255,15 @@ nav:
     - "Basics":
           - "Slider": "examples/generated/2d/dashboards/colorshemes.md"
           - "Menu and Sliders": "examples/generated/2d/dashboards/tesseral_spherical_harmonics.md"
+          - "Material Capture: matcap": "examples/generated/2d/dashboards/matcap.md"
 
   - "Geo":
     - "Projections":
           - "Winkel Tripel, US States": "examples/generated/2d/geo/us_states.md"
+          - "coastlines": "examples/generated/2d/geo/coastlines.md"
+          - "projections": "examples/generated/2d/geo/projections.md"
+          - "Submarine Cables": "examples/generated/2d/geo/submarine_cables.md"
+
   - "Ray tracing":
     - "Basics":
           - "Sphere and plane": "examples/generated/2d/rpr/sphere_plane.md"
