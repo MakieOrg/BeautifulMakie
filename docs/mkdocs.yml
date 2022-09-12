@@ -56,7 +56,7 @@ site_description: Makie Examples
 site_author: Lazaro Alonso
 site_url: ""
 
-repo_url: https://github.com/lazarusA/BeautifulMakie
+repo_url: https://github.com/MakieOrg/BeautifulMakie
 repo_name: BeautifulMakie
 edit_uri: "" # No edit button, as some of our pages are in /docs and some in /examples via symlink, so it's impossible for them all to be accurate
 
