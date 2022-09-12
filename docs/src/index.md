@@ -1,6 +1,3 @@
-!!! danger
-    This site is currently being updated. Hence, expect some breaking links (or the complete site) in the next fews days. 
-
 !!! tip
     The easiest and fastest way to find what you are looking for is via the searching box at the top.
 
@@ -10,6 +7,9 @@
 
 !!! cite
     From the japanese word [Maki-e](https://en.wikipedia.org/wiki/Maki-e), which is a technique to sprinkle lacquer with gold and silver powder. Data is the gold and silver of our age, so let’s spread it out beautifully on the screen! [Simon Danisch](https://github.com/sponsors/SimonDanisch).
+
+!!! danger
+    This site is currently being updated. Hence, expect some breaking links (or the complete site) in the next fews days. 
 
 ## Learning resources
 There is a chapter about Makie in the book [Julia Data Science](https://juliadatascience.io). It's free but you could also order a printed version on [Amazon](https://www.amazon.com/dp/B09KMRKQ96/).
