@@ -34,6 +34,8 @@ Just go to the repo and see what is in the [issues's menu](https://github.com/Ju
 
 Thanks to all the [contributors](https://github.com/JuliaPlots/Makie.jl/graphs/contributors)!
 
+![](img/makie_contributors.png)
+
 ## Donation
 
 Support this project by sponsoring the main mantainer and creator of Makie, [Simon Danisch](https://github.com/sponsors/SimonDanisch). Keep supporting this project!

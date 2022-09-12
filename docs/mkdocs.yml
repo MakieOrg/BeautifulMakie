@@ -129,6 +129,7 @@ nav:
           - "Bubble plot": "examples/generated/2d/scatters/bubble_plot.md"
           - "Bubble plot logxy": "examples/generated/2d/scatters/bubble_plot_logxy.md"
           - "Iris dataset": "examples/generated/2d/scatters/iris_dataset.md"
+          - "Makie Contributors": "examples/generated/2d/scatters/makie_contributors.md"
 
       - "Scatterslines":
           - "Sine": "examples/generated/2d/scatterlines/simple.md"
@@ -170,7 +171,8 @@ nav:
           - "Bins and counts": "examples/generated/2d/histogram/bins_counts.md"
           - "Normalization options": "examples/generated/2d/histogram/normalizations.md"
           - "hist + pdf = density": "examples/generated/2d/histogram/hist_pdf.md"
-          
+          - "hist from image": "examples/generated/2d/histogram/parallel_image_hist.md"
+
       - "Density":
           - "Distributions": "examples/generated/2d/density/density.md"
           - "RDatasets: mtcars": "examples/generated/2d/density/mtcars_density.md"
@@ -224,12 +226,16 @@ nav:
           - "Revolution surface s": "examples/generated/2d/surfaces/revolution_surface_s.md"
           - "Tesseral Spherical Harmonics": "examples/generated/2d/surfaces/tesseralSphericalH.md"
           - "Torus": "examples/generated/2d/surfaces/torus.md"
+          - "Band 3D plane surface": "examples/generated/2d/surfaces/band3d.md"
+
       - "Meshscatters":
           - "Cube: meshscatters": "examples/generated/2d/mscatters/cube_mscatters.md"
           - "RGBA cube": "examples/generated/2d/mscatters/RGBAcube.md"
           - "Weighted random-geometric Graph 3D": "examples/generated/2d/mscatters/RRGraph3D.md"
           - "Screen-Space Ambient Occlusion, SSAO": "examples/generated/2d/mscatters/SSAO_meshscatter.md"
           - "SSAO: meshscatter grid": "examples/generated/2d/mscatters/SSAO_mgrid.md"
+          - "Gauss-like shapes 2d": "examples/generated/2d/mscatters/gauss2d.md"
+
       - "Volumes":
           - "volume": "examples/generated/2d/volume/volume.md"
           - "volume contour & scatters": "examples/generated/2d/volume/volume_contour_scatters.md"
@@ -263,6 +269,9 @@ nav:
           - "coastlines": "examples/generated/2d/geo/coastlines.md"
           - "projections": "examples/generated/2d/geo/projections.md"
           - "Submarine Cables": "examples/generated/2d/geo/submarine_cables.md"
+          - "Blue Marbel": "examples/generated/2d/geo/blue_marbel.md"
+          - "Moon": "examples/generated/2d/geo/moon.md"
+          - "Donut: Earth & Sun": "examples/generated/2d/geo/donut_earth_sun.md"
 
   - "Ray tracing":
     - "Basics":
@@ -270,6 +279,8 @@ nav:
   - "Fun":
     - "Random plots":
       - "Astronauts": "examples/generated/2d/fun/astronauts.md"
+      - "Earthquakes on Earth: depth not at scale": "examples/generated/2d/fun/earthquakes.md"
+
   - "Algebra of Graphics":
     - "Statistics":
       - "Penguins, no AoG": "examples/generated/2d/aog/penguins.md"
