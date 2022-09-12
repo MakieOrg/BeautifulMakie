@@ -18,7 +18,7 @@ matball = load(assetpath("matball_base.obj"))
 matball_inner = load(assetpath("matball_inner.obj"))
 matball_outer = load(assetpath("matball_outer.obj"))
 ## download more ids from here:
-## https://github.com/lazarusA/BeautifulMakie/data/
+## https://raw.githubusercontent.com/MakieOrg/BeautifulMakie/main/data/
 #ids = JSON.parsefile("matcapIds.json")
 
 ids = ["F79686_FCCBD4_E76644_E76B56",

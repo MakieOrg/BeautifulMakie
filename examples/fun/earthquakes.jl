@@ -16,7 +16,7 @@ function sphere(; r = 1.0, n = 32)
 end
 
 ## https://earthquake.usgs.gov/earthquakes/map/?extent=-68.39918,-248.90625&extent=72.60712,110.74219
-urldata = "https://raw.githubusercontent.com/lazarusA/BeautifulMakie/main/data/"
+urldata = "https://raw.githubusercontent.com/MakieOrg/BeautifulMakie/main/data/"
 file1 = Downloads.download(urldata * "2021_01_2021_05.csv")
 file2 = Downloads.download(urldata * "2021_06_2022_01.csv")
 earthquakes1 = CSV.read(file1, DataFrame)
