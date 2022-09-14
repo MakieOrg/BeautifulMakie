@@ -269,7 +269,7 @@ nav:
           - "coastlines": "examples/generated/2d/geo/coastlines.md"
           - "projections": "examples/generated/2d/geo/projections.md"
           - "Submarine Cables": "examples/generated/2d/geo/submarine_cables.md"
-          - "Blue Marbel": "examples/generated/2d/geo/blue_marbel.md"
+          - "Blue Marble": "examples/generated/2d/geo/blue_marble.md"
           - "Moon": "examples/generated/2d/geo/moon.md"
           - "Donut: Earth & Sun": "examples/generated/2d/geo/donut_earth_sun.md"
 
