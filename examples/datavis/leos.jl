@@ -1,7 +1,7 @@
-using Downloads, CairoMakie
+using Downloads, GLMakie
 using Colors, Statistics
 using FileIO
-CairoMakie.activate!(type = "png")
+GLMakie.activate!()
 ## some data
 names = ["Leonardo Dicaprio", "Gisele Bundchen", "Bar Refaeli", 
         "Blake Lively", "Erin Heatherton", "Toni Garrn", "Kelly Rohrbach", 
