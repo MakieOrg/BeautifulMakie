@@ -276,10 +276,11 @@ nav:
   - "Ray tracing":
     - "Basics":
           - "Sphere and plane": "examples/generated/2d/rpr/sphere_plane.md"
-  - "Fun":
+  - "Data Visualization":
     - "Random plots":
-      - "Astronauts": "examples/generated/2d/fun/astronauts.md"
-      - "Earthquakes on Earth: depth not at scale": "examples/generated/2d/fun/earthquakes.md"
+      - "Astronauts": "examples/generated/2d/datavis/astronauts.md"
+      - "Earthquakes on Earth: depth not at scale": "examples/generated/2d/datavis/earthquakes.md"
+      - "Leo's Syndrome": "examples/generated/2d/datavis/leos.md"
 
   - "Algebra of Graphics":
     - "Statistics":
