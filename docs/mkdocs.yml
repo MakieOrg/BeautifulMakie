@@ -214,6 +214,8 @@ nav:
           - "Line 3d": "examples/generated/2d/lines3d/line3d.md"
           - "Lines, contour3d, contour, wireframe": "examples/generated/2d/lines3d/lines_wire_contour_3d.md"
           - "wireframe: torus": "examples/generated/2d/lines3d/wireframe_torus.md"
+          - "Archimedean Spiral": "examples/generated/2d/lines3d/archimedean_spiral.md"
+
       - "Surfaces":
           - "surface": "examples/generated/2d/surfaces/surface.md"
           - "branching": "examples/generated/2d/surfaces/branching.md"
@@ -277,10 +279,9 @@ nav:
     - "Basics":
           - "Sphere and plane": "examples/generated/2d/rpr/sphere_plane.md"
   - "Data Visualization":
-    - "Random plots":
-      - "Astronauts": "examples/generated/2d/datavis/astronauts.md"
-      - "Earthquakes on Earth: depth not at scale": "examples/generated/2d/datavis/earthquakes.md"
-      - "Leo's Syndrome": "examples/generated/2d/datavis/leos.md"
+    - "Astronauts": "examples/generated/2d/datavis/astronauts.md"
+    - "Earthquakes on Earth: depth not at scale": "examples/generated/2d/datavis/earthquakes.md"
+    - "Leo's Syndrome": "examples/generated/2d/datavis/leos.md"
 
   - "Algebra of Graphics":
     - "Statistics":
