@@ -282,6 +282,9 @@ nav:
     - "Astronauts": "examples/generated/2d/datavis/astronauts.md"
     - "Earthquakes on Earth: depth not at scale": "examples/generated/2d/datavis/earthquakes.md"
     - "Leo's Syndrome": "examples/generated/2d/datavis/leos.md"
+    - "Fractals": "examples/generated/2d/datavis/fractals.md"
+    - "Eigenvalues: densities": "examples/generated/2d/datavis/eigenvals_densities.md"
+    - "Eigenvalues evolution": "examples/generated/2d/datavis/eigenvalues_evolution.md"
 
   - "Algebra of Graphics":
     - "Statistics":
