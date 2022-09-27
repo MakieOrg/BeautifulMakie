@@ -14,8 +14,8 @@ land_geoCables = GeoJSON.read(seekstart(landCables))
 
 toPoints = GeoMakie.geo2basic(land_geoPoints)
 ## toLines = GeoMakie.geo2basic(land_geoCables) ## this should probably be supported.
-feat = GeoInterface.features(land_geoCables)
-toLines = GeoInterface.coordinates.(GeoInterface.geometry.(feat))
+#feat = GeoInterface.features(land_geoCables)
+toLines = GeoInterface.coordinates.(GeoInterface.geometry.(land_geoCables))
 splitLines = []
 for i in eachindex(toLines)
     for j in eachindex(toLines[i])

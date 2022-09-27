@@ -7,7 +7,8 @@ GLMakie.activate!()
 
 states = Downloads.download("https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json")
 states_geo = GeoJSON.read(read(states, String))
-n = length(GeoInterface.features(states_geo))
+#n = length(GeoInterface.features(states_geo))
+n = length(states_geo)
 
 fig = Figure(resolution=(1200, 800), fontsize=22)
 ax = GeoAxis(fig[1, 1]; dest="+proj=wintri",coastlines=true,
