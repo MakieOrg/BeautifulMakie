@@ -247,6 +247,8 @@ nav:
       - "Meshes":
           - "Meshes: Cylinder, Pyramid, Sphere, Rect3": "examples/generated/2d/meshes/meshes.md"
           - "Earth and planes": "examples/generated/2d/meshes/Earth_planes.md"
+          - "How to Cube": "examples/generated/2d/meshes/how_to_cube.md"
+          - "Cube: Cyberpunk style": "examples/generated/2d/meshes/cpunkCube.md"
   - "Themes":
     - "Predefined":
           - "black: epicycloid": "examples/generated/2d/themes/black_epicycloid.md"
@@ -285,6 +287,7 @@ nav:
     - "Fractals": "examples/generated/2d/datavis/fractals.md"
     - "Eigenvalues: densities": "examples/generated/2d/datavis/eigenvals_densities.md"
     - "Eigenvalues evolution": "examples/generated/2d/datavis/eigenvalues_evolution.md"
+    - "Strange attractors": "examples/generated/2d/datavis/strange_attractors.md"
 
   - "Algebra of Graphics":
     - "Statistics":
