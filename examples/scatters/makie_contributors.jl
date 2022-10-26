@@ -27,7 +27,7 @@ function plotcontributors()
     for i in 6:-1:1, j in 1:15
         scatter!(ax, Point2f(j,i); 
             #marker = Circle(Point2f(0), 0.5f0), 
-            image = avatars[k], 
+            #image = avatars[k], 
             markersize = 70)
         k += 1
     end
