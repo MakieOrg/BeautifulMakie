@@ -1,7 +1,6 @@
 using GLMakie, Colors, LinearAlgebra
 using GeometryBasics, Downloads, FileIO
-GLMakie.activate!() # hide
-GLMakie.enable_SSAO[] = true
+GLMakie.activate!(ssao=true)
 GLMakie.closeall() # close any open screen
 link = "https://www.solarsystemscope.com/textures/download/8k_earth_daymap.jpg"
 earth_img = load(Downloads.download(link))
@@ -11,8 +10,8 @@ end
 
 function ssaoplanes()
     fig = Figure()
-    ax = LScene(fig[1, 1]; show_axis=false,
-        scenekw=(SSAO = (radius=6.0, blur=3.5)))
+    ssao = Makie.SSAO(radius = 5.0, blur = 3)
+    ax = LScene(fig[1, 1]; show_axis=false, scenekw=(ssao=ssao,))
     ax.scene.ssao.bias[] = 0.025
     mesh!(ax, SphereTess(; o=Point3f(0.1, 0, 0), r=0.95);
         color=circshift(earth_img, (0, 3000)), ssao=true)

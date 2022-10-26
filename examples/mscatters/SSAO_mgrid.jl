@@ -1,6 +1,5 @@
 using GLMakie
-GLMakie.activate!() # hide
-GLMakie.enable_SSAO[] = true
+GLMakie.activate!(ssao=true)
 GLMakie.closeall() # close any open screen
 
 x = y = z = 1:10
@@ -11,13 +10,11 @@ vals = [f(ix, iy, iz) for ix in x, iy in y, iz in z]
 function ssaomeshscatter()
     colormap = :starrynight
     fig = Figure(resolution=(1800, 600))
-    ax11 = LScene(fig[1, 1]; show_axis=false,
-        scenekw=(SSAO = (radius=6.0, blur=3.5)))
+    ssao = Makie.SSAO(radius = 6.0, blur = 3)
+    ax11 = LScene(fig[1, 1]; show_axis=false, scenekw=(ssao=ssao,))
     ax11.scene.ssao.bias[] = 0.025
-    ax12 = LScene(fig[1, 2]; show_axis=false,
-        scenekw=(SSAO = (radius=6.0, blur=3.5)))
-    ax13 = LScene(fig[1, 3]; show_axis=false,
-        scenekw=(SSAO = (radius=6.0, blur=3.5)))
+    ax12 = LScene(fig[1, 2]; show_axis=false, scenekw=(ssao=ssao,))
+    ax13 = LScene(fig[1, 3]; show_axis=false, scenekw=(ssao=ssao,))
     meshscatter!(ax11, positions, color=vec(vals),
         marker=Rect3f(Vec3f(-0.5), Vec3f(1)),
         markersize=0.9,

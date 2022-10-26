@@ -2,15 +2,14 @@
 using GLMakie, Colors, LinearAlgebra
 using Random: seed!
 seed!(1313)
-GLMakie.activate!() # hide
-GLMakie.enable_SSAO[] = true
+GLMakie.activate!(ssao=true)
 GLMakie.closeall() # close any open screen
 
 function ssaom()
     positions = [Point3f(x, y, rand()) for x in -7:7 for y in -5:5]
     fig = Figure(resolution=(1200, 800))
-    ax = LScene(fig[1, 1]; show_axis=false,
-        scenekw=(SSAO = (radius=6.0, blur=3.5)))
+    ssao = Makie.SSAO(radius = 6.0, blur = 3)
+    ax = LScene(fig[1, 1]; show_axis=false, scenekw=(ssao=ssao,))
     ax.scene.ssao.bias[] = 0.025
     meshscatter!(ax, positions; marker=Rect3(Point3f(-0.5), Vec3f(1)),
         markersize=1, color=norm.(positions),

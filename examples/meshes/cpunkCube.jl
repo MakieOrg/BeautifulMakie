@@ -41,7 +41,7 @@ hidedecorations!.(axs)
 hidespines!.(axs)
 colgap!(fig.layout,0)
 rowgap!(fig.layout,0)
-imgcpunk = GLMakie.scene2image(fig.scene)
+imgcpunk = Makie.colorbuffer(fig.scene)
 
 # ## Do the meshed cube
 function meshcube(o=Vec3f(0), sizexyz = Vec3f(1))

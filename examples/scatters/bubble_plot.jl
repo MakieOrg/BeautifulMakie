@@ -10,7 +10,7 @@ ax = Axis(fig[1, 1]; xgridstyle = :dashdot, ygridstyle = :dashdot,
 pts1 = scatter!(ax, 10x, y; color = z, colormap = (:viridis, 0.75),
     markersize = 20z, marker = :rect)
 pts2 = scatter!(ax, 3x, 5y; color = z, colormap = (:thermal, 0.85),
-    markersize = 45z, marker = :circle)
+    markersize = 45z)
 
 Colorbar(fig[1, 2], pts1, label = "z1 value", ticklabelsize = 14,
     labelpadding = 5, width = 10)

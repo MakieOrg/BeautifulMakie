@@ -89,6 +89,6 @@ hidedecorations!.(axs)
 hidespines!.(axs)
 colgap!(fig.layout,0)
 rowgap!(fig.layout,0)
-imgOut = GLMakie.scene2image(fig.scene)
+imgOut = Makie.colorbuffer(fig.scene)
 
 mesh(m; color = imgOut, interpolate=false)

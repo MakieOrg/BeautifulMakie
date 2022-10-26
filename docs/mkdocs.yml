@@ -291,5 +291,9 @@ nav:
 
   - "Algebra of Graphics":
     - "Statistics":
+      - "ScatterLines": "examples/generated/2d/aog/scatterlinesAoG.md"
+      - "ABlines": "examples/generated/2d/aog/ablines.md"
       - "Penguins, no AoG": "examples/generated/2d/aog/penguins.md"
- 
+      - "Penguins": "examples/generated/2d/aog/penguinsAoG.md"
+      - "Penguins, 3d": "examples/generated/2d/aog/penguins3d.md"
+

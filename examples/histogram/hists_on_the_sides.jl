@@ -10,8 +10,7 @@ ax1 = Axis(fig[1, 1])
 ax2 = Axis(fig[2, 1])
 ax3 = Axis(fig[2, 2])
 hist!(ax1, x; color=(:orangered, 0.5), strokewidth=0.5)
-scatter!(ax2, x, y; color=color, markersize=10,
-    marker=:circle, strokewidth=0)
+scatter!(ax2, x, y; color=color, markersize=10, strokewidth=0)
 hist!(ax3, y; direction=:x, color=(:dodgerblue, 0.5),
     strokewidth=0.5)
 xlims!(ax1, -4, 4)
