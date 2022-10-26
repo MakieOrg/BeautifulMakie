@@ -111,7 +111,7 @@ function plotastro()
             position = (-99, -99), textsize = 10)
         limits!(ax, -100, 100, -100, 100)
     end
-    current_figure() # hide
+    fig
 end
 plotastro()
 

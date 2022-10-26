@@ -20,7 +20,7 @@ surface!(ax, x, y, z;
     backlight = 1.5f0,
     )
 zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
-rotate!(ax.scene, Vec3f(0, 0, 1), 3.0)
+GLMakie.rotate!(ax.scene, Vec3f(0, 0, 1), 3.0)
 fig
 
 # !!! warning 
