@@ -110,8 +110,8 @@ function plotastro()
         text!("Data - Astronaut Database - Mariya Stavnichuk and Tatsuya Corlett",
             position = (-99, -99), textsize = 10)
         limits!(ax, -100, 100, -100, 100)
+        fig
     end
-    fig
 end
 plotastro()
 

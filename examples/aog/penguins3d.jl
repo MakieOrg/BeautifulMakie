@@ -15,11 +15,11 @@ p3d  = data(penguins)
 p3d *= AoG.density()
 p3d *= mapping(:bill_length_mm, :bill_depth_mm)
 p3d *= visual(Wireframe, linewidth=0.05, transparency=true)
-p3d *= mapping(color = :species)
+p3d *= mapping(color = :species);
 
 # Let's define 3 new default colors 
 colors = tuple.([:grey10, :orange, :dodgerblue], 0.5)
-palstyle = (; color=colors, patchcolor = colors)
+palstyle = (; color=colors, patchcolor = colors);
 # ## Penguins 3d Wireframe density
 with_theme(theme_ggplot2(),resolution = (600,400), palette=palstyle) do
     draw(p3d; axis = (type = Axis3, perspectiveness = 0.5, aspect=(1, 1, 1)))
@@ -29,7 +29,7 @@ end
 
 phist = data(penguins)
 phist *= AoG.histogram(; bins = 28)
-phist *= mapping(:bill_length_mm => "bill length mm", color =:species, stack = :species)
+phist *= mapping(:bill_length_mm => "bill length mm", color =:species, stack = :species);
 
 with_theme(theme_ggplot2(),resolution = (600,400), palette=palstyle) do
     phist |> draw

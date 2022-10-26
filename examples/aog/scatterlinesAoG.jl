@@ -2,7 +2,7 @@ using CairoMakie, AlgebraOfGraphics
 CairoMakie.activate!(type = "svg") #hide
 
 # Here I try to follow as much as possible the [philosophy](https://aog.makie.org/stable/philosophy/) of AoG.
-# from https://aog.makie.org/stable/gallery/gallery/basic%20visualizations/lines_and_markers/#Lines-and-markers
+# from [here](https://aog.makie.org/stable/gallery/gallery/basic%20visualizations/lines_and_markers/#Lines-and-markers)
 
 ## create some data
 x = range(-π, π, length=50)
