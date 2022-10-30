@@ -288,6 +288,7 @@ nav:
     - "Eigenvalues: densities": "examples/generated/2d/datavis/eigenvals_densities.md"
     - "Eigenvalues evolution": "examples/generated/2d/datavis/eigenvalues_evolution.md"
     - "Strange attractors": "examples/generated/2d/datavis/strange_attractors.md"
+    - "Multiple titles": "examples/generated/2d/datavis/multipleTitles.md"
 
   - "Algebra of Graphics":
     - "Statistics":
@@ -296,4 +297,8 @@ nav:
       - "Penguins, no AoG": "examples/generated/2d/aog/penguins.md"
       - "Penguins": "examples/generated/2d/aog/penguinsAoG.md"
       - "Penguins, 3d": "examples/generated/2d/aog/penguins3d.md"
+      - "datasaurus": "examples/generated/2d/aog/datasaurus.md"
+      - "Penguins, marginal Boxes": "examples/generated/2d/aog/penguinsBoxes.md"
+      - "Penguins, marginal Violins": "examples/generated/2d/aog/penguinsViolins.md"
+      - "text ScatterLines": "examples/generated/2d/aog/textScatterLines.md"
 
