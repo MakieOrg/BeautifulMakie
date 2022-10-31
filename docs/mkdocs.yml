@@ -301,4 +301,4 @@ nav:
       - "Penguins, marginal Boxes": "examples/generated/2d/aog/penguinsBoxes.md"
       - "Penguins, marginal Violins": "examples/generated/2d/aog/penguinsViolins.md"
       - "text ScatterLines": "examples/generated/2d/aog/textScatterLines.md"
-
+      - "Market Data": "examples/generated/2d/aog/MarketData.md"
