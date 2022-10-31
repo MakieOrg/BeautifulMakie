@@ -1,7 +1,7 @@
 using CairoMakie
 using Random
 CairoMakie.activate!(type = "svg") #hide
-## from this [post](https://discourse.julialang.org/t/how-to-make-a-plot-with-multiple-titles-and-labels-in-makie/89137)
+# from this [post](https://discourse.julialang.org/t/how-to-make-a-plot-with-multiple-titles-and-labels-in-makie/89137)
 
 Random.seed!(1234)
 

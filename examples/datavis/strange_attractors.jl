@@ -7,6 +7,7 @@
 # In order to achieve the desire output we just need the following functions.
 using GLMakie, StatsBase, OnlineStats
 using LinearAlgebra, Interpolations
+GLMakie.activate!()
 # ## Trajectory
 
 function trajectory(fn, x0, y0, kargs; n = 1000) #  kargs = a, b, c, d
@@ -66,7 +67,7 @@ with_theme(theme_black()) do
     fig = Figure(resolution = (1200,900))
     axs = [Axis(fig[i,j], aspect=1) for i in 1:3 for j in 1:4]
     for i in 1:12
-        x, y = trajectory(Clifford, cargs[i][1:2]..., cargs[i][3:end]; n = 1_000_000)
+        x, y = trajectory(Clifford, cargs[i][1:2]..., cargs[i][3:end]; n = 100_000)
         o = aggHist(x, y; nbinsx = 300, nbinsy = 300)
         m = eq_hist(o.counts)
         heatmap!(axs[i], o.xedges, o.yedges, m; colormap = :inferno)

@@ -29,8 +29,8 @@ function m12u(n=10)
     return u1, u2
 end 
 
-n = 500
-a, b =  m12u(500)
+n = 100
+a, b =  m12u(100)
 xs, ys = xy(a,b)
 colors = repeat(1:n,inner=500)
 
@@ -56,8 +56,8 @@ function m12(n=10)
     return a, b
 end 
 
-n = 500
-a, b =  m12(500)
+n = 100
+a, b =  m12(100)
 xs, ys = xy(a,b)
 colors = repeat(1:n,inner=500)
 
@@ -67,7 +67,7 @@ with_theme(theme_black()) do
     scatter!(Point2f.(xs,ys); color=colors, markersize = 1, 
         colormap=[:yellow, :white, :orangered]
         )
-    limits!(ax, -20,20,-20,20)
+    limits!(ax, -8,8,-8,8)
     hidedecorations!(ax)
     hidespines!(ax)
     fig

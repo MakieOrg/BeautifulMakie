@@ -31,7 +31,7 @@ end
 m(;a=10rand()-5, b=10rand()-5) = [0 0 0 a; -1 -1 1 0; b 0 0 0; -1 -1 -1 -1]
 
 h = HeatMap(range(-3.5,3.5,length=1200), range(-3.5,3.5, length=1200))
-getcounts!(h, m; n=2_000_000)
+getcounts!(h, m; n=1_000_000)
 
 with_theme(theme_black()) do
     fig = Figure(figure_padding=0,resolution=(600,600))
@@ -47,7 +47,7 @@ end
 mtri() = Array(Tridiagonal(2rand(19) .-1, 2rand(20) .-1, 2rand(19) .-1))
 
 h = HeatMap(range(-3,3,length=1200÷2),range(-2,2,length=1200÷2))
-getcounts!(h, mtri; n=1_000_000)
+getcounts!(h, mtri; n=500_000)
 
 with_theme(theme_black()) do
     fig = Figure(figure_padding=0,resolution=(600,400))
@@ -62,7 +62,7 @@ end
 
 mβ(; n = 6) = 2rand(Beta(0.01,0.01), n,n) .-1
 h = HeatMap(range(-3,3,length=1200),range(-2,2,length=1200))
-getcounts!(h, mβ; n=10_000_000)
+getcounts!(h, mβ; n=1_000_000)
 
 with_theme(theme_black()) do
     fig = Figure(figure_padding=0,resolution=(600,400))
@@ -78,7 +78,7 @@ end
 
 m3(;a=9rand()-5,b=9rand()-5) = [a 1 -1; -1 b 0; 1 -1 -1]
 h = HeatMap(range(-4,4,length=1200),range(-2,2,length=1200))
-getcounts!(h, m3; n = 10_000_000)
+getcounts!(h, m3; n = 1_500_000)
 
 with_theme(theme_ggplot2()) do
     fig = Figure(figure_padding=0,resolution=(600,400))
@@ -96,7 +96,7 @@ mtrin(; n =30) = Array(Tridiagonal(rand([-1.0,1.0],n-1), zeros(n), rand([-1.0,1.
 
 h = HeatMap(range(-2,2,length=1200),range(-2,2,length=1200))
 
-getcounts!(h, mtrin; n = 1_000_000)
+getcounts!(h, mtrin; n = 100_000)
 
 with_theme(theme_dark()) do
     fig = Figure(figure_padding=0,resolution=(600,600))
@@ -112,7 +112,7 @@ end
 
 mrand(; f=1000,n=8) = rand([-1.0, -1/f, 0, 1/f, 1.0],n,n)
 h = HeatMap(range(-2,2,length=800), range(-2,2,length=800))
-getcounts!(h, mrand; n = 1_500_000)
+getcounts!(h, mrand; n = 500_000)
 
 with_theme(theme_dark()) do
     fig = Figure(figure_padding=0,resolution=(600,600))

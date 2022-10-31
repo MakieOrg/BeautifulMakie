@@ -47,7 +47,7 @@ end
 
 # ##  Mandelbrot plot
 
-npoints = 1200
+npoints = 600
 img = zeros(npoints, npoints)
 mandelbrot_set!(img, -2.0,0.5,-1.25,1.25, npoints)
 
@@ -113,7 +113,7 @@ end
 
 # ## Julia set plot
 
-npoints = 1200
+npoints = 600
 img = zeros(npoints, npoints)
 julia_set!(img, -1.7, 1.7, -1.7, 1.7, npoints)
 

@@ -15,6 +15,7 @@ with_theme(theme_light(), resolution = (1600,1200), fontsize = 24) do
 end
 
 # ## ggplot2 theme 
+
 with_theme(theme_ggplot2(), resolution = (1600,1200), fontsize = 24) do
     fig = Figure()
     g = GridLayout(fig[1,1])
@@ -25,6 +26,8 @@ with_theme(theme_ggplot2(), resolution = (1600,1200), fontsize = 24) do
     delete!.(bxs[14:end])
     fig
 end
+
+# Adding some stats
 
 gdf = groupby(dsaurus, :dataset);
 stats = sort(combine(gdf, [:x, :y] .=> mean, [:x, :y] .=> std, [:x, :y] => cor));
