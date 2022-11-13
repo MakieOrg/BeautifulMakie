@@ -1,7 +1,62 @@
-!!! tip
-    The easiest and fastest way to find what you are looking for is via the searching box at the top.
+<a id='Welcome-to-Beautiful-Makie'></a>
+
+<a id='Welcome-to-Beautiful-Makie-1'></a>
 
 # Welcome to Beautiful Makie
+
+!!! info
+	A gallery of easy to copy-paste examples
+
+!!! tip
+    The easiest and fastest way to find what you are looking for is via the searching box at the top.
+	
+## Feature examples
+
+<a href="/examples/generated/2d/lines/line\_latex/" rel ="get code">
+  ![Image title](/examples/generated/2d/lines/line\_latex.svg){ width="300" }
+</a>
+<a href="/examples/generated/2d/lines/line\_inset/" rel ="get code">
+  ![Image title](/examples/generated/2d/lines/line\_inset.svg){ width="300" }
+</a>
+<a href="/examples/generated/2d/lines/line\_two/" rel ="get code">
+  ![Image title](/examples/generated/2d/lines/line\_two.svg){ width="300" }
+</a>
+<a href="/examples/generated/2d/lines/line\_latex\_bessel/" rel ="get code">
+  ![Image title](/examples/generated/2d/lines/line\_latex\_bessel.svg){ width="300" }
+</a>
+<a href="/examples/generated/2d/lines/line\_twin\_axis/" rel ="get code">
+  ![Image title](/examples/generated/2d/lines/line\_twin\_axis.svg){ width="300" }
+</a>
+<a href="/examples/generated/2d/scatters/scatter/" rel ="get code">
+  ![Image title](/examples/generated/2d/scatters/scatter.svg){ width="300" }
+</a>
+<a href="/examples/generated/2d/scatterlines/scatterls\_line/" rel ="get code">
+  ![Image title](/examples/generated/2d/scatterlines/scatterls\_line.svg){ width="300" }
+</a>
+<a href="/examples/generated/2d/linesegments/linesegments/" rel ="get code">
+  ![Image title](/examples/generated/2d/linesegments/linesegments.svg){ width="300" }
+</a>
+<a href="/examples/generated/2d/stairs/stairs/" rel ="get code">
+  ![Image title](/examples/generated/2d/stairs/stairs.svg){ width="300" }
+</a>
+<a href="/examples/generated/2d/contour/qubit/" rel ="get code">
+  ![Image title](/examples/generated/2d/contour/qubit.png){ width="300" }
+</a>
+<a href="/examples/generated/2d/streamplot/field\_heatmap/" rel ="get code">
+  ![Image title](/examples/generated/2d/streamplot/field\_heatmap.png){ width="300" }
+</a>
+<a href="/examples/generated/2d/histogram/hists\_on\_the\_sides/" rel ="get code">
+  ![Image title](/examples/generated/2d/histogram/hists\_on\_the\_sides.svg){ width="300" }
+</a>
+<a href="/examples/generated/2d/density/density/" rel ="get code">
+  ![Image title](/examples/generated/2d/density/density.svg){ width="300" }
+</a>
+<a href="/examples/generated/2d/aog/MarketData/" rel ="get code">
+  ![Image title](/examples/generated/2d/aog/market\_data.svg){ width="300" }
+</a>
+<a href="/examples/generated/2d/aog/penguinsViolins/" rel ="get code">
+  ![Image title](/examples/generated/2d/aog/penguinsViolins.svg){ width="300" }
+</a>
 
 [Makie](https://github.com/JuliaPlots/Makie.jl) is a high-performance, extendable, and multi-platform plotting ecosystem for the Julia programming language. For more examples go to the different menu sections. See also the official [documentation](https://makie.juliaplots.org/stable/).
 
@@ -56,3 +111,12 @@ BibTeX entry:
   journal = {Journal of Open Source Software}
 }
 ```
+~~~
+<p> 
+  <span class ="galleryBM">
+    <a class="imagegroupBM" href= "examples/generated/2d/datavis/astronauts/"> 
+      <span class="imageBM" style="background-image: url(/examples/generated/2d/datavis/astronauts.png); background-size: auto 105%; background-position: center center !important;"></span>
+    </a>
+  </span>
+</p>
+~~~

@@ -10,6 +10,10 @@ plt = data(cl)*mapping(:timestamp, :Close)*visual(Lines)
 with_theme(theme_ggplot2(), resolution = (600,400)) do
     plt |> draw
 end
+save("market_data.svg", current_figure()); # hide
+
+# ![](market_data.svg)
+
 
 # ## Prices
 
