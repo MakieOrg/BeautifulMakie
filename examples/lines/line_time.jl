@@ -8,7 +8,7 @@ tempo = string.(timestamp(ta))
 lentime = length(tempo)
 slice_dates = range(1, lentime, step=lentime ÷ 8)
 
-fig = Figure(resolution=(600, 400), font=:sans)
+fig = Figure(resolution=(600, 400), fonts=(;regular = "sans"))
 ax = Axis(fig[1, 1], xlabel="Date", ylabel="value")
 line1 = lines!(ax, 1:lentime, vals; color=:black, linewidth=0.85)
 ax.xticks = (slice_dates, tempo[slice_dates])

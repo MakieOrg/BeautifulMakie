@@ -30,14 +30,14 @@ with_theme(theme_dark(), resolution = (650, 450)) do
     end
 
     titlelayout = GridLayout(fig[0, 1], halign = :left, tellwidth = false)
-    Label(titlelayout[1, 1], "Interest rate differentials", halign = :left, textsize = 30, font = "TeX Gyre Heros Bold Makie")
-    Label(titlelayout[2, 1], "Differences in monetary policy are a key driver of the strong dollar.", halign = :left, textsize = 20)
+    Label(titlelayout[1, 1], "Interest rate differentials", halign = :left, fontsize = 30, fonts = (; regular= "TeX Gyre Heros Bold Makie"))
+    Label(titlelayout[2, 1], "Differences in monetary policy are a key driver of the strong dollar.", halign = :left, fontsize = 20)
     Label(titlelayout[3, 1], "(versus US interest rate, percent)", halign = :left)
     rowgap!(titlelayout, 0)
 
     for (label, (year, y)) in ["Global\nfinancial\ncrisis" => (2008, 8), "Taper\ntantrum" => (2013, 8), "China\n2015\ncrisis" => (2015.4, 6), "Russia invasion\nof Ukraine" => (2022.1, 8)]
         lines!(ax, [year, year], [-10, y], color = :grey90, linestyle = :dash)
-        text!(ax, year, y, text = label, align = (:left, :top), offset = (10, 0), textsize = 14)
+        text!(ax, year, y, text = label, align = (:left, :top), offset = (10, 0), fontsize = 14)
     end
 
     ylims!(ax, -11, 11)

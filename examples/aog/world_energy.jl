@@ -126,7 +126,7 @@ with_theme(theme_black()) do
         width =  Relative(1.5 / 4), height =10,
         halign = 0.85, valign = :bottom, 
         vertical=false, flipaxis=false)
-    Label(fig[1,2], "Global Energy Consumption 2018", textsize=32,
+    Label(fig[1,2], "Global Energy Consumption 2018", fontsize=32,
         color=:white,
         halign = :left, valign = :top,
         tellheight = false, tellwidth = false,)

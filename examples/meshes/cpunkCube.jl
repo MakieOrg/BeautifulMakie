@@ -96,14 +96,14 @@ with_theme(theme_black()) do
     text!(ax2, string.(percent).*"%", position = Point2f.(rating, votes),
         align = (:center, :bottom))
     text!(ax2, "Total votes: $(sum(votes))", color=cmap_cpunk[8],
-        position = (1, 3maximum(votes)/4), textsize= 28)
+        position = (1, 3maximum(votes)/4), fontsize= 28)
     hideydecorations!(ax2; grid=false)
     hidespines!(ax2, :l, :t, :r)
     ax2.xticks = 1:10
     Label(fig[2,1], "Source: https://www.cyberpunk.net/en/edgerunners\nImages: https://twitter.com/edgerunners", 
-        textsize = 14, tellwidth=false, halign=:left, color = cmap_cpunk[9])
+        fontsize = 14, tellwidth=false, halign=:left, color = cmap_cpunk[9])
     Label(fig[2,2], "Stats: https://myanimelist.net/anime/42310/Cyberpunk__Edgerunners/stats", 
-        textsize = 14, tellwidth=false, halign=:right, color = cmap_cpunk[9])
+        fontsize = 14, tellwidth=false, halign=:right, color = cmap_cpunk[9])
     colgap!(fig.layout,1)
     fig
 end

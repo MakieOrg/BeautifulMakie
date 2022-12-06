@@ -71,13 +71,13 @@ function plotastro()
         hidedecorations!(ax)
         image!(-20 .. 20, -17 .. 17, rotr90(imgEarth))
         text!(astro.name, position = @.(Point2f(cos(astro.θ), sin(astro.θ)) * 85),
-            rotation = astro.texttheta, textsize = 6, align = astro.align)
+            rotation = astro.texttheta, fontsize = 6, align = astro.align)
         text!(string.(valYear.year_of_mission),
             position = @.(Point2f(cos(valYear.θ), sin(valYear.θ)) * 65),
-            rotation = valYear.texttheta, textsize = 10, align = valYear.align)
+            rotation = valYear.texttheta, fontsize = 10, align = valYear.align)
         text!(vehicles.ascend_shuttle,
             position = @.(Point2f(cos(vehicles.θ), sin(vehicles.θ)) * 73),
-            rotation = vehicles.texttheta, textsize = 6, align = vehicles.align)
+            rotation = vehicles.texttheta, fontsize = 6, align = vehicles.align)
 
         pltobj = scatter!(ax, astro[:, :xM], astro[:, :yM], color = colorp,
             colormap = cmap, markersize = 3 * ps, strokewidth = 0)
@@ -97,18 +97,18 @@ function plotastro()
             hrs = Int64(round(horas[indx], digits = 0))
             lines!(xg, yg, linewidth = 0.5, linestyle = :dash, color = :white)
             text!(string.(hrs), position = (xg[1] + 0.5, y[1] + 0.5),
-                color = "#FFDD33", textsize = 14)
+                color = "#FFDD33", fontsize = 14)
         end
         lines!([rPts * gridLines[1], rPts * gridLines[end]], [0, 0], linestyle = :dash,
             linewidth = 2, color = "#FFDD33")
-        text!("evaM (hrs)", position = (47, -3.5), color = "#FFDD33", textsize = 16)
+        text!("evaM (hrs)", position = (47, -3.5), color = "#FFDD33", fontsize = 16)
         text!("evaM ≡ Duration of extravehicular \n activities during the mission in hours",
-            position = (rPts * gridLines[end-2], 90), color = "#FFDD33", textsize = 16)
-        text!("using Makie", position = (-99, -94), textsize = 18, color = :white)
+            position = (rPts * gridLines[end-2], 90), color = "#FFDD33", fontsize = 16)
+        text!("using Makie", position = (-99, -94), fontsize = 18, color = :white)
         text!("Visualization by @LazarusAlon and Julius Krumbiegel ",
-            position = (-99, -97), textsize = 12, color = "#61AFEF")
+            position = (-99, -97), fontsize = 12, color = "#61AFEF")
         text!("Data - Astronaut Database - Mariya Stavnichuk and Tatsuya Corlett",
-            position = (-99, -99), textsize = 10)
+            position = (-99, -99), fontsize = 10)
         limits!(ax, -100, 100, -100, 100)
         fig
     end

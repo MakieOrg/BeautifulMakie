@@ -4,7 +4,7 @@ CairoMakie.activate!(type = "svg") #hide
 Random.seed!(13)
 n = 3000
 data = randn(n)
-fig = Figure(resolution = (1200, 800), font = "sans", fontsize = 20)
+fig = Figure(resolution = (1200, 800), fonts = (; regular= "sans"), fontsize = 20)
 ax1 = Axis(fig[1, 1]; xlabel = "value", ylabel = "samples")
 ax2 = Axis(fig[1, 2]; xlabel = "value", ylabel = "counts")
 ax3 = Axis(fig[2, 1]; xlabel = "value", ylabel = "counts")

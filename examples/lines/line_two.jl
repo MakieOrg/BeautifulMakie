@@ -7,7 +7,7 @@ lines(x, sin.(x); color = "#56B4E9", linewidth = 2, label = L"sin",
         xlabelsize = 22, ylabelsize = 22,
         xgridstyle = :dashdot, xgridwidth = 0.85,
         xtickalign = 1, xticksize = 20),
-    figure = (resolution = (600, 400), font = "CMU Serif"))
+    figure = (resolution = (600, 400), fonts = (; regular= "CMU Serif")))
 
 lines!(x, cos.(x); color = :black, linestyle = :dash, label = L"cos")
 limits!(-2π, 2π, -1, 1)

@@ -8,7 +8,7 @@ u2(x, y) = -x
 v2(x, y) = 2y
 z = [log10(sqrt(u2(x, y)^2 + v2(x, y)^2)) for x in x, y in y]
 
-fig = Figure(resolution = (600, 400), fontsize = 22, font = "CMU Serif")
+fig = Figure(resolution = (600, 400), fontsize = 22, fonts = (;regular="CMU Serif"))
 ax = fig[1, 1] = Axis(fig, xlabel = L"x", ylabel = L"y")
 fs = heatmap!(ax, x, y, z, colormap = Reverse(:plasma))
 streamplot!(ax, testField, x, y, colormap = Reverse(:plasma),

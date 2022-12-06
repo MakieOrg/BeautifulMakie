@@ -14,7 +14,7 @@ for (indx, i) in enumerate(p)
 end
 cbarPal = :thermal
 cmap = cgrad(colorschemes[cbarPal], psize, categorical = true)
-fig = Figure(resolution = (600, 400), font = "CMU Serif")
+fig = Figure(resolution = (600, 400), fonts = (; regular= "CMU Serif"))
 ax = Axis(fig[1, 1], xlabel = L"x", ylabel = L"x^{p}",
     xlabelsize = 22, ylabelsize = 22)
 [lines!(xs, ys[:, v], color = cmap[v]) for v in 1:psize]

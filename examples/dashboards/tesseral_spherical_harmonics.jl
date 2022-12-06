@@ -40,7 +40,7 @@ with_theme(theme_dark()) do
         colormap = cmap, shading = false)
     limits!(ax2, -0.5, 0.5, -0.5, 0.5, -1, 1)
     ## cbar = Colorbar(fig[1, 3], pltobj1, label = "Yₗₘ(θ,ϕ)", width = 11, tickalign = 1, tickwidth = 1)
-    fig[0, 1:2] = GLMakie.Label(fig, @lift("Tesseral Spherical Harmonics l = $($l), m = $($m)"), textsize = 20)
+    fig[0, 1:2] = GLMakie.Label(fig, @lift("Tesseral Spherical Harmonics l = $($l), m = $($m)"), fontsize = 20)
     fig[1, 0] = vgrid!(
         GLMakie.Label(fig, "Colormap", width = nothing),
         menu; tellheight = false, width = 150)

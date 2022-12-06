@@ -6,7 +6,7 @@ CairoMakie.activate!(type = "svg") #hide
 colors = ["#E69F00", "#56B4E9", "#009E73"]
 x = LinRange(-10, 10, 200)
 fg(x, μ, σ) = exp.(.-(x .- μ) .^ 2 ./ (2σ^2)) ./ (σ * √(2π))
-fig = Figure(resolution = (600, 400), font = "CMU Serif")
+fig = Figure(resolution = (600, 400), fonts= (; regular = "CMU Serif"))
 ax = Axis(fig[1, 1], xlabel = L"x", ylabel = L"y", xlabelsize = 22, ylabelsize = 22)
 for (idx, μ) in enumerate(μs)
     lines!(x, fg(x, μ, σs[idx]); color = colors[idx],

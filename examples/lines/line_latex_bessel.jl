@@ -2,7 +2,7 @@ using CairoMakie, LaTeXStrings, SpecialFunctions
 CairoMakie.activate!(type = "svg") #hide
 
 x = 0:0.1:15
-fig = Figure(resolution = (600, 400), font = "CMU Serif")
+fig = Figure(resolution = (600, 400), fonts =(; regular= "CMU Serif"))
 ax = Axis(fig[1, 1], xlabel = L"x", ylabel = L"J_{\nu}(x)", ylabelsize = 22,
     xlabelsize = 22, xgridstyle = :dash, ygridstyle = :dash, xtickalign = 1,
     xticksize = 10, ytickalign = 1, yticksize = 10, xlabelpadding = -10)

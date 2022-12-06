@@ -1,7 +1,7 @@
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 x = 0:0.05:4π
-fig = Figure(resolution = (600, 400), font = "CMU Serif") ## probably you need to install this font in your system
+fig = Figure(resolution = (600, 400), fonts = (; regular= "CMU Serif")) ## probably you need to install this font in your system
 ax = Axis(fig[1, 1], xlabel = L"x", ylabel = L"f (x)", ylabelsize = 22,
     xlabelsize = 22, xgridstyle = :dash, ygridstyle = :dash, xtickalign = 1,
     xticksize = 10, ytickalign = 1, yticksize = 10, xlabelpadding = -10)

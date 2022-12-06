@@ -6,7 +6,7 @@ n = 3000
 data = randn(n)
 normf = [:none, :pdf, :density, :probability]
 colors = Makie.wong_colors()
-fig = Figure(resolution = (1200, 800), font = "sans", fontsize = 20)
+fig = Figure(resolution = (1200, 800), fonts = (; regular ="sans"), fontsize = 20)
 axs = [Axis(fig[i, j], xlabel = i == 2 ? "value" : "") for i in 1:2 for j in 1:2]
 [hist!(axs[i], data; normalization = normf[i], color = colors[i],
     label = "$(normf[i])") for i in 1:4]

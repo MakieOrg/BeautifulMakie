@@ -36,7 +36,7 @@ with_theme(theme_dark()) do
     Colorbar(fig[1, 3], pltobj, label = "Yₗₘ(θ,ϕ)", tickwidth = 2, tickalign = 1,
         width = 25, ticksize = 25, height = Relative(0.5))
     fig[0, 1:2] = Label(fig, "Tesseral Spherical Harmonics l = $(l), m = $(m)",
-        textsize = 30, color = (:white, 0.85))
+        fontsize = 30, color = (:white, 0.85))
     hidedecorations!.(axs; grid = false)
     fig
 end

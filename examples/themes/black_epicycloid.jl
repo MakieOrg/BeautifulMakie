@@ -8,7 +8,7 @@ function EpicycloidLines()
     tronLegacy = ["#FF410DFF", "#6EE2FFFF", "#F7C530FF", "#95CC5EFF",
         "#D0DFE6FF", "#F79D1EFF", "#748AA6FF"]
 
-    fig = Figure(resolution = (600, 400), font = :sans)
+    fig = Figure(resolution = (600, 400), fonts = (; regular="sans"))
     ax = Axis(fig[1, 1], aspect = 1, title = "Epicycloid",
         xlabel = "x(θ) = r(k+1)cos(θ) -rcos((k+1)θ)",
         ylabel = "y(θ) = r(k+1)cos(θ) -rcos((k+1)θ)")

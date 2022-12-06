@@ -49,7 +49,7 @@ function plotmat()
     zoom!(axs[4].scene, cameracontrols(axs[4].scene), 1.2)
     sl = Slider(fig[1:2, 4], range=1:length(ids), startvalue=2, horizontal=false)
     connect!(idx, sl.value)
-    fig[0, 1:3] = GLMakie.Label(fig, @lift("idnum [$(1*$idx)] png material : $(ids[$idx])"), textsize=20,
+    fig[0, 1:3] = GLMakie.Label(fig, @lift("idnum [$(1*$idx)] png material : $(ids[$idx])"), fontsize=20,
         tellheight=true, tellwidth=false)
     fig
 end

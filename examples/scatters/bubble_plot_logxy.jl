@@ -10,7 +10,7 @@ fig, ax, pltpbj = scatter(x, y; markersize=(x .^ 2/3)[end:-1:1] .+ 6,
     color=x, colormap=cmap,
     figure=(;
         resolution=(600, 400),
-        font="CMU Serif"),
+        fonts=(;regular="CMU Serif")),
     axis=(; 
         xscale=log10,
         yscale=log10, 

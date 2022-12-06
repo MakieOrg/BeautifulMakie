@@ -15,10 +15,10 @@ ax = LScene(fig[1,1], show_axis = true)
 wireframe!(ax, x1, y1, z1; transparency = true)
 axis = ax.scene[OldAxis]
 tstyle = axis[:names]
-tstyle[:textsize] = 16
+tstyle[:fontsize] = 16
 tstyle[:gap] = 8
 axis[:ticks][:textcolor] = :black
-axis[:ticks][:textsize] = 10
+axis[:ticks][:fontsize] = 10
 fig
 
 # !!! warning 
