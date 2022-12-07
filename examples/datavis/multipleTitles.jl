@@ -30,7 +30,7 @@ with_theme(theme_dark(), resolution = (650, 450)) do
     end
 
     titlelayout = GridLayout(fig[0, 1], halign = :left, tellwidth = false)
-    Label(titlelayout[1, 1], "Interest rate differentials", halign = :left, fontsize = 30, fonts = (; regular= "TeX Gyre Heros Bold Makie"))
+    Label(titlelayout[1, 1], "Interest rate differentials", halign = :left, fontsize = 30, font="TeX Gyre Heros Bold Makie")
     Label(titlelayout[2, 1], "Differences in monetary policy are a key driver of the strong dollar.", halign = :left, fontsize = 20)
     Label(titlelayout[3, 1], "(versus US interest rate, percent)", halign = :left)
     rowgap!(titlelayout, 0)

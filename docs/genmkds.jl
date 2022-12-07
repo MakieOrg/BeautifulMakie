@@ -14,7 +14,11 @@ function getfiles()
     for f in folders
         names = readdir(joinpath(@__DIR__, "..", "examples", f))
         setdiff!(names, [".DS_Store", "density_ridges.jl",
-            "world_energy.jl", "gapminder.jl", "vertical_feature_mask.jl"])
+            "world_energy.jl", "gapminder.jl", 
+            "vertical_feature_mask.jl",
+            "submarine_cables.jl",
+            "timeseries_proj.jl"])
+            
         fpaths  = "$(f)/" .* names
         srcsfiles = vcat(srcsfiles, fpaths...)
     end

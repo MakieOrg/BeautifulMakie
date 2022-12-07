@@ -272,7 +272,7 @@ nav:
           - "Winkel Tripel, US States": "examples/generated/2d/geo/us_states.md"
           - "coastlines": "examples/generated/2d/geo/coastlines.md"
           - "projections": "examples/generated/2d/geo/projections.md"
-          - "Submarine Cables": "examples/generated/2d/geo/submarine_cables.md"
+          #- "Submarine Cables": "examples/generated/2d/geo/submarine_cables.md"
           - "Blue Marble": "examples/generated/2d/geo/blue_marble.md"
           - "Moon": "examples/generated/2d/geo/moon.md"
           - "Donut: Earth & Sun": "examples/generated/2d/geo/donut_earth_sun.md"
@@ -289,6 +289,7 @@ nav:
     - "Eigenvalues evolution": "examples/generated/2d/datavis/eigenvalues_evolution.md"
     - "Strange attractors": "examples/generated/2d/datavis/strange_attractors.md"
     - "Multiple titles": "examples/generated/2d/datavis/multipleTitles.md"
+    - "Earthquakes projection": "examples/generated/2d/datavis/earthquakes_proj.md"
 
   - "Algebra of Graphics":
     - "Statistics":
