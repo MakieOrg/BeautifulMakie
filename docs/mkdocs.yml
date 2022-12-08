@@ -249,6 +249,8 @@ nav:
           - "Earth and planes": "examples/generated/2d/meshes/Earth_planes.md"
           - "How to Cube": "examples/generated/2d/meshes/how_to_cube.md"
           - "Cube: Cyberpunk style": "examples/generated/2d/meshes/cpunkCube.md"
+          - "Simplex in 3D with arrows": "examples/generated/2d/meshes/simplex.md"
+
   - "Themes":
     - "Predefined":
           - "black: epicycloid": "examples/generated/2d/themes/black_epicycloid.md"
