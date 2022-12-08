@@ -12,6 +12,9 @@ faces = [
     4 3 1
     4 2 3
     ]
+## m = GLMakie.GeometryBasics.Mesh(GLMakie.Makie.to_vertices(vertices), GLMakie.Makie.to_triangles(faces))
+## mesh(m)
+
 marker = Sphere(Point3f(0), 1) # 0 -> -0.5, fully inside, 0 -> 0.5 fully outside
 
 fig = Figure(resolution = (600,600))
@@ -22,7 +25,7 @@ poly!(ax, vertices, faces; color = :transparent,
 meshscatter!(ax, 
     Point3f(1/3, 1/3,1/3),  # you need to calculate this for your use case
     marker = marker, markersize = 0.025, transparency=true)
-# the following are not over the plane nither perpendicular.
+## the following are not over the plane nither perpendicular.
 arrows!(ax, 
     [Point3f(1/3, 1/3,1/3)],  # you need to calculate this for your use case
     [Point3f(0.2, 0.1,0.3)],  # you need to calculate this for your use case
