@@ -15,7 +15,6 @@ theme:
     - navigation.tabs
     # - navigation.tabs.sticky
     - navigation.top
-    - navigation.footer
     - navigation.tracking
     - search.highlight
     - search.share
@@ -55,12 +54,11 @@ theme:
 site_name: Beautiful Makie
 site_description: Makie Examples
 site_author: Lazaro Alonso
-site_url: "https://beautiful.makie.org/dev/"
+site_url: ""
 
 repo_url: https://github.com/MakieOrg/BeautifulMakie
 repo_name: BeautifulMakie
 edit_uri: "" # No edit button, as some of our pages are in /docs and some in /examples via symlink, so it's impossible for them all to be accurate
-copyright: Copyright &copy; 2023 Lazaro Alonso
 
 strict: true # Don't allow warnings during the build process
 extra_javascript:
@@ -75,15 +73,6 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/lazarusA
-    - icon: fontawesome/brands/mastodon
-      link: https://julialang.social/@LazaroAlonso
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/LazarusAlon
 
 markdown_extensions:
   - admonition
@@ -112,7 +101,6 @@ plugins:
         - "_overrides"
 #  - mknotebooks # Jupyter notebooks
   - mkdocs-video
-#- social
 nav:
   - "Home": "index.md"
   - "2D":
