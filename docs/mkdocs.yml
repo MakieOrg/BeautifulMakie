@@ -15,6 +15,7 @@ theme:
     - navigation.tabs
     # - navigation.tabs.sticky
     - navigation.top
+    - navigation.footer
     - navigation.tracking
     - search.highlight
     - search.share
@@ -67,6 +68,15 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lazarusA
+    - icon: fontawesome/brands/mastodon
+      link: https://julialang.social/@LazaroAlonso
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/LazarusAlon
+      
 extra_css:
   - stylesheets/custom.css
 extra_javascript:
