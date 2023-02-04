@@ -55,7 +55,7 @@ theme:
 site_name: Beautiful Makie
 site_description: Makie Examples
 site_author: Lazaro Alonso
-site_url: "https://beautiful.makie.org/dev/"
+site_url: ""
 
 repo_url: https://github.com/MakieOrg/BeautifulMakie
 repo_name: BeautifulMakie
