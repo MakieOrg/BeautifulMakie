@@ -111,3 +111,12 @@ BibTeX entry:
   journal = {Journal of Open Source Software}
 }
 ```
+~~~
+<p> 
+  <span class ="galleryBM">
+    <a class="imagegroupBM" href= "examples/generated/2d/datavis/astronauts/"> 
+      <span class="imageBM" style="background-image: url(/examples/generated/2d/datavis/astronauts.png); background-size: auto 105%; background-position: center center !important;"></span>
+    </a>
+  </span>
+</p>
+~~~
