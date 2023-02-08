@@ -50,3 +50,5 @@ with_theme(theme_black(), resolution = (1400,800)) do
     fig
 end
 save("newEntryAoG_Geomakie.png", current_figure())
+
+# ![](newEntryAoG_Geomakie.png)

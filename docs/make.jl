@@ -1,8 +1,5 @@
 using Documenter, DocumenterMarkdown, Pkg
 
-deployconfig = Documenter.auto_detect_deploy_system()
-Documenter.post_status(deployconfig; type="pending", repo="github.com/MakieOrg/BeautifulMakie.git")
-
 makedocs(; sitename="BeautifulMakie", authors="Lazaro Alonso", clean=true, doctest=true,
         strict=[
              :doctest,
