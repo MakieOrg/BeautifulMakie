@@ -18,12 +18,14 @@ Because the file is too big, the output for the following script is generated lo
 using GLMakie
 using NCDatasets
 using GLMakie.GeometryBasics
+using Dates
 
 function SphereTess(; o=Point3f(0), r=1, tess=128)
     return uv_normal_mesh(Tesselation(Sphere(o, r), tess))
 end
 
-ds = Dataset("MOST") 
+ds = Dataset("MOST")
+tempo = ds["TIME"][:]
 indx = Observable(1)
 ds1 = @lift(replace(ds["HA"][:,:,$indx]/100, missing=>NaN)')
 
@@ -50,6 +52,10 @@ with_theme(theme_dark()) do
         rich("Visualization by Lazaro Alonso\n", color = :silver,
             rich("using Makie", color=:white)),
         fontsize = 18, halign = :left)
+    Label(fig[1,1, Top()],
+        @lift(rich("Day: $(day(tempo[$indx])) Hour: $(hour(tempo[$indx])), $(Minute(tempo[$indx]))",
+            color = :silver)),
+        fontsize = 18, halign = :right)
     rotate!(ax.scene, 1.5)
     zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
     fig
