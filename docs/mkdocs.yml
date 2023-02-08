@@ -302,6 +302,7 @@ nav:
     - "Strange attractors": "examples/generated/2d/datavis/strange_attractors.md"
     - "Multiple titles": "examples/generated/2d/datavis/multipleTitles.md"
     - "Earthquakes projection": "examples/generated/2d/datavis/earthquakes_proj.md"
+    - "Asteroid Impact - 66 Million Years Ago": "extinction_event.md"
 
   - "Algebra of Graphics":
     - "Statistics":
