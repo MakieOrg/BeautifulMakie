@@ -4,7 +4,7 @@ x = range(-3, 3, length=100)
 y = range(-2, 2, length=100)
 z = [sin(x + y^2) for x in x, y in y]
 xpt = [x for x in x, y in y]
-ypt = [y for x in x, y in y]
+ypt = [y for x in x, y in y];
 
 function boundary_values(a)
     return [a[1,:]..., a[2:end,end]..., a[end,end-1:-1:1]...,a[end-1:-1:1,1]...]
@@ -16,6 +16,7 @@ bzpt = boundary_values(z)
 
 upper = Point3f.(bxpt, bypt, bzpt)
 lower = Point3f.(bxpt, bypt, bzpt*0.0 .+ minimum(bzpt))
+lower_colors = bzpt*0.0 .+ minimum(bzpt);
 
 # ## Plotting sides
 with_theme(theme_dark()) do 
@@ -39,6 +40,27 @@ with_theme(theme_dark()) do
     fig
 end
 
+# ## Sides, colour gradient bottom to top
+with_theme(theme_dark()) do 
+    colormap = :linear_worb_100_25_c53_n256
+    fig = Figure()
+    ax  = Axis3(fig[1,1]; aspect =(1,1,0.5),
+        perspectiveness = 0.5f0,
+        azimuth = -1.275π * 1.77,
+        elevation = pi/4.5, protrusions=0)
+
+    surface!(ax, xpt, ypt, z;
+        colormap=(colormap, 0.1),
+        shading=true,
+        transparency=true,
+        )
+    lines!(ax, upper; color = :white, linewidth=1.25,
+        transparency=true)
+    lines!(ax, lower; color = :gold, linewidth=1.25,
+        transparency=true)
+    band!(ax, lower, upper; color = [lower_colors..., bzpt...], colormap)
+    fig
+end
 
 # ## Different views and options
 
