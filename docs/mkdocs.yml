@@ -239,6 +239,7 @@ nav:
           - "Tesseral Spherical Harmonics": "examples/generated/2d/surfaces/tesseralSphericalH.md"
           - "Torus": "examples/generated/2d/surfaces/torus.md"
           - "Band 3D plane surface": "examples/generated/2d/surfaces/band3d.md"
+          - "Surface filled sides": "examples/generated/2d/surfaces/surface_filled_sides.md"
 
       - "Meshscatters":
           - "Cube: meshscatters": "examples/generated/2d/mscatters/cube_mscatters.md"
