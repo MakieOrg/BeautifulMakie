@@ -28,7 +28,7 @@ theme:
     # We deliberately don't automatically use `media` to check a user's preferences. We default to light mode as
     # (a) it looks more professional, and (b) is more obvious about the fact that it offers a (dark mode) toggle.
     - scheme: default
-      primary: white
+      primary: grey
       accent: amber
       toggle:
         icon: material/weather-night
@@ -110,7 +110,11 @@ plugins:
       exclude:
         - "_overrides"
 #  - mknotebooks # Jupyter notebooks
-  - mkdocs-video
+  - mkdocs-video:
+      css_style:
+            video_controls: True
+            width: "100%"
+            height: "40vh"
 nav:
   - "Home": "index.md"
   - "2D":
@@ -286,6 +290,7 @@ nav:
           - "coastlines": "examples/generated/2d/geo/coastlines.md"
           - "projections": "examples/generated/2d/geo/projections.md"
           #- "Submarine Cables": "examples/generated/2d/geo/submarine_cables.md"
+          - "Animating Rasters": "examples/generated/2d/geo/rasters.md"
           - "Blue Marble": "examples/generated/2d/geo/blue_marble.md"
           - "Moon": "examples/generated/2d/geo/moon.md"
           - "Donut: Earth & Sun": "examples/generated/2d/geo/donut_earth_sun.md"

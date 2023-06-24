@@ -14,11 +14,16 @@
 # We'll also show the Julia package ecosystem's effortless interoperability, by using [DataInterpolations.jl](https://github.com/PumasAI/DataInterpolations.jl)
 # to smoothly interpolate a timeseries of rasters, and animate them in Makie!
 
+# ENV["RASTERDATASOURCES_PATH"] = ".." # joinpath(tempdir(), "Rasters"), needed for RasterDataSources
+
 # Let's load the packages:
-ENV["RASTERDATASOURCES_PATH"] = joinpath(tempdir(), "Rasters") # hide
+
 using Rasters
+using RasterDataSources
+using ArchGDAL
 using GLMakie
 using Makie.GeometryBasics
+using Makie.GeometryBasics: Tesselation, uv_normal_mesh
 using DataInterpolations, Printf
 
 # ### Getting the data
@@ -71,7 +76,14 @@ prec_interpolated = DataInterpolations.QuadraticInterpolation(prec_rasters, 1:le
 # ## A simple animation
 
 # Let's see if this interpolation worked.  We create a figure to animate:
-fig, ax, plt = surface(temp_interpolated(1.0); axis = (; type = Axis3))
+fig, ax, plt = surface(temp_interpolated(1.0); transparency=true,
+    axis = (; type = Axis3,
+        perspectiveness = 0.5,
+        azimuth = -0.5,
+        elevation = 0.57,
+        aspect = (1, 1, 1)),
+    figure =(;resolution = (800, 800))
+    )
 hm = heatmap!(ax, temp_interpolated(1.0); nan_color = :black)
 translate!(hm, 0, 0, -30) # get the heatmap to the bottom of the plot
 fig # hide
@@ -83,12 +95,13 @@ fig # hide
 # We use the `@time` macro to time how long the recording takes 
 # (note that this is on a device without a GPU, it will be significantly faster with one).
 
-@time record(fig, "temperature_surface_animation.mp4", LinRange(1, 12, 480); framerate = 30) do i
+@time record(fig, "temperature_surface_animation.mp4", LinRange(1, 12, 480÷4); framerate = 30) do i
     ax.title[] = @sprintf "%.2f" i
     plt.input_args[1][] = temp_interpolated(i)
     hm.input_args[1][] = temp_interpolated(i)
-end
-# ![](temperature_surface_animation.mp4)
+end;
+
+# ![type:video](temperature_surface_animation.mp4)
 
 # ## Animating a 3-D globe
 
@@ -113,7 +126,7 @@ m = Makie.GeometryBasics.uv_normal_mesh(
         ), 
         200
     )    
-)
+);
 
 # Now, we can decompose this mesh into its vertices, uv coordinates, and normals.
 # - The vertices of the mesh are the coordinates of the points on the sphere.
@@ -122,28 +135,33 @@ m = Makie.GeometryBasics.uv_normal_mesh(
 #   the mesh by, gets applied onto that mesh.
 p = decompose(Point3f0, m)
 uv = decompose_uv(m)
+norms = decompose_normals(m);
 
 # Now, we move to the visualization!
 
 # Let's first define a colormap which we'll use to plot:
 cmap = [:darkblue, :deepskyblue2, :deepskyblue, :gold, :tomato3, :red, :darkred]
+# this colormap is fun, but its confusing when including also the one for precipitation.
 Makie.to_colormap(cmap) # hide
 
 # We create the Figure, which is the top-level object in Makie,
 # and holds the axis which holds our plots.
-fig = Figure()
 
-# First, we plot the sphere, which displays temperature.
-ax, temperature_plot = mesh(
-    fig[1, 1],
+fig = Figure(resolution = (800,800), backgroundcolor=:snow2)
+# First, we plot an empty the sphere
+ax, plt_obj = mesh(fig[1,1], uv_normal_mesh(Tesselation(Sphere(Point3f(0), 0.99),128));
+    color = (:white,0.1), transparency=true,
+    axis = (type = LScene, show_axis = false)
+    )
+# Then, we plot the sphere, which displays temperature.
+temperature_plot = mesh!(
     m;
     color = Makie.convert_arguments(Makie.ContinuousSurface(), worldclim_stacks[10].tmax)[3]', 
     colorrange = (-50, 50), 
-    colormap = cmap, 
-    shading = true, 
-    axis = (type = LScene, show_axis = false)
+    colormap = :tableau_temperature, #cmap, 
+    shading = true,
+    transparency=false,
 )
-
 fig
 
 # Note how we defined the color!  
@@ -173,45 +191,52 @@ end
 # define a convenience function to do it:
 
 raster2array(raster) = Makie.convert_arguments(Makie.ContinuousSurface(), raster)[3]
-
 watervals = watermap(uv, raster2array(worldclim_stacks[1].prec)')
 
 # Let's finally plot the meshscatter!
 
 xy_width = 0.01
 prec_plot = meshscatter!(
-    ax,
     p, # the positions of the tessellated mesh we got last time
     rotations = norms, # rotate according to the normal vector, pointing out of the sphere
     marker = Rect3(Vec3f(0), Vec3f(1)), # unit box
-    markersize = Vec3f0.(xy_width, xy_width, watervals), # scale by 0.01 in x and y, and `watervals` in z
-    color = watervals, 
-    colormap = [(:black, 0.0), (:skyblue2, 0.6)],
-    shading = false
+    markersize = Vec3f0.(xy_width, xy_width, max.(0,watervals)), # scale by 0.01 in x and y, and `watervals` in z
+    color = max.(0,watervals),
+    colorrange= (0, 0.2),
+    colormap = [(:red, 0.01), (:dodgerblue, 0.7)],
+    shading = false,
+    transparency=true,
 )
 fig # hide
 
-# Before we animate, let's change the camera angle a bit.
-eye_position, lookat, upvector = Vec3f(0.5, 0.8, 2.5), Vec3f(0), Vec3f(0, 1, 0) # hide
-eye_position, lookat, upvector = Vec3f(0.31496838, -1.1342758, 2.535153), Vec3f(0.084392734, -0.011545606, 0.12137972), Vec3f(0.29894897, 0.71282643, 0.6344353)
-update_cam!(ax.scene, eye_position, lookat, upvector)
+# Before we animate, we could change the camera angles with:
+
+#eye_position = Vec3f(0.31496838, -1.1342758, 2.535153)
+#lookat = Vec3f(0.084392734, -0.011545606, 0.12137972)
+#upvector = Vec3f(0.29894897, 0.71282643, 0.6344353)
+#update_cam!(ax.scene, eye_position, lookat, upvector)
 
 # Let's also add a little title which tells us which season we're in:
 title_label = Label(fig[0, 1]; tellwidth = false, font = :bold, fontsize = 20)
+Colorbar(fig[1,2], temperature_plot, label="Temperature", height = Relative(0.5))
+Colorbar(fig[2,1], prec_plot, label="Precipitation", width = Relative(0.5), vertical=false)
+
+zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
 fig # hide
 
 # Now, we animate the water and temperature plots!
 
-@time record(fig, "worldclim_visualization.mp4", LinRange(1, 24, 600); framerate = 60) do i
+record(fig, "worldclim_visualization.mp4", LinRange(1, 24, 600÷4); framerate = 24) do i
     title_label.text[] = @sprintf "%.2f" (i % 12)
     temperature_plot.color[] = raster2array(temp_interpolated(i % 12))'
-    watervals = watermap(uv, raster2array(prec_interpolated(i % 12))')
+    watervals = max.(0, watermap(uv, raster2array(prec_interpolated(i % 12))'))
     prec_plot.color[] = watervals
     prec_plot.markersize[] .= Vec3f0.(xy_width, xy_width, watervals)
     ## since we modify markersize inplace above, we need to notify the signal
+    rotate!(ax.scene, i/8)
     notify(prec_plot.markersize)
-end
+end;
 
-# ![](worldclim_visualization.mp4)
+# ![type:video](worldclim_visualization.mp4)
 
 # This example, and some of the development work which made it possible, was funded by the [xKDR Forum](https://www.xkdr.org).
