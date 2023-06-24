@@ -12,4 +12,4 @@ function tolats(x)
 end
 df = DataFrame(cl)
 df[!, :tolon] .= collect(range(-180,180, length=length(cl)))
-df[!, :newvals] .= 
+#df[!, :newvals] .= 
