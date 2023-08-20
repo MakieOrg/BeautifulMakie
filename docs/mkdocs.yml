@@ -2,6 +2,7 @@ theme:
   name: material
   logo: img/makie.svg
   features:
+    - content.code.copy
     # - announce.dismiss
     - content.code.annotate
     # - content.tabs.link
