@@ -15,7 +15,6 @@ for (idx, μσ) in enumerate(μσpairs)
 end
 axislegend(L"\mu,\quad\sigma"; position= :cb, titlesize= 22)
 hidedecorations!(ax; grid = false);
-
 save("density.svg", fig); # hide
 
 # ![](density.svg)

@@ -265,6 +265,8 @@ nav:
           - "How to Cube": "examples/generated/2d/meshes/how_to_cube.md"
           - "Cube: Cyberpunk style": "examples/generated/2d/meshes/cpunkCube.md"
           - "Simplex in 3D with arrows": "examples/generated/2d/meshes/simplex.md"
+          - "Gravity Field lines effect": "examples/generated/2d/meshes/fgield.md"
+
 
   - "Themes":
     - "Predefined":

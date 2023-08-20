@@ -3,7 +3,8 @@ generated
 build
 .vscode
 .DS_Store
-
+*.mp4
+*tmp
 docs/docs
 docs/site
 examples/cheat_sheets

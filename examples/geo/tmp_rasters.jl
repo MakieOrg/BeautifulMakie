@@ -87,37 +87,7 @@ fig, ax, plt = surface(temp_interpolated(1.0); transparency=true,
 hm = heatmap!(ax, temp_interpolated(1.0); nan_color=:black)
 translate!(hm, 0, 0, -30) # get the heatmap to the bottom of the plot
 fig # hide
-# Now that the figure has been created, we can animate and record it.
 
-# This is done using Makie's `record` convenience function, which can iterate through a range,
-# and capture each frame and stitch it into an animation (using FFMpeg) automatically!
-
-# We use the `@time` macro to time how long the recording takes 
-# (note that this is on a device without a GPU, it will be significantly faster with one).
-
-@time record(fig, "temperature_surface_animation.mp4", LinRange(1, 12, 480÷4); framerate = 30) do i
-    ax.title[] = @sprintf "%.2f" i
-    plt.input_args[1][] = temp_interpolated(i)
-    hm.input_args[1][] = temp_interpolated(i)
-end;
-
-# ![type:video](temperature_surface_animation.mp4)
-
-# ## Animating a 3-D globe
-
-# The last animation was pretty cool!  But let's do something a little more 3D.
-
-# We can plot these fields on a sphere, so it looks like the actual Earth!  
-
-# This is done by plotting the rasters on a spherical mesh, which we can color using a 
-# matrix of color values as a "texture" (in computer graphics terminology).
-
-# We want to represent the Earth as a sphere, 
-# so we tesselate (break up in to triangles) a sphere, 
-# which represents Earth, into a mesh.
-
-# Makie uses GeometryBasics.jl to represent geometries, and it has very simple and efficient
-# routines to create meshes from simple shapes!
 
 m = Makie.GeometryBasics.uv_normal_mesh(
     Makie.GeometryBasics.Tesselation(
@@ -128,11 +98,6 @@ m = Makie.GeometryBasics.uv_normal_mesh(
     )
 );
 
-# Now, we can decompose this mesh into its vertices, uv coordinates, and normals.
-# - The vertices of the mesh are the coordinates of the points on the sphere.
-# - "UV coordinates" are 2-vectors, going from 0 to 1.  Each vertex has an associated UV coordinate.
-#   They provide the link between a mesh and how an image texture, like the raster we're going to color
-#   the mesh by, gets applied onto that mesh.
 p = decompose(Point3f0, m)
 uv = decompose_uv(m)
 norms = decompose_normals(m);
@@ -156,7 +121,7 @@ ax, plt_obj = mesh(fig[1, 1], uv_normal_mesh(Tesselation(Sphere(Point3f(0), 0.99
 # Then, we plot the sphere, which displays temperature.
 temperature_plot = mesh!(
     m;
-    color=Makie.convert_arguments(Makie.ContinuousSurface(), worldclim_stacks[10].tmax)[3]'[end:-1:1,:] |> Matrix,
+    color=Makie.convert_arguments(Makie.ContinuousSurface(), worldclim_stacks[10].tmax)[3]',
     colorrange=(-50, 50),
     colormap=:tableau_temperature, #cmap, 
     shading=true,
@@ -164,18 +129,7 @@ temperature_plot = mesh!(
 )
 fig
 
-# Note how we defined the color!  
-# We called `Makie.convert_arguments` on a `Raster` to get a tuple of `(x, y, z)`, 
-# then used the `z` matrix as a texture to color the mesh.
 
-# The auto-generated UV coordinates are in the convention which devices use,
-# and are actually swapped from the dimensions of column-major matrices in Julia.
-# That's why we have to transpose the matrix we get from `convert_arguments`.
-
-# Next, we plot the water as a meshscatter plot, in this case
-# kind of like a 3-D barplot on the sphere.
-
-# This is a simple utility function which retrieves the water values from the raster,
 # and resamples them to the mesh's nonlinear grid.
 function watermap(uv, water, normalization=908.0f0 * 4.0f0)
     markersize = map(uv) do uv
@@ -190,8 +144,8 @@ end
 # We don't want to call `convert_arguments` all the time, so let's 
 # define a convenience function to do it:
 
-raster2array(raster) = Makie.convert_arguments(Makie.ContinuousSurface(), raster)[3]'[end:-1:1,:]
-watervals = watermap(uv, raster2array(worldclim_stacks[1].prec))
+raster2array(raster) = Makie.convert_arguments(Makie.ContinuousSurface(), raster)[3]
+watervals = watermap(uv, raster2array(worldclim_stacks[1].prec)')
 
 # Let's finally plot the meshscatter!
 
@@ -209,25 +163,15 @@ prec_plot = meshscatter!(
 )
 fig # hide
 
-# Before we animate, we could change the camera angles with:
 
-#eye_position = Vec3f(0.31496838, -1.1342758, 2.535153)
-#lookat = Vec3f(0.084392734, -0.011545606, 0.12137972)
-#upvector = Vec3f(0.29894897, 0.71282643, 0.6344353)
-#update_cam!(ax.scene, eye_position, lookat, upvector)
 
-# Let's also add a little title which tells us which season we're in:
-title_label = Label(fig[0, 1]; tellwidth = false, font = :bold, fontsize = 20)
-Colorbar(fig[1,2], temperature_plot, label="Temperature", height = Relative(0.5))
-Colorbar(fig[2,1], prec_plot, label="Precipitation", width = Relative(0.5), vertical=false)
-
-zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
+zoom!(ax.scene, cameracontrols(ax.scene), 0.8)
 fig # hide
 
 # Now, we animate the water and temperature plots!
 
-record(fig, "worldclim_visualization.mp4", LinRange(1, 24, 600÷4); framerate = 24) do i
-    title_label.text[] = @sprintf "%.2f" (i % 12)
+record(fig, "worldclim_visualization_temp_precip.mp4", LinRange(1, 24, 600); framerate=24) do i
+    #title_label.text[] = @sprintf "%.2f" (i % 12)
     temperature_plot.color[] = raster2array(temp_interpolated(i % 12))'
     watervals = max.(0, watermap(uv, raster2array(prec_interpolated(i % 12))'))
     prec_plot.color[] = watervals
@@ -236,8 +180,7 @@ record(fig, "worldclim_visualization.mp4", LinRange(1, 24, 600÷4); framerate = 
     rotate!(ax.scene, i / 7)
     notify(prec_plot.markersize)
 end;
-set_theme!() # hide
 
-# ![type:video](worldclim_visualization.mp4)
+
 
 # This example, and some of the development work which made it possible, was funded by the [xKDR Forum](https://www.xkdr.org).
