@@ -1,5 +1,5 @@
 using Documenter, DocumenterMarkdown, Pkg
-ENV["RASTERDATASOURCES_PATH"] = "/Users/lalonso/data/"
+# ENV["RASTERDATASOURCES_PATH"] = "/Users/lalonso/data/"
 
 makedocs(; sitename="BeautifulMakie", authors="Lazaro Alonso", clean=true, doctest=true,
         strict=[
