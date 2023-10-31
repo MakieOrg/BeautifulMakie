@@ -61,4 +61,4 @@ with_theme(theme_dark()) do
     fig
 end
 ```
-![](img/extinction_event.png)
+![](/extinction_event.png)

@@ -35,7 +35,7 @@ using DataInterpolations, Printf
 
 # Here, we get the WorldClim climate data, which is an average of the climate
 # in a given month, for the entire globe.  We obtain the data for all 12 months.
-worldclim_stacks = [RasterStack(WorldClim{Climate}, month=i) for i in 1:12]
+worldclim_stacks = [RasterStack(WorldClim{Climate}, month=i) for i in 1:12];
 
 # These are RasterStacks, which are basically a collection of associated rasters.  We can
 # get individual rasters from these stacks:
@@ -48,13 +48,13 @@ worldclim_stacks[1].tmax
 # `z` are the values of the raster at the points `(x, y)`.  This is the format
 # that we can supply directly to Makie.
 
-Makie.convert_arguments(Makie.ContinuousSurface(), worldclim_stacks[1].tmax)
+Makie.convert_arguments(Makie.ContinuousSurface(), worldclim_stacks[1].tmax);
 
 # Let's extract two variables from this stack, the maximum temperature (`:tmax`),
 # and the precipitation (`:prec`).
 
-temp_rasters = getproperty.(worldclim_stacks, :tmax)
-prec_rasters = getproperty.(worldclim_stacks, :prec)
+temp_rasters = getproperty.(worldclim_stacks, :tmax);
+prec_rasters = getproperty.(worldclim_stacks, :prec);
 
 # ### Interpolating Rasters in time
 # This is good data, but we only have twelve time points.
@@ -67,8 +67,8 @@ prec_rasters = getproperty.(worldclim_stacks, :prec)
 
 # Here, we're performing a quadratic interpolation across the timeseries of rasters.
 
-temp_interpolated = DataInterpolations.QuadraticInterpolation(temp_rasters, 1:length(temp_rasters))
-prec_interpolated = DataInterpolations.QuadraticInterpolation(prec_rasters, 1:length(temp_rasters))
+temp_interpolated = DataInterpolations.QuadraticInterpolation(temp_rasters, 1:length(temp_rasters), extrapolate=true)
+prec_interpolated = DataInterpolations.QuadraticInterpolation(prec_rasters, 1:length(temp_rasters), extrapolate=true)
 
 # This returned an interpolation object which can be called with any time value
 # (as `temp_interpolated(1.5)`) between those it's given in the second parameter of the call.
@@ -76,15 +76,14 @@ prec_interpolated = DataInterpolations.QuadraticInterpolation(prec_rasters, 1:le
 # ## A simple animation
 
 # Let's see if this interpolation worked.  We create a figure to animate:
-fig, ax, plt = surface(temp_interpolated(1.0); transparency=true,
-    axis=(; type=Axis3,
-        perspectiveness=0.5,
-        azimuth=-0.5,
-        elevation=0.57,
-        aspect=(1, 1, 1)),
-    figure=(; resolution=(800, 800))
-)
-hm = heatmap!(ax, temp_interpolated(1.0); nan_color=:black)
+temp_inter = Observable(temp_interpolated(1.0))
+fig= Figure(resolution = (800,800))
+ax = Axis3(fig[1,1];perspectiveness=0.5,
+    azimuth=-0.5,
+    elevation=0.57,
+    aspect=(1, 1, 1))
+plt = surface!(ax, temp_inter; transparency=true)
+hm = heatmap!(ax, temp_inter; nan_color=:black)
 translate!(hm, 0, 0, -30) # get the heatmap to the bottom of the plot
 fig # hide
 # Now that the figure has been created, we can animate and record it.
@@ -97,8 +96,7 @@ fig # hide
 
 @time record(fig, "temperature_surface_animation.mp4", LinRange(1, 12, 480÷4); framerate = 30) do i
     ax.title[] = @sprintf "%.2f" i
-    plt.input_args[1][] = temp_interpolated(i)
-    hm.input_args[1][] = temp_interpolated(i)
+    temp_inter[] = temp_interpolated(i)
 end;
 
 # ![type:video](temperature_surface_animation.mp4)
@@ -146,7 +144,6 @@ Makie.to_colormap(cmap) # hide
 
 # We create the Figure, which is the top-level object in Makie,
 # and holds the axis which holds our plots.
-set_theme!(theme_black())
 fig = Figure(resolution=(800 * 2, 800 * 2))
 # First, we plot an empty the sphere
 ax, plt_obj = mesh(fig[1, 1], uv_normal_mesh(Tesselation(Sphere(Point3f(0), 0.99), 128));
@@ -157,7 +154,8 @@ ax, plt_obj = mesh(fig[1, 1], uv_normal_mesh(Tesselation(Sphere(Point3f(0), 0.99
 temperature_plot = mesh!(
     m;
     color=Makie.convert_arguments(Makie.ContinuousSurface(), worldclim_stacks[10].tmax)[3]'[end:-1:1,:] |> Matrix,
-    colorrange=(-50, 50),
+    colorrange=(-65, 50),
+    lowclip=:transparent,
     colormap=:tableau_temperature, #cmap, 
     shading=true,
     transparency=false
@@ -228,15 +226,14 @@ fig # hide
 
 record(fig, "worldclim_visualization.mp4", LinRange(1, 24, 600÷4); framerate = 24) do i
     title_label.text[] = @sprintf "%.2f" (i % 12)
-    temperature_plot.color[] = raster2array(temp_interpolated(i % 12))'
-    watervals = max.(0, watermap(uv, raster2array(prec_interpolated(i % 12))'))
+    temperature_plot.color[] = raster2array(temp_interpolated(i % 12))
+    watervals = max.(0, watermap(uv, raster2array(prec_interpolated(i % 12))))
     prec_plot.color[] = watervals
     prec_plot.markersize[] .= Vec3f0.(xy_width, xy_width, watervals)
     ## since we modify markersize inplace above, we need to notify the signal
     rotate!(ax.scene, i / 7)
     notify(prec_plot.markersize)
 end;
-set_theme!() # hide
 
 # ![type:video](worldclim_visualization.mp4)
 

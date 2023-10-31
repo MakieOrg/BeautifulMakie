@@ -1,5 +1,5 @@
 using CairoMakie, SpecialFunctions
-CairoMakie.activate!(type = "svg") #hide
+CairoMakie.activate!(type = "png") #hide
 p(s, β) = (β + 1)*a(β) * s^β * exp(-a(β)*s^(β+1))
 a(β) = gamma(((β + 2)/(β + 1))^(β + 1))
 s = LinRange(0,3,30)
@@ -8,7 +8,7 @@ colors = ["#FF410D", "#6EE2FF", "#F7C530", "#95CC5E", "#D0DFE6", "#F79D1E"]
 fig = Figure(resolution = (600,400))
 ax = Axis(fig[1,1]; palette = (; color = colors))
 for β in [0,1], step in [:pre, :center, :post]
-    stairs!(s, p.(s, β), step = step, label = "$(β), :$(step)")
+    stairs!(s, p.(s, β); linestyle = :solid, step = step, label = "$(β), :$(step)")
 end
 lines!(s, p.(s, 1), color = :grey30)
 lines!(s, p.(s, 0), color = :grey10)
@@ -17,10 +17,10 @@ text!(L"p(s)=(\beta+1)a_{\beta}\,s^{\beta}\exp(-a_{\beta}s^{\beta+1})",
 text!(L"a_{\beta} = \Gamma[(\beta+2)/(\beta+1)]^{\beta + 1}", 
     position = (1.7, 0.25), color = :black)
 axislegend("β, step", position = :rt);
+fig
+save("stairs.png", fig); # hide
 
-save("stairs.svg", fig); # hide
-
-# ![](stairs.svg)
+# ![](stairs.png)
 
 
 # !!! warning 
