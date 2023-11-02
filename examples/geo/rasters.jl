@@ -25,6 +25,7 @@ using GLMakie
 using Makie.GeometryBasics
 using Makie.GeometryBasics: Tesselation, uv_normal_mesh
 using DataInterpolations, Printf
+GLMakie.activate!()
 
 # ### Getting the data
 
@@ -48,7 +49,7 @@ worldclim_stacks[1].tmax
 # `z` are the values of the raster at the points `(x, y)`.  This is the format
 # that we can supply directly to Makie.
 
-Makie.convert_arguments(Makie.ContinuousSurface(), worldclim_stacks[1].tmax);
+Makie.convert_arguments(Makie.VertexBasedGrid(), worldclim_stacks[1].tmax);
 
 # Let's extract two variables from this stack, the maximum temperature (`:tmax`),
 # and the precipitation (`:prec`).
@@ -153,7 +154,7 @@ ax, plt_obj = mesh(fig[1, 1], uv_normal_mesh(Tesselation(Sphere(Point3f(0), 0.99
 # Then, we plot the sphere, which displays temperature.
 temperature_plot = mesh!(
     m;
-    color=Makie.convert_arguments(Makie.ContinuousSurface(), worldclim_stacks[10].tmax)[3]'[end:-1:1,:] |> Matrix,
+    color=Makie.convert_arguments(Makie.VertexBasedGrid(), worldclim_stacks[10].tmax)[3]'[end:-1:1,:] |> Matrix,
     colorrange=(-65, 50),
     lowclip=:transparent,
     colormap=:tableau_temperature, #cmap, 
@@ -188,7 +189,7 @@ end
 # We don't want to call `convert_arguments` all the time, so let's 
 # define a convenience function to do it:
 
-raster2array(raster) = Makie.convert_arguments(Makie.ContinuousSurface(), raster)[3]'[end:-1:1,:]
+raster2array(raster) = Makie.convert_arguments(Makie.VertexBasedGrid(), raster)[3]'[end:-1:1,:]
 watervals = watermap(uv, raster2array(worldclim_stacks[1].prec))
 
 # Let's finally plot the meshscatter!

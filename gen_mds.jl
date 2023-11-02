@@ -6,7 +6,7 @@ OUTPUT = joinpath(@__DIR__, "src", "examples", "generated")
 folders = readdir(joinpath(@__DIR__, "examples"))
 setdiff!(folders, [".DS_Store"])
 #setdiff!(folders, ["bars"])
-setdiff!(folders, ["cheat_sheets"])
+setdiff!(folders, ["cheat_sheets", "aog"])
 
 #folders = ["lines","scatters"]
 
@@ -21,6 +21,8 @@ function get_files()
             "timeseries_proj.jl",
             "boxplots_collection.jl",
             "collection_violins.jl",
+            "earthquakes_proj.jl",
+            "rasters.jl",
             "makie_contributors.jl"])
             
         fpaths  = "$(f)/" .* names
