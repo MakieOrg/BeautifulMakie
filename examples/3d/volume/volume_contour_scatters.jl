@@ -33,3 +33,7 @@ meshscatter!(ax4, vec(points3d); color = vec(vol1), colormap = cmap_alpha,
     marker = Rect3f(Vec3f(-1), Vec3f(2)))
 limits!(ax4, -1.2, 1.2, -1.2, 1.2, -1.2, 1.2)
 fig
+
+save("volume_contour_scatters.png", fig); # hide
+
+# ![](volume_contour_scatters.png)

@@ -35,3 +35,7 @@ Colorbar(fig[1, 2], pltobj, label = "xy <=1 & x + y^2<=1",
     height = Relative(0.5), width = 20)
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
+
+save("constraints.png", fig); # hide
+
+# ![](constraints.png)

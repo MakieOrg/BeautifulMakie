@@ -18,3 +18,7 @@ fig, ax, _ = volume(x, y, z, vol;
         )
     )
 fig
+
+save("volume.png", fig); # hide
+
+# ![](volume.png)

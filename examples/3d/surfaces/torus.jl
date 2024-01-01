@@ -39,3 +39,7 @@ fig[1, 3] = cbar1
 fig[1, 1] = cbar2
 colgap!(fig.layout, 2)
 fig
+
+save("torus.png", fig); # hide
+
+# ![](torus.png)

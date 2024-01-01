@@ -15,3 +15,6 @@ fig, ax, pltobj = surface(X1, Y1, Z1; shading = FastShading, ambient = Vec3f(0.6
 Colorbar(fig[1, 2], pltobj, height = Relative(0.5))
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
+save("revolution_surface.png", fig); # hide
+
+# ![](revolution_surface.png)

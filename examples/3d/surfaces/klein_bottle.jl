@@ -16,3 +16,6 @@ fig = Figure(size = (1200, 800))
 ax = LScene(fig[1, 1], show_axis = false)
 surface!(ax, x, y, z; color = sqrt.(x.^2 .+ y.^2), colormap = (:Spectral_11, 0.8))
 fig
+save("klein_bottle.png", fig); # hide
+
+# ![](klein_bottle.png)

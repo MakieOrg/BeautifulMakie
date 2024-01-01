@@ -74,8 +74,7 @@ fig = with_theme(theme_dark()) do
     meshscatter!(axs, Point3f(0 + s, 0 + s, 0.2); color = "#dd3365", markersize = 1.0)
     meshscatter!(axs, Point3f(0, 0 + s, 0.2); color = "#3782b9", markersize = 1.0)
     zoom!(axs.scene, cameracontrols(axs.scene), 0.87)
-    fig 
 end
-save("gfield.png", alpha_colorbuffer(fig.scene))
+save("gfield.png", alpha_colorbuffer(fig.scene), update=false)
 
 # ![](gfield.png)

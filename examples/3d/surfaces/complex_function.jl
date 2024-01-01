@@ -18,3 +18,6 @@ fig, ax, pltobj = surface(x, y, fvalues, color = fargs,
 Colorbar(fig[1, 2], pltobj, height = Relative(0.5))
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
+save("complex_function.png", fig); # hide
+
+# ![](complex_function.png)

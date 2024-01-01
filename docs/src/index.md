@@ -7,66 +7,63 @@ hero:
   tagline: Example plots
   image:
     src: /test_alpha_s.png
-    alt: VitePress
+    alt: gfield
   actions:
     - theme: brand
       text: Sponsor
-      link: /markdown-examples
-    - theme: alt
-      text: Short tutorial
-      link: /api-examples
+      link: https://github.com/sponsors/lazarusA?o=esb
     - theme: alt
       text: View on Github
-      link: /api-examples
+      link: https://github.com/MakieOrg/BeautifulMakie
     - theme: alt
       text: Official Documentation
-      link: /api-examples
-    - theme: alt
-      text: Discourse
-      link: /api-examples
-    - theme: alt
-      text: Packages Versions
-      link: /pkgs_versions
+      link: https://docs.makie.org/stable/
 features:
   - title: What is Makie?
     details: Makie is an interactive data visualization and plotting ecosystem for the Julia programming language, available on Windows, Linux and Mac. You can use Makie to interactively explore your data and create simple GUIs in native windows or web browsers, export high-quality vector graphics or even raytrace with physically accurate lightning.
   - title: Inspiration
-    details: The name Makie (we pronounce it Mah-kee) is derived from the japanese word Maki-e, which is a technique to sprinkle lacquer with gold and silver powder. Data is the gold and silver of our age, so let's spread it out beautifully on the screen! <br> <i>- Simon Danisch -</i>
+    details: The name Makie (we pronounce it Mah-kee) is derived from the japanese word 蒔絵, which is a technique to sprinkle lacquer with gold and silver powder. Data is the gold and silver of our age, so let's spread it out beautifully on the screen! <br> <i>- Simon Danisch -</i>
 ---
 <Gallery :images="images" />
 <script setup lang="ts">
 import Gallery from './components/Gallery.vue'
 const images = [
   {
-    src: 'worldclim_visualization_temp_precip.mp4',
-    caption: 'Library',
-    desc: 'Architect Design'
+    href: 'examples/animations/scatters_size',
+    src: 'examples/animations/assets/animScatters.mp4',
   },
   {
-    src: 'https://picsum.photos/350/250/?image=232',
-    caption: 'Night Sky',
-    desc: 'Cinematic'
+    href: 'examples/2d/lines/line_latex_bessels',
+    src: 'examples/2d/lines/line_latex_bessels.svg',
   },
-  {
-    src: 'https://picsum.photos/350/250?image=431',
-    caption: 'Tea Talk',
-    desc: 'Composite'
+    {
+    href: 'examples/2d/lines/line_cmaps_a',
+    src: 'examples/2d/lines/line_cmaps_a.svg',
   },
-  {
-    src: 'https://picsum.photos/350/250?image=474',
-    caption: 'Road',
-    desc: 'Landscape'
+    {
+    href: 'examples/2d/streamplot/streamplot',
+    src: 'examples/2d/streamplot/streamplot.png',
   },
-  {
-    src: 'https://picsum.photos/350/250?image=344',
-    caption: 'Sea',
-    desc: 'Cityscape'
+    {
+    href: 'examples/3d/contour3d',
+    src: 'examples/3d/contour3d/contourf_contour3d.png',
   },
-  {
-    src: 'https://picsum.photos/350/250?image=494',
-    caption: 'Vintage',
-    desc: 'Cinematic'
-  }
+    {
+    href: 'examples/3d/lines3d/archimedean_spiral',
+    src: 'examples/3d/lines3d/archimedean_spiral.png',
+  },
+    {
+    href: 'examples/3d/meshes/meshes',
+    src: 'examples/3d/meshes/meshes.png',
+  },
+    {
+    href: 'examples/3d/mscatters/RRGraph3D',
+    src: 'examples/3d/mscatters/RRGraph3D.png',
+  },
+    {
+    href: 'examples/themes/dark_surface_contour3d_streamplot',
+    src: 'examples/themes/dark_surface_contour3d_streamplot.png',
+  },
 ]
 </script>
 ```

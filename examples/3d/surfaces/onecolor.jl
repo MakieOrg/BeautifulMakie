@@ -12,3 +12,6 @@ fig = surface(x, y, z, colormap = [:dodgerblue, :dodgerblue],
     backlight = 2.0f0)
 wireframe!(x, y, z; overdraw = false, linewidth = 0.1) # try overdraw = true
 fig
+save("onecolor.png", fig); # hide
+
+# ![](onecolor.png)

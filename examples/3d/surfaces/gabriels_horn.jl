@@ -20,3 +20,6 @@ zoom!(ax.scene, cameracontrols(ax.scene), 0.98)
 Colorbar(fig[1, 2], pltobj, height=Relative(0.5))
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
+save("gabriels_horn.png", fig); # hide
+
+# ![](gabriels_horn.png)

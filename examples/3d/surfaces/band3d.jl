@@ -33,3 +33,6 @@ with_theme(theme_black()) do
     fig[1,1] = ax
     fig
 end
+save("band3d.png", current_figure()); # hide
+
+# ![](band3d.png)

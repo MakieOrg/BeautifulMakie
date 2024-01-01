@@ -41,3 +41,7 @@ with_theme(theme_dark()) do
     hidedecorations!.(axs; grid = false)
     fig
 end
+
+save("tesseralSphericalH.png", current_figure()); # hide
+
+# ![](tesseralSphericalH.png)

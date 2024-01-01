@@ -22,3 +22,7 @@ wireframe!(ax, x, y, z; overdraw = true, transparency = true,
 Colorbar(fig[1, 2], sm, height = Relative(0.5))
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
+
+save("surface.png", fig); # hide
+
+# ![](surface.png)
