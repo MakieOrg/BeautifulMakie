@@ -53,28 +53,30 @@ alphas = [g(x) for x in range(-2, 3, 101)]
 cmap = resample_cmap(cmap, n; alpha=alphas)
 s = 8.0
 
-fig = with_theme(theme_dark()) do 
-    fig = Figure(size = (1200, 1200))
-    axs = LScene(fig[1, 1], show_axis = false)
-    surface!(axs, x2, y2, z2, colormap = cmap, #colorrange = (0, 1.5),
-        transparency = :true)
-    surface!(axs, x2 .+ s, y2, z2, colormap = cmap, #colorrange = (0, 1.5),
-        transparency = :true)
-    surface!(axs, x2 .+ s, y2 .+ s, z2, colormap = cmap, #colorrange = (0, 1.5),
-        transparency = :true)
-    surface!(axs, x2, y2 .+ s, z2, colormap = cmap, #colorrange = (0, 1.5),
-        transparency = :true)
-    wireframe!(axs, x2, y2, z2, color = (:grey65, 0.1), transparency = true)
-    wireframe!(axs, x2 .+ s, y2, z2, color = (:grey65, 0.15), transparency = true)
-    wireframe!(axs, x2 .+ s, y2 .+ s, z2, color = (:grey65, 0.35), transparency = true)
-    wireframe!(axs, x2, y2 .+ s, z2, color = (:grey65, 0.15), transparency = true)
+set_theme!(theme_dark())
+fig = Figure(size = (1200, 1200))
+axs = LScene(fig[1, 1], show_axis = false)
+surface!(axs, x2, y2, z2, colormap = cmap, #colorrange = (0, 1.5),
+    transparency = :true)
+surface!(axs, x2 .+ s, y2, z2, colormap = cmap, #colorrange = (0, 1.5),
+    transparency = :true)
+surface!(axs, x2 .+ s, y2 .+ s, z2, colormap = cmap, #colorrange = (0, 1.5),
+    transparency = :true)
+surface!(axs, x2, y2 .+ s, z2, colormap = cmap, #colorrange = (0, 1.5),
+    transparency = :true)
+wireframe!(axs, x2, y2, z2, color = (:grey65, 0.1), transparency = true)
+wireframe!(axs, x2 .+ s, y2, z2, color = (:grey65, 0.15), transparency = true)
+wireframe!(axs, x2 .+ s, y2 .+ s, z2, color = (:grey65, 0.35), transparency = true)
+wireframe!(axs, x2, y2 .+ s, z2, color = (:grey65, 0.15), transparency = true)
 
-    meshscatter!(axs, Point3f(0, 0, 0.2); color = "#e4c92a", markersize = 1.2)
-    meshscatter!(axs, Point3f(0 + s, 0, 0.2); color = :white, markersize = 1.0)
-    meshscatter!(axs, Point3f(0 + s, 0 + s, 0.2); color = "#dd3365", markersize = 1.0)
-    meshscatter!(axs, Point3f(0, 0 + s, 0.2); color = "#3782b9", markersize = 1.0)
-    zoom!(axs.scene, cameracontrols(axs.scene), 0.87)
-end
-save("gfield.png", alpha_colorbuffer(fig.scene), update=false)
+meshscatter!(axs, Point3f(0, 0, 0.2); color = "#e4c92a", markersize = 1.2)
+meshscatter!(axs, Point3f(0 + s, 0, 0.2); color = :white, markersize = 1.0)
+meshscatter!(axs, Point3f(0 + s, 0 + s, 0.2); color = "#dd3365", markersize = 1.0)
+meshscatter!(axs, Point3f(0, 0 + s, 0.2); color = "#3782b9", markersize = 1.0)
+#zoom!(axs.scene, cameracontrols(axs.scene), 0.87)
+center!(axs.scene)
+save("gfield.png", alpha_colorbuffer(fig.scene))
+
+set_theme!() # hide
 
 # ![](gfield.png)

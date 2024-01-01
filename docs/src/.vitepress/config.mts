@@ -101,7 +101,7 @@ export default defineConfig({
               items: [
                 { text: 'barplot_cmap_y_error',link: '/examples/2d/bars/barplot_cmap_y_error' },
                 { text: 'barplot_y_error',link: '/examples/2d/bars/barplot_y_error' },
-                { text: 'bars',link: '/examples/2d/bars/stripped_bars' },
+                { text: 'stripped_bars',link: '/examples/2d/bars/stripped_bars' },
                 { text: 'x_barplot_error_y_error',link: '/examples/2d/bars/x_barplot_error_y_error' },
               ],
             },
