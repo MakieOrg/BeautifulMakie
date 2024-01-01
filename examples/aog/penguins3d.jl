@@ -21,7 +21,7 @@ p3d *= mapping(color = :species);
 colors = tuple.([:grey10, :orange, :dodgerblue], 0.5)
 palstyle = (; color=colors, patchcolor = colors);
 # ## Penguins 3d Wireframe density
-with_theme(theme_ggplot2(),resolution = (600,400), palette=palstyle) do
+with_theme(theme_ggplot2(),size = (600,400), palette=palstyle) do
     draw(p3d; axis = (type = Axis3, perspectiveness = 0.5, aspect=(1, 1, 1)))
 end
 
@@ -31,7 +31,7 @@ phist = data(penguins)
 phist *= AoG.histogram(; bins = 28)
 phist *= mapping(:bill_length_mm => "bill length mm", color =:species, stack = :species);
 
-with_theme(theme_ggplot2(),resolution = (600,400), palette=palstyle) do
+with_theme(theme_ggplot2(),size = (600,400), palette=palstyle) do
     phist |> draw
 end
 
@@ -39,11 +39,11 @@ end
 # Currently, density plots with `direction=:y` is not supported by AoG, 
 # but you can just do it with plain Makie and combine everything into a nice layout.
 
-with_theme(theme_ggplot2(),resolution = (600,400), palette=palstyle) do 
+with_theme(theme_ggplot2(),size = (600,400), palette=palstyle) do 
     pnames = ["Chinstrap", "Adelie","Gentoo"]
     bill_depths = [filter(:species => x -> x == n, penguins)[!,:bill_depth_mm] for n in pnames]
 
-    fig = Figure(; resolution = (700, 700))
+    fig = Figure(; size = (700, 700))
     draw!(fig[2,1], p3d; axis = (type = Axis3, perspectiveness = 0.5, aspect=(1, 1, 1)))
     draw!(fig[1,1], phist)
     ## plain Makie

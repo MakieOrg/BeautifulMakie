@@ -78,7 +78,7 @@ prec_interpolated = DataInterpolations.QuadraticInterpolation(prec_rasters, 1:le
 
 # Let's see if this interpolation worked.  We create a figure to animate:
 temp_inter = Observable(temp_interpolated(1.0))
-fig= Figure(resolution = (800,800))
+fig= Figure(size = (800,800))
 ax = Axis3(fig[1,1];perspectiveness=0.5,
     azimuth=-0.5,
     elevation=0.57,
@@ -145,7 +145,7 @@ Makie.to_colormap(cmap) # hide
 
 # We create the Figure, which is the top-level object in Makie,
 # and holds the axis which holds our plots.
-fig = Figure(resolution=(800 * 2, 800 * 2))
+fig = Figure(size=(800 * 2, 800 * 2))
 # First, we plot an empty the sphere
 ax, plt_obj = mesh(fig[1, 1], uv_normal_mesh(Tesselation(Sphere(Point3f(0), 0.99), 128));
     color=(:white, 0.1), transparency=true,
@@ -158,7 +158,7 @@ temperature_plot = mesh!(
     colorrange=(-65, 50),
     lowclip=:transparent,
     colormap=:tableau_temperature, #cmap, 
-    shading=true,
+    shading = FastShading,
     transparency=false
 )
 fig

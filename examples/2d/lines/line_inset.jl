@@ -1,12 +1,12 @@
 using CairoMakie, Random
-CairoMakie.activate!(type = "png") #hide
+CairoMakie.activate!(type = "svg") #hide
 
 Random.seed!(123)
 x = -3:0.05:3
 y = exp.(-x .^ 2)
 n = 15
 y[1:n] = y[1:n] .+ 0.02 * randn(n)
-fig = Figure(resolution = (600, 400))
+fig = Figure(size = (600, 400))
 ax1 = Axis(fig[1, 1], xlabel = "x", ylabel = "f(x)", xgridvisible = true,
     ygridvisible = true)
 lines!(ax1, x, y, color = :red, label = "f(x)")
@@ -20,6 +20,6 @@ ax2.yticks = [-0.05, 0, 0.05]
 ax2.xticks = [-3, -2.5, -2]
 translate!(ax2.scene, 0, 0, 10);
 
-save("line_inset.png", fig); # hide
+save("line_inset.svg", fig); # hide
 
-# ![](line_inset.png)
+# ![](line_inset.svg)

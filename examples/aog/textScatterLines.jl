@@ -10,6 +10,6 @@ d = DataFrame(name = repeat(["A","B","C","D","E","F"], inner=4),
 pSL = data(d)
 pSL *= mapping(:time, :value, color = :name, text = :name => verbatim)
 pSL *= visual(ScatterLines) + visual(Makie.Text, align = (:center, :bottom))
-with_theme(theme_ggplot2(), resolution = (600,400)) do
+with_theme(theme_ggplot2(), size = (600,400)) do
     draw(pSL)
 end

@@ -1,11 +1,11 @@
 using CairoMakie, RDatasets, Colors, ColorSchemes
-CairoMakie.activate!(type = "png") #hide
+CairoMakie.activate!(type = "svg") #hide
 
 airquality = dataset("datasets", "airquality")
 categories = ["Ozone", "Solar.R", "Wind", "Temp"]
 colors = categorical_colors(:Set1, length(categories))
 
-fig = Figure(resolution = (600, 400))
+fig = Figure(size = (600, 400))
 ax = Axis(fig[1, 1], xticks = (1:length(categories), categories))
 for (indx, f) in enumerate(categories)
     datam = filter(x -> x !== missing, airquality[:, f])
@@ -15,3 +15,6 @@ for (indx, f) in enumerate(categories)
         mediancolor = :black)
 end
 fig
+save("airquality.svg", fig); # hide
+
+# ![](airquality.svg)

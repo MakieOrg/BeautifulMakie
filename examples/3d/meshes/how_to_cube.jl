@@ -2,12 +2,13 @@ using GLMakie, TestImages, FileIO
 using GeometryBasics, Colors
 using Downloads
 GLMakie.activate!()
+GLMakie.closeall() # close any open screen
 
 # ## Simple cubed mesh
 mr = Rect3f(Vec3f(-0.5), Vec3f(1))
 
 fig, ax, obj = mesh(mr; color = :white, transparency=true,
-    figure = (; resolution = (1200,600)))
+    figure = (; size = (1200,600)))
 wireframe!(ax, mr; color = :black, transparency=true)
 mesh(fig[1,2], mr; color = [v[3] for v in coordinates(mr)],
     colormap = :Spectral_11)
@@ -16,7 +17,7 @@ fig
 # Adding some colours at random
 
 fig, ax, obj = mesh(mr; color = rand(length(coordinates(mr))),
-    colormap = :sunset, figure = (; resolution = (1200,600)))
+    colormap = :sunset, figure = (; size = (1200,600)))
 mesh(fig[1,2], mr; color = 1:length(coordinates(mr)),
     colormap = :sunset)
 fig
@@ -26,7 +27,7 @@ fig
 img = testimage("chelsea")
 fig, ax, obj = mesh(mr; color =rand(10,10), interpolate=false,
     colormap = :seaborn_icefire_gradient,
-    figure = (; resolution = (1200,600)))
+    figure = (; size = (1200,600)))
 mesh(fig[1,2], mr; color = img, interpolate=false)
 fig
 
@@ -54,7 +55,7 @@ m = meshcube();
 ## -x, -y, -z
 img = rand(RGBf, 2, 3)
 fig, ax, obj = mesh(m; color = img, interpolate=false,
-    figure = (; resolution = (1200,600)))
+    figure = (; size = (1200,600)))
 mesh(fig[1,2], m; color = img)
 fig
 
@@ -82,7 +83,7 @@ timgs = ["bark_512", "bark_he_512", "brick_wall_he_512",
     "woolen_cloth_he_512", "wood_grain_he_512", "straw_he_512"];
 
 
-fig = Figure(figure_padding=0, resolution =(600,400))
+fig = Figure(figure_padding=0, size =(600,400))
 axs = [Axis(fig[i,j], aspect=1) for i in 1:2 for j in 1:3]
 [heatmap!(axs[i], testimage(timgs[i])) for i in 1:6]
 hidedecorations!.(axs)

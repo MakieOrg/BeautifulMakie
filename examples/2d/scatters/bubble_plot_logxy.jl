@@ -9,7 +9,7 @@ cmap = cgrad(:Hiroshige, scale=:log, alpha=0.5)
 fig, ax, pltpbj = scatter(x, y; markersize=(x .^ 2/3)[end:-1:1] .+ 6,
     color=x, colormap=cmap,
     figure=(;
-        resolution=(600, 400),
+        size=(600, 400),
         fonts=(;regular="CMU Serif"),
         backgroundcolor=:transparent),
     axis=(;

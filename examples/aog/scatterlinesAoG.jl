@@ -15,6 +15,6 @@ xy *= mapping(:x, :y)
 ## define your visual layer, what kind of plot do you want?
 xy *= visual(ScatterLines)
 ## draw your figure
-with_theme(theme_ggplot2(), resolution = (600,400)) do
+with_theme(theme_ggplot2(), size = (600,400)) do
     xy |> draw
 end

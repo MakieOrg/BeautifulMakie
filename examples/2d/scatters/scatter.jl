@@ -15,7 +15,7 @@ scatter(rand(d,n), rand(b, n);
         xlabel = "x", ylabel = "y",
         ),
     figure = (;
-        resolution = (600,400),)
+        size = (600,400),)
     )
     
 save("scatter.svg", current_figure()); # hide

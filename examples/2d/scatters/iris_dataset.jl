@@ -6,7 +6,7 @@ byCat = dset.Species
 categ = unique(byCat)
 markers = [:circle, :diamond, :utriangle]
 
-fig = Figure(; resolution=(600, 400), backgroundcolor=:transparent)
+fig = Figure(; size=(600, 400), backgroundcolor=:transparent)
 ax = Axis(fig[1, 1]; xlabel="Sepal Length", ylabel="Sepal Width",
     backgroundcolor=:transparent)
 for (idx, c) in enumerate(categ)

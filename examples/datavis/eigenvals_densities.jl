@@ -34,7 +34,7 @@ h = HeatMap(range(-3.5,3.5,length=1200), range(-3.5,3.5, length=1200))
 getcounts!(h, m; n=1_000_000)
 
 with_theme(theme_black()) do
-    fig = Figure(figure_padding=0,resolution=(600,600))
+    fig = Figure(figure_padding=0,size=(600,600))
     ax = Axis(fig[1,1]; aspect = DataAspect())
     heatmap!(ax,-3.5..3.5, -3.5..3.5, eq_hist(h.counts); colormap = :bone_1)
     hidedecorations!(ax)
@@ -50,7 +50,7 @@ h = HeatMap(range(-3,3,length=1200÷2),range(-2,2,length=1200÷2))
 getcounts!(h, mtri; n=500_000)
 
 with_theme(theme_black()) do
-    fig = Figure(figure_padding=0,resolution=(600,400))
+    fig = Figure(figure_padding=0,size=(600,400))
     ax = Axis(fig[1,1]; aspect = DataAspect())
     heatmap!(ax, -3..3, -2..2, eq_hist(h.counts); colormap = :bone_1)
     hidedecorations!(ax)
@@ -65,7 +65,7 @@ h = HeatMap(range(-3,3,length=1200),range(-2,2,length=1200))
 getcounts!(h, mβ; n=1_000_000)
 
 with_theme(theme_black()) do
-    fig = Figure(figure_padding=0,resolution=(600,400))
+    fig = Figure(figure_padding=0,size=(600,400))
     ax = Axis(fig[1,1]; aspect = DataAspect())
     heatmap!(ax, -3..3, -2..2,eq_hist(h.counts);
         colormap = [:black, :white, :white])
@@ -81,7 +81,7 @@ h = HeatMap(range(-4,4,length=1200),range(-2,2,length=1200))
 getcounts!(h, m3; n = 1_500_000)
 
 with_theme(theme_ggplot2()) do
-    fig = Figure(figure_padding=0,resolution=(600,400))
+    fig = Figure(figure_padding=0,size=(600,400))
     ax = Axis(fig[1,1]; aspect = DataAspect())
     heatmap!(ax, -4..4, -2..2,eq_hist(h.counts);
         colormap = :seaborn_icefire_gradient)
@@ -99,7 +99,7 @@ h = HeatMap(range(-2,2,length=1200),range(-2,2,length=1200))
 getcounts!(h, mtrin; n = 100_000)
 
 with_theme(theme_dark()) do
-    fig = Figure(figure_padding=0,resolution=(600,600))
+    fig = Figure(figure_padding=0,size=(600,600))
     ax = Axis(fig[1,1]; aspect = DataAspect())
     heatmap!(ax, -2..2, -2..2, eq_hist(h.counts);
         colormap = :linear_kry_5_95_c72_n256)
@@ -115,7 +115,7 @@ h = HeatMap(range(-2,2,length=800), range(-2,2,length=800))
 getcounts!(h, mrand; n = 500_000)
 
 with_theme(theme_dark()) do
-    fig = Figure(figure_padding=0,resolution=(600,600))
+    fig = Figure(figure_padding=0,size=(600,600))
     ax = Axis(fig[1,1]; aspect = DataAspect())
     heatmap!(ax, -2..2, -2..2, eq_hist(h.counts);
         colormap = :hot)

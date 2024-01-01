@@ -5,7 +5,7 @@ Random.seed!(124)
 n = 30
 x, y, z = randn(n), randn(n), randn(n)
 
-fig = Figure(; resolution = (600, 400), backgroundcolor=:transparent)
+fig = Figure(; size = (600, 400), backgroundcolor=:transparent)
 ax = Axis(fig[1, 1]; xgridstyle = :dashdot, ygridstyle = :dashdot,
     xtickalign = 1, ytickalign = 1,
     backgroundcolor=:transparent)

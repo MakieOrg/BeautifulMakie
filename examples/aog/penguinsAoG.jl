@@ -21,7 +21,7 @@ let
     ## declare the grouping and the respective visual attribute
     p_len *= mapping(color=:species, marker=:species)
 
-    with_theme(theme_ggplot2(),resolution = (600,400), palette=palette, Scatter=(cycle=cycle,)) do
+    with_theme(theme_ggplot2(),size = (600,400), palette=palette, Scatter=(cycle=cycle,)) do
         draw(p_len + p_len * linear(); 
             axis = (; title="Flipper and bill length"))
     end

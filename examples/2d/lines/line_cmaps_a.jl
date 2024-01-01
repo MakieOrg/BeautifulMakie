@@ -1,8 +1,8 @@
 using CairoMakie, ColorSchemes
-CairoMakie.activate!(type = "png") #hide
+CairoMakie.activate!(type = "svg") #hide
 
 x = range(0, 2π, 50)
-fig = Figure(resolution = (800, 600), fontsize = 22)
+fig = Figure(size = (800, 600), fontsize = 22)
 ax = Axis(fig, xlabel = L"x", ylabel = L"y")
 line1 = lines!(x, sin.(x), color = x, colormap = :thermal, linewidth = 4)
 line2 = lines!(x, cos.(x), color = sqrt.(x), colormap = :ice, linewidth = 4)
@@ -25,3 +25,6 @@ fig[3, 2] = cbar3
 colgap!(fig.layout, 5)
 rowgap!(fig.layout, 5)
 fig
+save("line_cmaps_a.svg", fig); # hide
+
+# ![](line_cmaps_a.svg)

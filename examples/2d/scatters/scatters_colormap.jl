@@ -9,7 +9,7 @@ markers = [:+, :diamond, :star4, :rtriangle, :rect,
     :circle, :pentagon, :cross, :star5]
     
 function FigGridScatters()
-    fig = Figure(resolution = (1200, 800), backgroundcolor=:transparent)
+    fig = Figure(size = (1200, 800), backgroundcolor=:transparent)
         c = 1
         for i in 1:2, j in 1:2:5
             ax = Axis(fig[i, j], aspect = AxisAspect(1), backgroundcolor=:transparent)
@@ -28,5 +28,5 @@ function FigGridScatters()
     fig
 end
 fig = FigGridScatters()
-save("scatters_cmap.svg", current_figure()); # hide
-# ![](scatters_cmap.svg)
+save("scatters_colormap.svg", current_figure()); # hide
+# ![](scatters_colormap.svg)

@@ -28,7 +28,7 @@ field = [exp(cosd(l)) + 3(y / 90) for l in lons, y in lats]
 
 function plotCables()
     fig, ax, = scatter(toPoints; markersize=5, color=1:length(toPoints),
-        colormap=:plasma, figure=(; resolution=(1200, 800), fontsize=24))
+        colormap=:plasma, figure=(; size=(1200, 800), fontsize=24))
     [lines!(ax, splitLines[i]; linewidth=0.85) for i in eachindex(splitLines)]
     lines!(GeoMakie.coastlines(); color=:white, linewidth=0.35)
     limits!(ax, -185, 185, -95, 95)

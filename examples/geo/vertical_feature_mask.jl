@@ -12,7 +12,7 @@ v= [t for t in vl, s in ul]
 
 surface(u, v, v; color = 1 ./ v)
 
-fig = Figure(resolution=(1200, 800), fontsize=22)
+fig = Figure(size=(1200, 800), fontsize=22)
 ax = LScene(fig[1,1])
 lines!(ax, GeoMakie.coastlines())
 lines!(ax, GeoMakie.coastlines()[95], color = :red, linewidth=5)
@@ -37,7 +37,7 @@ for p in longpath
     push!(linepathh, Point3f(p[1]..., 20))
 end
 
-fig = Figure(resolution=(1200, 800), fontsize=22)
+fig = Figure(size=(1200, 800), fontsize=22)
 ax = LScene(fig[1,1])
 lines!(ax, GeoMakie.coastlines())
 lines!(ax, linepath, color = :red, linewidth=5)

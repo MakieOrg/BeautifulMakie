@@ -51,7 +51,7 @@ npoints = 600
 img = zeros(npoints, npoints)
 mandelbrot_set!(img, -2.0,0.5,-1.25,1.25, npoints)
 
-fig = Figure(figure_padding=0,resolution=(600,600))
+fig = Figure(figure_padding=0,size=(600,600))
 ax = Axis(fig[1,1]; aspect = DataAspect())
 heatmap!(ax, eq_hist(img); colormap=:inferno)
 hidedecorations!(ax)
@@ -77,7 +77,7 @@ cmaps = [:plasma, :bone_1, :viridis, :CMRmap, :gist_stern,
     :linear_bmy_10_95_c78_n256, :Hiroshige, :seaborn_icefire_gradient,
     :sunset, :sun]
 
-fig = Figure(resolution=(1200,900))
+fig = Figure(size=(1200,900))
 axs = [Axis(fig[i,j]; aspect = DataAspect()) for i in 1:3 for j in 1:4]
 npoints = 300
 img = zeros(npoints, npoints)
@@ -117,7 +117,7 @@ npoints = 600
 img = zeros(npoints, npoints)
 julia_set!(img, -1.7, 1.7, -1.7, 1.7, npoints)
 
-fig = Figure(figure_padding=0,resolution=(600,600))
+fig = Figure(figure_padding=0,size=(600,600))
 ax = Axis(fig[1,1]; aspect = DataAspect())
 heatmap!(ax, log10.(img); colormap=:bone_1)
 hidedecorations!(ax)
@@ -130,7 +130,7 @@ cvalues = [0.274 - 0.008 * 1im, 0.285 + 0.01*1im,
     -0.7269 + 0.1889*1im, -0.1 + 0.65*1im,
     -0.382 + 0.618*1im, -0.449 + 0.571*1im]
 
-fig = Figure(resolution=(1200,600))
+fig = Figure(size=(1200,600))
 axs = [Axis(fig[i,j]; aspect = DataAspect()) for i in 1:2 for j in 1:4]
 npoints = 300
 img = zeros(npoints, npoints)

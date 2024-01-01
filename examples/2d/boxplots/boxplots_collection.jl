@@ -1,12 +1,12 @@
 using CairoMakie, Random, Distributions
-CairoMakie.activate!(type = "png") #hide
+CairoMakie.activate!(type = "svg") #hide
 
 Random.seed!(13)
 n = 3000
 colors = resample_cmap(:spring, 8)[3:end]
 
-fig = Figure(resolution = (600, 400))
-ax = Axis(fig[1,1]; palette = (; patchcolor = colors), 
+fig = Figure(; size = (600, 400))
+ax = Axis(fig[1,1]; # palette = (; patchcolor = colors), 
     xticks = (1:7, ["cat 1", "A", "B", "C", "D", "E", "F"]), 
     yticks = ([-5], ["cat 2"]), yticklabelrotation = π/2)
 boxplot!(ax, fill(-5,n), rand(Normal(0, 0.5), n); orientation=:horizontal, 
@@ -23,5 +23,5 @@ for i in 2:7
 end
 axislegend(ax, position = :lt)
 fig
-save("boxplot_collection.png", fig); # hide
-# ![](boxplot_collection.png)
+save("boxplot_collection.svg", fig); # hide
+# ![](boxplot_collection.svg)

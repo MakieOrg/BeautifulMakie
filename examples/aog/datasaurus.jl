@@ -10,13 +10,13 @@ file = Downloads.download(link)
 dsaurus = CSV.read(file, DataFrame, delim = '\t')
 
 plt = data(dsaurus) * mapping(:x => "", :y => "", layout=:dataset)
-with_theme(theme_light(), resolution = (1600,1200), fontsize = 24) do
+with_theme(theme_light(), size = (1600,1200), fontsize = 24) do
     draw(plt) ## palettes = (layout=wrap(cols=3),)
 end
 
 # ## ggplot2 theme 
 
-with_theme(theme_ggplot2(), resolution = (1600,1200), fontsize = 24) do
+with_theme(theme_ggplot2(), size = (1600,1200), fontsize = 24) do
     fig = Figure()
     g = GridLayout(fig[1,1])
     wfacet = draw!(g, plt)
@@ -36,7 +36,7 @@ plt *= visual(strokewidth=0.95, strokecolor=:black, color =(:white,0.5));
 
 # ## dark theme 
 
-with_theme(theme_dark(), resolution = (1600,1200), fontsize = 24) do
+with_theme(theme_dark(), size = (1600,1200), fontsize = 24) do
 
     fig = Figure()
     g = GridLayout(fig[1,1])

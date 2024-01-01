@@ -11,11 +11,11 @@ p_not1to1 *= mapping(:intercepts, :slopes, color=:intercepts => nonnumeric)
 ## define your visual layer, what kind of plot do you want?
 p_not1to1 *= visual(ABLines, color = [:red, :blue, :orange], linestyle=:dash)
 
-with_theme(theme_ggplot2(), resolution = (600,400)) do
+with_theme(theme_ggplot2(), size = (600,400)) do
     p_1to1 + p_not1to1 |> draw
 end
 
-with_theme(theme_ggplot2(), resolution = (600,400)) do
+with_theme(theme_ggplot2(), size = (600,400)) do
     fig = Figure()
     ax = Axis(fig[1,1])
     aog = draw!(ax, p_1to1 + p_not1to1)

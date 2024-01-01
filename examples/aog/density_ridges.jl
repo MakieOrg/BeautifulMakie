@@ -21,7 +21,7 @@ let
     p_len *= mapping(:flipper_length_mm => (t -> t / 10), 
         color=:species)
 
-    with_theme(theme_light(),resolution = (600,400), palette=palette, Scatter=(cycle=cycle,)) do
+    with_theme(theme_light(),size = (600,400), palette=palette, Scatter=(cycle=cycle,)) do
        p_len |> draw
     end
 end

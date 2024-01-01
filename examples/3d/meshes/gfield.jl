@@ -1,6 +1,7 @@
 using GLMakie, LaTeXStrings, Colors, ColorSchemes
 using FileIO
 GLMakie.activate!()
+GLMakie.closeall() # close any open screen
 
 function alpha_colorbuffer(scene)
     bg = scene.backgroundcolor[]
@@ -53,7 +54,7 @@ cmap = resample_cmap(cmap, n; alpha=alphas)
 s = 8.0
 
 fig = with_theme(theme_dark()) do 
-    fig = Figure(resolution = (1200, 1200))
+    fig = Figure(size = (1200, 1200))
     axs = LScene(fig[1, 1], show_axis = false)
     surface!(axs, x2, y2, z2, colormap = cmap, #colorrange = (0, 1.5),
         transparency = :true)
@@ -75,6 +76,6 @@ fig = with_theme(theme_dark()) do
     zoom!(axs.scene, cameracontrols(axs.scene), 0.87)
     fig 
 end
-save("test_alpha_s.png", alpha_colorbuffer(fig.scene))
+save("gfield.png", alpha_colorbuffer(fig.scene))
 
-# ![](test_alpha_s.png)
+# ![](gfield.png)

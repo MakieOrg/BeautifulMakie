@@ -28,7 +28,7 @@ let
     bplt *= mapping(:species, :flipper_length_mm => (t -> t / 10), color = :species)
     bplt *= visual(Makie.BoxPlot, orientation = :horizontal)
 
-    with_theme(theme_light(),resolution = (600,400), palette=palette, Scatter=(cycle=cycle,)) do
+    with_theme(theme_light(),size = (600,400), palette=palette, Scatter=(cycle=cycle,)) do
         fig = Figure()
         axs = [Axis(fig[2,1], xlabel = "flipper length (cm)", ylabel = "bill length (cm)"),
             Axis(fig[1,1]), Axis(fig[2,2])]

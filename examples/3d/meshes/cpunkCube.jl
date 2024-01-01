@@ -5,6 +5,7 @@ import Cascadia: Selector
 import Gumbo: parsehtml
 import HTTP
 GLMakie.activate!()
+GLMakie.closeall() # close any open screen
 
 # ## Download images from twitter
 lucy = Downloads.download("https://pbs.twimg.com/media/FbbZqWTXkAA8KTo?format=jpg&name=large")
@@ -34,14 +35,14 @@ poster = poster[1+80:1080+80,end:-1:1]
 imgs = [rotr90(lucydavid), lucy, rotl90(david), 
     rotr90(faraday), rotr90(rotr90(poster)), rotr90(rotr90(luda))]
 
-fig = Figure(figure_padding=0, resolution =(600*4,400*4))
+fig = Figure(figure_padding=0, size =(600*4,400*4))
 axs = [Axis(fig[i,j], aspect=1) for i in 1:2 for j in 1:3]
 [heatmap!(axs[i], imgs[i]) for i in 1:6]
 hidedecorations!.(axs)
 hidespines!.(axs)
 colgap!(fig.layout,0)
 rowgap!(fig.layout,0)
-imgcpunk = Makie.colorbuffer(fig.scene)
+imgcpunk = Makie.colorbuffer(fig)
 
 # ## Do the meshed cube
 function meshcube(o=Vec3f(0), sizexyz = Vec3f(1))
@@ -88,7 +89,7 @@ rating, votes = getstats()
 percent = round.(votes/sum(votes)*100, digits=1)
 
 with_theme(theme_black()) do
-    fig = Figure(resolution= (1200,700), fontsize = 24)
+    fig = Figure(size= (1200,700), fontsize = 24)
     ax1 = LScene(fig[1,1], show_axis=false)
     ax2 = Axis(fig[1,2]; xlabel = "Rating score")
     mesh!(ax1, m; color = imgcpunk, interpolate=false)

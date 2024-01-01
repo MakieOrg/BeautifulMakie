@@ -1,5 +1,5 @@
 using CairoMakie, ColorSchemes
-CairoMakie.activate!(type = "png") #hide
+CairoMakie.activate!(type = "svg") #hide
 
 xs = 0:0.01:1
 p = -10:1:10
@@ -15,10 +15,13 @@ for (indx, i) in enumerate(p)
 end
 cbarPal = :thermal
 cmap = cgrad(colorschemes[cbarPal], psize, categorical = true)
-fig = Figure(resolution = (600, 400), fonts = (; regular= "CMU Serif"))
+fig = Figure(size = (600, 400), fonts = (; regular= "CMU Serif"))
 ax = Axis(fig[1, 1], aspect = 1, xlabel = L"x", ylabel = L"x^{p}",
     xlabelsize = 22, ylabelsize = 22)
 [lines!(xs, ys[:, v], color = cmap[v], label = "$(p[v])") for v in 1:psize]
 Legend(fig[1, 2], ax, L"p"; nbanks = 2)
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
+save("line_colored.svg", fig); # hide
+
+# ![](line_colored.svg)
