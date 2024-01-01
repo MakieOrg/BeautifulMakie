@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "docs:dev": "vitepress dev docs/docs_site",
+    "docs:build": "vitepress build docs/docs_site",
+    "docs:preview": "vitepress preview docs/docs_site"
+  },
+  "devDependencies": {
+    "vitepress-plugin-tabs": "^0.5.0"
+  }
+}

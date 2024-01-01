@@ -3,7 +3,7 @@ using AlgebraOfGraphics, GLMakie, GeoMakie
 using Statistics
 plt = data(cl)*mapping(:timestamp, :Close)*visual(Lines)
 
-with_theme(theme_ggplot2(), resolution = (600,400)) do
+with_theme(theme_ggplot2(), size = (600,400)) do
     plt |> draw
 end
 

@@ -18,7 +18,7 @@ end
 plane = Rect3f(Vec3f(-5,-2,-1.05), Vec3f(10,4,0.05))
 
 ## the actual figure
-fig=Figure(; resolution=(900, 900))
+fig=Figure(; size=(900, 900))
 ax=LScene(fig[1, 1]; show_axis=false, scenekw=(;lights=lights))
 screen=RPRMakie.RPRScreen(size(ax.scene); plugin=RPR.Northstar, iterations=250)
 matsys=screen.matsys

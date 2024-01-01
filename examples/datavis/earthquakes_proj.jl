@@ -28,7 +28,7 @@ plt = data(n15) * mapping(:n, :depth, color=:mag, text = :place => verbatim) *
 ptxt = data(n15) * mapping(:x, :n=>(t->t+0.25), text = :place => verbatim) *
     visual(Makie.Text, align = (:left, :bottom))
 
-with_theme(theme_black(), resolution = (1400,800)) do
+with_theme(theme_black(), size = (1400,800)) do
     fig = Figure()
     gax = GeoAxis(fig[1,2]; aspect = 1,
         dest = "+proj=eqdc +lat_1=90 +lat_2=90",

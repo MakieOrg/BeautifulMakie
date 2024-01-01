@@ -106,7 +106,7 @@ cmapH = make_colorscheme(newmap, length=20);
 
 with_theme(theme_black()) do
     colormap = cmapH  #cgrad(:viridis, scale = log10)
-    fig = Figure(resolution = (2400, 800), fontsize=24)
+    fig = Figure(size = (2400, 800), fontsize=24)
     ax1 = Axis(fig[1,1], xlabel = "terawatt-hour")
     ax2 = GeoAxis(fig[1,2]; dest = "+proj=crast"
         )

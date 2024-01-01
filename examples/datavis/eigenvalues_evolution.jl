@@ -35,7 +35,7 @@ xs, ys = xy(a,b)
 colors = repeat(1:n,inner=500)
 
 with_theme(theme_black()) do
-    fig=Figure(resolution=(800,800))
+    fig=Figure(size=(800,800))
     ax = Axis(fig[1,1])
     scatter!(Point2f.(xs,ys); color=colors, markersize = 1, 
         colormap=[:yellow, :white, :orangered]
@@ -62,7 +62,7 @@ xs, ys = xy(a,b)
 colors = repeat(1:n,inner=500)
 
 with_theme(theme_black()) do
-    fig=Figure(resolution=(800,800))
+    fig=Figure(size=(800,800))
     ax = Axis(fig[1,1])
     scatter!(Point2f.(xs,ys); color=colors, markersize = 1, 
         colormap=[:yellow, :white, :orangered]

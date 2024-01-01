@@ -3,8 +3,15 @@ generated
 build
 .vscode
 .DS_Store
+*.DS_Store
+*.mp4
+*tmp
+docs
+docs/docs_site
+docs/src/.vitepress/dist
+docs/src/.vitepress/cache
+docs/src/examples
 
-docs/docs
-docs/site
-examples/cheat_sheets
 .cache
+dev
+test_record
