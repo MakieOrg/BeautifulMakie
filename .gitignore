@@ -5,6 +5,7 @@ build
 .DS_Store
 *.DS_Store
 *tmp
+docs/docs_site
 docs/src/.vitepress/dist
 docs/src/.vitepress/cache
 docs/docs_site/.vitepress/dist

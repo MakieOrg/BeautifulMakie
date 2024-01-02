@@ -48,19 +48,19 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Install dependencies
         run: npm add -D vitepress # or pnpm install / yarn install / bun install
-      # - name: Install documentation dependencies
-      #   run: sudo apt-get update && sudo apt-get install -y xorg-dev mesa-utils xvfb libgl1 freeglut3-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libxext-dev libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
-      # - name: Install documentation dependencies
-      #   run: DISPLAY=:0 xvfb-run -s '-screen 0 1024x768x24' julia --project=docs -e 'using Pkg; pkg"add https://github.com/LuxDL/DocumenterVitepress.jl.git"; Pkg.instantiate(); Pkg.precompile()'
-      # - name: generating examples md files
-      #   run: |
-      #     julia --project=docs/ --color=yes docs/gen_mds.jl
-      #     DISPLAY=:0 xvfb-run -s '-screen 0 1024x768x24' julia --project=docs/ --color=yes docs/make.jl
+      - name: Install documentation dependencies
+        run: sudo apt-get update && sudo apt-get install -y xorg-dev mesa-utils xvfb libgl1 freeglut3-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libxext-dev libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
+      - name: Install documentation dependencies
+        run: DISPLAY=:0 xvfb-run -s '-screen 0 1024x768x24' julia --project=docs -e 'using Pkg; pkg"add https://github.com/LuxDL/DocumenterVitepress.jl.git"; Pkg.instantiate(); Pkg.precompile()'
+      - name: generating examples md files
+        run: |
+          julia --project=docs/ --color=yes docs/gen_mds.jl
+          DISPLAY=:0 xvfb-run -s '-screen 0 1024x768x24' julia --project=docs/ --color=yes docs/make.jl
       - name: Build with VitePress
-        # env:
-        #   RASTERDATASOURCES_PATH: ".." # For downloading raster data
-        #   JULIA_DEBUG: "Documenter"
-        #   DATADEPS_ALWAYS_ACCEPT: true
+        env:
+          RASTERDATASOURCES_PATH: ".." # For downloading raster data
+          JULIA_DEBUG: "Documenter"
+          DATADEPS_ALWAYS_ACCEPT: true
         run: |
           NODE_OPTIONS=--max-old-space-size=32768 npm run docs:build # or pnpm docs:build / yarn docs:build / bun run docs:build
           touch docs/docs_site/.vitepress/dist/.nojekyll
