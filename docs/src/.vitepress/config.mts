@@ -3,7 +3,7 @@ import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/BeautifulMakie/',
+  base: '/',
   title: "Beautiful Makie",
   description: "A gallery collection",
   lastUpdated: true,
