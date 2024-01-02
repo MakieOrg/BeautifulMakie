@@ -30,39 +30,39 @@ import Gallery from './components/Gallery.vue'
 const images = [
   {
     href: 'examples/animations/scatter_size',
-    src: 'examples/animations/animScatters.mp4',
+    src: 'animScatters.mp4',
   },
   {
     href: 'examples/2d/lines/line_latex_bessels',
-    src: 'examples/2d/lines/line_latex_bessels.svg',
+    src: 'line_latex_bessels.svg',
   },
     {
     href: 'examples/2d/lines/line_cmaps_a',
-    src: 'examples/2d/lines/line_cmaps_a.svg',
+    src: 'line_cmaps_a.svg',
   },
     {
     href: 'examples/2d/streamplot/streamplot',
-    src: 'examples/2d/streamplot/streamplot.png',
+    src: 'streamplot.png',
   },
     {
     href: 'examples/3d/contour3d',
-    src: 'examples/3d/contour3d/contourf_contour3d.png',
+    src: 'contourf_contour3d.png',
   },
     {
     href: 'examples/3d/lines3d/archimedean_spiral',
-    src: 'examples/3d/lines3d/archimedean_spiral.png',
+    src: 'archimedean_spiral.png',
   },
     {
     href: 'examples/3d/meshes/meshes',
-    src: 'examples/3d/meshes/meshes.png',
+    src: 'meshes.png',
   },
     {
     href: 'examples/3d/mscatters/RRGraph3D',
-    src: 'examples/3d/mscatters/RRGraph3D.png',
+    src: 'RRGraph3D.png',
   },
     {
     href: 'examples/themes/dark_surface_contour3d_streamplot',
-    src: 'examples/themes/dark_surface_contour3d_streamplot.png',
+    src: 'dark_surface_contour3d_streamplot.png',
   },
 ]
 </script>
