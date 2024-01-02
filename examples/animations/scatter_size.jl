@@ -1,6 +1,5 @@
 using GLMakie, Random
 GLMakie.activate!()
-mkpath("assets")#hide
 
 Random.seed!(123)
 npts = 100
@@ -16,7 +15,7 @@ with_theme(theme_dark()) do
     limits!(ax, 0, 2, 0, 1)
     ## the animation is done by updating the Observable values
     ## change assets->(your folder) to make it work in your local env
-    record(fig, joinpath("assets", "animScatters.mp4"),
+    record(fig, "animScatters.mp4",
         framerate = 24, profile = "main") do io
         for i in 1:0.1:8
             msize[] = i * initms
@@ -26,4 +25,4 @@ with_theme(theme_dark()) do
     nothing # hide
 end
 
-# ![type:video](./assets/animScatters.mp4)
+# ![type:video](animScatters.mp4)

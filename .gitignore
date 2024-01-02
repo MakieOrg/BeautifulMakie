@@ -8,6 +8,8 @@ build
 *tmp
 docs/src/.vitepress/dist
 docs/src/.vitepress/cache
+docs/docs_site/.vitepress/dist
+docs/docs_site/.vitepress/cache
 docs/src/examples
 
 .cache
