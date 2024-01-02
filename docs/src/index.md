@@ -29,8 +29,8 @@ features:
 import Gallery from './components/Gallery.vue'
 const images = [
   {
-    href: 'examples/animations/scatters_size',
-    src: 'examples/animations/assets/animScatters.mp4',
+    href: 'examples/animations/scatter_size',
+    src: 'examples/animations/animScatters.mp4',
   },
   {
     href: 'examples/2d/lines/line_latex_bessels',
