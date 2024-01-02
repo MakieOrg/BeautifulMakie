@@ -4,7 +4,6 @@ build
 .vscode
 .DS_Store
 *.DS_Store
-*.mp4
 *tmp
 docs/src/.vitepress/dist
 docs/src/.vitepress/cache
