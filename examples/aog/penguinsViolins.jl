@@ -1,5 +1,6 @@
 using CairoMakie, PalmerPenguins, DataFrames
 using AlgebraOfGraphics
+
 CairoMakie.activate!(type = "svg") #hide
 
 function getPenguins()
@@ -27,7 +28,7 @@ bplt = data(penguins)
 bplt *= mapping(:species, :flipper_length_mm => (t -> t / 10), color = :species)
 bplt *= visual(Violin, orientation = :horizontal)
 
-with_theme(theme_light(),size = (600,400), palette=palette, Scatter=(cycle=cycle,)) do
+with_theme(theme_light(), size = (600,400), palette=palette, Scatter=(cycle=cycle,)) do
     fig = Figure()
     axs = [Axis(fig[2,1], xlabel = "flipper length (cm)", ylabel = "bill length (cm)"),
         Axis(fig[1,1]), Axis(fig[2,2])]
@@ -45,6 +46,7 @@ with_theme(theme_light(),size = (600,400), palette=palette, Scatter=(cycle=cycle
     legend!(fig[1,2], dots)
     fig
 end
+
 save("penguinsViolins.svg", current_figure()); # hide
 
 # ![](penguinsViolins.svg)
