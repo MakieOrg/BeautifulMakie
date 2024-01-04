@@ -20,14 +20,15 @@ p3d *= mapping(color = :species);
 # Let's define 3 new default colors 
 colors = tuple.([:grey10, :orange, :dodgerblue], 0.5)
 palstyle = (; color=colors, patchcolor = colors);
+
 # ## Penguins 3d Wireframe density
 with_theme(theme_ggplot2(),size = (600,400), palette=palstyle) do
     draw(p3d; axis = (type = Axis3, perspectiveness = 0.5, aspect=(1, 1, 1)))
 end
 
-save("penguins3d_1.png", current_figure()); # hide
+save("penguins3d1.png", current_figure()); # hide
 
-# ![](penguins3d_1.png)
+# ![](penguins3d1.png)
 
 # ## Penguins histogram
 
@@ -38,9 +39,10 @@ phist *= mapping(:bill_length_mm => "bill length mm", color =:species, stack = :
 with_theme(theme_ggplot2(),size = (600,400), palette=palstyle) do
     phist |> draw
 end
-save("penguins3d_2.png", current_figure()); # hide
 
-# ![](penguins3d_2.png)
+save("penguins3d2.png", current_figure()); # hide
+
+# ![](penguins3d2.png)
 
 # ## AoG and plain Makie
 # Currently, density plots with `direction=:y` is not supported by AoG, 
@@ -66,6 +68,6 @@ with_theme(theme_ggplot2(),size = (600,400), palette=palstyle) do
     fig
 end
 
-save("penguins3d_3.png", current_figure()); # hide
+save("penguins3d3.png", current_figure()); # hide
 
-# ![](penguins3d_3.png)
+# ![](penguins3d3.png)
