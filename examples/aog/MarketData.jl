@@ -10,9 +10,9 @@ plt = data(cl)*mapping(:timestamp, :Close)*visual(Lines)
 with_theme(theme_ggplot2(), size = (600,400)) do
     plt |> draw
 end
-save("market_data.svg", current_figure()); # hide
+save("market_data1.svg", current_figure()); # hide
 
-# ![](market_data.svg)
+# ![](market_data1.svg)
 
 
 # ## Prices
@@ -24,7 +24,9 @@ plt *= mapping(:timestamp, labels .=> "value", color =dims(1)=>renamer(labels) =
 with_theme(theme_light(), size = (600,400)) do
     plt * visual(Lines) |> draw
 end
+save("market_data2.svg", current_figure()); # hide
 
+# ![](market_data2.svg)
 # ## StockChart
 
 df = DataFrame(ohlc)
@@ -36,3 +38,7 @@ plt *= visual(BarPlot)
 with_theme(theme_dark(), size = (800,500)) do
     draw(plt, palettes =(; color = [:deepskyblue, :firebrick3]))
 end
+
+save("market_data3.svg", current_figure()); # hide
+
+# ![](market_data3.svg)

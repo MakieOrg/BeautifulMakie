@@ -32,3 +32,7 @@ function plotPenguins()
     end
 end
 fig = plotPenguins()
+
+save("penguins.svg", fig); # hide
+
+# ![](penguins.svg)

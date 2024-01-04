@@ -65,7 +65,7 @@ export default defineConfig({
           { text: 'Dashboards', link: '/examples/dashboards/tesseral_spherical_harmonics' },
           { text: 'Data Visualization', link: '' },
           { text: 'Geo', link: '' },
-          { text: 'Algebra of Graphics', link: '' },
+          { text: 'Algebra of Graphics', link: '/examples/aog/penguins3d' },
           { text: 'Raytracing', link: '' }
         ]},
         { text: 'Pkgs versions', link: '/pkgs_versions' },
@@ -122,6 +122,7 @@ export default defineConfig({
                 { text: 'contour_over_heatmap',link: '/examples/2d/contour/contour_over_heatmap' },
                 { text: 'egg_shape',link: '/examples/2d/contour/egg_shape' },
                 { text: 'qubit',link: '/examples/2d/contour/qubit' },
+                { text: 'overlayed_functions',link: '/examples/2d/contour/overlayed_functions' },
               ],
             },
             {
@@ -392,6 +393,26 @@ export default defineConfig({
             { text: 'Menu and sliders', link: '/examples/dashboards/tesseral_spherical_harmonics' },
             { text: 'slider colormaps', link: '/examples/dashboards/colorschemes' },
             { text: 'slider matcap', link: '/examples/dashboards/matcap' },
+          ],
+        },
+      ],
+      '/examples/aog/': [
+        {
+          text: 'AlgebraOfGraphics',
+          collapsed: true,
+          items: [
+            { text: 'ablines', link: '/examples/aog/ablines' },
+            { text: 'datasaurus', link: '/examples/aog/datasaurus' },
+            { text: 'density_ridges', link: '/examples/aog/density_ridges' },
+            // { text: 'gapminder', link: '/examples/aog/gapminder' },
+            { text: 'MarketData', link: '/examples/aog/MarketData' },
+            { text: 'penguins', link: '/examples/aog/penguins' },
+            { text: 'penguins3d', link: '/examples/aog/penguins3d' },
+            { text: 'penguinsAoG', link: '/examples/aog/penguinsAoG' },
+            { text: 'penguinsBoxes', link: '/examples/aog/penguinsBoxes' },
+            { text: 'penguinsViolins', link: '/examples/aog/penguinsViolins' },
+            { text: 'scatterlinesAoG', link: '/examples/aog/scatterlinesAoG' },
+            { text: 'textScatterLines', link: '/examples/aog/textScatterLines' },
           ],
         },
       ],

@@ -18,3 +18,6 @@ xy *= visual(ScatterLines)
 with_theme(theme_ggplot2(), size = (600,400)) do
     xy |> draw
 end
+save("scatterlinesAoG.svg", current_figure()); # hide
+
+# ![](scatterlinesAoG.svg)

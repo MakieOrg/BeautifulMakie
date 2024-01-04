@@ -15,6 +15,10 @@ with_theme(theme_ggplot2(), size = (600,400)) do
     p_1to1 + p_not1to1 |> draw
 end
 
+save("ablines1.svg", current_figure()); # hide
+
+# ![](ablines1.svg)
+
 with_theme(theme_ggplot2(), size = (600,400)) do
     fig = Figure()
     ax = Axis(fig[1,1])
@@ -25,3 +29,6 @@ with_theme(theme_ggplot2(), size = (600,400)) do
     Legend(fig[1,2], ax, valign = 0.2)
     fig
 end
+
+save("ablines2.svg", current_figure()); # hide
+# ![](ablines2.svg)

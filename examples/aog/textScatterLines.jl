@@ -13,3 +13,6 @@ pSL *= visual(ScatterLines) + visual(Makie.Text, align = (:center, :bottom))
 with_theme(theme_ggplot2(), size = (600,400)) do
     draw(pSL)
 end
+save("textScatterLines.svg", current_figure()); # hide
+
+# ![](textScatterLines.svg)

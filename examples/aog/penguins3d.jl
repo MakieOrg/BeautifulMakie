@@ -25,6 +25,10 @@ with_theme(theme_ggplot2(),size = (600,400), palette=palstyle) do
     draw(p3d; axis = (type = Axis3, perspectiveness = 0.5, aspect=(1, 1, 1)))
 end
 
+save("penguins3d_1.png", current_figure()); # hide
+
+# ![](penguins3d_1.png)
+
 # ## Penguins histogram
 
 phist = data(penguins)
@@ -34,6 +38,9 @@ phist *= mapping(:bill_length_mm => "bill length mm", color =:species, stack = :
 with_theme(theme_ggplot2(),size = (600,400), palette=palstyle) do
     phist |> draw
 end
+save("penguins3d_2.png", current_figure()); # hide
+
+# ![](penguins3d_2.png)
 
 # ## AoG and plain Makie
 # Currently, density plots with `direction=:y` is not supported by AoG, 
@@ -58,3 +65,7 @@ with_theme(theme_ggplot2(),size = (600,400), palette=palstyle) do
     colgap!(fig.layout,0)
     fig
 end
+
+save("penguins3d_3.png", current_figure()); # hide
+
+# ![](penguins3d_3.png)

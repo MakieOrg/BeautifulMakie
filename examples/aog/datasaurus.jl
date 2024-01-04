@@ -2,9 +2,9 @@ using CSV, Downloads, DataFrames
 using AlgebraOfGraphics, CairoMakie
 using Statistics
 CairoMakie.activate!(type = "svg") #hide
-# https://github.com/jumpingrivers/datasauRus
-# https://www.autodesk.com/research/publications/same-stats-different-graphs
 
+#https://github.com/jumpingrivers/datasauRus
+#https://www.autodesk.com/research/publications/same-stats-different-graphs
 link = "https://raw.githubusercontent.com/jumpingrivers/datasauRus/main/inst/extdata/DatasaurusDozen-Long.tsv"
 file = Downloads.download(link)
 dsaurus = CSV.read(file, DataFrame, delim = '\t')
@@ -13,6 +13,10 @@ plt = data(dsaurus) * mapping(:x => "", :y => "", layout=:dataset)
 with_theme(theme_light(), size = (1600,1200), fontsize = 24) do
     draw(plt) ## palettes = (layout=wrap(cols=3),)
 end
+
+save("datasaurus1.svg", current_figure()); # hide
+
+# ![](datasaurus1.svg)
 
 # ## ggplot2 theme 
 
@@ -26,7 +30,9 @@ with_theme(theme_ggplot2(), size = (1600,1200), fontsize = 24) do
     delete!.(bxs[14:end])
     fig
 end
+save("datasaurus2.svg", current_figure()); # hide
 
+# ![](datasaurus2.svg)
 # Adding some stats
 
 gdf = groupby(dsaurus, :dataset);
@@ -56,3 +62,7 @@ with_theme(theme_dark(), size = (1600,1200), fontsize = 24) do
     hidedecorations!(axstats)
     fig
 end
+
+save("datasaurus3.svg", current_figure()); # hide
+
+# ![](datasaurus3.svg)
