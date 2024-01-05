@@ -1,7 +1,7 @@
 using Makie, GLMakie, GeoMakie
 import Downloads
-using GeoJSON
-using GeoInterface
+using GeoMakie.GeoJSON
+using GeoMakie.GeoInterface
 
 GLMakie.activate!()
 
@@ -11,8 +11,7 @@ states_geo = GeoJSON.read(read(states, String))
 n = length(states_geo)
 
 fig = Figure(size=(1200, 800), fontsize=22)
-ax = GeoAxis(fig[1, 1]; dest="+proj=wintri",coastlines=true,
-    title="Projection: Winkel Tripel, US States", tellheight=true)
-poly!(ax, states_geo, color=1:n, colormap=:plasma, strokecolor=:black,
-    strokewidth=1, overdraw=true, transformation=(:xy, 10))
+ax = GeoAxis(fig[1, 1]; dest="+proj=wintri", title="Projection: Winkel Tripel, US States")
+poly!(ax, states_geo, color=1:n, colormap=:plasma, strokecolor=:black, strokewidth=1)
+ylims!(ax,-90,90)
 fig
