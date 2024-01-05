@@ -28,12 +28,15 @@ end
 
 fig = Figure(size=(800, 400), fontsize=22)
 ax = LScene(fig[1,1]; show_axis=false)
-lines!(ax, GeoMakie.coastlines(), transparency=true)
-lines!(ax, linepath, color = :red, linewidth=2.5, transparency=true)
-lines!(ax, linepathh, color = :red, linewidth=2.5, transparency=true)
-band!(ax, linepath, linepathh, color = repeat(1:1384,outer=2))
+lines!(ax, GeoMakie.coastlines(), transparency=true, color=:white)
+lines!(ax, linepath, color = :orangered, linewidth=2.5, transparency=true)
+lines!(ax, linepathh, color = :white, linewidth=2.5, transparency=true)
+band!(ax, linepath, linepathh, color = repeat(1:1384,outer=2), transparency=true)
 image!(ax, -180..180, -90..90, earth_img'[:,end:-1:1])
-rotate!(ax.scene, 2*pi/3)
+rotate!(ax.scene, 2*pi/2.6)
 fig
-zoom!(ax.scene, cameracontrols(ax.scene), 0.45)
-display(fig; update=false)
+zoom!(ax.scene, cameracontrols(ax.scene), 30)
+#center!(ax.scene)
+save("vertical_feature_mask.png", fig, update=false); # hide
+
+# ![](vertical_feature_mask.png)

@@ -1,7 +1,9 @@
 using CairoMakie, HTTP, CSV, DataFrames, DataFramesMeta, Suppressor
 using Images, ColorSchemes, Colors, Statistics
+using Downloads
 using Lazy: @>
 CairoMakie.activate!(type = "png")
+
 function plotastro()
     data_url = "https://bit.ly/3kmlGn2"
     @suppress begin
@@ -30,12 +32,14 @@ function plotastro()
         astro
         @subset([true; :ascend_shuttle[2:end] .!= :ascend_shuttle[1:end-1]])
     end
-    tierra = "https://climate.nasa.gov/system/internal_resources/details/original/309_ImageWall5_768px-60.jpg"
+    tierra = "https://eoimages.gsfc.nasa.gov/images/imagerecords/8000/8108/ipcc_bluemarble_west_front.jpg"
     @suppress begin
         global imgEarth
-        tierra = HTTP.download(tierra)
+        tierra = Downloads.download(tierra)
         imgEarth = load(tierra)
+        imgEarth = imgEarth[:,120:end-120]
     end
+
     function getPoints(xi, yi, xf, yf)
         xyos = []
         for i in 1:length(xo)
@@ -69,7 +73,7 @@ function plotastro()
             autolimitaspect = 1)
         hidespines!(ax)
         hidedecorations!(ax)
-        image!(-20 .. 20, -17 .. 17, rotr90(imgEarth))
+        image!(-20 .. 20, -20 .. 20, rotr90(imgEarth))
         text!(astro.name, position = @.(Point2f(cos(astro.θ), sin(astro.θ)) * 85),
             rotation = astro.texttheta, fontsize = 6, align = astro.align)
         text!(string.(valYear.year_of_mission),
@@ -113,4 +117,8 @@ function plotastro()
         fig
     end
 end
-plotastro()
+fig = plotastro()
+
+save("astronauts.png", fig); # hide
+
+# ![](astronauts.png)

@@ -48,4 +48,8 @@ function plotproj()
     end
     fig
 end
-plotproj()
+
+fig = plotproj()
+save("projections.png", fig); # hide
+
+# ![](projections.png)

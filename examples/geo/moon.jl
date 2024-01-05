@@ -24,3 +24,7 @@ hidedecorations!(ax)
 hidespines!(ax)
 fig[1, 1] = ax
 fig
+
+save("moon.png", fig); # hide
+
+# ![](moon.png)

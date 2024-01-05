@@ -39,3 +39,7 @@ with_theme(theme_dark()) do
     hidedecorations!(ax; grid=false)
     fig
 end
+
+save("donut_earth_sun.png", current_figure()); # hide
+
+# ![](donut_earth_sun.png)

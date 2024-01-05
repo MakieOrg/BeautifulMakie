@@ -56,8 +56,8 @@ function m12(n=10)
     return a, b
 end 
 
-n = 100
-a, b =  m12(100)
+n = 150
+a, b =  m12(n)
 xs, ys = xy(a,b)
 colors = repeat(1:n,inner=500)
 

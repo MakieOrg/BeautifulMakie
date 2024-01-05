@@ -17,7 +17,6 @@
 # ENV["RASTERDATASOURCES_PATH"] = ".." # joinpath(tempdir(), "Rasters"), needed for RasterDataSources
 
 # Let's load the packages:
-
 using Rasters
 using RasterDataSources
 using ArchGDAL
@@ -49,7 +48,7 @@ worldclim_stacks[1].tmax
 # `z` are the values of the raster at the points `(x, y)`.  This is the format
 # that we can supply directly to Makie.
 
-Makie.convert_arguments(Makie.VertexBasedGrid(), worldclim_stacks[1].tmax);
+Makie.convert_arguments(Makie.VertexGrid(), worldclim_stacks[1].tmax);
 
 # Let's extract two variables from this stack, the maximum temperature (`:tmax`),
 # and the precipitation (`:prec`).
@@ -77,16 +76,20 @@ prec_interpolated = DataInterpolations.QuadraticInterpolation(prec_rasters, 1:le
 # ## A simple animation
 
 # Let's see if this interpolation worked.  We create a figure to animate:
+ras_inter = temp_interpolated(1.0)
+ras_inter = replace_missing(ras_inter, NaN)
+
 temp_inter = Observable(temp_interpolated(1.0))
-fig= Figure(size = (800,800))
-ax = Axis3(fig[1,1];perspectiveness=0.5,
+fig= Figure(; size = (800,800))
+ax = Axis3(fig[1,1]; perspectiveness=0.5,
     azimuth=-0.5,
     elevation=0.57,
     aspect=(1, 1, 1))
-plt = surface!(ax, temp_inter; transparency=true)
-hm = heatmap!(ax, temp_inter; nan_color=:black)
+plt = surface!(ax, ras_inter; transparency=true)
+hm = heatmap!(ax, ras_inter; nan_color=:black)
 translate!(hm, 0, 0, -30) # get the heatmap to the bottom of the plot
 fig # hide
+
 # Now that the figure has been created, we can animate and record it.
 
 # This is done using Makie's `record` convenience function, which can iterate through a range,
@@ -97,7 +100,7 @@ fig # hide
 
 @time record(fig, "temperature_surface_animation.mp4", LinRange(1, 12, 480÷4); framerate = 30) do i
     ax.title[] = @sprintf "%.2f" i
-    temp_inter[] = temp_interpolated(i)
+    temp_inter[] = replace_missing(temp_interpolated(i), NaN)
 end;
 
 # ![type:video](temperature_surface_animation.mp4)
@@ -145,7 +148,7 @@ Makie.to_colormap(cmap) # hide
 
 # We create the Figure, which is the top-level object in Makie,
 # and holds the axis which holds our plots.
-fig = Figure(size=(800 * 2, 800 * 2))
+fig = Figure(; size=(800, 800))
 # First, we plot an empty the sphere
 ax, plt_obj = mesh(fig[1, 1], uv_normal_mesh(Tesselation(Sphere(Point3f(0), 0.99), 128));
     color=(:white, 0.1), transparency=true,
@@ -154,7 +157,7 @@ ax, plt_obj = mesh(fig[1, 1], uv_normal_mesh(Tesselation(Sphere(Point3f(0), 0.99
 # Then, we plot the sphere, which displays temperature.
 temperature_plot = mesh!(
     m;
-    color=Makie.convert_arguments(Makie.VertexBasedGrid(), worldclim_stacks[10].tmax)[3]'[end:-1:1,:] |> Matrix,
+    color=Makie.convert_arguments(Makie.VertexGrid(), worldclim_stacks[10].tmax)[3]'[end:-1:1,:] |> Matrix,
     colorrange=(-65, 50),
     lowclip=:transparent,
     colormap=:tableau_temperature, #cmap, 
@@ -189,7 +192,7 @@ end
 # We don't want to call `convert_arguments` all the time, so let's 
 # define a convenience function to do it:
 
-raster2array(raster) = Makie.convert_arguments(Makie.VertexBasedGrid(), raster)[3]'[end:-1:1,:]
+raster2array(raster) = Makie.convert_arguments(Makie.VertexGrid(), raster)[3]'[end:-1:1,:]
 watervals = watermap(uv, raster2array(worldclim_stacks[1].prec))
 
 # Let's finally plot the meshscatter!
@@ -221,11 +224,11 @@ Colorbar(fig[1,2], temperature_plot, label="Temperature", height = Relative(0.5)
 Colorbar(fig[2,1], prec_plot, label="Precipitation", width = Relative(0.5), vertical=false)
 
 zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
-fig # hide
+display(fig; update=false) # hide
 
 # Now, we animate the water and temperature plots!
 
-record(fig, "worldclim_visualization.mp4", LinRange(1, 24, 600÷4); framerate = 24) do i
+record(fig, "worldclim_visualization.mp4", LinRange(1, 24, 600÷4); framerate = 24, update=false) do i
     title_label.text[] = @sprintf "%.2f" (i % 12)
     temperature_plot.color[] = raster2array(temp_interpolated(i % 12))
     watervals = max.(0, watermap(uv, raster2array(prec_interpolated(i % 12))))

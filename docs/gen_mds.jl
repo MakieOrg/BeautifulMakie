@@ -6,7 +6,7 @@ OUTPUT = joinpath(@__DIR__, "src", "examples")
 
 folders = readdir(joinpath(@__DIR__, "..", "examples"))
 setdiff!(folders, [".DS_Store"])
-setdiff!(folders, ["geo", "rpr", "datavis"])
+setdiff!(folders, ["rpr"])
 
 function get_files(folders)
     srcsfiles = []
@@ -17,11 +17,8 @@ function get_files(folders)
             setdiff!(names, [".DS_Store",
                 "world_energy.jl",
                 "gapminder.jl", 
-                "vertical_feature_mask.jl",
+                "gott_azimuthal.jl",
                 "submarine_cables.jl",
-                "timeseries_proj.jl",
-                "earthquakes_proj.jl",
-                "rasters.jl",
                 ])
                 
             fpaths  = "$(f)/" .* names

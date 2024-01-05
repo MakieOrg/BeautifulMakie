@@ -80,11 +80,11 @@ m3(;a=9rand()-5,b=9rand()-5) = [a 1 -1; -1 b 0; 1 -1 -1]
 h = HeatMap(range(-4,4,length=1200),range(-2,2,length=1200))
 getcounts!(h, m3; n = 1_500_000)
 
-with_theme(theme_ggplot2()) do
+with_theme(theme_dark()) do
     fig = Figure(figure_padding=0,size=(600,400))
     ax = Axis(fig[1,1]; aspect = DataAspect())
     heatmap!(ax, -4..4, -2..2,eq_hist(h.counts);
-        colormap = :seaborn_icefire_gradient)
+        colormap = :CMRmap)
     hidedecorations!(ax)
     hidespines!(ax)
     fig

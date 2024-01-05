@@ -15,3 +15,7 @@ ax = GeoAxis(fig[1, 1]; dest="+proj=wintri", title="Projection: Winkel Tripel, U
 poly!(ax, states_geo, color=1:n, colormap=:plasma, strokecolor=:black, strokewidth=1)
 ylims!(ax,-90,90)
 fig
+
+save("us_states.png", fig); # hide
+
+# ![](us_states.png)

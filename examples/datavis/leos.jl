@@ -29,7 +29,7 @@ function BezierPath(o, f, co, cf; t = range(0,1, length=30))
     return [poly3(t, o, co, cf, f) for t in t]
 end
 function posFig(ax, x; yoff=100, ylow = 15)
-    o = ax.scene.px_area[].origin - Point2f(0, yoff)
+    o = ax.scene.viewport[].origin - Point2f(0, yoff)
     return Makie.project(ax.scene, Point2f(x, ylow)) + o
 end
 function supLine(p1, p2; x=0,y=8)
@@ -96,3 +96,7 @@ with_theme(theme_black()) do
     Label(fig[0,:], "Leo's Syndrome", color = "#F79D1EFF", fontsize = 32)
     fig
 end
+
+save("leos.png", current_figure()); # hide
+
+# ![](leos.png)

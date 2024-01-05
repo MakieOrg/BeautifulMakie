@@ -79,3 +79,7 @@ with_theme(theme_black()) do
     colgap!(fig.layout,1)
     fig
 end
+
+save("strange_attractors.png", current_figure()); # hide
+
+# ![](strange_attractors.png)
