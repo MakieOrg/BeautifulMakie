@@ -1,3 +1,7 @@
+# ## contour levels: egg shape
+
+# ![](egg_shape.png)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "png") #hide
 x = -1:0.02:1
@@ -19,5 +23,3 @@ cl = contour!(x, y, segg;
 fig
 
 save("egg_shape.png", fig); # hide
-
-# ![](egg_shape.png)

@@ -1,3 +1,7 @@
+# ## text: rich text
+
+# ![](your_name.svg)
+
 using GLMakie
 using CairoMakie
 CairoMakie.activate!(type = "svg")
@@ -15,5 +19,3 @@ hidespines!(ax)
 fig
 
 save("your_name.svg", fig); # hide
-
-# ![](your_name.svg)

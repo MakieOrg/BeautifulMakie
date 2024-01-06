@@ -1,3 +1,7 @@
+# ## band
+
+# ![](band.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -22,5 +26,3 @@ axislegend(ax, position = :rt, merge = true)
 hidedecorations!(ax; grid = false)
 fig
 save("band.svg", fig); # hide
-
-# ![](band.svg)

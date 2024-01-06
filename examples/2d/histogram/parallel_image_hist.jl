@@ -1,3 +1,7 @@
+# ## Histograms r,g,b colors on image
+
+# ![](parallel_image_hist.svg)
+
 using CairoMakie
 import TestImages, Images
 CairoMakie.activate!(type = "svg") #hide

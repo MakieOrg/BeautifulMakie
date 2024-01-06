@@ -1,3 +1,7 @@
+# ## SSAO and meshscatters
+
+# ![](SSAO_meshscatter.png)
+
 ## from https://makie.juliaplots.org/v0.15/documentation/lighting/#examples
 using GLMakie, Colors, LinearAlgebra
 using Random: seed!
@@ -21,5 +25,3 @@ function ssaom()
 end
 fig = ssaom()
 save("SSAO_meshscatter.png", fig); # hide
-
-# ![](SSAO_meshscatter.png)

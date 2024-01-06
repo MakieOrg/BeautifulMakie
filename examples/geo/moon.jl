@@ -1,6 +1,11 @@
+# ## Moon texture onto a sphere
+
+# ![](moon.png)
+
 using GLMakie, FileIO
 using Downloads: download
 GLMakie.activate!()
+GLMakie.closeall() # hide
 
 moon = load(download("https://svs.gsfc.nasa.gov/vis/a000000/a004600/a004675/phases.0001_print.jpg"))
 n = 1024 # 2048
@@ -26,5 +31,3 @@ fig[1, 1] = ax
 fig
 
 save("moon.png", fig); # hide
-
-# ![](moon.png)

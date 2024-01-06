@@ -1,3 +1,7 @@
+# ## contour plots at levels
+
+# ![](contour_function.png)
+
 using CairoMakie
 CairoMakie.activate!(type = "png") #hide
 
@@ -19,5 +23,3 @@ Colorbar(fig[1, 3], pltobj1, ticks=([-π, -π / 2, 0, π / 2, π],
 limits!(axs[1], -2, 2, -2, 2)
 fig
 save("contour_function.png", fig); # hide
-
-# ![](contour_function.png)

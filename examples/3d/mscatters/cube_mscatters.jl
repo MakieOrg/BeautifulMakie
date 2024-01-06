@@ -1,3 +1,7 @@
+# ## Assembled cube with smaller cubes: meshscatters
+
+# ![](cube_mscatters.png)
+
 using GLMakie, ColorSchemes
 using GeometryBasics: Rect3f
 GLMakie.activate!()
@@ -35,5 +39,3 @@ limits!(ax, -1, 11, -1, 11, -1, 11)
 fig
 
 save("cube_mscatters.png", fig); # hide
-
-# ![](cube_mscatters.png)

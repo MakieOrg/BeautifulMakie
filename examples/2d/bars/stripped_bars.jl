@@ -1,10 +1,12 @@
+# ## stripped bars
+
+# ![](stripped_bars.png)
+
 ## This currently fails with CairoMakie
 ## https://discourse.julialang.org/t/striped-colors-for-e-g-bar-plots-in-julia/64435/3
 using GLMakie.Makie, GLMakie, Random
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
-
-
 Random.seed!(13)
 ## patterns
 ## `'/'`, `'\\'`, `'-'`, `'|'`, `'x'`, and `'+'`
@@ -24,5 +26,3 @@ end
 ax.xticks = (1:8, ["grey", "orange", "/", "\\", "-", "|", "x", "+"])
 fig
 save("stripped_bars.png", fig); # hide
-
-# ![](stripped_bars.png)

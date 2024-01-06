@@ -1,3 +1,7 @@
+# ## light theme
+
+# ![](light_ngon.svg)
+
 using CairoMakie, GeometryBasics
 CairoMakie.activate!(type = "svg") #hide
 
@@ -19,5 +23,3 @@ with_theme(theme_light()) do
     fig
 end
 save("light_ngon.svg", current_figure()); # hide
-
-# ![](light_ngon.svg)

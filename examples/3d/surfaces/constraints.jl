@@ -1,3 +1,7 @@
+# ## constraints: split surfaces
+
+# ![](constraints.png)
+
 using GLMakie
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -37,5 +41,3 @@ colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
 
 save("constraints.png", fig); # hide
-
-# ![](constraints.png)

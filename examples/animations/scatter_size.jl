@@ -1,5 +1,10 @@
+# ## Animate markersize growth
+
+# <video src="./animScatters.mp4" controls="controls" autoplay="autoplay"></video>
+
 using GLMakie, Random
 GLMakie.activate!()
+GLMakie.closeall() # hide
 
 Random.seed!(123)
 npts = 100
@@ -24,5 +29,3 @@ with_theme(theme_dark()) do
     end
     nothing # hide
 end
-
-# ![type:video](animScatters.mp4)

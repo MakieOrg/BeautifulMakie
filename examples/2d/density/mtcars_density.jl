@@ -1,3 +1,7 @@
+# ## density mtcars
+
+# ![](mtcars_density.svg)
+
 using CairoMakie, RDatasets, Colors, ColorSchemes
 CairoMakie.activate!(type = "svg") #hide
 
@@ -24,5 +28,3 @@ Legend(fig[1, 1], ax1, "Cyl", orientation = :horizontal,
 Legend(fig[3, 2], ax2, "Cyl")
 fig
 save("mtcars_density.svg", fig); # hide
-
-# ![](mtcars_density.svg)

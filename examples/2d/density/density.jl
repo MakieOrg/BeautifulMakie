@@ -1,3 +1,6 @@
+# ## density plot
+
+# ![](density.svg)
 using CairoMakie, Distributions, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -16,5 +19,3 @@ end
 axislegend(L"\mu,\quad\sigma"; position= :cb, titlesize= 22)
 hidedecorations!(ax; grid = false);
 save("density.svg", fig); # hide
-
-# ![](density.svg)

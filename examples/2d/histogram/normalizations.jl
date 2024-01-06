@@ -1,3 +1,7 @@
+# ## Histogram normalizations
+
+# ![](normalizations.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -13,5 +17,3 @@ axs = [Axis(fig[i, j], xlabel = i == 2 ? "value" : "") for i in 1:2 for j in 1:2
 [axislegend(axs[i], position = :rt) for i in 1:4]
 fig
 save("normalizations.svg", fig); # hide
-
-# ![](normalizations.svg)

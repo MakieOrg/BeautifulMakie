@@ -1,3 +1,7 @@
+# ## ggplot2 theme
+
+# ![](ggplot2_stem.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 Random.seed!(2)
@@ -20,5 +24,3 @@ with_theme(theme_ggplot2()) do
     fig
 end
 save("ggplot2_stem.svg", current_figure()); # hide
-
-# ![](ggplot2_stem.svg)

@@ -1,3 +1,7 @@
+# ## surface + contour + wireframe
+
+# ![](surface.png)
+
 using GLMakie
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -24,5 +28,3 @@ colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
 
 save("surface.png", fig); # hide
-
-# ![](surface.png)

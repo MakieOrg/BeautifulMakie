@@ -1,3 +1,7 @@
+# ## Astronauts
+
+# ![](astronauts.png)
+
 using CairoMakie, HTTP, CSV, DataFrames, DataFramesMeta, Suppressor
 using Images, ColorSchemes, Colors, Statistics
 using Downloads
@@ -120,5 +124,3 @@ end
 fig = plotastro()
 
 save("astronauts.png", fig); # hide
-
-# ![](astronauts.png)

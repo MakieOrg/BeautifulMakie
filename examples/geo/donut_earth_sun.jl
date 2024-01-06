@@ -1,6 +1,11 @@
+# ## Torus surfacec with sun and moon textures
+
+# ![](donut_earth_sun.png)
+
 using GLMakie,  FileIO
 using Downloads: download 
-GLMakie.activate!() 
+GLMakie.activate!()
+GLMakie.closeall() # hide
 
 nasa = "https://eoimages.gsfc.nasa.gov/images/imagerecords/"
 earth_link = nasa * "73000/73963/gebco_08_rev_bath_3600x1800_color.jpg"
@@ -41,5 +46,3 @@ with_theme(theme_dark()) do
 end
 
 save("donut_earth_sun.png", current_figure()); # hide
-
-# ![](donut_earth_sun.png)

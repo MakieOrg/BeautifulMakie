@@ -1,3 +1,7 @@
+# ## gabriels horn: surface revolution
+
+# ![](gabriels_horn.png)
+
 using GLMakie
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -21,5 +25,3 @@ Colorbar(fig[1, 2], pltobj, height=Relative(0.5))
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
 save("gabriels_horn.png", fig); # hide
-
-# ![](gabriels_horn.png)

@@ -1,3 +1,7 @@
+# ## surface with one color
+
+# ![](onecolor.png)
+
 using GLMakie
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -13,5 +17,3 @@ fig = surface(x, y, z, colormap = [:dodgerblue, :dodgerblue],
 wireframe!(x, y, z; overdraw = false, linewidth = 0.1) # try overdraw = true
 fig
 save("onecolor.png", fig); # hide
-
-# ![](onecolor.png)

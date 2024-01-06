@@ -1,3 +1,7 @@
+# ## Mesh with matcap: Slider
+
+# ![](matcap.png)
+
 using GLMakie
 using FileIO, Downloads, JSON
 using Makie.GeometryBasics: Pyramid
@@ -56,5 +60,3 @@ function plotmat()
 end
 fig = with_theme(plotmat, theme_dark())
 save("matcap.png", fig); # hide
-
-# ![](matcap.png)

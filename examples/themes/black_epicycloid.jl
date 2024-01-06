@@ -1,3 +1,7 @@
+# ## Black theme
+
+# ![](black_epicycloid.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -20,5 +24,3 @@ function EpicycloidLines()
 end
 fig = with_theme(EpicycloidLines, theme_black())
 save("black_epicycloid.svg", fig); # hide
-
-# ![](black_epicycloid.svg)

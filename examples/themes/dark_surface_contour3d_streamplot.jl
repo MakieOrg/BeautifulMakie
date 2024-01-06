@@ -1,3 +1,7 @@
+# ## Dark theme
+
+# ![](dark_surface_contour3d_streamplot.png)
+
 ## example modified from  mthelm85
 using GLMakie, ForwardDiff
 GLMakie.activate!()
@@ -31,5 +35,3 @@ function plot()
 end
 fig = with_theme(plot, theme_dark())
 save("dark_surface_contour3d_streamplot.png", fig); # hide
-
-# ![](dark_surface_contour3d_streamplot.png)

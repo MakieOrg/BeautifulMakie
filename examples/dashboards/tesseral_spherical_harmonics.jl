@@ -1,3 +1,7 @@
+# ## Tesseral Spherical Harmonics: Slider + Menu
+
+# ![](tesseral_spherical_harmonics.png)
+
 using GLMakie, ColorSchemes
 using AssociatedLegendrePolynomials
 GLMakie.activate!()
@@ -58,5 +62,3 @@ with_theme(theme_dark()) do
     fig
 end
 save("tesseral_spherical_harmonics.png", current_figure()); # hide
-
-# ![](tesseral_spherical_harmonics.png)

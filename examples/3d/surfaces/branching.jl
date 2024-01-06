@@ -1,3 +1,7 @@
+# ## branching
+
+# ![](branching.png)
+
 using GLMakie
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -13,5 +17,3 @@ fig = surface(x, y, z; colormap = [:orangered, :orangered],
 wireframe!(x, y, z, overdraw = false, linewidth = 0.1) # try overdraw = true
 fig
 save("branching.png", fig); # hide
-
-# ![](branching.png)

@@ -1,4 +1,7 @@
 # ## Multiple overlayed contour plots
+
+# ![](overlayed_functions.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -20,5 +23,3 @@ axislegend()
 fig
 
 save("overlayed_functions.svg", fig); # hide
-
-# ![](overlayed_functions.svg)

@@ -1,5 +1,5 @@
-# # Animating Rasters with Makie.jl
-# Author: Anshul Singhvi
+# ## Animating Rasters with Makie.jl
+# - Author: Anshul Singhvi
 
 # "Rasters" are a common data format for representing spatial data, specifically
 # data points on a uniform grid.  In Julia, we can represent and manipulate these 
@@ -15,6 +15,7 @@
 # to smoothly interpolate a timeseries of rasters, and animate them in Makie!
 
 ## ENV["RASTERDATASOURCES_PATH"] = ".." # joinpath(tempdir(), "Rasters"), needed for RasterDataSources
+ENV["RASTERDATASOURCES_PATH"] = ".."
 
 # Let's load the packages:
 using Rasters
@@ -25,6 +26,7 @@ using Makie.GeometryBasics
 using Makie.GeometryBasics: Tesselation, uv_normal_mesh
 using DataInterpolations, Printf
 GLMakie.activate!()
+GLMakie.closeall() # hide
 
 # ### Getting the data
 
@@ -97,12 +99,12 @@ fig
 # We use the `@time` macro to time how long the recording takes 
 # (note that this is on a device without a GPU, it will be significantly faster with one).
 
-@time record(fig, "temperature_surface_animation.mp4", LinRange(1, 12, 480÷4); framerate = 30) do i
+@time record(fig, "temperatureSurfaceAnimation.mp4", LinRange(1, 12, 480÷4); framerate = 30) do i
     ax.title[] = @sprintf "%.2f" i
     temp_inter[] = temp_interpolated(i)
 end;
 
-# ![type:video](temperature_surface_animation.mp4)
+# <video src="./temperatureSurfaceAnimation.mp4" controls="controls"></video>
 
 # ## Animating a 3-D globe
 
@@ -230,7 +232,7 @@ fig
 
 # Now, we animate the water and temperature plots!
 
-record(fig, "worldclim_visualization.mp4", LinRange(1, 24, 600÷4); framerate = 24, update=false) do i
+record(fig, "worldclimVisualization.mp4", LinRange(1, 24, 600÷4); framerate = 24, update=false) do i
     title_label.text[] = @sprintf "%.2f" (i % 12)
     temperature_plot.color[] = raster2array(temp_interpolated(i % 12))
     watervals = max.(0, watermap(uv, raster2array(prec_interpolated(i % 12))))
@@ -241,6 +243,6 @@ record(fig, "worldclim_visualization.mp4", LinRange(1, 24, 600÷4); framerate = 
     notify(prec_plot.markersize)
 end;
 
-# ![type:video](worldclim_visualization.mp4)
+# <video src="./worldclimVisualization.mp4" controls="controls" autoplay="autoplay"></video>
 
 # This example, and some of the development work which made it possible, was funded by the [xKDR Forum](https://www.xkdr.org).

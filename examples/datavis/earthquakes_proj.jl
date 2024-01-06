@@ -1,3 +1,7 @@
+# ## Earthquakes and GeoMakie
+
+# ![](newEntryAoG_Geomakie.png)
+
 using GLMakie, GeoMakie
 using AlgebraOfGraphics, DataFrames, CSV
 using FileIO, Downloads
@@ -52,5 +56,3 @@ with_theme(theme_dark(), size = (1400,800)) do
     fig
 end
 save("newEntryAoG_Geomakie.png", current_figure())
-
-# ![](newEntryAoG_Geomakie.png)

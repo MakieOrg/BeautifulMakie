@@ -1,3 +1,7 @@
+# ## Fake gravitation field, spheres and wireframes
+
+# ![](gfield.png)
+
 using GLMakie, LaTeXStrings, Colors, ColorSchemes
 using FileIO
 GLMakie.activate!()
@@ -78,5 +82,3 @@ center!(axs.scene)
 save("gfield.png", alpha_colorbuffer(fig.scene))
 
 set_theme!() # hide
-
-# ![](gfield.png)

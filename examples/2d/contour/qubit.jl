@@ -1,3 +1,6 @@
+# ## contour levels: qubit
+# ![](qubit.png)
+
 using CairoMakie
 CairoMakie.activate!(type = "png") #hide
 
@@ -15,5 +18,3 @@ limits!(ax, 0, 4π, 0, 4π)
 ## colsize!(fig.layout, 1, Aspect(1, 1.0))
 
 save("qubit.png", fig); # hide
-
-# ![](qubit.png)

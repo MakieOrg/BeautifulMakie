@@ -1,3 +1,7 @@
+# ## histogram pdf normalization
+
+# ![](hist.svg)
+
 using CairoMakie, Distributions, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -21,5 +25,3 @@ hist!(rand(Normal(0.2,0.2), 1000), normalization = :pdf, color = :values,
 hidedecorations!(ax; grid = false)
 fig
 save("hist.svg", fig); # hide
-
-# ![](hist.svg)

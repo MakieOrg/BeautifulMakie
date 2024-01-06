@@ -1,3 +1,7 @@
+# ## band confidence error
+
+# ![](band_confidence_error.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -12,5 +16,3 @@ lines!(x, y1d, color = :black)
 band!(x, lower, upper; color = (:green, 0.2))
 fig
 save("band_confidence_error.svg", fig); # hide
-
-# ![](band_confidence_error.svg)

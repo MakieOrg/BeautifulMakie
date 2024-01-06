@@ -1,3 +1,7 @@
+# ## minimal theme
+
+# ![](minimal_series.png)
+
 using CairoMakie, Random, LaTeXStrings
 CairoMakie.activate!(type = "svg") #hide
 
@@ -20,5 +24,3 @@ with_theme(theme_minimal()) do
     fig
 end
 save("minimal_series.png", current_figure()); # hide
-
-# ![](minimal_series.png)

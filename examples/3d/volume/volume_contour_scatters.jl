@@ -1,3 +1,7 @@
+# ## volume, contour and scatters
+
+# ![](volume_contour_scatters.png)
+
 using GLMakie, ColorSchemes
 using GeometryBasics: Rect3f
 GLMakie.activate!() # hide
@@ -35,5 +39,3 @@ limits!(ax4, -1.2, 1.2, -1.2, 1.2, -1.2, 1.2)
 fig
 
 save("volume_contour_scatters.png", fig); # hide
-
-# ![](volume_contour_scatters.png)

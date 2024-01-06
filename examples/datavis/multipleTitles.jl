@@ -1,3 +1,7 @@
+# ## Multiple Titles
+
+# ![](multipleTitles.svg)
+
 using CairoMakie
 using Random
 CairoMakie.activate!(type = "svg") #hide
@@ -55,5 +59,3 @@ with_theme(theme_dark(), size = (650, 450)) do
 end
 
 save("multipleTitles.svg", current_figure()); # hide
-
-# ![](multipleTitles.svg)

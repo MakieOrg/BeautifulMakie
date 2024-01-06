@@ -1,6 +1,35 @@
+# ## Geo Projections
+
+# ![](projections.png)
+
 using GLMakie, GeoMakie
 GLMakie.activate!()
-## consider this list as examples for your use cases
+GLMakie.closeall() # hide
+
+sproj = ["+proj=weren", "+proj=crast",
+    "+proj=wink1", "+proj=wink2", "+proj=wintri", "+proj=poly",
+    "+proj=putp1", "+proj=putp2", "+proj=putp3", "+proj=putp3p", "+proj=putp4p", "+proj=putp5",
+    "+proj=putp5p", "+proj=putp6", "+proj=putp6p", "+proj=qua_aut", "+proj=robin", "+proj=rouss",
+    "+proj=rpoly", "+proj=sinu"]
+
+## let's plot just a few
+function plotproj()
+    fig = Figure(size=(1600, 900))
+    k = 1
+    for i in 1:2, j in 1:2
+        ga = GeoAxis(fig[i, j]; dest=sproj[k], title=sproj[k])
+        ## hidedecorations!(ga)
+        lines!(ga, GeoMakie.coastlines()) # plot coastlines from Natural Earth.
+        k += 1
+    end
+    fig
+end
+
+fig = plotproj()
+save("projections.png", fig); # hide
+
+# # More projections
+
 projections = ["+proj=adams_hemi", "+proj=adams_ws1", "+proj=adams_ws2",
     "+proj=aea +lat_1=29.5 +lat_2=42.5", "+proj=aeqd", "+proj=airy", "+proj=aitoff",
     "+proj=apian", "+proj=august", "+proj=bacon", "+proj=bertin1953", "+proj=bipc +ns",
@@ -28,28 +57,4 @@ projections = ["+proj=adams_hemi", "+proj=adams_ws1", "+proj=adams_ws2",
     "+proj=urmfps +n=0.5", "+proj=vandg", "+proj=vandg2", "+proj=vandg3", "+proj=vandg4",
     "+proj=vitk1 +lat_1=45 +lat_2=55", "+proj=wag1", "+proj=wag2", "+proj=wag3", "+proj=wag4",
     "+proj=wag5", "+proj=wag6", "+proj=wag7", "+proj=webmerc +datum=WGS84", "+proj=weren",
-    "+proj=wink1", "+proj=wink2", "+proj=wintri"]
-
-sproj = ["+proj=weren", "+proj=crast",
-    "+proj=wink1", "+proj=wink2", "+proj=wintri", "+proj=poly",
-    "+proj=putp1", "+proj=putp2", "+proj=putp3", "+proj=putp3p", "+proj=putp4p", "+proj=putp5",
-    "+proj=putp5p", "+proj=putp6", "+proj=putp6p", "+proj=qua_aut", "+proj=robin", "+proj=rouss",
-    "+proj=rpoly", "+proj=sinu"]
-
-## let's plot just a few
-function plotproj()
-    fig = Figure(size=(1600, 900))
-    k = 1
-    for i in 1:2, j in 1:2
-        ga = GeoAxis(fig[i, j]; dest=sproj[k], title=sproj[k])
-        ## hidedecorations!(ga)
-        lines!(ga, GeoMakie.coastlines()) # plot coastlines from Natural Earth.
-        k += 1
-    end
-    fig
-end
-
-fig = plotproj()
-save("projections.png", fig); # hide
-
-# ![](projections.png)
+    "+proj=wink1", "+proj=wink2", "+proj=wintri"];

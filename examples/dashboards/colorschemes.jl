@@ -1,3 +1,7 @@
+# ## colorschemes options: Slider + volume
+
+# ![](colorschemes.png)
+
 using GLMakie, ColorSchemes, Random
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -28,5 +32,3 @@ function plotVolColormaps(; rseed = 123)
 end
 fig = with_theme(plotVolColormaps, theme_dark())
 save("colorschemes.png", fig); # hide
-
-# ![](colorschemes.png)

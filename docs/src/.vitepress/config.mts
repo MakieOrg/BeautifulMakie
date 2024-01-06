@@ -62,7 +62,7 @@ const viteConfig = defineViteConfig({
           { text: 'stairs',link: '/examples/2d/stairs/stairs' },
           { text: 'stem',link: '/examples/2d/stem/stem' },
           { text: 'streamplot',link: '/examples/2d/streamplot/streamplot' },
-          { text: 'text',link: '/examples/2d/text/name' },
+          { text: 'text',link: '/examples/2d/text/your_name' },
           { text: 'violins',link: '/examples/2d/violins/single' },
       ]},
 
@@ -82,7 +82,7 @@ const viteConfig = defineViteConfig({
           { text: 'Dashboards', link: '/examples/dashboards/tesseral_spherical_harmonics' },
           { text: 'Data Visualization', link: '/examples/datavis/earthquakes' },
           { text: 'Geo', link: '/examples/geo/projections' },
-          { text: 'Algebra of Graphics', link: '/examples/aog/penguins3d' },
+          { text: 'Algebra of Graphics', link: '/examples/aog/ablines' },
           { text: 'Raytracing', link: '' }
         ]},
         { text: 'Pkgs versions', link: '/pkgs_versions' },

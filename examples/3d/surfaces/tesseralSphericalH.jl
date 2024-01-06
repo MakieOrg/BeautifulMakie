@@ -1,3 +1,7 @@
+# ## Tesseral Spherical Harmonics
+
+# ![](tesseralSphericalH.png)
+
 using GLMakie
 using AssociatedLegendrePolynomials
 GLMakie.activate!()
@@ -43,5 +47,3 @@ with_theme(theme_dark()) do
 end
 
 save("tesseralSphericalH.png", current_figure()); # hide
-
-# ![](tesseralSphericalH.png)

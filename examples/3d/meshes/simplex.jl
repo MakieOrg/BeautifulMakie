@@ -1,3 +1,7 @@
+# ## simplex
+
+# ![](simplex.png)
+
 using GLMakie
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -45,5 +49,3 @@ zoom!(ax.scene, cameracontrols(ax.scene), 0.9)
 rotate!(ax.scene, -0.1)
 fig
 save("simplex.png", fig); # hide
-
-# ![](simplex.png)
