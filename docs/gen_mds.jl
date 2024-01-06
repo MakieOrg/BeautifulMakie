@@ -19,7 +19,7 @@ function get_files(folders)
                 "gapminder.jl", 
                 "gott_azimuthal.jl",
                 "rasters.jl",
-                "density_ridges.jl"
+                "density_ridges.jl",
                 "penguins.jl",
                 "penguins3d.jl",
                 "penguinsAoG.jl",
