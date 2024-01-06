@@ -3,7 +3,7 @@ using Documenter
 include("theme_light_dark.jl")
 set_theme!(merge(theme_latexfonts(), theme_light_dark()))
 
-# ENV["RASTERDATASOURCES_PATH"] = "/Users/lalonso/data/"
+ENV["RASTERDATASOURCES_PATH"] = "/Users/lalonso/data/"
 
 makedocs(; sitename="BeautifulMakie", authors="Lazaro Alonso",
     clean=true,

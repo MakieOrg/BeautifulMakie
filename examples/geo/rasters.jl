@@ -39,7 +39,7 @@ worldclim_stacks = [RasterStack(WorldClim{Climate}, month=i) for i in 1:12];
 
 # These are RasterStacks, which are basically a collection of associated rasters.  We can
 # get individual rasters from these stacks:
-worldclim_stacks[1].tmax
+worldclim_stacks[1].tmax;
 
 # In order to get them into a form which we can use directly with Makie, 
 # we can call `Makie.convert_arguments` directly on individual rasters from these stacks.
@@ -53,8 +53,8 @@ Makie.convert_arguments(Makie.VertexGrid(), worldclim_stacks[1].tmax);
 # Let's extract two variables from this stack, the maximum temperature (`:tmax`),
 # and the precipitation (`:prec`).
 
-temp_rasters = getproperty.(worldclim_stacks, :tmax);
-prec_rasters = getproperty.(worldclim_stacks, :prec);
+temp_rasters = replace_missing.(getproperty.(worldclim_stacks, :tmax), NaN);
+prec_rasters = replace_missing.(getproperty.(worldclim_stacks, :prec), NaN);
 
 # ### Interpolating Rasters in time
 # This is good data, but we only have twelve time points.
@@ -68,7 +68,7 @@ prec_rasters = getproperty.(worldclim_stacks, :prec);
 # Here, we're performing a quadratic interpolation across the timeseries of rasters.
 
 temp_interpolated = DataInterpolations.QuadraticInterpolation(temp_rasters, 1:length(temp_rasters), extrapolate=true)
-prec_interpolated = DataInterpolations.QuadraticInterpolation(prec_rasters, 1:length(temp_rasters), extrapolate=true)
+prec_interpolated = DataInterpolations.QuadraticInterpolation(prec_rasters, 1:length(temp_rasters), extrapolate=true);
 
 # This returned an interpolation object which can be called with any time value
 # (as `temp_interpolated(1.5)`) between those it's given in the second parameter of the call.
@@ -76,19 +76,18 @@ prec_interpolated = DataInterpolations.QuadraticInterpolation(prec_rasters, 1:le
 # ## A simple animation
 
 # Let's see if this interpolation worked.  We create a figure to animate:
-ras_inter = temp_interpolated(1.0)
-ras_inter = replace_missing(ras_inter, NaN)
+ras_inter = temp_interpolated(1.0);
 
-temp_inter = Observable(temp_interpolated(1.0))
+temp_inter = Observable(ras_inter)
 fig= Figure(; size = (800,800))
 ax = Axis3(fig[1,1]; perspectiveness=0.5,
     azimuth=-0.5,
     elevation=0.57,
     aspect=(1, 1, 1))
-plt = surface!(ax, ras_inter; transparency=true)
-hm = heatmap!(ax, ras_inter; nan_color=:black)
+plt = surface!(ax, temp_inter; transparency=true)
+hm = heatmap!(ax, temp_inter; nan_color=:black)
 translate!(hm, 0, 0, -30) # get the heatmap to the bottom of the plot
-fig # hide
+fig
 
 # Now that the figure has been created, we can animate and record it.
 
@@ -100,7 +99,7 @@ fig # hide
 
 @time record(fig, "temperature_surface_animation.mp4", LinRange(1, 12, 480÷4); framerate = 30) do i
     ax.title[] = @sprintf "%.2f" i
-    temp_inter[] = replace_missing(temp_interpolated(i), NaN)
+    temp_inter[] = temp_interpolated(i)
 end;
 
 # ![type:video](temperature_surface_animation.mp4)
@@ -135,6 +134,7 @@ m = Makie.GeometryBasics.uv_normal_mesh(
 # - "UV coordinates" are 2-vectors, going from 0 to 1.  Each vertex has an associated UV coordinate.
 #   They provide the link between a mesh and how an image texture, like the raster we're going to color
 #   the mesh by, gets applied onto that mesh.
+
 p = decompose(Point3f0, m)
 uv = decompose_uv(m)
 norms = decompose_normals(m);
@@ -144,10 +144,10 @@ norms = decompose_normals(m);
 # Let's first define a colormap which we'll use to plot:
 cmap = [:darkblue, :deepskyblue2, :deepskyblue, :gold, :tomato3, :red, :darkred]
 # this colormap is fun, but its confusing when including also the one for precipitation.
-Makie.to_colormap(cmap) # hide
 
 # We create the Figure, which is the top-level object in Makie,
 # and holds the axis which holds our plots.
+
 fig = Figure(; size=(800, 800))
 # First, we plot an empty the sphere
 ax, plt_obj = mesh(fig[1, 1], uv_normal_mesh(Tesselation(Sphere(Point3f(0), 0.99), 128));
@@ -209,7 +209,7 @@ prec_plot = meshscatter!(
     shading=false,
     transparency=true,
 )
-fig # hide
+fig
 
 # Before we animate, we could change the camera angles with:
 
@@ -224,7 +224,7 @@ Colorbar(fig[1,2], temperature_plot, label="Temperature", height = Relative(0.5)
 Colorbar(fig[2,1], prec_plot, label="Precipitation", width = Relative(0.5), vertical=false)
 
 zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
-display(fig; update=false) # hide
+display(fig; update=false)
 
 # Now, we animate the water and temperature plots!
 
