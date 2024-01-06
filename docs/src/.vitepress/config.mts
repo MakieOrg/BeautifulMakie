@@ -1,8 +1,25 @@
-import { defineConfig } from 'vitepress'
+// We can use mergeConfig method from vite or vitest/config entries to merge Vitepress config with Vitest config:
+import { mergeConfig } from 'vite';
+import { defineConfig as defineViteConfig} from 'vitepress';
+import { defineConfig as defineVitestConfig } from 'vitest/config';
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+const vitestConfig = defineVitestConfig({
+    build: {
+      chunkSizeWarningLimit:500,
+      rollupOptions: {
+          output:{
+              manualChunks(id) {
+                if (id.includes('node_modules')) {
+                    return id.toString().split('node_modules/')[1].split('/')[0].toString();
+                }
+            }
+          }
+      }
+    },
+});
+const viteConfig = defineViteConfig({
   base: '/',
   title: "Beautiful Makie",
   description: "A gallery collection",
@@ -462,3 +479,5 @@ export default defineConfig({
     }
   }
 })
+
+export default mergeConfig(viteConfig, vitestConfig);

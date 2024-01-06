@@ -59,13 +59,14 @@ with_theme(theme_black()) do
         halign=0.0, justification=:left)
     zoom!(ax.scene, cameracontrols(ax.scene), 0.55)
     rotate!(ax.scene, 3.0)
-
-    record(fig, "earthquakes.mp4", framerate = 24, update=false) do io
-       for i in 3.0:0.015:9.5
-           rotate!(ax.scene, i)
-           recordframe!(io)  # record a new frame
-       end
-    end
+    save("earthquakes.png", fig; update=false)
+    ##run this to get a smooth animation
+    ## record(fig, "earthquakes.mp4", framerate = 24, update=false) do io
+    ##    for i in 3.0:0.015:9.5
+    ##        rotate!(ax.scene, i)
+    ##        recordframe!(io)  # record a new frame
+    ##    end
+    ## end
 end
 
-# ![type:video](earthquakes.mp4)
+# ![](earthquakes.png)

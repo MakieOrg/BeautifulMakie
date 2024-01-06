@@ -42,7 +42,7 @@ function plotproj()
     k = 1
     for i in 1:2, j in 1:2
         ga = GeoAxis(fig[i, j]; dest=sproj[k], title=sproj[k])
-        #hidedecorations!(ga)
+        ## hidedecorations!(ga)
         lines!(ga, GeoMakie.coastlines()) # plot coastlines from Natural Earth.
         k += 1
     end

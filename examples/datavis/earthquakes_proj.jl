@@ -33,7 +33,7 @@ with_theme(theme_dark(), size = (1400,800)) do
     gax = GeoAxis(fig[1,2]; aspect = 1, dest = "+proj=eqdc +lat_1=90 +lat_2=90")
     axlocs = Axis(fig[1,1], xlabel = "depth [km]", ylabel = "magnitude")
     lines!(gax, GeoMakie.coastlines(), color=:papayawhip, linewidth=0.5)
-    #obj = draw!(gax, p)
+    ## obj = draw!(gax, p)
     obj = scatter!(gax, df[!, :longitude], df[!, :latitude];
         color = df[!, :mag], colormap = Reverse(:Hiroshige),
         markersize = 50*(exp.(df[!, :mag]) .- mn)/mx )

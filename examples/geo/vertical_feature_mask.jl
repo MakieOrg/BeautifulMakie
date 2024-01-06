@@ -36,7 +36,7 @@ image!(ax, -180..180, -90..90, earth_img'[:,end:-1:1])
 rotate!(ax.scene, 2*pi/2.6)
 fig
 zoom!(ax.scene, cameracontrols(ax.scene), 30)
-#center!(ax.scene)
+## center!(ax.scene)
 save("vertical_feature_mask.png", fig, update=false); # hide
 
 # ![](vertical_feature_mask.png)
