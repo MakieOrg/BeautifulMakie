@@ -40,7 +40,7 @@ toPoints3D = [Point3f([toCartesian(lons[i], lats[i];
 ms = (exp.(mag) .- minimum(exp.(mag))) ./ maximum(exp.(mag) .- minimum(exp.(mag)))
 
 with_theme(theme_black()) do
-    fig = Figure(size = (1600, 1600), fontsize = 32)
+    fig = Figure(size = (900, 900), fontsize = 20)
     ax = LScene(fig[1, 1], show_axis = false)
     pltobj = meshscatter!(ax, toPoints3D; markersize = ms / 20 .+ 0.001, color = mag,
         colormap = resample_cmap(:afmhot, 256)[10:end], shading = FastShading,
@@ -48,16 +48,25 @@ with_theme(theme_black()) do
     surface!(ax, sphere(; r = 1.0)..., color = tuple.(earth_img, 0.1),
         shading = FastShading, transparency = true)
     Colorbar(fig[1, 2], pltobj, label = "Magnitude", height = Relative(1.5 / 4))
-    Label(fig[1, 1, Bottom()], "Visualization by @LazarusAlon\nusing Makie")
-    Label(fig[1, 1, Top()], "Earthquakes on Earth between January 2021 and January 2022.\nOriginal data from USGS")
-    zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
+    Label(fig[1, 1, Top()],
+        rich("Visualization by ",
+        rich("Lazaro Alonso\n", color=:dodgerblue),
+        rich("using Makie", color=:orangered)),
+        justification=:left,
+        halign=1.0
+        )
+    Label(fig[1, 1, Top()], "Earthquakes on Earth. Jan-2021 to Jan-2022\nOriginal data from USGS",
+        halign=0.0, justification=:left)
+    zoom!(ax.scene, cameracontrols(ax.scene), 0.55)
     rotate!(ax.scene, 3.0)
-    ## uncomment to get the animation
-    ## record(fig, joinpath(@__DIR__, "earthquakes.mp4"), framerate = 24) do io
+    save("earthquakes.png", fig; update=false)
+    ##run this to get a smooth animation
+    ## record(fig, "earthquakes.mp4", framerate = 24, update=false) do io
     ##    for i in 3.0:0.015:9.5
     ##        rotate!(ax.scene, i)
     ##        recordframe!(io)  # record a new frame
     ##    end
     ## end
-    fig
 end
+
+# ![](earthquakes.png)

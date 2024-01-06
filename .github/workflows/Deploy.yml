@@ -7,6 +7,9 @@ on:
   # using the `master` branch as the default branch.
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -43,7 +46,7 @@ jobs:
         with:
             node-version: 18
             cache: npm # or pnpm / yarn
-            cache-dependency-path: 'package.json' # this should be a package-lock.json file
+            cache-dependency-path: 'package-lock.json' # this should be a package-lock.json file
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Install dependencies

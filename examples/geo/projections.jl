@@ -41,11 +41,15 @@ function plotproj()
     fig = Figure(size=(1600, 900))
     k = 1
     for i in 1:2, j in 1:2
-        ga = GeoAxis(fig[i, j]; dest=sproj[k],
-            title=sproj[k], coastlines=true)
-        hidedecorations!(ga)
+        ga = GeoAxis(fig[i, j]; dest=sproj[k], title=sproj[k])
+        ## hidedecorations!(ga)
+        lines!(ga, GeoMakie.coastlines()) # plot coastlines from Natural Earth.
         k += 1
     end
     fig
 end
-plotproj()
+
+fig = plotproj()
+save("projections.png", fig); # hide
+
+# ![](projections.png)

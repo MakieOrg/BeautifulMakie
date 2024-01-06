@@ -28,24 +28,26 @@ plt = data(n15) * mapping(:n, :depth, color=:mag, text = :place => verbatim) *
 ptxt = data(n15) * mapping(:x, :n=>(t->t+0.25), text = :place => verbatim) *
     visual(Makie.Text, align = (:left, :bottom))
 
-with_theme(theme_black(), size = (1400,800)) do
+with_theme(theme_dark(), size = (1400,800)) do
     fig = Figure()
-    gax = GeoAxis(fig[1,2]; aspect = 1,
-        dest = "+proj=eqdc +lat_1=90 +lat_2=90",
-        coastlines = true, coastline_attributes = (; color=:papayawhip, linewidth=0.5)
-        )
+    gax = GeoAxis(fig[1,2]; aspect = 1, dest = "+proj=eqdc +lat_1=90 +lat_2=90")
     axlocs = Axis(fig[1,1], xlabel = "depth [km]", ylabel = "magnitude")
-    obj = draw!(gax, p)
-    colorbar!(fig[1,3], obj)
+    lines!(gax, GeoMakie.coastlines(), color=:papayawhip, linewidth=0.5)
+    ## obj = draw!(gax, p)
+    obj = scatter!(gax, df[!, :longitude], df[!, :latitude];
+        color = df[!, :mag], colormap = Reverse(:Hiroshige),
+        markersize = 50*(exp.(df[!, :mag]) .- mn)/mx )
+
+    Colorbar(fig[1,3], obj)
     draw!(axlocs, plt)
     draw!(axlocs, ptxt)
     axlocs.yticks = (1:15, string.(n15[!, :mag]))
     colsize!(fig.layout, 1, Auto(0.5))
     colgap!(fig.layout,0)
     hidespines!(axlocs, :r, :t)
-    Label(fig[1, 2, Bottom()], "Visualization by @LazarusAlon\nusing Makie")
+    Label(fig[1, 2, Bottom()], "\n\nVisualization by @LazarusAlon\nusing Makie")
     Label(fig[1, 1, Top()], 
-    "Earthquakes on Earth between January 2021 and January 2022.\nOriginal data from USGS",
+    "Earthquakes on Earth. Jan-2021 to Jan-2022.\nOriginal data from USGS",
         color = :gold)
     fig
 end

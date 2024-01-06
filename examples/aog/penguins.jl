@@ -3,7 +3,7 @@ using GLM: lm, @formula, predict
 CairoMakie.activate!(type = "svg") #hide
 
 function getPenguins()
-    ENV["DATADEPS_ALWAYS_ACCEPT"] = "true"
+    ## ENV["DATADEPS_ALWAYS_ACCEPT"] = "true"
     penguins = dropmissing(DataFrame(PalmerPenguins.load()))
     return penguins
 end

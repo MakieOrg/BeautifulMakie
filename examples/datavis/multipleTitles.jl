@@ -53,3 +53,7 @@ with_theme(theme_dark(), size = (650, 450)) do
     """, tellwidth = false, halign = :left, justification = :left)
     fig
 end
+
+save("multipleTitles.svg", current_figure()); # hide
+
+# ![](multipleTitles.svg)
