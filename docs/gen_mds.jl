@@ -18,7 +18,6 @@ function get_files(folders)
                 "world_energy.jl",
                 "gapminder.jl", 
                 "gott_azimuthal.jl",
-                "rasters.jl",
                 "density_ridges.jl",
                 "penguins.jl",
                 "penguins3d.jl",

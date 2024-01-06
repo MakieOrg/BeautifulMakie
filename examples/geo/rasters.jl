@@ -14,7 +14,7 @@
 # We'll also show the Julia package ecosystem's effortless interoperability, by using [DataInterpolations.jl](https://github.com/PumasAI/DataInterpolations.jl)
 # to smoothly interpolate a timeseries of rasters, and animate them in Makie!
 
-# ENV["RASTERDATASOURCES_PATH"] = ".." # joinpath(tempdir(), "Rasters"), needed for RasterDataSources
+## ENV["RASTERDATASOURCES_PATH"] = ".." # joinpath(tempdir(), "Rasters"), needed for RasterDataSources
 
 # Let's load the packages:
 using Rasters
@@ -149,12 +149,12 @@ cmap = [:darkblue, :deepskyblue2, :deepskyblue, :gold, :tomato3, :red, :darkred]
 # and holds the axis which holds our plots.
 
 fig = Figure(; size=(800, 800))
-# First, we plot an empty the sphere
+## First, we plot an empty the sphere
 ax, plt_obj = mesh(fig[1, 1], uv_normal_mesh(Tesselation(Sphere(Point3f(0), 0.99), 128));
     color=(:white, 0.1), transparency=true,
     axis=(type=LScene, show_axis=false)
 )
-# Then, we plot the sphere, which displays temperature.
+## Then, we plot the sphere, which displays temperature.
 temperature_plot = mesh!(
     m;
     color=Makie.convert_arguments(Makie.VertexGrid(), worldclim_stacks[10].tmax)[3]'[end:-1:1,:] |> Matrix,
@@ -179,6 +179,7 @@ fig
 
 # This is a simple utility function which retrieves the water values from the raster,
 # and resamples them to the mesh's nonlinear grid.
+
 function watermap(uv, water, normalization=908.0f0 * 4.0f0)
     markersize = map(uv) do uv
         wsize = reverse(size(water))
@@ -218,13 +219,14 @@ fig
 #upvector = Vec3f(0.29894897, 0.71282643, 0.6344353)
 #update_cam!(ax.scene, eye_position, lookat, upvector)
 
-# Let's also add a little title which tells us which season we're in:
+## Let's also add a little title which tells us which season we're in:
 title_label = Label(fig[0, 1]; tellwidth = false, font = :bold, fontsize = 20)
 Colorbar(fig[1,2], temperature_plot, label="Temperature", height = Relative(0.5))
 Colorbar(fig[2,1], prec_plot, label="Precipitation", width = Relative(0.5), vertical=false)
 
 zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
-display(fig; update=false)
+## display(fig; update=false)
+fig
 
 # Now, we animate the water and temperature plots!
 
