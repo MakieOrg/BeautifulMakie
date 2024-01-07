@@ -1,3 +1,7 @@
+# ## x log scale 
+
+# ![](line_xlog.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -10,5 +14,3 @@ lines(x, y; color = :black, figure = (size = (600, 400),),
 ylims!(-1, 1)
 current_figure()
 save("line_xlog.svg", current_figure()); # hide
-
-# ![](line_xlog.svg)

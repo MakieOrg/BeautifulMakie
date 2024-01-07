@@ -1,3 +1,7 @@
+# ## lines, latex fonts
+
+# ![](line_latex.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 x = 0:0.05:4π
@@ -13,5 +17,3 @@ xlims!(-0.5, 12)
 axislegend(L"f(x)"; position = :rt, backgroundcolor = (:grey90, 0.25));
 
 save("line_latex.svg", fig); # hide
-
-# ![](line_latex.svg)

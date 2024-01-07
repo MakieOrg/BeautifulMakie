@@ -1,3 +1,7 @@
+# ## streamplot: Electric field lines
+
+# ![](streamplot.png)
+
 using CairoMakie, LinearAlgebra
 CairoMakie.activate!(type = "png") #hide
 
@@ -42,5 +46,3 @@ hidedecorations!(ax1; grid = false)
 hidedecorations!(ax2; grid = false)
 fig
 save("streamplot.png", fig); # hide
-
-# ![](streamplot.png)

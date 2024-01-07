@@ -1,3 +1,7 @@
+# ## streamplot: complex polya field
+
+# ![](complex_polya_field.png)
+
 using CairoMakie
 CairoMakie.activate!(type = "png") #hide
 
@@ -24,5 +28,3 @@ colsize!(fig.layout, 1, Aspect(1, 1.0))
 colsize!(fig.layout, 2, Aspect(1, 1.0))
 fig
 save("complex_polya_field.png", fig); # hide
-
-# ![](complex_polya_field.png)

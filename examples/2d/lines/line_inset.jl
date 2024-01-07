@@ -1,3 +1,7 @@
+# ## Inset line plot
+
+# ![](line_inset.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -21,5 +25,3 @@ ax2.xticks = [-3, -2.5, -2]
 translate!(ax2.scene, 0, 0, 10);
 
 save("line_inset.svg", fig); # hide
-
-# ![](line_inset.svg)

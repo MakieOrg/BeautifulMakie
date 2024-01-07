@@ -1,3 +1,7 @@
+# ## iris dataset: scatter plot
+
+# ![](iris_dataset.svg)
+
 using CairoMakie, RDatasets, Random, Colors
 CairoMakie.activate!(type = "svg") #hide
 Random.seed!(4353)
@@ -18,5 +22,3 @@ end
 axislegend("Species")
 fig
 save("iris_dataset.svg", fig); # hide
-
-# ![](iris_dataset.svg)

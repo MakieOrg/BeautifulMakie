@@ -1,3 +1,7 @@
+# ## scatters with colormap
+
+# ![](scatters_colormap.svg)
+
 using CairoMakie, Random, ColorSchemes
 CairoMakie.activate!(type = "svg")
 Random.seed!(123)
@@ -29,4 +33,3 @@ function FigGridScatters()
 end
 fig = FigGridScatters()
 save("scatters_colormap.svg", current_figure()); # hide
-# ![](scatters_colormap.svg)

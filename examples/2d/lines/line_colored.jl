@@ -1,3 +1,7 @@
+# ## lines colored with discrete colors from colormap: Legend
+
+# ![](line_colored.svg)
+
 using CairoMakie, ColorSchemes
 CairoMakie.activate!(type = "svg") #hide
 
@@ -23,5 +27,3 @@ Legend(fig[1, 2], ax, L"p"; nbanks = 2)
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
 save("line_colored.svg", fig); # hide
-
-# ![](line_colored.svg)

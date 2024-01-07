@@ -1,3 +1,7 @@
+# ## stem plot
+
+# ![](stem.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 Random.seed!(2)
@@ -19,5 +23,3 @@ stem!(1:8, 1.5randn(8); marker = my_markers,
 hidedecorations!(ax; grid = false)
 fig
 save("stem.svg", fig); # hide
-
-# ![](stem.svg)

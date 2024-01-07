@@ -1,3 +1,7 @@
+# ## bubble plot: scatters in x and y log scale
+
+# ![](bubble_plot_logxy.svg)
+
 using CairoMakie, Random, Colors
 CairoMakie.activate!(type = "svg") #hide
 
@@ -27,5 +31,3 @@ Colorbar(fig[1, 2], pltpbj)
 ylims!(ax, 1e-1, 1e2)
 fig
 save("bubble_plot_logxy.svg", fig); # hide
-
-# ![](bubble_plot_logxy.svg)

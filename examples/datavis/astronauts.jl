@@ -113,7 +113,7 @@ function plotastro()
         text!("evaM ≡ Duration of extravehicular \n activities during the mission in hours",
             position = (rPts * gridLines[end-2], 90), color = "#FFDD33", fontsize = 16)
         text!("using Makie", position = (-99, -94), fontsize = 18, color = :white)
-        text!("Visualization by @LazarusAlon and Julius Krumbiegel ",
+        text!("Visualization by Lazaro Alonso and Julius Krumbiegel ",
             position = (-99, -97), fontsize = 12, color = "#61AFEF")
         text!("Data - Astronaut Database - Mariya Stavnichuk and Tatsuya Corlett",
             position = (-99, -99), fontsize = 10)

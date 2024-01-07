@@ -1,3 +1,7 @@
+# ## bubble plot: scatters
+
+# ![](bubble_plot.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -21,4 +25,3 @@ Colorbar(fig[1, 3], pts2, label = "z2 value", ticklabelsize = 14,
 fig
 
 save("bubble_plot.svg", fig); # hide
-# ![](bubble_plot.svg)

@@ -1,3 +1,7 @@
+# ## scatter
+
+# ![](scatter.svg)
+
 using CairoMakie, Distributions
 using Random
 CairoMakie.activate!(type = "svg")

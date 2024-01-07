@@ -1,3 +1,7 @@
+# ## scatterlines + scatter with legend inside
+
+# ![](scatters_line.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -12,5 +16,3 @@ scatter!(x, -cos.(x); color = :red, label = "-cos(x)", strokewidth = 1,
 axislegend(; position = :lt, backgroundcolor = (:white, 0.85), framecolor = :green);
 
 save("scatters_line.svg", fig); # hide
-
-# ![](scatters_line.svg)

@@ -1,3 +1,7 @@
+# ## streamplot: Poincare and Van der Paul
+
+# ![](poincare_vander.png)
+
 using CairoMakie
 CairoMakie.activate!(type = "png") #hide
 
@@ -18,5 +22,3 @@ axs = [Axis(fig[1, i], xlabel = "x", ylabel = "y", title = titles[i],
 fig
 
 save("poincare_vander.png", fig); # hide
-
-# ![](poincare_vander.png)

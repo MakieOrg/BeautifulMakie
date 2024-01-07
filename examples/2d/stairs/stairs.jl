@@ -1,3 +1,7 @@
+# ## stairs plot
+
+# ![](stairs.svg)
+
 using CairoMakie, SpecialFunctions
 CairoMakie.activate!(type = "svg") #hide
 
@@ -20,5 +24,3 @@ text!(L"a_{\beta} = \Gamma[(\beta+2)/(\beta+1)]^{\beta + 1}",
 axislegend("β, step", position = :rt);
 fig
 save("stairs.svg", fig); # hide
-
-# ![](stairs.svg)

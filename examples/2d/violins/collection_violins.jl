@@ -1,3 +1,7 @@
+# ## several violins: Normal distributions
+
+# ![](collection_violins.svg)
+
 using CairoMakie, Distributions, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -24,5 +28,3 @@ ax.xticks = (1:n, string.('A':'D'))
 hideydecorations!(ax; grid = false) 
 fig
 save("collection_violins.svg", fig); # hide
-
-# ![](collection_violins.svg)

@@ -398,7 +398,11 @@ const viteConfig = defineViteConfig({
           text: 'Animations',
           collapsed: true,
           items: [
-            { text: 'scatter size', link: '/examples/animations/scatter_size' },
+            { text: 'gravities', link: '/examples/animations/gravities' },
+            { text: 'rotating_with_time', link: '/examples/animations/rotating_with_time' },
+            { text: 'scatter_and_line', link: '/examples/animations/scatter_and_line' },
+            { text: 'scatter_size', link: '/examples/animations/scatter_size' },
+            { text: 'travelling_solar_system', link: '/examples/animations/travelling_solar_system' },
           ],
         },
       ],

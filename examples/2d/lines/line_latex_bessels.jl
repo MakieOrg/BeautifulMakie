@@ -1,3 +1,7 @@
+# ## bessely width latex fonts
+
+# ![](line_latex_bessels.svg)
+
 using CairoMakie, LaTeXStrings, SpecialFunctions
 CairoMakie.activate!(type = "svg") #hide
 
@@ -14,5 +18,3 @@ axislegend(; position = :rb, nbanks = 2, framecolor = (:grey, 0.5))
 ylims!(-1.8, 0.7)
 fig
 save("line_latex_bessels.svg", fig); # hide
-
-# ![](line_latex_bessels.svg)
