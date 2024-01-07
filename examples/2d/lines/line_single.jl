@@ -1,3 +1,7 @@
+# ## simple line
+
+# ![](line_single.svg) 
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -11,5 +15,3 @@ axislegend("legend", position = :lt)
 limits!(0, 10, 0, 100)
 
 save("line_single.svg", current_figure()); # hide
-
-# ![](line_single.svg)

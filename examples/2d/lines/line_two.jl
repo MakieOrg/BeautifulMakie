@@ -1,3 +1,7 @@
+# ## two lines
+
+# ![](line_two.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -13,5 +17,3 @@ lines!(x, cos.(x); color = :black, linestyle = :dash, label = L"cos")
 limits!(-2π, 2π, -1, 1)
 axislegend("Legend", position = :lb);
 save("line_two.svg", current_figure()); # hide
-
-# ![](line_two.svg)

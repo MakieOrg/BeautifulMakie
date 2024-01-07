@@ -1,3 +1,7 @@
+# ## x and y log scales
+
+# ![](line_xylog.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -12,5 +16,3 @@ lines(x, y, color=:navy, figure=(size=(600, 400),),
 current_figure()
 
 save("line_xylog.svg", current_figure()); # hide
-
-# ![](line_xylog.svg)

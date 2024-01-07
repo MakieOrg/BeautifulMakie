@@ -9,8 +9,8 @@ Random.seed!(124)
 cmap = resample_cmap(:linear_wcmr_100_45_c42_n256, 256; 
     alpha = rand(256))
 
-fig = Figure(size = (600,400))
-ax = Axis(fig[1,1]; )
+fig = Figure(; size = (600,400))
+ax = Axis(fig[1,1])
 hist!(rand(Normal(2.6,0.4), 1000), normalization = :pdf, offset = -1, 
     color = :values, colormap = :plasma, direction = :x, fillto = -0.5)
 hist!(rand(Normal(2.6,0.4), 1000), normalization = :pdf, offset = 1, 

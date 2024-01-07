@@ -1,3 +1,7 @@
+# ## multiple lines at once: series
+
+# ![](series.svg)
+
 using CairoMakie, Random, LaTeXStrings
 CairoMakie.activate!(type = "svg") #hide
 Random.seed!(123)
@@ -17,5 +21,3 @@ text!(latexstring(x * y * "\\varphi>0"), position = (-1,-1))
 hidedecorations!(ax; grid = false)
 fig
 save("series.svg", fig); # hide
-
-# ![](series.svg)

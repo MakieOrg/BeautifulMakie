@@ -1,3 +1,7 @@
+# ## line with colormap
+
+# ![](line_cmap.svg)
+
 using CairoMakie, ColorSchemes
 CairoMakie.activate!(type = "svg") #hide
 
@@ -12,5 +16,3 @@ Colorbar(fig[1, 2], obj, label = "sin(x)")
 colgap!(fig.layout, 5)
 fig
 save("line_cmap.svg", fig); # hide
-
-# ![](line_cmap.svg)

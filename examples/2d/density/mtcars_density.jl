@@ -11,7 +11,7 @@ categ = unique(byCat)
 colors1 = categorical_colors(:Hiroshige, length(categ))
 colors2 = categorical_colors(:gnuplot, length(categ))
 
-fig = Figure(size = (600, 800))
+fig = Figure(; size = (600, 800))
 ax1 = Axis(fig[2, 1], xlabel = "MPG", ylabel = "density", xgridstyle = :dash,
     ygridstyle = :dash, rightspinevisible = false, topspinevisible = false)
 ax2 = Axis(fig[3, 1], xlabel = "MPG", ylabel = "density")

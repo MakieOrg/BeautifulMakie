@@ -1,3 +1,7 @@
+# ## streamplot ode solution
+
+# ![](ode_solution.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "png") #hide
 
@@ -8,5 +12,3 @@ streamplot!(ax, odeSol, -2 .. 4, -2 .. 2, colormap = Reverse(:plasma),
     gridsize = (32, 32), arrow_size = 10)
 fig
 save("ode_solution.svg", fig); # hide
-
-# ![](ode_solution.svg)

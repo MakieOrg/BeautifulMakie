@@ -1,3 +1,7 @@
+# ## scatters + line with Legend outside
+
+# ![](scatters_line_leg_out.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -11,5 +15,3 @@ scatter!(x, -cos.(x), color = :red, label = "-cos(x)", strokewidth = 1,
 Legend(fig[1, 2], ax, merge = true)
 fig
 save("scatters_line_leg_out.svg", fig); # hide
-
-# ![](scatters_line_leg_out.svg)

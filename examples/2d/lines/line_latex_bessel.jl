@@ -1,3 +1,7 @@
+# ## besselj lines with latex fonts
+
+# ![](line_latex_bessel.svg)
+
 using CairoMakie, LaTeXStrings, SpecialFunctions
 CairoMakie.activate!(type = "svg") #hide
 
@@ -11,5 +15,3 @@ for ν in 0:6
 end
 axislegend(; nbanks = 3, framecolor = (:grey, 0.5));
 save("line_latex_bessel.svg", fig); # hide
-
-# ![](line_latex_bessel.svg)

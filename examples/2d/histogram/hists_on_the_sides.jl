@@ -9,7 +9,7 @@ CairoMakie.activate!(type = "svg") #hide
 Random.seed!(123)
 n = 200
 x, y, color = randn(n) / 2, randn(n), randn(n)
-fig = Figure(size=(600, 400))
+fig = Figure(; size=(600, 400))
 ax1 = Axis(fig[1, 1])
 ax2 = Axis(fig[2, 1])
 ax3 = Axis(fig[2, 2])
@@ -25,6 +25,7 @@ hidexdecorations!(ax1, ticks=false, grid=false)
 colsize!(fig.layout, 1, Relative(2 / 3))
 rowsize!(fig.layout, 1, Relative(1 / 3))
 colgap!(fig.layout, 10)
-rowgap!(fig.layout, 10);
+rowgap!(fig.layout, 10)
+fig
 
 save("hists_on_the_sides.svg", fig); # hide

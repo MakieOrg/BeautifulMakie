@@ -1,3 +1,7 @@
+# ## twin axis
+
+# ![](line_twin_axis.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -12,5 +16,3 @@ lines!(ax2, 0 .. 10, x -> exp(-x); color = :dodgerblue)
 hidespines!(ax2, :l, :b, :t)
 hidexdecorations!(ax2);
 save("line_twin_axis.svg", fig); # hide
-
-# ![](line_twin_axis.svg)

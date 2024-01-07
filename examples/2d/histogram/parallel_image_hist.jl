@@ -13,7 +13,7 @@ function  image_histogram()
     greens = vec(float.(Images.green.(img)))
     blues = vec(float.(Images.blue.(img)))
     
-    fig = Figure(;size = (1200,400))
+    fig = Figure(; size = (1200,400))
     ax1 = Axis(fig[1, 1], aspect = DataAspect())
     ax2 = Axis(fig[1, 2])
     for (i, col) = enumerate([:red, :green, :blue])

@@ -1,3 +1,7 @@
+# ## Inset heatmap
+
+# ![](line_inset_h.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -26,5 +30,3 @@ ax2.yticks = [-10, 0, 10]
 ax2.xticks = [-10, 0, 10]
 fig
 save("line_inset_h.svg", fig); # hide
-
-# ![](line_inset_h.svg)

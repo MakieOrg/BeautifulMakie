@@ -1,3 +1,7 @@
+# ## y log scale
+
+# ![](line_ylog.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -10,5 +14,3 @@ lines(y, x; color=:orangered, figure=(size=(600, 400),),
 xlims!(-1, 1)
 current_figure()
 save("line_ylog.svg", current_figure()); # hide
-
-# ![](line_ylog.svg)

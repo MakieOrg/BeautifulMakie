@@ -1,3 +1,7 @@
+# ## lines colored with discrete colors from colormap: Colorbar
+
+# ![](line_colored_cbar.svg)
+
 using CairoMakie, ColorSchemes
 CairoMakie.activate!(type = "svg") #hide
 xs = 0:0.01:1
@@ -23,5 +27,3 @@ Colorbar(fig[1, 2], limits = (-10, 10), nsteps = psize, colormap = cmap,
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
 save("line_colored_cbar.svg", fig); # hide
-
-# ![](line_colored_cbar.svg)

@@ -1,3 +1,7 @@
+# ## spiral scatterlines
+
+# ![](spirals.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 n = 50
@@ -12,5 +16,3 @@ for (k,i) in enumerate(-4:-2)
 end
 fig
 save("spirals.svg", current_figure()); # hide
-
-# ![](spirals.svg)

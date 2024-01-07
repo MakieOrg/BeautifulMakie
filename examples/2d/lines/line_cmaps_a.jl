@@ -1,3 +1,7 @@
+# ## lines with colormap and colorbars around
+
+# ![](line_cmaps_a.svg)
+
 using CairoMakie, ColorSchemes
 CairoMakie.activate!(type = "svg") #hide
 
@@ -26,5 +30,3 @@ colgap!(fig.layout, 5)
 rowgap!(fig.layout, 5)
 fig
 save("line_cmaps_a.svg", fig); # hide
-
-# ![](line_cmaps_a.svg)

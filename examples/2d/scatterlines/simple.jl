@@ -1,3 +1,7 @@
+# ## simple scatterlines
+
+# ![](simple.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -11,5 +15,3 @@ scatterlines!(x, sin.(x);
 axislegend()
 fig
 save("simple.svg", fig); # hide
-
-# ![](simple.svg)

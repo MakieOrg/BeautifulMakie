@@ -1,3 +1,7 @@
+# ## violin plot: airquality data
+
+# ![](airquality.svg)
+
 using CairoMakie, RDatasets, Colors, ColorSchemes
 CairoMakie.activate!(type = "svg") #hide
 
@@ -15,5 +19,3 @@ for (indx, f) in enumerate(categories)
 end
 fig
 save("airquality.svg", fig); # hide
-
-# ![](airquality.svg)

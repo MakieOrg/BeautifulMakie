@@ -1,3 +1,7 @@
+# ## scatter markers
+
+# ![](markers.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -12,5 +16,3 @@ scatterlines!(x, cos.(x), color = :black, label = "cos(x)",
 axislegend(; position = :cc)
 fig
 save("markers.svg", fig); # hide
-
-# ![](markers.svg)

@@ -1,3 +1,7 @@
+# ## Makie contributors
+
+# ![](makie_contributors.png)
+
 using GLMakie, GitHub, Downloads, FileIO
 GLMakie.activate!() #hide
 

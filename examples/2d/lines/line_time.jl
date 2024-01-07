@@ -1,3 +1,7 @@
+# ## Time ticks on x axis
+
+# ![](line_time.svg)
+
 using CairoMakie, TimeSeries, Dates
 CairoMakie.activate!(type = "svg") #hide
 ## dummy data
@@ -16,5 +20,3 @@ ax.xticklabelrotation = π / 4
 ax.xticklabelalign = (:right, :center)
 fig
 save("line_time.svg", fig); # hide
-
-# ![](line_time.svg)
