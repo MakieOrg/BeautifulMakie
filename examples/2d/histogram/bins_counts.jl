@@ -1,3 +1,7 @@
+# ## histograms bins counts
+
+# ![](bins_counts.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -21,5 +25,3 @@ axislegend(ax3; position = :rt)
 axislegend(ax4; position = :rt)
 fig
 save("bins_counts.svg", fig); # hide
-
-# ![](bins_counts.svg)

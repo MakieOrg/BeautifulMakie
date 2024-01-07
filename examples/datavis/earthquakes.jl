@@ -1,3 +1,7 @@
+# ## Earthquakes
+
+# <video src="./earthquakes.mp4" controls="controls" autoplay="autoplay"></video>
+
 using CSV, DataFrames
 using GLMakie, Colors, ColorSchemes
 using FileIO, Downloads
@@ -61,12 +65,12 @@ with_theme(theme_black()) do
     rotate!(ax.scene, 3.0)
     save("earthquakes.png", fig; update=false)
     ##run this to get a smooth animation
-    ## record(fig, "earthquakes.mp4", framerate = 24, update=false) do io
-    ##    for i in 3.0:0.015:9.5
-    ##        rotate!(ax.scene, i)
-    ##        recordframe!(io)  # record a new frame
-    ##    end
-    ## end
+    record(fig, "earthquakes.mp4", framerate = 24, update=false) do io
+        for i in 3.0:0.015:9.5
+            rotate!(ax.scene, i)
+            recordframe!(io)  # record a new frame
+        end
+    end
 end
 
 # ![](earthquakes.png)

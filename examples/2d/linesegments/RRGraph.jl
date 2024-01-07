@@ -1,3 +1,7 @@
+# ## RRGraph
+
+# ![](RRGraph.svg)
+
 ## port from the original code used in:
 ## L Alonso, et. al. https://doi.org/10.1093/comnet/cnx053
 using LinearAlgebra, Random, CairoMakie
@@ -60,5 +64,3 @@ rrgraph = with_theme(theme_black()) do
 end
 
 save("RRGraph.svg", current_figure()); # hide
-
-# ![](RRGraph.svg)

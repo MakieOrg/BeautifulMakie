@@ -1,3 +1,7 @@
+# ## Histogram and pdf
+
+# ![](hist_pdf.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -11,5 +15,3 @@ density!(ax1, data; color = (:orange, 0.25), label = "density!", strokewidth = 1
 axislegend(ax1, position = :rt)
 fig
 save("hist_pdf.svg", fig); # hide
-
-# ![](hist_pdf.svg)

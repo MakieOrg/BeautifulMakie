@@ -1,3 +1,7 @@
+# ## heatmap with text on top
+
+# ![](text_heatmap.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -32,5 +36,3 @@ ax.xticklabelrotation = π / 3
 ax.xticklabelalign = (:right, :center)
 fig
 save("text_heatmap.svg", fig); # hide
-
-# ![](text_heatmap.svg)

@@ -1,3 +1,7 @@
+# ## meshscatters and distributions
+
+# ![](gauss2d.png)
+
 using GLMakie, Random
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -42,5 +46,3 @@ with_theme(theme_dark()) do
     fig
 end
 save("gauss2d.png", current_figure()); # hide
-
-# ![](gauss2d.png)

@@ -1,3 +1,7 @@
+# ## contourf and contour3d 
+
+# ![](contourf_contour3d.png)
+
 using GLMakie
 GLMakie.activate!() 
 GLMakie.closeall() # close any open screen
@@ -28,5 +32,3 @@ with_theme(theme_dark()) do
     fig
 end
 save("contourf_contour3d.png", current_figure()); # hide
-
-# ![](contourf_contour3d.png)

@@ -1,3 +1,7 @@
+# ## band or ribbon
+
+# ![](band_ribbon.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -8,5 +12,3 @@ band!(x, sin.(x), sin.(x) .+ 1; color = (:blue, 0.2))
 band!(x, cos.(x), 1 .+ cos.(x); color = (:red, 0.2))
 fig
 save("band_ribbon.svg", fig); # hide
-
-# ![](band_ribbon.svg)

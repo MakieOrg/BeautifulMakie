@@ -1,3 +1,7 @@
+# ## errorbars
+
+# ![](errorbars.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -19,5 +23,3 @@ lines!(x, y; linewidth = 0.5, linestyle = :dashdot)
 hidedecorations!(ax; grid = false) 
 fig
 save("errorbars.svg", fig); # hide
-
-# ![](errorbars.svg)

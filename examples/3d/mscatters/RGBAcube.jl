@@ -1,3 +1,7 @@
+# ## RGBAcube
+
+# ![](RGBAcube.png)
+
 using GLMakie, Colors
 using GeometryBasics: Rect3f
 GLMakie.activate!()
@@ -14,5 +18,3 @@ fig, ax, obj = meshscatter(positions;
 )
 fig
 save("RGBAcube.png", fig); # hide
-
-# ![](RGBAcube.png)

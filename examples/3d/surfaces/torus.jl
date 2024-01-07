@@ -1,3 +1,7 @@
+# ## Torus surfaces
+
+# ![](torus.png)
+
 using GLMakie
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -41,5 +45,3 @@ colgap!(fig.layout, 2)
 fig
 
 save("torus.png", fig); # hide
-
-# ![](torus.png)

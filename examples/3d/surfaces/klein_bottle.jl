@@ -1,3 +1,7 @@
+# ## klein bottle
+
+# ![](klein_bottle.png)
+
 using GLMakie
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -17,5 +21,3 @@ ax = LScene(fig[1, 1], show_axis = false)
 surface!(ax, x, y, z; color = sqrt.(x.^2 .+ y.^2), colormap = (:Spectral_11, 0.8))
 fig
 save("klein_bottle.png", fig); # hide
-
-# ![](klein_bottle.png)

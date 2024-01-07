@@ -1,3 +1,7 @@
+# ## complex function surface
+
+# ![](complex_function.png)
+
 using GLMakie
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -19,5 +23,3 @@ Colorbar(fig[1, 2], pltobj, height = Relative(0.5))
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
 save("complex_function.png", fig); # hide
-
-# ![](complex_function.png)

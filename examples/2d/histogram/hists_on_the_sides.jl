@@ -1,3 +1,7 @@
+# ## Histograms on the sides
+
+# ![](hists_on_the_sides.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 ## see also https://discourse.julialang.org/t/beautiful-makie-gallery/62523/31
@@ -24,5 +28,3 @@ colgap!(fig.layout, 10)
 rowgap!(fig.layout, 10);
 
 save("hists_on_the_sides.svg", fig); # hide
-
-# ![](hists_on_the_sides.svg)

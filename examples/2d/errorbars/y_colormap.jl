@@ -1,3 +1,7 @@
+# ## errorbars with a colormap
+
+# ![](y_colormap.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -12,5 +16,3 @@ errorbars!(ax, x, y, yerr; whiskerwidth = 12, color = yerr,
 scatter!(ax, x, y; color = yerr, colormap = :viridis, markersize = 15)
 fig
 save("y_colormap.svg", fig); # hide
-
-# ![](y_colormap.svg)

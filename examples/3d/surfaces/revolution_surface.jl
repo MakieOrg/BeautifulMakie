@@ -1,3 +1,7 @@
+# ## revolution surface
+
+# ![](revolution_surface.png)
+
 using GLMakie
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -16,5 +20,3 @@ Colorbar(fig[1, 2], pltobj, height = Relative(0.5))
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
 save("revolution_surface.png", fig); # hide
-
-# ![](revolution_surface.png)

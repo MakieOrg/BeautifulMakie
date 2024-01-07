@@ -1,3 +1,7 @@
+# ## barplot with colormap and y-errorbars
+
+# ![](barplot_cmap_y_error.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -10,5 +14,3 @@ barplot!(ax, x, y; strokewidth = 1, color = x, colormap = (:Spectral_10, 0.85),
 errorbars!(ax, x, y, yerr; whiskerwidth = 12)
 fig
 save("barplot_cmap_y_error.svg", fig); # hide
-
-# ![](barplot_cmap_y_error.svg)

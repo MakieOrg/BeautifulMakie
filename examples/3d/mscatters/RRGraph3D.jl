@@ -1,3 +1,7 @@
+# ## Random Rectangular Graph
+
+# ![](RRGraph3D.png)
+
 ## Adaptation from:
 ## L Alonso, et. al. https://doi.org/10.1093/comnet/cnx053
 
@@ -74,5 +78,3 @@ with_theme(theme_dark()) do
     plotGraph3D(adjacencyM3D, x, y, z)
 end
 save("RRGraph3D.png", current_figure()); # hide
-
-# ![](RRGraph3D.png)

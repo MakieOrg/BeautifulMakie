@@ -1,3 +1,7 @@
+# ## boxplot collection: Normal distributions
+
+# ![](boxplot_collection.svg)
+
 using CairoMakie, Random, Distributions
 CairoMakie.activate!(type = "svg") #hide
 
@@ -24,4 +28,3 @@ end
 axislegend(ax, position = :lt)
 fig
 save("boxplot_collection.svg", fig); # hide
-# ![](boxplot_collection.svg)

@@ -1,3 +1,7 @@
+# ## Arrows
+
+# ![](arrows.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -18,5 +22,3 @@ limits!(ax, -3,3,-3,3)
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
 save("arrows.svg", fig); # hide
-
-# ![](arrows.svg)

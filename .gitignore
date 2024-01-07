@@ -16,3 +16,4 @@ docs/src/examples
 dev
 test_record
 node_modules
+tmp_*

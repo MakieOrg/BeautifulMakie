@@ -1,3 +1,7 @@
+# ## contour in 3d
+
+# ![](contour_v.png)
+
 using GLMakie, ColorSchemes
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -20,5 +24,3 @@ fig, ax, _ = contour(x, y, z, vol;
     )
 fig
 save("contour_v.png", fig); # hide
-
-# ![](contour_v.png)

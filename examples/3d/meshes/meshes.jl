@@ -1,3 +1,7 @@
+# ## Meshes: Cylinder, Pyramid, Cone, Cube
+
+# ![](meshes.png)
+
 using GLMakie, Random, Colors, LinearAlgebra
 using GeometryBasics: Cylinder, Pyramid
 using Makie
@@ -44,5 +48,3 @@ with_theme(theme_dark()) do
     fig
 end
 save("meshes.png", current_figure()); # hide
-
-# ![](meshes.png)

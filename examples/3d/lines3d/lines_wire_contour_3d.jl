@@ -1,3 +1,7 @@
+# ## lines, wireframe and contour in 3d
+
+# ![](lines_wire_contour_3d.png)
+
 using GLMakie
 GLMakie.activate!() 
 GLMakie.closeall() # close any open screen
@@ -30,5 +34,3 @@ with_theme(theme_dark()) do
 end
 
 save("lines_wire_contour_3d.png", current_figure()); # hide
-
-# ![](lines_wire_contour_3d.png)

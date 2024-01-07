@@ -1,3 +1,7 @@
+# ## Earth on sphere surrounded by planes
+
+# ![](Earth_planes.png)
+
 using GLMakie, Colors, LinearAlgebra
 using GeometryBasics, Downloads, FileIO
 GLMakie.activate!(ssao=true)
@@ -27,5 +31,3 @@ function ssaoplanes()
 end
 fig = with_theme(ssaoplanes, theme_dark())
 save("Earth_planes.png", fig); # hide
-
-# ![](Earth_planes.png)

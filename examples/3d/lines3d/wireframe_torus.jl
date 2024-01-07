@@ -1,3 +1,7 @@
+# ## wireframe torus
+
+# ![](wireframe_torus.png)
+
 using GLMakie
 GLMakie.activate!() 
 GLMakie.closeall() # close any open screen
@@ -23,5 +27,3 @@ axis[:ticks][:fontsize] = 10
 fig
 
 save("wireframe_torus.png", fig); # hide
-
-# ![](wireframe_torus.png)

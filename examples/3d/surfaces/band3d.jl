@@ -1,3 +1,7 @@
+# ## band in 3d
+
+# ![](band3d.png)
+
 using GLMakie, LaTeXStrings, SpecialFunctions, Random
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -34,5 +38,3 @@ with_theme(theme_black()) do
     fig
 end
 save("band3d.png", current_figure()); # hide
-
-# ![](band3d.png)

@@ -1,3 +1,7 @@
+# ## errorbars in x and y
+
+# ![](simple_x_y.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -10,5 +14,3 @@ errorbars!(ax, x, y, yerr; whiskerwidth = 12, color = :orangered)
 errorbars!(ax, x, y, xerr; whiskerwidth = 12, direction = :x)
 fig
 save("simple_x_y.svg", fig); # hide
-
-# ![](simple_x_y.svg)

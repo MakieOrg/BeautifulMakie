@@ -1,3 +1,7 @@
+# ## contour over heatmap
+
+# ![](contour_over_heatmap.png)
+
 using CairoMakie
 CairoMakie.activate!(type = "png") #hide
 
@@ -18,5 +22,3 @@ Colorbar(fig[1, 4], p1, width=20, ticksize=20, tickalign=1)
 fig
 
 save("contour_over_heatmap.png", fig); # hide
-
-# ![](contour_over_heatmap.png)

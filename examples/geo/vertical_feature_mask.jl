@@ -1,7 +1,13 @@
+# ## vertical 3d band over map
+
+# ![](vertical_feature_mask.png)
+
 using GLMakie, GeoMakie
 using Downloads: download
 using FileIO
 GLMakie.activate!()
+GLMakie.closeall() # hide
+
 earth_img = load(download("https://upload.wikimedia.org/wikipedia/commons/5/56/Blue_Marble_Next_Generation_%2B_topography_%2B_bathymetry.jpg"))
 
 fig = Figure(; size=(800, 400), fontsize=22)
@@ -13,6 +19,8 @@ fig
 
 idx_l = findmax(length.(GeoMakie.coastlines()))
 longpath = GeoMakie.coastlines()[idx_l[2]]
+@show idx_l
+
 
 linepath = Point3f[]
 for p in longpath
@@ -38,5 +46,3 @@ fig
 zoom!(ax.scene, cameracontrols(ax.scene), 30)
 ## center!(ax.scene)
 save("vertical_feature_mask.png", fig, update=false); # hide
-
-# ![](vertical_feature_mask.png)

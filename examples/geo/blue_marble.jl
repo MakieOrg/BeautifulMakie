@@ -1,6 +1,11 @@
+# ## Blue marble
+
+# ![](blue_marble.png)
+
 using GLMakie, FileIO
 using Downloads: download
 GLMakie.activate!() 
+GLMakie.closeall() # hide
 
 earth_img = load(download("https://upload.wikimedia.org/wikipedia/commons/5/56/Blue_Marble_Next_Generation_%2B_topography_%2B_bathymetry.jpg"))
 n = 1024 ÷ 4 # 2048
@@ -23,6 +28,4 @@ zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
 GLMakie.rotate!(ax.scene, Vec3f(0, 0, 1), 3.0)
 fig
 
-save("blue_marble.png", fig); # hide
-
-# ![](blue_marble.png)
+save("blue_marble.png", fig; update=false); # hide

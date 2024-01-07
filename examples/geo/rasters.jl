@@ -1,5 +1,5 @@
-# # Animating Rasters with Makie.jl
-# Author: Anshul Singhvi
+# ## Animating Rasters with Makie.jl
+# - Author: Anshul Singhvi
 
 # "Rasters" are a common data format for representing spatial data, specifically
 # data points on a uniform grid.  In Julia, we can represent and manipulate these 
@@ -14,7 +14,8 @@
 # We'll also show the Julia package ecosystem's effortless interoperability, by using [DataInterpolations.jl](https://github.com/PumasAI/DataInterpolations.jl)
 # to smoothly interpolate a timeseries of rasters, and animate them in Makie!
 
-# ENV["RASTERDATASOURCES_PATH"] = ".." # joinpath(tempdir(), "Rasters"), needed for RasterDataSources
+## ENV["RASTERDATASOURCES_PATH"] = ".." # joinpath(tempdir(), "Rasters"), needed for RasterDataSources
+ENV["RASTERDATASOURCES_PATH"] = ".."
 
 # Let's load the packages:
 using Rasters
@@ -25,6 +26,7 @@ using Makie.GeometryBasics
 using Makie.GeometryBasics: Tesselation, uv_normal_mesh
 using DataInterpolations, Printf
 GLMakie.activate!()
+GLMakie.closeall() # hide
 
 # ### Getting the data
 
@@ -97,12 +99,12 @@ fig
 # We use the `@time` macro to time how long the recording takes 
 # (note that this is on a device without a GPU, it will be significantly faster with one).
 
-@time record(fig, "temperature_surface_animation.mp4", LinRange(1, 12, 480÷4); framerate = 30) do i
+@time record(fig, "temperatureSurfaceAnimation.mp4", LinRange(1, 12, 480÷4); framerate = 30) do i
     ax.title[] = @sprintf "%.2f" i
     temp_inter[] = temp_interpolated(i)
 end;
 
-# ![type:video](temperature_surface_animation.mp4)
+# <video src="./temperatureSurfaceAnimation.mp4" controls="controls"></video>
 
 # ## Animating a 3-D globe
 
@@ -149,12 +151,12 @@ cmap = [:darkblue, :deepskyblue2, :deepskyblue, :gold, :tomato3, :red, :darkred]
 # and holds the axis which holds our plots.
 
 fig = Figure(; size=(800, 800))
-# First, we plot an empty the sphere
+## First, we plot an empty the sphere
 ax, plt_obj = mesh(fig[1, 1], uv_normal_mesh(Tesselation(Sphere(Point3f(0), 0.99), 128));
     color=(:white, 0.1), transparency=true,
     axis=(type=LScene, show_axis=false)
 )
-# Then, we plot the sphere, which displays temperature.
+## Then, we plot the sphere, which displays temperature.
 temperature_plot = mesh!(
     m;
     color=Makie.convert_arguments(Makie.VertexGrid(), worldclim_stacks[10].tmax)[3]'[end:-1:1,:] |> Matrix,
@@ -179,6 +181,7 @@ fig
 
 # This is a simple utility function which retrieves the water values from the raster,
 # and resamples them to the mesh's nonlinear grid.
+
 function watermap(uv, water, normalization=908.0f0 * 4.0f0)
     markersize = map(uv) do uv
         wsize = reverse(size(water))
@@ -218,17 +221,18 @@ fig
 #upvector = Vec3f(0.29894897, 0.71282643, 0.6344353)
 #update_cam!(ax.scene, eye_position, lookat, upvector)
 
-# Let's also add a little title which tells us which season we're in:
+## Let's also add a little title which tells us which season we're in:
 title_label = Label(fig[0, 1]; tellwidth = false, font = :bold, fontsize = 20)
 Colorbar(fig[1,2], temperature_plot, label="Temperature", height = Relative(0.5))
 Colorbar(fig[2,1], prec_plot, label="Precipitation", width = Relative(0.5), vertical=false)
 
 zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
-display(fig; update=false)
+## display(fig; update=false)
+fig
 
 # Now, we animate the water and temperature plots!
 
-record(fig, "worldclim_visualization.mp4", LinRange(1, 24, 600÷4); framerate = 24, update=false) do i
+record(fig, "worldclimVisualization.mp4", LinRange(1, 24, 600÷4); framerate = 24, update=false) do i
     title_label.text[] = @sprintf "%.2f" (i % 12)
     temperature_plot.color[] = raster2array(temp_interpolated(i % 12))
     watervals = max.(0, watermap(uv, raster2array(prec_interpolated(i % 12))))
@@ -239,6 +243,6 @@ record(fig, "worldclim_visualization.mp4", LinRange(1, 24, 600÷4); framerate = 
     notify(prec_plot.markersize)
 end;
 
-# ![type:video](worldclim_visualization.mp4)
+# <video src="./worldclimVisualization.mp4" controls="controls" autoplay="autoplay"></video>
 
 # This example, and some of the development work which made it possible, was funded by the [xKDR Forum](https://www.xkdr.org).

@@ -1,3 +1,7 @@
+# ## volume
+
+# ![](volume.png)
+
 using GLMakie, ColorSchemes
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -20,5 +24,3 @@ fig, ax, _ = volume(x, y, z, vol;
 fig
 
 save("volume.png", fig); # hide
-
-# ![](volume.png)

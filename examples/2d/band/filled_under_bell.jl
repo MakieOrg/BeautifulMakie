@@ -1,3 +1,7 @@
+# ## Filled curve. Under the bell
+
+# ![](filled_under_bell.svg)
+
 using CairoMakie
 CairoMakie.activate!(type = "svg") #hide
 
@@ -17,5 +21,3 @@ end
 axislegend(; merge = true, framecolor = :red)
 fig
 save("filled_under_bell.svg", fig); # hide
-
-# ![](filled_under_bell.svg)

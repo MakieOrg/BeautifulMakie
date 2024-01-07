@@ -1,3 +1,7 @@
+# ## vertical and horizontal boxplots
+
+# ![](vertical_horizontal.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -24,5 +28,3 @@ axislegend(ax1, position = :rb, framecolor = :transparent)
 axislegend(ax2, position = :rt, backgroundcolor = (:dodgerblue, 0.2))
 fig
 save("vertical_horizontal.svg", fig); # hide
-
-# ![](vertical_horizontal.svg)

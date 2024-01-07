@@ -1,3 +1,7 @@
+# ## heatmap
+
+# ![](heatmap.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -10,5 +14,3 @@ colsize!(fig.layout, 1, Aspect(1, 1.0))
 colgap!(fig.layout, 7)
 fig
 save("heatmap.svg", fig); # hide
-
-# ![](heatmap.svg)

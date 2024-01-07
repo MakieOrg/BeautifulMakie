@@ -1,3 +1,7 @@
+# ## linesegments
+
+# ![](linesegments.svg)
+
 using CairoMakie, Random, Distributions
 CairoMakie.activate!(type = "svg") #hide
 Random.seed!(1234)
@@ -14,5 +18,3 @@ linesegments(someSegments(; n = n);
     );
     
 save("linesegments.svg", current_figure()); # hide
-
-# ![](linesegments.svg)

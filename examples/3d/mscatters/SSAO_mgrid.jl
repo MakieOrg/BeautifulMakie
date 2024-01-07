@@ -1,3 +1,7 @@
+# ## SSAO meshscatters grid
+
+# ![](SSAO_mgrid.png)
+
 using GLMakie
 GLMakie.activate!(ssao=true)
 GLMakie.closeall() # close any open screen
@@ -46,5 +50,3 @@ function ssaomeshscatter()
 end
 with_theme(ssaomeshscatter, theme_dark())
 save("SSAO_mgrid.png", current_figure()); # hide
-
-# ![](SSAO_mgrid.png)

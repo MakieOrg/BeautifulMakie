@@ -1,3 +1,7 @@
+# ## line: archimedean spiral
+
+# ![](archimedean_spiral.png)
+
 using GLMakie
 GLMakie.activate!()
 GLMakie.closeall() # close any open screen
@@ -27,5 +31,3 @@ with_theme(theme_black()) do
     fig
 end
 save("archimedean_spiral.png", current_figure()); # hide
-
-# ![](archimedean_spiral.png)

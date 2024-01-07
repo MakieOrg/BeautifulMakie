@@ -1,3 +1,7 @@
+# ## Leos
+
+# ![](leos.png)
+
 using Downloads, GLMakie
 using Colors, Statistics
 using FileIO
@@ -98,5 +102,3 @@ with_theme(theme_black()) do
 end
 
 save("leos.png", current_figure()); # hide
-
-# ![](leos.png)

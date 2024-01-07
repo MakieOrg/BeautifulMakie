@@ -1,3 +1,6 @@
+# ## x-error barplot and y-errorbars
+# ![](x_barplot_error_y_error.svg)
+
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
@@ -11,5 +14,3 @@ barplot!(ax, x, y; width = 1.8xerr, strokewidth = 1, color = :transparent,
 errorbars!(ax, x, y, yerr; whiskerwidth = 12)
 fig
 save("x_barplot_error_y_error.svg", fig); # hide
-
-# ![](x_barplot_error_y_error.svg)
