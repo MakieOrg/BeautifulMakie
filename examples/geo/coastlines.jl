@@ -2,7 +2,7 @@
 
 # ![](coastlines.png)
 
-# This should create GeoAxis, the on top we plot the coastlines from from Natural Earth.
+# This should create a GeoAxis, then on top we plot the coastlines from from Natural Earth.
 using GLMakie, GeoMakie
 GLMakie.activate!()
 GLMakie.closeall() # hide
