@@ -148,3 +148,23 @@ mjx-container > svg {
   margin: auto;
   display: inline-block;
 }
+
+/**
+ * Colors links
+ * -------------------------------------------------------------------------- */
+
+ :root {
+  --vp-c-brand-1: #e4c92a;
+  --vp-c-brand-2: #e4c92a;
+  --vp-c-brand-3: #e4c92a;
+  --vp-c-sponsor: #ca2971;
+  --vitest-c-sponsor-hover: #c13071;
+}
+
+.dark {
+  --vp-c-brand-1: #3782b9;
+  --vp-c-brand-2: #3782b9;
+  --vp-c-brand-3: #3782b9;
+  --vp-c-sponsor: #ee4e95;
+  --vitest-c-sponsor-hover: #e51370;
+}
