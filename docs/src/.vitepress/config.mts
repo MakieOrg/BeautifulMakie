@@ -38,7 +38,10 @@ const viteConfig = defineViteConfig({
     // https://vitepress.dev/reference/default-theme-config
     logo: { src: '/icon_makie.png', width: 24, height: 24 },
     search: {
-      provider: 'local'
+      provider: 'local',
+      options: {
+        detailedView: true
+      }
     },
     nav: [
       { text: 'Home', link: '/' },
@@ -478,8 +481,8 @@ const viteConfig = defineViteConfig({
       { icon: 'twitter', link: 'https://twitter.com/LazarusAlon' }
     ],
     footer: {
-      message: 'Made with <a href="https://vitepress.dev" target="_blank"><strong>VitePress</strong></a>, <a href="https://documenter.juliadocs.org/stable/" target="_blank">Documenter.jl</a> & <a href="https://fredrikekre.github.io/Literate.jl/v2/" target="_blank">Literate.jl</a> <br> Released under the MIT License. Powered by the <a href="https://julialang.org" target="_blank">Julia Programming Language.</a>',
-      copyright: '© Copyright 2023 <strong>Lazaro Alonso</strong>'
+      message: 'Made with <a href="https://github.com/LuxDL/DocumenterVitepress.jl" target="_blank"><strong>DocumenterVitepress.jl</strong></a> & <a href="https://fredrikekre.github.io/Literate.jl/v2/" target="_blank">Literate.jl</a> <br> Released under the MIT License. Powered by the <a href="https://julialang.org" target="_blank">Julia Programming Language.</a>',
+      copyright: '© Copyright 2024 <a href="https://github.com/lazarusA" target="_blank"><strong>Lazaro Alonso</strong>'
     }
   }
 })
