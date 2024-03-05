@@ -23,5 +23,3 @@ scatter(rand(d,n), rand(b, n);
     )
     
 save("scatter.svg", current_figure()); # hide
-
-# ![](scatter.svg)
