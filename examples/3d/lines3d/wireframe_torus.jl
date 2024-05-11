@@ -16,7 +16,7 @@ y2 = [.5 * sin(v)                        for u in U, v in V]
 z2 = [sin(u) + .5 * sin(u) * cos(v)      for u in U, v in V];
 
 ## and now we plot the figure
-fig = Figure(size =(600,600))
+fig = Figure(; size =(600,600))
 ax = LScene(fig[1,1], show_axis = true)
 wireframe!(ax, x1, y1, z1; transparency = true)
 ## some control over axis names.

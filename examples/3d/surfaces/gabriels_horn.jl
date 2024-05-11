@@ -14,7 +14,8 @@ Z1 = [(1/u) * sin(v) for u in u, v in v]
 
 fig = Figure(size=(1200, 800))
 ax = LScene(fig[1, 1], show_axis=false)
-pltobj = surface!(ax, -X1, -Y1, Z1; shading = FastShading, ambient=Vec3f(0.65, 0.65, 0.65),
+pltobj = surface!(ax, -X1, -Y1, Z1; shading = FastShading,
+    #ambient=Vec3f(0.65, 0.65, 0.65),
     backlight=1.0f0, color=sqrt.(X1 .^ 2 .+ Y1 .^ 2 .+ Z1 .^ 2),
     colormap=Reverse(:bone_1), transparency=true,
     )

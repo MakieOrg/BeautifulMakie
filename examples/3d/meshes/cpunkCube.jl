@@ -35,7 +35,7 @@ poster = poster[1+80:1080+80,end:-1:1]
 imgs = [rotr90(lucydavid), lucy, rotl90(david), 
     rotr90(faraday), rotr90(rotr90(poster)), rotr90(rotr90(luda))]
 
-fig = Figure(figure_padding=0, size =(600*4,400*4))
+fig = Figure(figure_padding=0, size =(600,400))
 axs = [Axis(fig[i,j], aspect=1) for i in 1:2 for j in 1:3]
 [heatmap!(axs[i], imgs[i]) for i in 1:6]
 hidedecorations!.(axs)
@@ -89,15 +89,15 @@ rating, votes = getstats()
 percent = round.(votes/sum(votes)*100, digits=1)
 
 with_theme(theme_black()) do
-    fig = Figure(size= (1200,700), fontsize = 24)
+    fig = Figure(size= (1200,700), fontsize = 18)
     ax1 = LScene(fig[1,1], show_axis=false)
     ax2 = Axis(fig[1,2]; xlabel = "Rating score")
     mesh!(ax1, m; color = imgcpunk, interpolate=false)
     barplot!(ax2, rating, votes; color =reverse(cmap_cpunk))
     text!(ax2, string.(percent).*"%", position = Point2f.(rating, votes),
         align = (:center, :bottom))
-    text!(ax2, "Total votes: $(sum(votes))", color=cmap_cpunk[8],
-        position = (1, 3maximum(votes)/4), fontsize= 28)
+    text!(ax2, Point2f(1, 3maximum(votes)/4); text="Total votes: $(sum(votes))",
+        color=cmap_cpunk[8], fontsize= 28)
     hideydecorations!(ax2; grid=false)
     hidespines!(ax2, :l, :t, :r)
     ax2.xticks = 1:10

@@ -22,10 +22,10 @@ with_theme(theme_dark()) do
     contour!(axs[1], x, y, z; levels = 20, transformation = (:xy, minimum(z)), 
         transparency = true)
     lines!(axs[2], cat(x, NaN, dims=1), y, vcat(z, fill(NaN,30)'), 
-        color = maximum(z, dims=1)[1,:], transparency = false)
+        color = repeat(maximum(z, dims=1)[1,:], inner=31),
+        transparency = false)
     lines!(axs[2], cat(x, NaN, dims=1), y, 
-        vcat(z, fill(NaN,30)')*0 .+ minimum(z); color = maximum(z, dims=1)[1,:], 
-        transparency = true)
+        vcat(z, fill(NaN,30)')*0 .+ minimum(z); color = repeat(maximum(z, dims=1)[1,:], inner=31), transparency = true)
     wireframe!(axs[3], x, y, z; color = :grey90, transparency = true)
     wireframe!(axs[3], x, y, z*0 .+ minimum(z); color = :grey90, 
         transparency = true)

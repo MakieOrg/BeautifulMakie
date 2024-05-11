@@ -16,6 +16,6 @@ violin!(ax, a, data; width = 0.35, color = (:orangered, 0.45),
     show_median = true, mediancolor = :navy, strokecolor = :black,
     strokewidth = 1, label = "vertical")
 limits!(ax, 0, 2, -5, 5)
-axislegend(ax, position = :rt)
+# axislegend(ax, position = :rt)
 fig
 save("single.svg", fig); # hide

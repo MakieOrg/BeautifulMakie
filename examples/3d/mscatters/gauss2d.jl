@@ -37,7 +37,7 @@ with_theme(theme_dark()) do
         color = vec(z./2), 
         colormap = cmap_alpha, 
         colorrange = (0, 6), 
-        ambient = Vec3f(0.85, 0.85, 0.85), 
+        #ambient = Vec3f(0.85, 0.85, 0.85), # lights?
         backlight = 1.5f0)
     xlims!(-5.5,10)
     ylims!(-5.5,5.5)

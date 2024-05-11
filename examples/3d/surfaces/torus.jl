@@ -15,7 +15,7 @@ x2 = [1 + cos(u) + 0.5 * cos(u) * cos(v) for u in U, v in V]
 y2 = [0.5 * sin(v) for u in U, v in V]
 z2 = [sin(u) + 0.5 * sin(u) * cos(v) for u in U, v in V]
 
-fig = Figure(size = (1200, 800))
+fig = Figure(; size = (1200, 800))
 ax = LScene(fig, show_axis = true)
 tori1 = surface!(ax, x1, y1, z1; colormap = :viridis, shading = NoShading,
     transparency = true)

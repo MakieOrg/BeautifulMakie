@@ -12,7 +12,8 @@ X1 = [u for u in u, v in v]
 Y1 = [(u^4 - u^2) * cos(v) for u in u, v in v]
 Z1 = [(u^4 - u^2) * sin(v) for u in u, v in v]
 
-fig, ax, pltobj = surface(X1, Y1, Z1; shading = FastShading, ambient = Vec3f(0.65, 0.65, 0.65),
+fig, ax, pltobj = surface(X1, Y1, Z1; shading = FastShading,
+    #ambient = Vec3f(0.65, 0.65, 0.65),
     backlight = 1.0f0, color = sqrt.(X1 .^ 2 .+ Y1 .^ 2 .+ Z1 .^ 2),
     colormap = :viridis, transparency = true,
     figure = (; size = (1200, 800), fontsize = 22))
