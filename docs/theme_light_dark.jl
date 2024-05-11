@@ -68,7 +68,7 @@ function theme_light_dark()
             yminortickcolor = :grey45,
         ),
         Legend=(framecolor=(:black, 0.35),
-            bgcolor=(:white, 0.1)),
+            backgroundcolor=(:white, 0.1)),
         Axis3 = (
             zlabelrotation = 0π,
             xlabeloffset = 50,
