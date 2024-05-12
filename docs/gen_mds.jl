@@ -26,6 +26,7 @@ function get_files(folders)
                 "penguinsBoxes.jl",
                 "penguinsViolins.jl",
                 "submarine_cables.jl",
+                "earthquakes_proj.jl",
                 ])
                 
             fpaths  = "$(f)/" .* names

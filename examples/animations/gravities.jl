@@ -1,6 +1,8 @@
 # ## Falling bodies in the Solar System.
 
+# ```@raw html
 # <video src="./gravities.mp4" controls="controls" autoplay="autoplay"></video>
+# ```
 
 using GLMakie, FileIO
 GLMakie.activate!()

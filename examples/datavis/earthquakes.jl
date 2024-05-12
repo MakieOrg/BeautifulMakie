@@ -1,6 +1,8 @@
 # ## Earthquakes
 
+# ```@raw html
 # <video src="./earthquakes.mp4" controls="controls" autoplay="autoplay"></video>
+# ```
 
 using CSV, DataFrames
 using GLMakie, Colors, ColorSchemes

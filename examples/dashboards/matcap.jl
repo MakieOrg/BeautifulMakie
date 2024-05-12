@@ -34,9 +34,9 @@ function plotmat()
     idx = Observable(1)
     idpng = @lift(ids[$idx])
     matcap = @lift(load(Downloads.download("https://raw.githubusercontent.com/nidorx/matcaps/master/1024/$($idpng).png")))
-    # ambient = Vec3f(0.8, 0.8, 0.8)
+
     shading = FastShading
-    fig = Figure(size=(1200, 900))
+    fig = Figure(size=(900, 600))
     axs = [LScene(fig[i, j]; show_axis=false)
             for j in 1:3, i in 1:2]
     mesh!(axs[5], sphere; matcap, shading)

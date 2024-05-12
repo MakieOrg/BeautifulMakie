@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "docs:dev": "vitepress dev docs/docs_site",
-    "docs:build": "vitepress build docs/docs_site",
-    "docs:preview": "vitepress preview docs/docs_site"
+    "docs:dev": "vitepress dev docs/docs_site/.documenter/",
+    "docs:build": "vitepress build docs/docs_site/.documenter/",
+    "docs:preview": "vitepress preview docs/docs_site/.documenter/"
   },
   "devDependencies": {
     "vitepress-plugin-tabs": "^0.5.0"

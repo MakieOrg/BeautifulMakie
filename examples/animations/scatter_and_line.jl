@@ -1,6 +1,8 @@
 # ## Animate line and point: Projectile motion
 
+# ```@raw html
 # <video src="./scatterAndLine.mp4" controls="controls" autoplay="autoplay"></video>
+# ```
 
 using GLMakie
 GLMakie.activate!()
