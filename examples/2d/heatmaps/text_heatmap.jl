@@ -1,9 +1,9 @@
 # ## heatmap with text on top
 
-# ![](text_heatmap.svg)
+# ![](text_heatmap.png)
 
 using CairoMakie, Random
-CairoMakie.activate!(type = "svg") #hide
+CairoMakie.activate!(type = "png") #hide
 
 Random.seed!(123)
 m = 15
@@ -35,4 +35,4 @@ Colorbar(fig[1, 2], hmap; label = "values", width = 15, ticksize = 15)
 ax.xticklabelrotation = π / 3
 ax.xticklabelalign = (:right, :center)
 fig
-save("text_heatmap.svg", fig); # hide
+save("text_heatmap.png", fig); # hide

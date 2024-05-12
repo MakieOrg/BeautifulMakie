@@ -1,9 +1,9 @@
 # ## density plot
 
-# ![](density.svg)
+# ![](density.png)
 
 using CairoMakie, Distributions, Random
-CairoMakie.activate!(type = "svg") #hide
+CairoMakie.activate!(type = "png") #hide
 
 Random.seed!(124)
 colors = ["#FF410D", "#6EE2FF", "#F7C530", "#95CC5E", "#D0DFE6", "#F79D1E"]
@@ -20,4 +20,4 @@ end
 axislegend(L"\mu,\quad\sigma"; position= :cb, titlesize= 22)
 hidedecorations!(ax; grid = false)
 fig
-save("density.svg", fig); # hide
+save("density.png", fig); # hide

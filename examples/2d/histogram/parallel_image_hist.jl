@@ -1,10 +1,10 @@
 # ## Histograms r,g,b colors on image
 
-# ![](parallel_image_hist.svg)
+# ![](parallel_image_hist.png)
 
 using CairoMakie
 import TestImages, Images
-CairoMakie.activate!(type = "svg") #hide
+CairoMakie.activate!(type = "png") #hide
 
 ## example by @cormullion
 function  image_histogram()
@@ -32,6 +32,4 @@ function  image_histogram()
 end 
 
 fig = with_theme(image_histogram, theme_ggplot2())
-save("parallel_image_hist.svg", fig); # hide
-
-# ![](parallel_image_hist.svg)
+save("parallel_image_hist.png", fig); # hide

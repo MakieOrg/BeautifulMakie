@@ -1,9 +1,9 @@
 # ## x and y log scales
 
-# ![](line_xylog.svg)
+# ![](line_xylog.png)
 
 using CairoMakie, Random
-CairoMakie.activate!(type = "svg") #hide
+CairoMakie.activate!(type = "png") #hide
 
 Random.seed!(123)
 x = 0.001:0.05:10
@@ -13,6 +13,5 @@ lines(x, y, color=:navy, figure=(size=(600, 400),),
         xgridstyle=:dash, ygridstyle=:dash, xminorticksvisible=true,
         xminorticks=IntervalsBetween(9), yminorticksvisible=true,
         yminorticks=IntervalsBetween(9)))
-current_figure()
 
-save("line_xylog.svg", current_figure()); # hide
+save("line_xylog.png", current_figure()); # hide
