@@ -1,9 +1,9 @@
 # ## lines with colormap and colorbars around
 
-# ![](line_cmaps_a.svg)
+# ![](line_cmaps_a.png)
 
 using CairoMakie, ColorSchemes
-CairoMakie.activate!(type = "svg") #hide
+CairoMakie.activate!(type = "png") #hide
 
 x = range(0, 2π, 50)
 fig = Figure(size = (800, 600), fontsize = 22)
@@ -29,4 +29,4 @@ fig[3, 2] = cbar3
 colgap!(fig.layout, 5)
 rowgap!(fig.layout, 5)
 fig
-save("line_cmaps_a.svg", fig); # hide
+save("line_cmaps_a.png", fig); # hide

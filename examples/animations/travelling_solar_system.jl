@@ -1,6 +1,8 @@
 # ## The speed of light in the solar system
 
+# ```@raw html
 # <video src="./travellingSolarSystem.mp4" controls="controls" autoplay="autoplay"></video>
+# ```
 
 using GLMakie
 GLMakie.activate!()

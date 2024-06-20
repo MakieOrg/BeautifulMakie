@@ -20,8 +20,6 @@ scatter(rand(d,n), rand(b, n);
         ),
     figure = (;
         size = (600,400),)
-    )
-    
-save("scatter.svg", current_figure()); # hide
+        )
 
-# ![](scatter.svg)
+save("scatter.svg", current_figure()); # hide

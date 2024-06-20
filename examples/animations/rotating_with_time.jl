@@ -1,6 +1,8 @@
 # ## Rotating disc points
 
+# ```@raw html
 # <video src="./rotatingWithTime.mp4" controls="controls" autoplay="autoplay"></video>
+# ```
 
 using GLMakie
 GLMakie.activate!()

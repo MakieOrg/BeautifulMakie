@@ -11,13 +11,16 @@ gapminder = Downloads.download(basepath*"gapminder-health-income.csv");
 df = DataFrame(CSV.File(gapminder));
 
 # selecting and plotting
-colors = cgrad(:cividis, size(df,1), categorical=true)
+colors = cgrad(:Hiroshige, size(df,1), categorical=true)
 p = data(df) *
     mapping(:income, :health, color = :country =>(t -> string(t)), 
         markersize =:population => (t-> 8 + 70t/maximum(df.population))) * 
     visual(Scatter)
-draw(p, axis=(xscale=log10,), palettes=(color=colors,))
 
-save("gapminder.png", current_figure()); # hide
+f = Figure()
+draw!(f, p, axis=(xscale=log10,), palettes=(color=colors,))
+f
+
+save("gapminder.png", f); # hide
 
 # ![](gapminder.png)

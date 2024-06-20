@@ -5,6 +5,7 @@
 using CairoMakie, Random
 CairoMakie.activate!(type = "svg") #hide
 
+using GLMakie
 Random.seed!(123)
 fig = Figure(size = (600, 400))
 ax = Axis(fig[1, 1]; xlabel = "x", ylabel = "y")

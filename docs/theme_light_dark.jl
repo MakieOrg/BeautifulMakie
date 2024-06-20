@@ -37,7 +37,7 @@ function theme_light_dark()
         Hist = (cycle = Cycle([:color, :strokecolor], covary=true),),
         Stairs = (cycle=cycle1,),
         Stem= (cycle=cycle5,),
-        Text = (cycle = [:color],),
+        # Text = (cycle = [:color],),
         Violin = (cycle = [:color, :strokecolor, :mediancolor],),
         strokewidth=0.5,
         colormap= Reverse(:Hokusai3),
@@ -68,7 +68,7 @@ function theme_light_dark()
             yminortickcolor = :grey45,
         ),
         Legend=(framecolor=(:black, 0.35),
-            bgcolor=(:white, 0.1)),
+            backgroundcolor=(:white, 0.1)),
         Axis3 = (
             zlabelrotation = 0π,
             xlabeloffset = 50,

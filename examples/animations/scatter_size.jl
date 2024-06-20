@@ -1,6 +1,8 @@
 # ## Animate markersize growth
 
+# ```@raw html
 # <video src="./animScatters.mp4" controls="controls" autoplay="autoplay"></video>
+# ```
 
 using GLMakie, Random
 GLMakie.activate!()

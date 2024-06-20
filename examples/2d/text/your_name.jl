@@ -13,7 +13,7 @@ fig = Figure(figure_padding= 0, size = (320, 48),
 ax = Axis(fig[1,1], backgroundcolor=:transparent)
 text!(ax, [0], [0],
     text= rich(rich("Your", font="Bold"), " Name", font =:regular),
-    align = (:center, :center), color = :white, padding=0)
+    align = (:center, :center), color = :white)
 hidedecorations!(ax)
 hidespines!(ax)
 fig

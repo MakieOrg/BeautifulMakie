@@ -109,14 +109,14 @@ function plotastro()
         end
         lines!([rPts * gridLines[1], rPts * gridLines[end]], [0, 0], linestyle = :dash,
             linewidth = 2, color = "#FFDD33")
-        text!("evaM (hrs)", position = (47, -3.5), color = "#FFDD33", fontsize = 16)
+        text!("evaM (hrs)", position = Point2f(47, -3.5), color = "#FFDD33", fontsize = 16)
         text!("evaM ≡ Duration of extravehicular \n activities during the mission in hours",
-            position = (rPts * gridLines[end-2], 90), color = "#FFDD33", fontsize = 16)
-        text!("using Makie", position = (-99, -94), fontsize = 18, color = :white)
+            position = Point2f(rPts * gridLines[end-2], 90), color = "#FFDD33", fontsize = 16)
+        text!("using Makie", position = Point2f(-99, -94), fontsize = 18, color = :white)
         text!("Visualization by Lazaro Alonso and Julius Krumbiegel ",
-            position = (-99, -97), fontsize = 12, color = "#61AFEF")
+            position = Point2f(-99, -97), fontsize = 12, color = "#61AFEF")
         text!("Data - Astronaut Database - Mariya Stavnichuk and Tatsuya Corlett",
-            position = (-99, -99), fontsize = 10)
+            position = Point2f(-99, -99), fontsize = 10)
         limits!(ax, -100, 100, -100, 100)
         fig
     end

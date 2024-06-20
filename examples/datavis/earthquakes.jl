@@ -1,6 +1,8 @@
 # ## Earthquakes
 
+# ```@raw html
 # <video src="./earthquakes.mp4" controls="controls" autoplay="autoplay"></video>
+# ```
 
 using CSV, DataFrames
 using GLMakie, Colors, ColorSchemes
@@ -47,8 +49,7 @@ with_theme(theme_black()) do
     fig = Figure(size = (900, 900), fontsize = 20)
     ax = LScene(fig[1, 1], show_axis = false)
     pltobj = meshscatter!(ax, toPoints3D; markersize = ms / 20 .+ 0.001, color = mag,
-        colormap = resample_cmap(:afmhot, 256)[10:end], shading = FastShading,
-        ambient = Vec3f(0.99, 0.99, 0.99))
+        colormap = resample_cmap(:afmhot, 256)[10:end], shading = FastShading)
     surface!(ax, sphere(; r = 1.0)..., color = tuple.(earth_img, 0.1),
         shading = FastShading, transparency = true)
     Colorbar(fig[1, 2], pltobj, label = "Magnitude", height = Relative(1.5 / 4))

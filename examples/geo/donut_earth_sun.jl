@@ -26,7 +26,6 @@ with_theme(theme_dark()) do
     fig, ax, = surface(x1, y1, z1; 
         color = earth'[:,end:-1:1],
         shading = FastShading, 
-        ambient = Vec3f(0.85, 0.85, 0.85), 
         backlight = 1.5f0,
         axis=(; 
             type=Axis3, 
@@ -39,7 +38,6 @@ with_theme(theme_dark()) do
     surface!(ax, x2, y2, z2; 
         color = sun'[:,end:-1:1],
         shading = FastShading,
-        ambient = Vec3f(0.85, 0.85, 0.85), 
         backlight = 1.5f0)
     hidedecorations!(ax; grid=false)
     fig

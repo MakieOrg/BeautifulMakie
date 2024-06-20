@@ -1,9 +1,9 @@
 # ## lines colored with discrete colors from colormap: Colorbar
 
-# ![](line_colored_cbar.svg)
+# ![](line_colored_cbar.png)
 
 using CairoMakie, ColorSchemes
-CairoMakie.activate!(type = "svg") #hide
+CairoMakie.activate!(type = "png") #hide
 xs = 0:0.01:1
 p = -10:1:10
 p = filter(x -> x != 0, collect(p))
@@ -26,4 +26,4 @@ Colorbar(fig[1, 2], limits = (-10, 10), nsteps = psize, colormap = cmap,
     label = L"p", ticksize = 20, width = 20, tickalign = 1)
 colsize!(fig.layout, 1, Aspect(1, 1.0))
 fig
-save("line_colored_cbar.svg", fig); # hide
+save("line_colored_cbar.png", fig); # hide

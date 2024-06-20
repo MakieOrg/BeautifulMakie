@@ -29,7 +29,7 @@ cmap = "Hiroshige"
 with_theme(theme_dark()) do
     fig = Figure(size = (1200, 800))
     menu = Menu(fig, options = ["Hiroshige", "Spectral_11", "diverging_bkr_55_10_c35_n256",
-        "diverging_cwm_80_100_c22_n256", ":diverging_gkr_60_10_c40_n256",
+        "diverging_cwm_80_100_c22_n256", "diverging_gkr_60_10_c40_n256",
         "diverging_linear_bjr_30_55_c53_n256",
         "diverging_protanopic_deuteranopic_bwy_60_95_c32_n256"])
     Ygrid = lift(l, m) do l, m
@@ -53,7 +53,7 @@ with_theme(theme_dark()) do
         pltobj1.colormap = s
         pltobj2.colormap = s
     end
-    sl = Slider(fig[end+1, 1:2], range = 1:30, startvalue = 2)
+    sl = Slider(fig[end+1, 1:2], range = 1:30, startvalue = 6)
     sl2 = Slider(fig[end+1, 1:2], range = @lift(-$(sl.value):1:$(sl.value)))
     connect!(l, sl.value)
     connect!(m, sl2.value)

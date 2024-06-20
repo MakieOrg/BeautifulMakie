@@ -15,17 +15,14 @@ x = [cos(φ) * sin(θ) for θ in θ, φ in φ]
 y = [sin(φ) * sin(θ) for θ in θ, φ in φ]
 z = [cos(θ) for θ in θ, φ in φ]
 
-fig = Figure(size = (1200, 800), backgroundcolor = :grey80)
+fig = Figure(size = (800, 600), backgroundcolor = :grey80)
 ax = LScene(fig[1, 1], show_axis = false)
 surface!(ax, x, y, z; 
     color = earth_img,
     shading = NoShading,
-    lightposition = Vec3f(-2, -3, -3), 
-    ambient = Vec3f(0.8, 0.8, 0.8),
-    backlight = 1.5f0,
+    backlight = 1.5f0
     )
 zoom!(ax.scene, cameracontrols(ax.scene), 0.65)
 GLMakie.rotate!(ax.scene, Vec3f(0, 0, 1), 3.0)
-fig
 
 save("blue_marble.png", fig; update=false); # hide
