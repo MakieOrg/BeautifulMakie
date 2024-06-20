@@ -45,7 +45,7 @@ const images = [
     src: 'streamplot.png',
   },
     {
-    href: 'examples/3d/contour3d',
+    href: 'examples/3d/contour3d/contourf_contour3d',
     src: 'contourf_contour3d.png',
   },
     {

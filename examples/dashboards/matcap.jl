@@ -18,10 +18,10 @@ Cone(; quality=10) = merge([
     Makie._mantle(Point3f(0), Point3f(0, 0, 1), 0.5f0, 0.0f0, quality)])
 cone = Cone()
 
-brain = load(assetpath("brain.stl"))
-matball = load(assetpath("matball_base.obj"))
-matball_inner = load(assetpath("matball_inner.obj"))
-matball_outer = load(assetpath("matball_outer.obj"))
+brain = load(Makie.assetpath("brain.stl"))
+matball = load(Makie.assetpath("matball_base.obj"))
+matball_inner = load(Makie.assetpath("matball_inner.obj"))
+matball_outer = load(Makie.assetpath("matball_outer.obj"))
 ## download more ids from here:
 ## https://raw.githubusercontent.com/MakieOrg/BeautifulMakie/main/data/
 #ids = JSON.parsefile("matcapIds.json")

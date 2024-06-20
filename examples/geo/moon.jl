@@ -21,8 +21,6 @@ ax = Axis3(fig, aspect=:data, viewmode=:fitzoom, #perspectiveness = 0.5,
 surface!(ax, x, y, z; 
     color=moon, 
     shading = FastShading,
-    lightposition=Vec3f(-2, -3, -3), 
-    ambient=Vec3f(0.8, 0.8, 0.8),
     backlight=1.5f0
     )
 hidedecorations!(ax)

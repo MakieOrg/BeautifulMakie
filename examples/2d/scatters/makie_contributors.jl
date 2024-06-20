@@ -42,5 +42,3 @@ end
 
 fig = plotcontributors(avatars)
 save("makie_contributors.png", fig); # hide
-
-# ![](makie_contributors.png)

@@ -25,9 +25,9 @@ function plotVolColormaps(; rseed = 123)
         elevation = π / 9
         )
     volume!(ax, xs, ys, zs, A; colormap = cmap, transparency = true, colorrange = (0,5))
-    fig[0, 1] = GLMakie.Label(fig, @lift("Colormap: $(cs[$cmapIdx])"), fontsize = 20,
+    fig[0, 1] = GLMakie.Label(fig, @lift("Colormap: $(cs[$cmapIdx]), id : $($cmapIdx)"), fontsize = 20,
         tellheight = true, tellwidth = false)
-    sl = Slider(fig[1, 2], range = 1:length(cs), startvalue = 380, horizontal = false)
+    sl = Slider(fig[1, 2], range = 1:length(cs), startvalue = 1021, horizontal = false)
     connect!(cmapIdx, sl.value)
     fig
 end
