@@ -20,12 +20,12 @@ const vitestConfig = defineVitestConfig({
     },
 });
 const viteConfig = defineViteConfig({
-  base: '/',
+  base: 'REPLACE_ME_DOCUMENTER_VITEPRESS',
   title: "Beautiful Makie",
   description: "A gallery collection",
   lastUpdated: true,
   cleanUrls: true,
-  
+  outDir: 'REPLACE_ME_DOCUMENTER_VITEPRESS',
   markdown: {
     config(md) {
       md.use(tabsMarkdownPlugin)
@@ -345,7 +345,7 @@ const viteConfig = defineViteConfig({
                 { text: 'how_to_cube',link: '/examples/3d/meshes/how_to_cube' },
                 { text: 'meshes',link: '/examples/3d/meshes/meshes' },
                 { text: 'simplex',link: '/examples/3d/meshes/simplex' },
-
+                { text: 'Isosurfaces',link: '/examples/3d/meshes/isosurfaces' },
               ],
             },
             {
@@ -488,6 +488,7 @@ const viteConfig = defineViteConfig({
         },
       ],
     },
+    editLink: 'REPLACE_ME_DOCUMENTER_VITEPRESS',
     socialLinks: [
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/lazaro-alonso/' },
       { icon: 'github', link: 'https://github.com/lazarusA' },
