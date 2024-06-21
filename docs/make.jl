@@ -10,7 +10,16 @@ makedocs(; sitename="BeautifulMakie", authors="Lazaro Alonso",
     clean=true,
     checkdocs=:all,
     format=DocumenterVitepress.MarkdownVitepress(;
-        repo = "github.com/MakieOrg/BeautifulMakie",),
-    draft=false,
-    source="src", build=joinpath(@__DIR__, "docs_site/")
+        repo = "github.com/MakieOrg/BeautifulMakie"),
+        draft = false,
+        source = "src",
+        build = "build",
     )
+
+deploydocs(; 
+    repo = "github.com/MakieOrg/BeautifulMakie", # this must be the full URL!
+    target = "build", # this is where Vitepress stores its output
+    branch = "gh-pages",
+    devbranch = "main",
+    push_preview = true
+)
