@@ -358,6 +358,7 @@ const viteConfig = defineViteConfig({
                 { text: 'RRGraph3D',link: '/examples/3d/mscatters/RRGraph3D' },
                 { text: 'SSAO_meshscatter',link: '/examples/3d/mscatters/SSAO_meshscatter' },
                 { text: 'SSAO_mgrid',link: '/examples/3d/mscatters/SSAO_mgrid' },
+                { text: 'LScene limits',link: '/examples/3d/mscatters/lscene_limits' },
               ],
             },
             {
