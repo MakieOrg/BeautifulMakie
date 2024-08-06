@@ -8,10 +8,9 @@ using GLMakie
 using Meshing, GeometryBasics
 GLMakie.activate!()
 
-isoval = 100
-algo = MarchingCubes(; iso=isoval)
+function show_isosurface(f,h,ξ; color=(:dodgerblue,0.5), isoval=100)
+  algo = MarchingCubes(; iso=isoval)
 
-function show_isosurface(f,h,ξ; color=(:dodgerblue,0.5))
   s = [h(x,y,z) for x in ξ, y in ξ, z in ξ] .+ isoval
   # generate the mesh using marching cubes
   vts, fcs = isosurface(s, algo)
