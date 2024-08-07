@@ -8,9 +8,9 @@ d = DataFrame(name = repeat(["A","B","C","D","E","F"], inner=4),
       time=repeat([0,1,3,6], outer=6), value = rand(24));
 
 pSL = data(d)
-pSL *= mapping(:time, :value, color = :name, #text = :name => verbatim # now is not working :(
-    )
-pSL *= visual(ScatterLines) # + visual(Makie.Text, align = (:center, :bottom))
+pSL *= mapping(:time, :value)
+pSL *= mapping(color = :name) * visual(ScatterLines) +
+    mapping(color = :name, text = :name => verbatim) * visual(Makie.Text, align = (:center, :bottom))
 with_theme(theme_ggplot2(), size = (600,400)) do
     draw(pSL)
 end

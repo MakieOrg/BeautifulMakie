@@ -31,7 +31,8 @@ save("densityridges1.png", current_figure()); # hide
 p_len  = data(penguins)
 ## p_len = AoG.density()
 p_len *= mapping(:flipper_length_mm, color=:species)
-p_len *= visual(AoG.Density, direction=:y, offset = 1.0,
+p_len *= AoG.density()
+p_len *= visual(direction=:y, offset = 1.0, # direction is not working!
     alpha = 0.2, strokewidth = 1.5, strokecolor = :grey20)
 draw(p_len)
 
