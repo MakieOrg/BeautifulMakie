@@ -8,14 +8,19 @@ using GLMakie
 using Meshing, GeometryBasics
 GLMakie.activate!()
 
-isoval = 100
-algo = MarchingCubes(iso=isoval, insidepositive=false)
+function show_isosurface(f,h,ξ; color=(:dodgerblue,0.5), isoval=100)
+  algo = MarchingCubes(; iso=isoval)
 
-function show_isosurface(f,h,ξ; color=(:dodgerblue,0.5))
   s = [h(x,y,z) for x in ξ, y in ξ, z in ξ] .+ isoval
-  mc = GeometryBasics.Mesh(s, algo)
+  
+  ## generate the mesh using marching cubes
+  
+  vts, fcs = isosurface(s, algo)
+  
+  ## mc = GeometryBasics.Mesh(s, algo)
 
-  return mesh(f, normal_mesh(mc); color,
+  return mesh(f, vts, map(v -> GeometryBasics.TriangleFace(v...), fcs);
+      color,
       diffuse = Vec3f0(0.8),
       specular = Vec3f0(1.1),
       shininess = 30f0,

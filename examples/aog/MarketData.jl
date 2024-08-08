@@ -32,11 +32,11 @@ save("market_data2.svg", current_figure()); # hide
 df = DataFrame(ohlc)
 pltd = data(df[200:280,:])
 plt = pltd * mapping(:timestamp, :Open => "StockChart")
-plt *= mapping(fillto=:Close, color = (:Open, :Close) => isless => "Open<Close")
+plt *= mapping(color = (:Open, :Close) => isless => "Open<Close") # fillto=:Close, because of this, the plot is wrong
 plt *= visual(BarPlot)
 
 with_theme(theme_dark(), size = (800,500)) do
-    draw(plt, palettes =(; color = [:deepskyblue, :firebrick3]))
+    draw(plt, scales(Color = (; palette = [:deepskyblue, :firebrick3])))
 end
 
 save("market_data3.svg", current_figure()); # hide

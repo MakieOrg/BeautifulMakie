@@ -23,6 +23,7 @@ function get_files(folders)
                 "textScatterLines.jl",
                 "gott_azimuthal.jl",
                 "us_states.jl",
+                "gapminder.jl",
                 ])
                 
             fpaths  = "$(f)/" .* names

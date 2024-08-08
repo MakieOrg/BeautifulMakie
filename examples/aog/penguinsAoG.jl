@@ -19,10 +19,10 @@ p_len  = data(penguins)
 p_len *= mapping(:flipper_length_mm => (t -> t / 10) => "flipper length (cm)",
     :bill_length_mm => (t -> t / 10) => "bill length (cm)")
 ## declare the grouping and the respective visual attribute
-p_len *= mapping(color=:species, marker=:species)
+p_len *= mapping(color=:species)
 
 with_theme(theme_ggplot2(),size = (600,400), palette=palette, Scatter=(cycle=cycle,)) do
-    draw(p_len + p_len * linear(); 
+    draw(p_len * mapping(marker=:species) + p_len * linear(); 
         axis = (; title="Flipper and bill length"))
 end
 
