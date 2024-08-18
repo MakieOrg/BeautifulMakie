@@ -15,11 +15,10 @@ function show_isosurface(f,h,ξ; color=(:dodgerblue,0.5), isoval=100)
   
   ## generate the mesh using marching cubes
   
-  vts, fcs = isosurface(s, algo)
+  vts, fcs = Meshing.isosurface(s, algo)
+  mc = GeometryBasics.Mesh(Point3f.(vts), GeometryBasics.TriangleFace.(fcs))
   
-  ## mc = GeometryBasics.Mesh(s, algo)
-
-  return mesh(f, vts, map(v -> GeometryBasics.TriangleFace(v...), fcs);
+  return mesh(f, normal_mesh(mc);
       color,
       diffuse = Vec3f0(0.8),
       specular = Vec3f0(1.1),
@@ -32,7 +31,7 @@ end
 
 # ### Torus 
 
-# isosurfaces for h(x,y,z)=0
+# Isosurfaces for ``h(x,y,z)=0``
 
 torus(x,y,z; c=20, a=15) = ((hypot(x,y)-c)^2+z^2-a^2)
 
