@@ -331,6 +331,7 @@ const viteConfig = defineViteConfig({
               items: [
                 { text: 'archimedean_spiral',link: '/examples/3d/lines3d/archimedean_spiral' },
                 { text: 'lines3d',link: '/examples/3d/lines3d/line3d' },
+                { text: 'Filled 3d curve',link: '/examples/3d/lines3d/filled3d_curve'},
                 { text: 'lines_wire_contour_3d',link: '/examples/3d/lines3d/lines_wire_contour_3d' },
                 { text: 'wireframe_torus',link: '/examples/3d/lines3d/wireframe_torus' },
               ],
