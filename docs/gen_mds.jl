@@ -18,6 +18,7 @@ function get_files(folders)
                 "world_energy.jl",
                 "gott_azimuthal.jl",
                 "earthquakes_proj.jl",
+                "rasters.jl",
                 "submarine_cables.jl",
                 "textScatterLines.jl",
                 "gott_azimuthal.jl",
