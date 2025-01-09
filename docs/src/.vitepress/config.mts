@@ -218,6 +218,7 @@ const viteConfig = defineViteConfig({
                 { text: 'line_xlog',link: '/examples/2d/lines/line_xlog' },
                 { text: 'line_xylog',link: '/examples/2d/lines/line_xylog' },
                 { text: 'line_ylog',link: '/examples/2d/lines/line_ylog' },
+                { text: 'line_broken_axis',link: '/examples/2d/lines/line_broken_axis' },
               ],
             },
             {

@@ -11,7 +11,7 @@ docs/src/.vitepress/cache
 docs/docs_site/.vitepress/dist
 docs/docs_site/.vitepress/cache
 docs/src/examples
-
+package-lock.json
 .cache
 dev
 test_record

@@ -154,9 +154,9 @@ mjx-container > svg {
  * -------------------------------------------------------------------------- */
 
  :root {
-  --vp-c-brand-1: #e4c92a;
-  --vp-c-brand-2: #e4c92a;
-  --vp-c-brand-3: #e4c92a;
+  --vp-c-brand-1: #ca2971;
+  --vp-c-brand-2: #ca2971;
+  --vp-c-brand-3: #ca2971;
   --vp-c-sponsor: #ca2971;
   --vitest-c-sponsor-hover: #c13071;
 }
