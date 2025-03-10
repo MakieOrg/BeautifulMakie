@@ -3,7 +3,10 @@
 # ![](astronauts.png)
 
 using CairoMakie, HTTP, CSV, DataFrames, DataFramesMeta, Suppressor
-using Images, ColorSchemes, Colors, Statistics
+using Statistics
+using CairoMakie.FileIO
+using ColorSchemes
+using Colors
 using Downloads
 using Lazy: @>
 CairoMakie.activate!(type = "png")
