@@ -19,3 +19,4 @@ dev
 test_record
 node_modules
 tmp_*
+.qodo

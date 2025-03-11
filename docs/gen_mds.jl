@@ -22,6 +22,8 @@ function get_files(folders)
                 "gott_azimuthal.jl",
                 "earthquakes_proj.jl",
                 "rasters.jl",
+                "how_to_cube.jl",
+                "cpunkCube.jl",
                 "submarine_cables.jl",
                 "textScatterLines.jl",
                 "gott_azimuthal.jl",

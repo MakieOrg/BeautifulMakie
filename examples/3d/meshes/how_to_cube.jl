@@ -10,7 +10,7 @@ mr = Rect3f(Vec3f(-0.5), Vec3f(1))
 fig, ax, obj = mesh(mr; color = :white, transparency=true,
     figure = (; size = (1200,600)))
 wireframe!(ax, mr; color = :black, transparency=true)
-mesh(fig[1,2], mr; color = [v[3] for v in coordinates(mr)],
+mesh(fig[1,2], mr; color = vcat([repeat([v[2]], 3) for v in coordinates(mr)]...),
     colormap = :Spectral_11)
 fig
 
