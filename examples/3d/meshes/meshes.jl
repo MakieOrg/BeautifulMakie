@@ -24,10 +24,10 @@ rectMesh = GeometryBasics.mesh(rectmesh)
 rectThin = GeometryBasics.mesh(rectthin)
 cyL = GeometryBasics.mesh(cyl)
 
-cmap = resample_cmap(:Spectral_11, length(rectMesh.position))
-colors1 = [cmap[i] for (i,v) in enumerate(rectMesh.position)]
-colors2 = [RGBA(rand(4)...) for v in rectThin.position]
-colors3 = [norm(v) for v in cyL.position]
+cmap = resample_cmap(:Spectral_11, 3*length(rectMesh.position))
+colors1 = [cmap[i] for i in 1:3*length(rectMesh.position)]
+colors2 = repeat([RGBA(rand(4)...) for v in rectThin.position], 3)
+colors3 = repeat([norm(v) for v in cyL.position], 2)[1:62]
 markers = [sphere, rectmesh, cyl, pyr, cone]
 
 with_theme(theme_dark()) do

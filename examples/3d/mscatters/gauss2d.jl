@@ -20,7 +20,7 @@ cmap_alpha = resample_cmap(:linear_worb_100_25_c53_n256, n, alpha = alphas)
 with_theme(theme_dark()) do
     fig, ax, = meshscatter(x, y, z; 
         marker=box, 
-        markersize = 0.5, 
+        markersize = 0.05, 
         color = vec(z), 
         colormap = cmap_alpha,
         colorrange = (0,6),
@@ -33,7 +33,7 @@ with_theme(theme_dark()) do
         figure = (;
             size =(1200,800)))
     meshscatter!(ax, x .+ 7, y, z./2; 
-        markersize = 0.25, 
+        markersize = 0.05, 
         color = vec(z./2), 
         colormap = cmap_alpha, 
         colorrange = (0, 6), 
