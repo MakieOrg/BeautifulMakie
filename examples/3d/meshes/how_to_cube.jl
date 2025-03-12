@@ -39,16 +39,16 @@ fig
 
 function meshcube(o=Vec3f(0), sizexyz = Vec3f(1))
     uvs = [Vec2f(x, y) for y in 0:0.5:1 for x in range(0, 1, length=4)]
+    ##          -              + 
     fs = QuadFace[
-        #    -              + 
         (1, 2, 6, 5), (6, 7, 11, 10),  # x
         (2, 3, 7, 6), (7, 8, 12, 11),  # y
         (3, 4, 8, 7), (5, 6, 10, 9),   # z
     ]
-
     r = Rect3f(Vec3f(-0.5) .+ o, sizexyz)
     m = GeometryBasics.Mesh(coordinates(r), faces(r);
         uv = GeometryBasics.FaceView(uvs, fs), normal = normals(r))
+    return m
 end
 m = meshcube();
 
