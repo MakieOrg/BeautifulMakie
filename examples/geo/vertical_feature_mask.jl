@@ -23,15 +23,15 @@ longpath = GeoMakie.coastlines()[idx_l[2]]
 
 
 linepath = Point3f[]
-for p in longpath
-    push!(linepath, Point3f(p[1]..., 0))
-    push!(linepath, Point3f(p[1]..., 0))
+for p in longpath.points
+    push!(linepath, Point3f(p..., 0))
+    push!(linepath, Point3f(p..., 0))
 end
 
 linepathh = Point3f[]
-for p in longpath
-    push!(linepathh, Point3f(p[1]..., 20))
-    push!(linepathh, Point3f(p[1]..., 20))
+for p in longpath.points
+    push!(linepathh, Point3f(p..., 20))
+    push!(linepathh, Point3f(p..., 20))
 end
 
 fig = Figure(size=(800, 400), fontsize=22)
@@ -39,7 +39,7 @@ ax = LScene(fig[1,1]; show_axis=false)
 lines!(ax, GeoMakie.coastlines(), transparency=true, color=:white)
 lines!(ax, linepath, color = :orangered, linewidth=2.5, transparency=true)
 lines!(ax, linepathh, color = :white, linewidth=2.5, transparency=true)
-band!(ax, linepath, linepathh, color = repeat(1:1384,outer=2), transparency=true)
+band!(ax, linepath, linepathh, color = repeat(1:1386, outer=2), transparency=true)
 image!(ax, -180..180, -90..90, earth_img'[:,end:-1:1])
 rotate!(ax.scene, 2*pi/2.6)
 fig

@@ -6,19 +6,20 @@ GLMakie.closeall() # close any open screen
 
 # ## Simple cubed mesh
 mr = Rect3f(Vec3f(-0.5), Vec3f(1))
+mr_n = GeometryBasics.normal_mesh(mr)
 
 fig, ax, obj = mesh(mr; color = :white, transparency=true,
     figure = (; size = (1200,600)))
 wireframe!(ax, mr; color = :black, transparency=true)
-mesh(fig[1,2], mr; color = [v[3] for v in coordinates(mr)],
+mesh(fig[1,2], mr_n; color = Array(vcat(coordinates(mr_n)...)),
     colormap = :Spectral_11)
 fig
 
 # Adding some colours at random
 
-fig, ax, obj = mesh(mr; color = rand(length(coordinates(mr))),
+fig, ax, obj = mesh(mr; color = rand(24),
     colormap = :sunset, figure = (; size = (1200,600)))
-mesh(fig[1,2], mr; color = 1:length(coordinates(mr)),
+mesh(fig[1,2], mr; color = 1:24,
     colormap = :sunset)
 fig
 
@@ -37,17 +38,17 @@ fig
 # Solution by ffreyer, define new uvs
 
 function meshcube(o=Vec3f(0), sizexyz = Vec3f(1))
-    uvs = map(v -> v ./ (3, 2), Vec2f[
-    (0, 0), (0, 1), (1, 1), (1, 0),
-    (1, 0), (1, 1), (2, 1), (2, 0),
-    (2, 0), (2, 1), (3, 1), (3, 0),
-    (0, 1), (0, 2), (1, 2), (1, 1),
-    (1, 1), (1, 2), (2, 2), (2, 1),
-    (2, 1), (2, 2), (3, 2), (3, 1),
-    ])
-    m = normal_mesh(Rect3f(Vec3f(-0.5) .+ o, sizexyz))
-    m = GeometryBasics.Mesh(meta(coordinates(m);
-        uv = uvs, normals = normals(m)), faces(m))
+    uvs = [Vec2f(x, y) for y in 0:0.5:1 for x in range(0, 1, length=4)]
+    ##          -              + 
+    fs = QuadFace[
+        (1, 2, 6, 5), (6, 7, 11, 10),  # x
+        (2, 3, 7, 6), (7, 8, 12, 11),  # y
+        (3, 4, 8, 7), (5, 6, 10, 9),   # z
+    ]
+    r = Rect3f(Vec3f(-0.5) .+ o, sizexyz)
+    m = GeometryBasics.Mesh(coordinates(r), faces(r);
+        uv = GeometryBasics.FaceView(uvs, fs), normal = normals(r))
+    return m
 end
 m = meshcube();
 
@@ -79,13 +80,9 @@ mesh(m; color = img, interpolate=false)
 
 # ## Individual images per face
 
-timgs = ["bark_512", "bark_he_512", "brick_wall_he_512",
-    "woolen_cloth_he_512", "wood_grain_he_512", "straw_he_512"];
-
-
 fig = Figure(figure_padding=0, size =(600,400))
 axs = [Axis(fig[i,j], aspect=1) for i in 1:2 for j in 1:3]
-[heatmap!(axs[i], testimage(timgs[i])) for i in 1:6]
+[heatmap!(axs[i], testimage("chelsea")) for i in 1:6]
 hidedecorations!.(axs)
 hidespines!.(axs)
 colgap!(fig.layout,0)

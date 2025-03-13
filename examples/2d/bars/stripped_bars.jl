@@ -15,7 +15,7 @@ directions = [Vec2f(1), Vec2f(1, -1), Vec2f(1, 0), Vec2f(0, 1),
 colors = [:white, :orange, (:green, 0.5), :yellow, (:blue, 0.85), :black]
 ## then defining the patches are defined by calling LinePattern
 patternColors = [Makie.LinePattern(direction = hatch; width = 5, tilesize = (20, 20),
-    linecolor = colors[indx], background_color = colors[end-indx+1])
+    linecolor = colors[indx], backgroundcolor = colors[end-indx+1])
         for (indx, hatch) in enumerate(directions)];
 
 ## We could start with normal barplots

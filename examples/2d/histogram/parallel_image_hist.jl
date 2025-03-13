@@ -3,15 +3,16 @@
 # ![](parallel_image_hist.png)
 
 using CairoMakie
-import TestImages, Images
+import TestImages
+using Colors
 CairoMakie.activate!(type = "png") #hide
 
 ## example by @cormullion
 function  image_histogram()
     img = TestImages.testimage("lighthouse")
-    reds = vec(float.(Images.red.(img)))
-    greens = vec(float.(Images.green.(img)))
-    blues = vec(float.(Images.blue.(img)))
+    reds = vec(float.(red.(img)))
+    greens = vec(float.(green.(img)))
+    blues = vec(float.(blue.(img)))
     
     fig = Figure(; size = (1200,400))
     ax1 = Axis(fig[1, 1], aspect = DataAspect())

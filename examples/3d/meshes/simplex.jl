@@ -12,7 +12,7 @@ vertices = [
     0 1 0 
     0 0 1
     ]
-faces = [
+_faces = [
     3 2 1
     4 1 2
     4 3 1
@@ -25,8 +25,8 @@ marker = Sphere(Point3f(0), 1) # 0 -> -0.5, fully inside, 0 -> 0.5 fully outside
 
 fig = Figure(size = (600,600))
 ax = LScene(fig[1,1], show_axis=false)
-m = mesh!(ax, vertices, faces; color = :white, transparency=true,)
-poly!(ax, vertices, faces; color = :transparent, 
+m = mesh!(ax, vertices, _faces; color = :white, transparency=true,)
+poly!(ax, vertices, _faces; color = :transparent, 
     transparency=true, strokewidth = 1.0)
 meshscatter!(ax, 
     Point3f(1/3, 1/3,1/3),  # you need to calculate this for your use case
@@ -46,6 +46,6 @@ arrows!(ax,
     color = :dodgerblue,
     arrowcolor = :orange)
 zoom!(ax.scene, cameracontrols(ax.scene), 0.9)
-rotate!(ax.scene, -0.1)
+GLMakie.rotate!(ax.scene, -0.1)
 fig
 save("simplex.png", fig); # hide

@@ -7,10 +7,10 @@
   "devDependencies": {
     "markdown-it": "^14.1.0",
     "markdown-it-mathjax3": "^4.3.2",
-    "vitepress-plugin-tabs": "^0.5.0",
-    "vitest": "^1.6.0"
+    "vitepress-plugin-tabs": "^0.6.0",
+    "vitest": "^3.0.8"
   },
   "dependencies": {
-    "vitepress": "^1.1.4"
+    "vitepress": "^1.6.3"
   }
 }

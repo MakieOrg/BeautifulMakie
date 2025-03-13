@@ -20,8 +20,8 @@ function show_isosurface(f,h,ξ; color=(:dodgerblue,0.5), isoval=100)
   
   return mesh(f, normal_mesh(mc);
       color,
-      diffuse = Vec3f0(0.8),
-      specular = Vec3f0(1.1),
+      diffuse = Vec3f(0.8),
+      specular = Vec3f(1.1),
       shininess = 30f0,
       backlight = 5f0,
       transparency=true,

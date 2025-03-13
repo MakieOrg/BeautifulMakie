@@ -10,26 +10,26 @@ GLMakie.closeall() # close any open screen
 # ## Download images from twitter
 lucy = Downloads.download("https://pbs.twimg.com/media/FbbZqWTXkAA8KTo?format=jpg&name=large")
 lucy = load(lucy)
-lucy = lucy[1:1000,1:1000]
+lucy = lucy[1:1000,1:1000];
 
 david = Downloads.download("https://pbs.twimg.com/media/FdGmKklXEAAkdG1?format=jpg&name=large")
 david = load(david)
-david = david[1:1000,1:1000]
+david = david[1:1000,1:1000];
 
 faraday = Downloads.download("https://pbs.twimg.com/media/Fdq1ev-X0AM-tXv?format=jpg&name=large")
 faraday = load(faraday)
-faraday = faraday[1:1000,1:1000]
+faraday = faraday[1:1000,1:1000];
 
 lucydavid = Downloads.download("https://pbs.twimg.com/media/FdAs55qXoAAyG9l?format=jpg&name=large")
 lucydavid = load(lucydavid)
 
 luda = Downloads.download("https://pbs.twimg.com/media/Fcs-pGSX0AIdzWs?format=jpg&name=large") 
 luda = load(luda)
-luda = luda[201-40:1240,end:-1:1]
+luda = luda[201-40:1240,end:-1:1];
 
 poster = Downloads.download("https://pbs.twimg.com/media/FZFjXDAWIAE-vAT?format=jpg&name=large")
 poster = load(poster)
-poster = poster[1+80:1080+80,end:-1:1]
+poster = poster[1+80:1080+80,end:-1:1];
 
 # ## Set images into the right (your) order
 imgs = [rotr90(lucydavid), lucy, rotl90(david), 
@@ -46,17 +46,17 @@ imgcpunk = Makie.colorbuffer(fig)
 
 # ## Do the meshed cube
 function meshcube(o=Vec3f(0), sizexyz = Vec3f(1))
-    uvs = map(v -> v ./ (3, 2), Vec2f[
-    (0, 0), (0, 1), (1, 1), (1, 0),
-    (1, 0), (1, 1), (2, 1), (2, 0),
-    (2, 0), (2, 1), (3, 1), (3, 0),
-    (0, 1), (0, 2), (1, 2), (1, 1),
-    (1, 1), (1, 2), (2, 2), (2, 1),
-    (2, 1), (2, 2), (3, 2), (3, 1),
-    ])
-    m = normal_mesh(Rect3f(Vec3f(-0.5) .+ o, sizexyz))
-    m = GeometryBasics.Mesh(meta(coordinates(m);
-        uv = uvs, normals = normals(m)), faces(m))
+    uvs = [Vec2f(x, y) for y in 0:0.5:1 for x in range(0, 1, length=4)]
+    ##          -              + 
+    fs = QuadFace[
+        (1, 2, 6, 5), (6, 7, 11, 10),  # x
+        (2, 3, 7, 6), (7, 8, 12, 11),  # y
+        (3, 4, 8, 7), (5, 6, 10, 9),   # z
+    ]
+    r = Rect3f(Vec3f(-0.5) .+ o, sizexyz)
+    m = GeometryBasics.Mesh(coordinates(r), faces(r);
+        uv = GeometryBasics.FaceView(uvs, fs), normal = normals(r))
+    return m
 end
 
 m = meshcube();

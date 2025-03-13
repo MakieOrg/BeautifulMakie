@@ -14,7 +14,7 @@ end
 
 function ssaoplanes()
     fig = Figure()
-    ssao = Makie.SSAO(radius = 5.0, blur = 3)
+    ssao = Makie.SSAO(radius = 1.35, blur = 3)
     ax = LScene(fig[1, 1]; show_axis=false, scenekw=(ssao=ssao,))
     ax.scene.ssao.bias[] = 0.025
     mesh!(ax, SphereTess(; o=Point3f(0.1, 0, 0), r=0.95);
