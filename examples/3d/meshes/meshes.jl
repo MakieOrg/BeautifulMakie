@@ -5,7 +5,7 @@
 using GLMakie, Random, Colors, LinearAlgebra
 using GeometryBasics: Cylinder, Pyramid
 using Makie
-import GeometryBasics
+using GeometryBasics
 GLMakie.activate!() # hide
 GLMakie.closeall() # close any open screen
 
@@ -16,10 +16,38 @@ pyr = Pyramid(Point3f(0), 1f0, 1f0)
 rectmesh = Rect3(Point3f(-0.5), Vec3f(1))
 rectthin = Rect3(Point3f(-1), Vec3f(2,2,0.25))
 sphere = Sphere(Point3f(-0.5), 1)
-Cone(; quality = 10) = merge([
-    Makie._circle(Point3f(0), 0.5f0, Vec3f(0,0,-1), quality),
-    Makie._mantle(Point3f(0), Point3f(0,0,1), 0.5f0, 0f0, quality)])
-cone = Cone()
+function Kone(; quality = 10)
+    # Create base circle points
+    base_radius = 0.5f0
+    base_points = Point3f[]
+    for i in 0:quality-1
+        angle = 2π * i / quality
+        x = base_radius * cos(angle)
+        y = base_radius * sin(angle)
+        push!(base_points, Point3f(x, y, 0))
+    end
+    
+    # Apex point
+    apex = Point3f(0, 0, 1)
+    
+    # Create faces connecting base to apex
+    faces = TriangleFace{Int}[]
+    for i in 1:quality
+        next_i = (i % quality) + 1
+        # Triangle: base point i, base point next, apex
+        push!(faces, TriangleFace(i, next_i, quality + 1))
+    end
+    # Base circle face
+    for i in 2:quality-1
+        push!(faces, TriangleFace(1, i, i + 1))
+    end
+    
+    # Combine all points
+    all_points = vcat(base_points, [apex])
+    
+    return GeometryBasics.Mesh(all_points, faces)
+end
+cone = Kone()
 rectMesh = GeometryBasics.mesh(rectmesh)
 rectThin = GeometryBasics.mesh(rectthin)
 cyL = GeometryBasics.mesh(cyl)

@@ -19,13 +19,12 @@ with_theme(theme_black()) do
 
     axis = ax.scene[OldAxis]
     axis[:names, :axisnames] = ("x", "y", "z")
-    tstyle = axis[:names] #  get the nested attributes and work directly with them
-    tstyle[:fontsize] = 10
-    tstyle[:textcolor] = (:red, :green, :white)
-    tstyle[:font] = "helvetica"
-    tstyle[:gap] = 5
-    axis[:ticks][:textcolor] = :white
-    axis[:ticks][:fontsize] = 5
+    axis[:names, :fontsize] = 10
+    axis[:names, :textcolor] = (:red, :green, :white)
+    axis[:names, :font] = "helvetica"
+    axis[:names, :gap] = 5
+    axis[:ticks, :textcolor] = :white
+    axis[:ticks, :fontsize] = 5
     Colorbar(fig[1,2], line3d, label = "z",ticklabelsize = 14,
         width = 12, height = Relative(2/4), tickalign=0)
     fig

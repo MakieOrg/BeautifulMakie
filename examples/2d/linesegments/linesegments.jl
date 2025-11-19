@@ -12,7 +12,7 @@ function someSegments(; n = 50)
 end
 linesegments(someSegments(; n = n);
     color = rand(n), 
-    colormap = :Spectral_11, linewidth = abs.(randn(n)), 
+    colormap = :Spectral_11, linewidth = ones(2*n), 
     axis = (; xlabel = "x", ylabel = "y"),
     figure = (; size = (600,400))
     );

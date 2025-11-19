@@ -13,11 +13,38 @@ GLMakie.closeall() # close any open screen
 pyr = Pyramid(Point3f(0), 1.0f0, 1.0f0)
 rectmesh = Rect3(Point3f(-0.5), Vec3f(1))
 sphere = Sphere(Point3f(-0.5), 1)
-Cone(; quality=10) = merge([
-    Makie._circle(Point3f(0), 0.5f0, Vec3f(0, 0, -1), quality),
-    Makie._mantle(Point3f(0), Point3f(0, 0, 1), 0.5f0, 0.0f0, quality)])
-cone = Cone()
-
+function Kone(; quality = 10)
+    # Create base circle points
+    base_radius = 0.5f0
+    base_points = Point3f[]
+    for i in 0:quality-1
+        angle = 2π * i / quality
+        x = base_radius * cos(angle)
+        y = base_radius * sin(angle)
+        push!(base_points, Point3f(x, y, 0))
+    end
+    
+    # Apex point
+    apex = Point3f(0, 0, 1)
+    
+    # Create faces connecting base to apex
+    faces = TriangleFace{Int}[]
+    for i in 1:quality
+        next_i = (i % quality) + 1
+        # Triangle: base point i, base point next, apex
+        push!(faces, TriangleFace(i, next_i, quality + 1))
+    end
+    # Base circle face
+    for i in 2:quality-1
+        push!(faces, TriangleFace(1, i, i + 1))
+    end
+    
+    # Combine all points
+    all_points = vcat(base_points, [apex])
+    
+    return GeometryBasics.Mesh(all_points, faces)
+end
+cone = Kone()
 brain = load(Makie.assetpath("brain.stl"))
 matball = load(Makie.assetpath("matball_base.obj"))
 matball_inner = load(Makie.assetpath("matball_inner.obj"))
@@ -35,7 +62,7 @@ function plotmat()
     idpng = @lift(ids[$idx])
     matcap = @lift(load(Downloads.download("https://raw.githubusercontent.com/nidorx/matcaps/master/1024/$($idpng).png")))
 
-    shading = FastShading
+    shading = true
     fig = Figure(size=(900, 600))
     axs = [LScene(fig[i, j]; show_axis=false)
             for j in 1:3, i in 1:2]
