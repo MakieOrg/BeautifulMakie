@@ -16,6 +16,10 @@ const sidebar = {
   ...sidebarData,
 }
 
+const baseTemp = {
+  base: 'REPLACE_ME_DOCUMENTER_VITEPRESS',
+}
+
 // https://vitepress.dev/reference/site-config
 const vitestConfig = defineVitestConfig({
     build: {
