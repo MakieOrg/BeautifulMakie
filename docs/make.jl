@@ -17,7 +17,7 @@ makedocs(; sitename="BeautifulMakie", authors="Lazaro Alonso",
         build = "build",
     )
 
-deploydocs(; 
+DocumenterVitepress.deploydocs(; 
     repo = "github.com/MakieOrg/BeautifulMakie", # this must be the full URL!
     target = "build", # this is where Vitepress stores its output
     branch = "gh-pages",

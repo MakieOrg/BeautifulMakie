@@ -41,7 +41,7 @@ jobs:
       - name: Install documentation dependencies
         run: sudo apt-get update && sudo apt-get install -y xorg-dev mesa-utils xvfb libgl1 freeglut3-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libxext-dev libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
       - name: Install custom documentation dependencies
-        run: DISPLAY=:0 xvfb-run -s '-screen 0 1024x768x24' julia --project=docs -e 'using Pkg; Pkg.instantiate(); Pkg.precompile()'
+        run: DISPLAY=:0 xvfb-run -s '-screen 0 1024x768x24' julia --project=docs -e 'using Pkg; Pkg.add(url="https://github.com/MakieOrg/Makie.jl", subdir="Makie"); Pkg.add(url="https://github.com/MakieOrg/Makie.jl", subdir="CairoMakie"); Pkg.add(url="https://github.com/MakieOrg/Makie.jl", subdir="GLMakie"); Pkg.instantiate(); Pkg.precompile()'
       - name: Build and deploy docs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # For authentication with GitHub Actions token

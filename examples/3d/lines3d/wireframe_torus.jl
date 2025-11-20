@@ -22,11 +22,9 @@ wireframe!(ax, x1, y1, z1; transparency = true)
 ## some control over axis names.
 ## A lot more options are available in ax.scene[OldAxis]
 axis = ax.scene[OldAxis]
-tstyle = axis[:names]
-tstyle[:fontsize] = 16
-tstyle[:gap] = 8
-axis[:ticks][:textcolor] = :black
-axis[:ticks][:fontsize] = 10
+axis[:names, :fontsize] = 16
+axis[:names, :gap] = 8
+axis[:ticks, :textcolor] = :black
+axis[:ticks, :fontsize] = 10
 fig
-
 save("wireframe_torus.png", fig); # hide

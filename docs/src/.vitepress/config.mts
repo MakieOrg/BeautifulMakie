@@ -16,6 +16,10 @@ const sidebar = {
   ...sidebarData,
 }
 
+const baseTemp = {
+  base: 'REPLACE_ME_DOCUMENTER_VITEPRESS',
+}
+
 // https://vitepress.dev/reference/site-config
 const vitestConfig = defineVitestConfig({
     build: {
@@ -38,6 +42,9 @@ const viteConfig = defineViteConfig({
   lastUpdated: true,
   cleanUrls: true,
   outDir: 'REPLACE_ME_DOCUMENTER_VITEPRESS',
+  head: [
+    ['link', { rel: 'icon', href: 'REPLACE_ME_DOCUMENTER_VITEPRESS_FAVICON' }],
+  ],
   markdown: {
     config(md) {
       md.use(tabsMarkdownPlugin)

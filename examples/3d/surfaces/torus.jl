@@ -25,14 +25,13 @@ wireframe!(ax, x1, y1, z1; linewidth = 0.5, transparency = true)
 
 axis = ax.scene[OldAxis]
 axis[:names, :axisnames] = ("x", "y", "z")
-tstyle = axis[:names] #  get the nested attributes and work directly with them
 
-tstyle[:fontsize] = 15
-tstyle[:textcolor] = (:red, :green, :black)
-tstyle[:font] = "helvetica"
-tstyle[:gap] = 10
-axis[:ticks][:textcolor] = :black
-axis[:ticks][:fontsize] = 10
+axis[:names, :fontsize] = 15
+axis[:names, :textcolor] = (:red, :green, :black)
+axis[:names, :font] = "helvetica"
+axis[:names, :gap] = 10
+axis[:ticks, :textcolor] = :black
+axis[:ticks, :fontsize] = 10
 cbar1 = Colorbar(fig, tori1, label = "z", width = 25, ticklabelsize = 20,
     labelsize = 20, ticksize = 25, tickalign = 1, height = Relative(0.5))
 cbar2 = Colorbar(fig, tori2, label = "z", width = 25, flipaxis = false,

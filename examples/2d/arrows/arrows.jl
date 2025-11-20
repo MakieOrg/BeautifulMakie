@@ -14,8 +14,8 @@ cmap = :gnuplot
 
 fig = Figure(; size = (600, 400))
 ax = Axis(fig[1,1], xlabel = "x", ylabel = "y", aspect = DataAspect())
-arrows!(ax, xs, ys, us, vs, arrowsize = 10, lengthscale = 0.1,
-    arrowcolor = strength, linecolor = strength, colormap = cmap)
+arrows2d!(ax, xs, ys, us, vs, tipwidth = 10, lengthscale = 0.1,
+    tipcolor = strength, shaftcolor = strength, colormap = cmap)
 Colorbar(fig[1,2], limits =(minimum(strength), maximum(strength)),
     nsteps =100, colormap = cmap, ticksize=15, width = 15, tickalign=1)
 limits!(ax, -3,3,-3,3)

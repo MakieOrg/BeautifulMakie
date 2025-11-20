@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: Sponsor
-      link: https://github.com/sponsors/lazarusA?o=esb
+      link: https://github.com/sponsors/MakieOrg
     - theme: alt
       text: View on Github
       link: https://github.com/MakieOrg/BeautifulMakie
@@ -21,8 +21,10 @@ hero:
 features:
   - title: What is Makie?
     details: Makie is an interactive data visualization and plotting ecosystem for the Julia programming language, available on Windows, Linux and Mac. You can use Makie to interactively explore your data and create simple GUIs in native windows or web browsers, export high-quality vector graphics or even raytrace with physically accurate lightning.
+    link: https://docs.makie.org/stable/
   - title: Inspiration
     details: The name Makie (we pronounce it Mah-kee) is derived from the japanese word 蒔絵, which is a technique to sprinkle lacquer with gold and silver powder. Data is the gold and silver of our age, so let's spread it out beautifully on the screen! <br> <i>- Simon Danisch -</i>
+    link: https://github.com/sponsors/SimonDanisch
 ---
 <Gallery :images="images" />
 <script setup lang="ts">

@@ -44,3 +44,6 @@ StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 Suppressor = "fd094767-a336-5f1f-9728-57cf17d0bbfb"
 TestImages = "5e47fb64-e119-507b-a336-dd2b206d9990"
 TimeSeries = "9e3dc215-6440-5c97-bce1-76c03772f85e"
+
+[compat]
+DocumenterVitepress = "0.2.4"
