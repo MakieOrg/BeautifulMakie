@@ -1,0 +1,889 @@
+{
+  "/examples/dashboards/": [
+    {
+      "items": [
+        {
+          "link": "/examples/dashboards/colorschemes",
+          "text": "colorschemes"
+        },
+        {
+          "link": "/examples/dashboards/matcap",
+          "text": "matcap"
+        },
+        {
+          "link": "/examples/dashboards/tesseral_spherical_harmonics",
+          "text": "tesseral spherical harmonics"
+        }
+      ],
+      "text": "dashboards"
+    }
+  ],
+  "/examples/2d/": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "link": "/examples/2d/arrows/arrows",
+              "text": "arrows"
+            }
+          ],
+          "text": "arrows",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/band/band",
+              "text": "band"
+            },
+            {
+              "link": "/examples/2d/band/band_confidence_error",
+              "text": "band confidence error"
+            },
+            {
+              "link": "/examples/2d/band/band_ribbon",
+              "text": "band ribbon"
+            },
+            {
+              "link": "/examples/2d/band/filled_under",
+              "text": "filled under"
+            },
+            {
+              "link": "/examples/2d/band/filled_under_bell",
+              "text": "filled under bell"
+            }
+          ],
+          "text": "band",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/bars/barplot_cmap_y_error",
+              "text": "barplot cmap y error"
+            },
+            {
+              "link": "/examples/2d/bars/barplot_y_error",
+              "text": "barplot y error"
+            },
+            {
+              "link": "/examples/2d/bars/stripped_bars",
+              "text": "stripped bars"
+            },
+            {
+              "link": "/examples/2d/bars/x_barplot_error_y_error",
+              "text": "x barplot error y error"
+            }
+          ],
+          "text": "bars",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/boxplots/airquality",
+              "text": "airquality"
+            },
+            {
+              "link": "/examples/2d/boxplots/boxplots_collection",
+              "text": "boxplots collection"
+            },
+            {
+              "link": "/examples/2d/boxplots/vertical_horizontal",
+              "text": "vertical horizontal"
+            }
+          ],
+          "text": "boxplots",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/contour/complex_function",
+              "text": "complex function"
+            },
+            {
+              "link": "/examples/2d/contour/contour_over_heatmap",
+              "text": "contour over heatmap"
+            },
+            {
+              "link": "/examples/2d/contour/egg_shape",
+              "text": "egg shape"
+            },
+            {
+              "link": "/examples/2d/contour/overlayed_functions",
+              "text": "overlayed functions"
+            },
+            {
+              "link": "/examples/2d/contour/qubit",
+              "text": "qubit"
+            }
+          ],
+          "text": "contour",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/density/density",
+              "text": "density"
+            },
+            {
+              "link": "/examples/2d/density/mtcars_density",
+              "text": "mtcars density"
+            }
+          ],
+          "text": "density",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/errorbars/errorbars",
+              "text": "errorbars"
+            },
+            {
+              "link": "/examples/2d/errorbars/simple_x_y",
+              "text": "simple x y"
+            },
+            {
+              "link": "/examples/2d/errorbars/y_colormap",
+              "text": "y colormap"
+            }
+          ],
+          "text": "errorbars",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/heatmaps/heatmap",
+              "text": "heatmap"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmap1SharedCbar",
+              "text": "heatmap1SharedCbar"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmap2SharedCbars",
+              "text": "heatmap2SharedCbars"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmapCbarBottom",
+              "text": "heatmapCbarBottom"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmapCbarLeft",
+              "text": "heatmapCbarLeft"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmapCbarTop",
+              "text": "heatmapCbarTop"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmapGrid",
+              "text": "heatmapGrid"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmapIrregular",
+              "text": "heatmapIrregular"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmapIrregularCategories",
+              "text": "heatmapIrregularCategories"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmapLogIrregular",
+              "text": "heatmapLogIrregular"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmapScaleAdd",
+              "text": "heatmapScaleAdd"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmapScaleCrosshair",
+              "text": "heatmapScaleCrosshair"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmapScaleDetail",
+              "text": "heatmapScaleDetail"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmapScaleSections",
+              "text": "heatmapScaleSections"
+            },
+            {
+              "link": "/examples/2d/heatmaps/heatmapxyz",
+              "text": "heatmapxyz"
+            },
+            {
+              "link": "/examples/2d/heatmaps/text_heatmap",
+              "text": "text heatmap"
+            }
+          ],
+          "text": "heatmaps",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/histogram/bins_counts",
+              "text": "bins counts"
+            },
+            {
+              "link": "/examples/2d/histogram/hist",
+              "text": "hist"
+            },
+            {
+              "link": "/examples/2d/histogram/hist_alpha",
+              "text": "hist alpha"
+            },
+            {
+              "link": "/examples/2d/histogram/hist_pdf",
+              "text": "hist pdf"
+            },
+            {
+              "link": "/examples/2d/histogram/hists_on_the_sides",
+              "text": "hists on the sides"
+            },
+            {
+              "link": "/examples/2d/histogram/normalizations",
+              "text": "normalizations"
+            },
+            {
+              "link": "/examples/2d/histogram/parallel_image_hist",
+              "text": "parallel image hist"
+            }
+          ],
+          "text": "histogram",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/lines/line_broken_axis",
+              "text": "line broken axis"
+            },
+            {
+              "link": "/examples/2d/lines/line_cmap",
+              "text": "line cmap"
+            },
+            {
+              "link": "/examples/2d/lines/line_cmaps",
+              "text": "line cmaps"
+            },
+            {
+              "link": "/examples/2d/lines/line_cmaps_a",
+              "text": "line cmaps a"
+            },
+            {
+              "link": "/examples/2d/lines/line_colored",
+              "text": "line colored"
+            },
+            {
+              "link": "/examples/2d/lines/line_colored_cbar",
+              "text": "line colored cbar"
+            },
+            {
+              "link": "/examples/2d/lines/line_inset",
+              "text": "line inset"
+            },
+            {
+              "link": "/examples/2d/lines/line_inset_h",
+              "text": "line inset h"
+            },
+            {
+              "link": "/examples/2d/lines/line_latex",
+              "text": "line latex"
+            },
+            {
+              "link": "/examples/2d/lines/line_latex_bessel",
+              "text": "line latex bessel"
+            },
+            {
+              "link": "/examples/2d/lines/line_latex_bessels",
+              "text": "line latex bessels"
+            },
+            {
+              "link": "/examples/2d/lines/line_single",
+              "text": "line single"
+            },
+            {
+              "link": "/examples/2d/lines/line_time",
+              "text": "line time"
+            },
+            {
+              "link": "/examples/2d/lines/line_twin_axis",
+              "text": "line twin axis"
+            },
+            {
+              "link": "/examples/2d/lines/line_two",
+              "text": "line two"
+            },
+            {
+              "link": "/examples/2d/lines/line_xlog",
+              "text": "line xlog"
+            },
+            {
+              "link": "/examples/2d/lines/line_xylog",
+              "text": "line xylog"
+            },
+            {
+              "link": "/examples/2d/lines/line_ylog",
+              "text": "line ylog"
+            }
+          ],
+          "text": "lines",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/linesegments/RRGraph",
+              "text": "RRGraph"
+            },
+            {
+              "link": "/examples/2d/linesegments/linesegments",
+              "text": "linesegments"
+            }
+          ],
+          "text": "linesegments",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/poly/poly_ngon",
+              "text": "poly ngon"
+            },
+            {
+              "link": "/examples/2d/poly/poly_strokes",
+              "text": "poly strokes"
+            }
+          ],
+          "text": "poly",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/scatterlines/markers",
+              "text": "markers"
+            },
+            {
+              "link": "/examples/2d/scatterlines/scatters_line",
+              "text": "scatters line"
+            },
+            {
+              "link": "/examples/2d/scatterlines/scatters_line_leg_out",
+              "text": "scatters line leg out"
+            },
+            {
+              "link": "/examples/2d/scatterlines/simple",
+              "text": "simple"
+            },
+            {
+              "link": "/examples/2d/scatterlines/spirals",
+              "text": "spirals"
+            }
+          ],
+          "text": "scatterlines",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/scatters/bubble_plot",
+              "text": "bubble plot"
+            },
+            {
+              "link": "/examples/2d/scatters/bubble_plot_logxy",
+              "text": "bubble plot logxy"
+            },
+            {
+              "link": "/examples/2d/scatters/iris_dataset",
+              "text": "iris dataset"
+            },
+            {
+              "link": "/examples/2d/scatters/makie_contributors",
+              "text": "makie contributors"
+            },
+            {
+              "link": "/examples/2d/scatters/scatter",
+              "text": "scatter"
+            },
+            {
+              "link": "/examples/2d/scatters/scatters_colormap",
+              "text": "scatters colormap"
+            },
+            {
+              "link": "/examples/2d/scatters/scatters_legend",
+              "text": "scatters legend"
+            }
+          ],
+          "text": "scatters",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/series/series",
+              "text": "series"
+            }
+          ],
+          "text": "series",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/stairs/stairs",
+              "text": "stairs"
+            }
+          ],
+          "text": "stairs",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/stem/stem",
+              "text": "stem"
+            }
+          ],
+          "text": "stem",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/streamplot/complex_polya_field",
+              "text": "complex polya field"
+            },
+            {
+              "link": "/examples/2d/streamplot/field_heatmap",
+              "text": "field heatmap"
+            },
+            {
+              "link": "/examples/2d/streamplot/ode_solution",
+              "text": "ode solution"
+            },
+            {
+              "link": "/examples/2d/streamplot/poincare_vander",
+              "text": "poincare vander"
+            },
+            {
+              "link": "/examples/2d/streamplot/streamplot",
+              "text": "streamplot"
+            }
+          ],
+          "text": "streamplot",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/text/your_name",
+              "text": "your name"
+            }
+          ],
+          "text": "text",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/2d/violins/airquality",
+              "text": "airquality"
+            },
+            {
+              "link": "/examples/2d/violins/collection_violins",
+              "text": "collection violins"
+            },
+            {
+              "link": "/examples/2d/violins/single",
+              "text": "single"
+            }
+          ],
+          "text": "violins",
+          "collapsed": true
+        }
+      ],
+      "text": "2d"
+    }
+  ],
+  "/examples/3d/": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "link": "/examples/3d/contour3d/contour_v",
+              "text": "contour v"
+            },
+            {
+              "link": "/examples/3d/contour3d/contourf_contour3d",
+              "text": "contourf contour3d"
+            }
+          ],
+          "text": "contour3d",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/3d/lines3d/archimedean_spiral",
+              "text": "archimedean spiral"
+            },
+            {
+              "link": "/examples/3d/lines3d/filled3d_curve",
+              "text": "filled3d curve"
+            },
+            {
+              "link": "/examples/3d/lines3d/line3d",
+              "text": "line3d"
+            },
+            {
+              "link": "/examples/3d/lines3d/lines_wire_contour_3d",
+              "text": "lines wire contour 3d"
+            },
+            {
+              "link": "/examples/3d/lines3d/wireframe_torus",
+              "text": "wireframe torus"
+            }
+          ],
+          "text": "lines3d",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/3d/meshes/Earth_planes",
+              "text": "Earth planes"
+            },
+            {
+              "link": "/examples/3d/meshes/cpunkCube",
+              "text": "cpunkCube"
+            },
+            {
+              "link": "/examples/3d/meshes/gfield",
+              "text": "gfield"
+            },
+            {
+              "link": "/examples/3d/meshes/how_to_cube",
+              "text": "how to cube"
+            },
+            {
+              "link": "/examples/3d/meshes/isosurfaces",
+              "text": "isosurfaces"
+            },
+            {
+              "link": "/examples/3d/meshes/meshes",
+              "text": "meshes"
+            },
+            {
+              "link": "/examples/3d/meshes/simplex",
+              "text": "simplex"
+            }
+          ],
+          "text": "meshes",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/3d/mscatters/RGBAcube",
+              "text": "RGBAcube"
+            },
+            {
+              "link": "/examples/3d/mscatters/RRGraph3D",
+              "text": "RRGraph3D"
+            },
+            {
+              "link": "/examples/3d/mscatters/SSAO_meshscatter",
+              "text": "SSAO meshscatter"
+            },
+            {
+              "link": "/examples/3d/mscatters/SSAO_mgrid",
+              "text": "SSAO mgrid"
+            },
+            {
+              "link": "/examples/3d/mscatters/cube_mscatters",
+              "text": "cube mscatters"
+            },
+            {
+              "link": "/examples/3d/mscatters/gauss2d",
+              "text": "gauss2d"
+            },
+            {
+              "link": "/examples/3d/mscatters/lscene_limits",
+              "text": "lscene limits"
+            }
+          ],
+          "text": "mscatters",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/3d/surfaces/band3d",
+              "text": "band3d"
+            },
+            {
+              "link": "/examples/3d/surfaces/branching",
+              "text": "branching"
+            },
+            {
+              "link": "/examples/3d/surfaces/complex_function",
+              "text": "complex function"
+            },
+            {
+              "link": "/examples/3d/surfaces/constraints",
+              "text": "constraints"
+            },
+            {
+              "link": "/examples/3d/surfaces/gabriels_horn",
+              "text": "gabriels horn"
+            },
+            {
+              "link": "/examples/3d/surfaces/klein_bottle",
+              "text": "klein bottle"
+            },
+            {
+              "link": "/examples/3d/surfaces/onecolor",
+              "text": "onecolor"
+            },
+            {
+              "link": "/examples/3d/surfaces/revolution_surface",
+              "text": "revolution surface"
+            },
+            {
+              "link": "/examples/3d/surfaces/revolution_surface_s",
+              "text": "revolution surface s"
+            },
+            {
+              "link": "/examples/3d/surfaces/surface",
+              "text": "surface"
+            },
+            {
+              "link": "/examples/3d/surfaces/surface_filled_sides",
+              "text": "surface filled sides"
+            },
+            {
+              "link": "/examples/3d/surfaces/tesseralSphericalH",
+              "text": "tesseralSphericalH"
+            },
+            {
+              "link": "/examples/3d/surfaces/torus",
+              "text": "torus"
+            }
+          ],
+          "text": "surfaces",
+          "collapsed": true
+        },
+        {
+          "items": [
+            {
+              "link": "/examples/3d/volume/volume",
+              "text": "volume"
+            },
+            {
+              "link": "/examples/3d/volume/volume_contour_scatters",
+              "text": "volume contour scatters"
+            }
+          ],
+          "text": "volume",
+          "collapsed": true
+        }
+      ],
+      "text": "3d"
+    }
+  ],
+  "/examples/rpr/": [
+    {
+      "items": [
+        {
+          "link": "/examples/rpr/sphere_plane",
+          "text": "sphere plane"
+        }
+      ],
+      "text": "rpr"
+    }
+  ],
+  "/examples/themes/": [
+    {
+      "items": [
+        {
+          "link": "/examples/themes/black_epicycloid",
+          "text": "black epicycloid"
+        },
+        {
+          "link": "/examples/themes/dark_surface_contour3d_streamplot",
+          "text": "dark surface contour3d streamplot"
+        },
+        {
+          "link": "/examples/themes/ggplot2_stem",
+          "text": "ggplot2 stem"
+        },
+        {
+          "link": "/examples/themes/light_ngon",
+          "text": "light ngon"
+        },
+        {
+          "link": "/examples/themes/minimal_series",
+          "text": "minimal series"
+        }
+      ],
+      "text": "themes"
+    }
+  ],
+  "/examples/geo/": [
+    {
+      "items": [
+        {
+          "link": "/examples/geo/blue_marble",
+          "text": "blue marble"
+        },
+        {
+          "link": "/examples/geo/coastlines",
+          "text": "coastlines"
+        },
+        {
+          "link": "/examples/geo/donut_earth_sun",
+          "text": "donut earth sun"
+        },
+        {
+          "link": "/examples/geo/moon",
+          "text": "moon"
+        },
+        {
+          "link": "/examples/geo/projections",
+          "text": "projections"
+        },
+        {
+          "link": "/examples/geo/vertical_feature_mask",
+          "text": "vertical feature mask"
+        }
+      ],
+      "text": "geo"
+    }
+  ],
+  "/examples/datavis/": [
+    {
+      "items": [
+        {
+          "link": "/examples/datavis/astronauts",
+          "text": "astronauts"
+        },
+        {
+          "link": "/examples/datavis/candlestick",
+          "text": "candlestick"
+        },
+        {
+          "link": "/examples/datavis/earthquakes",
+          "text": "earthquakes"
+        },
+        {
+          "link": "/examples/datavis/eigenvals_densities",
+          "text": "eigenvals densities"
+        },
+        {
+          "link": "/examples/datavis/eigenvals_evolution",
+          "text": "eigenvals evolution"
+        },
+        {
+          "link": "/examples/datavis/fractals",
+          "text": "fractals"
+        },
+        {
+          "link": "/examples/datavis/leos",
+          "text": "leos"
+        },
+        {
+          "link": "/examples/datavis/multipleTitles",
+          "text": "multipleTitles"
+        },
+        {
+          "link": "/examples/datavis/strange_attractors",
+          "text": "strange attractors"
+        }
+      ],
+      "text": "datavis"
+    }
+  ],
+  "/examples/algebra_of_graphics/": [
+    {
+      "items": [
+        {
+          "link": "/examples/algebra_of_graphics/MarketData",
+          "text": "MarketData"
+        },
+        {
+          "link": "/examples/algebra_of_graphics/ablines",
+          "text": "ablines"
+        },
+        {
+          "link": "/examples/algebra_of_graphics/datasaurus",
+          "text": "datasaurus"
+        },
+        {
+          "link": "/examples/algebra_of_graphics/density_ridges",
+          "text": "density ridges"
+        },
+        {
+          "link": "/examples/algebra_of_graphics/penguins",
+          "text": "penguins"
+        },
+        {
+          "link": "/examples/algebra_of_graphics/penguins3d",
+          "text": "penguins3d"
+        },
+        {
+          "link": "/examples/algebra_of_graphics/penguinsAoG",
+          "text": "penguinsAoG"
+        },
+        {
+          "link": "/examples/algebra_of_graphics/penguinsBoxes",
+          "text": "penguinsBoxes"
+        },
+        {
+          "link": "/examples/algebra_of_graphics/penguinsViolins",
+          "text": "penguinsViolins"
+        },
+        {
+          "link": "/examples/algebra_of_graphics/scatterlinesAoG",
+          "text": "scatterlinesAoG"
+        }
+      ],
+      "text": "algebra of graphics"
+    }
+  ],
+  "/examples/animations/": [
+    {
+      "items": [
+        {
+          "link": "/examples/animations/gravities",
+          "text": "gravities"
+        },
+        {
+          "link": "/examples/animations/rotating_with_time",
+          "text": "rotating with time"
+        },
+        {
+          "link": "/examples/animations/scatter_and_line",
+          "text": "scatter and line"
+        },
+        {
+          "link": "/examples/animations/scatter_size",
+          "text": "scatter size"
+        },
+        {
+          "link": "/examples/animations/travelling_solar_system",
+          "text": "travelling solar system"
+        }
+      ],
+      "text": "animations"
+    }
+  ]
+}
